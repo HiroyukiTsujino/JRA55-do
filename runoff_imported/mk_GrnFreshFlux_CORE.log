@@ -1,0 +1,64 @@
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.01
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.02
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.03
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.04
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.05
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.06
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.07
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.08
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.09
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.10
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.11
+ Read from ...data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.12
+total (clim)=      2.0120041 mSv
+  modify_nextxy 
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.01
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.02
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.03
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.04
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.05
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.06
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.07
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.08
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.09
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.10
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.11
+ Reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.12
+  Killworth filter 
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.01
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.02
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.03
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.04
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.05
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.06
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.07
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.08
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.09
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.10
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.11
+ reading from data_Grn_CORE_org/monclim_025x025/fwf_green_025x025.12
+  mk_daily_main 
+ Written to data_Grn_CORE_new/dayclim_025x025/fwf_green_025x025_365dy
+ Written to data_Grn_CORE_new/dayclim_025x025/fwf_green_025x025_366dy
+ Written to data_Grn_CORE_new/dayclim_025x025/total_fwf_green_365dy
+ annual mean (mSv) (killworth : no adjust)
+ original data             from daily (mSv: normal year) 
+    2.012004120076782         2.011887303102865     
+ adjusted factor=    1.000058063378469     
+ annual_mean (mSv) (killworth: adjusted)
+ original data           from daily (normal year)   from daily (leap year) 
+    2.012004120076782         2.012004120076784         2.008989049500729     
+ check at          1347          637
+         filtered, not filtered.  [relative error (%)] 
+             0.0026490     2.2670569
+             0.0058063    -1.5127332
+             0.0122211    -2.1872296
+             0.0058063    30.9376791
+            -0.0296485    17.7898563
+             0.0058063   -13.9077044
+            -0.0097880     6.3867588
+             0.0033266     4.1954823
+             0.0058063    -2.1564440
+             0.0029424     1.9042072
+             0.0058063     6.6333316
+             0.0038741     2.9800002

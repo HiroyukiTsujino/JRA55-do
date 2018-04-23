@@ -1,0 +1,15 @@
+&nml_make_red2reg_mult_corrfac
+  file_in='@org_dir@/sph2m_@surf@_corr.@period@.dat'
+  file_latlon='@latlon_dir@/sph2m_@surf@_corr.@period@.dat'
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask',
+  file_mask_latlon='../linkdir/data/jra55_ocean_mask.gd',
+  num_data=12,
+  l_out_weight=.false.
+  file_weight='../@latlon_dir@/sph2m_@surf@_corr.@period@.dat'
+  file_table='@file_table@'
+  imut=640,
+  jmut=320,
+  grid_name='TL319'
+  undef4_in=9.999e20,
+  undef4_out=9.999e20,
+/

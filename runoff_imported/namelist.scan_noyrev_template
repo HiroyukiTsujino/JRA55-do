@@ -1,0 +1,9 @@
+&nml_river_scan_noyrev
+  ibyr=@ibyr@,
+  ieyr=@ieyr@,
+  riv_in_base='@file_river_base@',
+  l_clim=@l_clim@,
+  file_mask='@file_mask_out@',
+  undef_in=@undef_in@,
+  num_rec_clim=@num_data@,
+/

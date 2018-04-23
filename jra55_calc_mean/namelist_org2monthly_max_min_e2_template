@@ -1,0 +1,7 @@
+&nml_org2mon_mxmn
+  iyst=1999,
+  iyed=1999,
+  item_name='@item@',
+  in_base_dir='../linkdir/forcing/jra_latlon_e2',
+  out_base_dir='../linkdir/forcing/jra_monthly_e3',
+&end

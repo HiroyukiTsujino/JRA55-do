@@ -1,0 +1,132 @@
+#
+#  統一結合モデル用データ変換ツールなど
+#                                    @021005/SY
+#                                    @060324/SY
+
+include ../Mkinc
+
+# ターゲット
+TARGET = aobndm merid_geo merid_ip
+
+# フラグ
+CGCMFLAGS = #
+# オプション CYCLIC, VARIABLE, SPHERICAL, JOT, ICE  について
+# 海洋モデルに合わせる
+#OGCMFLAGS = -DOGCM_CYCLIC -DOGCM_JOT -DOGCM_ICE -DOGCM_VARIABLE -DOGCM_FREESURFACE
+#OGCMFLAGS = -DOGCM_CYCLIC -DOGCM_JOT -DOGCM_ICE
+# 親makeで作成される OGCMFLAGSをinclude
+include ../ogcm_flags.in
+CPPFLAGS = $(CGCMFLAGS) $(OGCMFLAGS)
+
+# ツール類は並列化しない
+PARALLEL = single
+MPI_OR_SINGLE = SINGLE
+
+# ディレクトリ
+BINDIR = ../../bin
+AGCMDIR = ../AGCM
+OGCMDIR = ../OGCM
+CPLRDIR = ../COUPLER
+#INCLUDES = -I. -I$(CPLRDIR) -I$(AGCMDIR) -I$(OGCMDIR)
+INCLUDES = -I.
+
+MAKE = make
+
+.SUFFIXES: .F .F90 .o
+
+# ルール
+
+all : $(TARGET)
+
+check:
+	@echo "CPPFLAGS = $(CPPFLAGS)"
+	@echo "FFLAGS = $(FFLAGS)"
+
+merid_geo: \
+		merid_geo.F90 og_dummy.o rdjobp_dummy.o \
+		param.o stmdlp.o rdbndt.o \
+		og_common_dummy.o ogmpi_dummy.o \
+		ogfile.o trnsfrm.o
+	$(FC) $(FFLAGS) $(CPPFLAGS) $^ -o $@ $(INCLUDES)
+
+merid_ip: \
+		merid_ip.F90 og_dummy.o rdjobp_dummy.o \
+		param.o stmdlp.o rdbndt.o \
+		og_common_dummy.o ogmpi_dummy.o \
+		ogfile.o trnsfrm.o density.o
+	$(FC) $(FFLAGS) $(CPPFLAGS) $^ -o $@ $(INCLUDES)
+
+agcm_prm.o: agcm_prm_resol.o
+mask_consistency.o: com_cgcm_ifa.o
+com_cgcm_ifo.o: param.o
+param.o: dz.F90
+intpl.o: \
+		intpl.F90 com_cgcm_ifa.o com_cgcm_ifo.o \
+		file_utils.o cgcm_glob_monit.o
+cgcm_glob_monit.o: file_open.o calendar.o
+file_open.o: search_fileunit.o
+com_cgcm_ifa.o: agcm_prm.o
+og_common_dummy.o: param.o
+stmdlp.o: og_common_dummy.o ogmpi_dummy.o ogfile.o
+rdbndt.o: param.o og_common_dummy.o ogmpi_dummy.o 
+density.o: og_common_dummy.o stmdlp.o 
+
+#
+# AGCMのモジュール
+#
+agcm_prm.F:
+	cp $(AGCMDIR)/GLOBAL_VAR/prm.F $@
+agcm_prm_resol.F:
+	cat $(AGCMDIR)/GLOBAL_VAR/prm_resol.F > $@
+mask_consistency.F:
+	cp $(AGCMDIR)/PHYSCS/$@ .
+file_open.F:
+	cp $(AGCMDIR)/UTILITY/$@ .
+search_fileunit.F:
+	cp $(AGCMDIR)/UTILITY/$@ .
+calendar.F:
+	cp $(AGCMDIR)/UTILITY/$@ .
+
+#
+# OGCMのモジュール
+#
+OGCM_SRCS = \
+	param.F90 stmdlp.F90 rdbndt.F90 trnsfrm.F90 ogfile.F90 dz.F90 density.F90
+$(OGCM_SRCS):
+	cp $(OGCMDIR)/$@ .
+com_cgcm_ifo.F90:
+	cp $(OGCMDIR)/cgcm/$@ .
+
+#
+# COUPLERのモジュール
+#
+CPL_SRCS = \
+	com_cgcm_ifa.F intpl.F90 aobnd_monit.F cgcm_glob_monit.F90 \
+	file_utils.F cgcm_sub2.F
+$(CPL_SRCS):
+	cp $(CPLRDIR)/$@ .
+
+
+###### インストール #################################
+
+install: $(TARGET)
+	cp -f $(TARGET) $(BINDIR)
+
+
+###### Cleaning #################################
+
+clean:
+	rm -f $(TARGET) *.o *.mod $(RM_LIST)
+	rm -f $(OGCM_SRCS) com_cgcm_ifo.F90
+	rm -f $(CPL_SRCS)
+	rm -f agcm_prm.F agcm_prm_resol.F mask_consistency.F file_open.F \
+		search_fileunit.F calendar.F
+
+###### Compilation #################################
+
+.F.o:   
+	$(FC) $(FFLAGS) $(CPPFLAGS) -c $(INCLUDES) $< -o $@
+
+.F90.o: 
+	$(FC) $(FFLAGS) $(CPPFLAGS) -c $(INCLUDES) $< -o $@
+

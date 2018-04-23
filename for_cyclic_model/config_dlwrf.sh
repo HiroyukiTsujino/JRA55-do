@@ -1,0 +1,2 @@
+short_name='rlds'
+long_name="Surface_Downwelling_Longwave_Radiation_units_watts_per_square_meter"

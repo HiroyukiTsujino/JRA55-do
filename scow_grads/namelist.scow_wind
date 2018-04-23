@@ -1,0 +1,6 @@
+&nml_scow_wind
+  flnin_scow='/work116/htsujino/SCOW/wind_spd_monthly_maps.nc'
+  undef_in=-9999.9
+  flnot_base='/work116/htsujino/SCOW/grads/wind_spd_monthly.m'
+  undef_out=-9.99e33
+&end

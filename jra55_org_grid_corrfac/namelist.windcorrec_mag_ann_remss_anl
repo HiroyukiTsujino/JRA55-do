@@ -1,0 +1,16 @@
+&nml_windcorrec_mag_ann
+  flnin1='../linkdir/forcing/qscat_jra55anl_filt_annclim_TL319r/wn10m.nov1999_oct2009.dat'
+  irecs_obs=1,
+  undef_obs=-9.99e33,
+  flnin4='../linkdir/forcing/remss_jra55anl_filt_annclim_TL319r/wn10m.nov1999_oct2009.dat'
+  undef_jra=-9.99e33,
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  flnot1='../linkdir/forcing/remss_jra55anl_filt_corrfac_v7_TL319r/wn10m_mag_annual.dat'
+  flnot3='../linkdir/forcing/remss_jra55anl_filt_corrfac_v7_TL319/wn10m_mag_annual.dat'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  mag_max=10.0d0,
+  mag_min=0.1d0,
+&end

@@ -1,0 +1,11 @@
+ &nml_day_to_mon
+   imax=1440,
+   jmax=720,
+   infile_dir='/work115/htsujino/QuikSCAT/qscat/bmaps_v04/grads_daily_strict',
+   outfile_dir='/work115/htsujino/QuikSCAT/qscat/bmaps_v04/grads_monthly_strict',
+   undef_in=-9.99e33,
+   undef_out=-9.99e33,
+   nbyr=1999,
+   neyr=2009,
+   min_ratio=0.333333333333333d0,
+ &end

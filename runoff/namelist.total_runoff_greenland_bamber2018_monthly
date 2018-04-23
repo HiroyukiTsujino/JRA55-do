@@ -1,0 +1,8 @@
+&nml_total_runoff_monthly
+  file_river_in='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_et_al_2018_025x025/grads_monthly/Bamber_2018_025x025.',
+  dir_out='Bamber_2018',
+  file_out_base='sldice.',
+  nrec=3,
+  nbyr=1958,
+  neyr=2016,
+/

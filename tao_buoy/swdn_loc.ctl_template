@@ -1,0 +1,11 @@
+DSET ^@base_dir@/@out_dir@/swdn_@loc@.%y4%m2
+OPTIONS big_endian template
+TITLE downward short wave from buoy
+UNDEF -0.9990000E+34
+XDEF 1 LEVELS @lon@
+YDEF 1 LEVELS @lat@
+ZDEF 1 LEVELS   0.0
+TDEF @num_dat@ LINEAR  @stmon@@styear@  1mo
+VARS  1
+swdn  0 99  Downward shortwave radiation [W/m2]
+ENDVARS

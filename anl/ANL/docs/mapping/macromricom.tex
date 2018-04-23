@@ -1,0 +1,134 @@
+%\newcommand{\refa}[5]{\item{} #1: #2, {\it #3}, {\bf #4}, #5.}
+\newcommand{\refa}[5]{\item{} #1: #2, {\it #3}, {\it #4}, #5.}
+\newcommand{\refb}[3]{\item{} #1: {\it #2}, #3.}
+\newcommand{\dgr}{^{\circ}}
+%
+\newcommand{\Frac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\newcommand{\PD}[2]{\Frac{\partial #1}{\partial #2}}
+\newcommand{\PDD}[2]{\Frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\PDDD}[2]{\Frac{\partial^3 #1}{\partial #2^3}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\dz}{\Delta z}
+\newcommand{\dV}{\Delta V}
+\newcommand{\dS}{\Delta S}
+%
+\newcommand{\bm}[1]{\mbox{\boldmath{$#1$}}}
+%
+\newcommand{\dlambda}{\Delta \lambda}
+\newcommand{\dphi}{\Delta \phi}
+%
+\newcommand{\ip}{i+\frac{1}{2}}
+\newcommand{\ipp}{i+\frac{3}{2}}
+\newcommand{\im}{i-\frac{1}{2}}
+\newcommand{\jp}{j+\frac{1}{2}}
+\newcommand{\jpp}{j+\frac{3}{2}}
+\newcommand{\jm}{j-\frac{1}{2}}
+\newcommand{\kp}{k+\frac{1}{2}}
+\newcommand{\kpp}{k+\frac{3}{2}}
+\newcommand{\km}{k-\frac{1}{2}}
+\newcommand{\kmm}{k-\frac{3}{2}}
+% QUICKEST
+\newcommand{\xsi}{z_{k}}
+\newcommand{\xsl}{z_{k+\frac{1}{2}}}
+\newcommand{\xsll}{z_{k+\frac{3}{2}}}
+\newcommand{\xsr}{z_{k-\frac{1}{2}}}
+\newcommand{\xsrr}{z_{k-\frac{3}{2}}}
+\newcommand{\dxsi}{\Delta\xsi}
+\newcommand{\dxsl}{\Delta\xsl}
+\newcommand{\dxsll}{\Delta\xsll}
+\newcommand{\dxsr}{\Delta\xsr}
+\newcommand{\dxsrr}{\Delta\xsrr}
+\newcommand{\Intdt}{\int_{t^n}^{t^{n+1}}dt}
+\newcommand{\Intdx}{\int_{\xsl}^{\xsr}dx}
+% UTOPIA
+\newcommand{\psiL}{\psi_L}
+\newcommand{\psiN}{\psi_N}
+\newcommand{\psiS}{\psi_S}
+\newcommand{\psiSS}{\psi_{SS}}
+\newcommand{\psiu}{\psi_u}
+\newcommand{\psid}{\psi_d}
+\newcommand{\psidd}{\psi_{dd}}
+\newcommand{\dpsi}{\Delta\psi}
+\newcommand{\dpsiL}{\Delta\psiL}
+\newcommand{\dpsiN}{\Delta\psiN}
+\newcommand{\dpsiS}{\Delta\psiS}
+\newcommand{\dpsiSS}{\Delta\psiSS}
+\newcommand{\dpsiu}{\Delta\psiu}
+\newcommand{\dpsid}{\Delta\psid}
+\newcommand{\dpsidd}{\Delta\psidd}
+\newcommand{\muL}{\mu_L}
+\newcommand{\muE}{\mu_E}
+\newcommand{\muW}{\mu_W}
+\newcommand{\muWW}{\mu_{WW}}
+\newcommand{\mur}{\mu_r}
+\newcommand{\mul}{\mu_l}
+\newcommand{\mull}{\mu_{ll}}
+\newcommand{\dmu}{\Delta\mu}
+\newcommand{\dmuL}{\Delta\muL}
+\newcommand{\dmuE}{\Delta\muE}
+\newcommand{\dmuW}{\Delta\muW}
+\newcommand{\dmuWW}{\Delta\muWW}
+\newcommand{\dmur}{\Delta\mur}
+\newcommand{\dmul}{\Delta\mul}
+\newcommand{\dmull}{\Delta\mull}
+\newcommand{\Tn}{T^n}
+\newcommand{\TL}{T_L}
+\newcommand{\TE}{T_E}
+\newcommand{\TW}{T_W}
+\newcommand{\TWW}{T_{WW}}
+\newcommand{\TNW}{T_{NW}}
+\newcommand{\TN}{T_N}
+\newcommand{\TS}{T_S}
+\newcommand{\TSE}{T_{SE}}
+\newcommand{\TSW}{T_{SW}}
+\newcommand{\TSS}{T_{SS}}
+\newcommand{\TnL}{\Tn_L}
+\newcommand{\TnE}{\Tn_E}
+\newcommand{\TnW}{\Tn_W}
+\newcommand{\TnWW}{\Tn_{WW}}
+\newcommand{\TnNW}{\Tn_{NW}}
+\newcommand{\TnN}{\Tn_N}
+\newcommand{\TnS}{\Tn_S}
+\newcommand{\TnSE}{\Tn_{SE}}
+\newcommand{\TnSW}{\Tn_{SW}}
+\newcommand{\TnSS}{\Tn_{SS}}
+\newcommand{\Tnr}{\Tn_r}
+\newcommand{\Tnl}{\Tn_l}
+\newcommand{\Tnu}{\Tn_u}
+\newcommand{\Tnd}{\Tn_d}
+\newcommand{\chin}{\chi^n}
+\newcommand{\chiL}{\chi_L}
+\newcommand{\chiE}{\chi_E}
+\newcommand{\chiW}{\chi_W}
+\newcommand{\chiWW}{\chi_{WW}}
+\newcommand{\chiNW}{\chi_{NW}}
+\newcommand{\chiN}{\chi_N}
+\newcommand{\chiS}{\chi_S}
+\newcommand{\chiSE}{\chi_{SE}}
+\newcommand{\chiSW}{\chi_{SW}}
+\newcommand{\chiSS}{\chi_{SS}}
+\newcommand{\chinL}{\chin_L}
+\newcommand{\chinE}{\chin_E}
+\newcommand{\chinW}{\chin_W}
+\newcommand{\chinWW}{\chin_{WW}}
+\newcommand{\chinNW}{\chin_{NW}}
+\newcommand{\chinN}{\chin_N}
+\newcommand{\chinS}{\chin_S}
+\newcommand{\chinSE}{\chin_{SE}}
+\newcommand{\chinSW}{\chin_{SW}}
+\newcommand{\chinSS}{\chin_{SS}}
+\newcommand{\xin}{\xi^n}
+\newcommand{\xinl}{\xin_l}
+\newcommand{\xind}{\xin_d}
+\newcommand{\etan}{\eta^n}
+\newcommand{\etanl}{\etan_l}
+\newcommand{\etand}{\etan_d}
+
+\newcommand{\dxd}{\Delta x_d}
+\newcommand{\dxu}{\Delta x_u}
+\newcommand{\dyl}{\Delta y_l}
+\newcommand{\dyr}{\Delta y_r}
+
+\newcommand{\beginchap}{\hspace*{1zw}}

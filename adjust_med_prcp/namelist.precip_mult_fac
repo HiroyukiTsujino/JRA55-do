@@ -1,0 +1,13 @@
+&nml_precip_mult_fac
+  flnin_base1='/work116/htsujino/GPCC/grads_integ/precip_med_ann.',
+  flnin_base2='../jra55_latlon_diag/have_result/core/prcp_med_core_1958-2015.gd',
+  flnin_base3='../jra55_latlon_diag/have_result/jra55_v0_7/prcp_med_jra55_v0_7_1958-2015.gd',
+  flnot_base1='mult_fac_prcp_1957-2010.gd',
+  area_region=2.5182132195833220E+012,
+  ibyr=1958,
+  ieyr=2009,
+  ibyr_cl=1979,
+  ieyr_cl=1996
+  ibyr_fac=1958,
+  ieyr_fac=1978
+&end

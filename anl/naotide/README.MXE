@@ -1,0 +1,31 @@
+README
+
+
+潮位同化データセットnao99b (Matsumoto et al. 2000)による潮位場を作る。
+はじめに、データのあるディレクトリにリンクを張る必要がある。
+  link_nao99b.sh
+
+
+==== Fortran program ====
+
+tidehmap_ctl.F90, tidehmap.F90
+  namelist.configure.inに基づいて、潮位分布(tideh)を作成する。
+  sample/make_tideh.sh サンプル・スクリプト
+
+spot_ctl.F90, spot.F90
+  namelist.configure.in の時刻を使って、ある1点の潮位時間変動を求める。
+  sample/make_spot.sh サンプル・スクリプト
+
+
+==== Fortran subroutine ====
+
+naotide.f
+  Matsumoto et al. (2000)の潮汐予測サブルーチン。
+  位置、時刻を与えると潮位を返す。
+
+naotide_M2.f
+  M2成分のみの結果を与えるように修正した。
+
+naotidej.f
+  日本近海で水平解像度5分。
+

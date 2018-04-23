@@ -1,0 +1,10 @@
+&nml_fill_mult_correc
+  flnin1='@work_dir@/sph2m_@surf@_corr.@period@.dat'
+  num_data=12,
+  nitem1=1,
+  nth1=1,
+  undef_jra=9.999e20,
+  flnot1='@work_dir@/sph2m_@surf@_corr_filled.@period@.dat'
+  file_mask='../linkdir/data/jra55_ocean_mask.gd'
+  num_pass=@num_pass@
+&end

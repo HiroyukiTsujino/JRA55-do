@@ -1,0 +1,10 @@
+ &nml_extract_rec
+  infile='/worke/htsujino/SURF_FLUX/forcing/jra_for_mricom/tripolar-1_0-0_5/runoff/rnof.@year@.dat'
+  outfile='/worke/htsujino/SURF_FLUX/forcing/jra_for_mricom/tripolar-1_0-0_5/runoff/rnof.@yyyymmdd@'
+  undef_in=-9.99e33
+  undef_out=-9.99e33
+  imax=364,
+  jmax=368,
+  kmax=1
+  irec=@day_year@
+ &end

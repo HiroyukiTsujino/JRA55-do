@@ -1,0 +1,7 @@
+ &nammoncl
+  infile_base='/worke/htsujino/NOCS/grads_diag/sph2m.'
+  outfile_base='/worke/htsujino/NOCS/grads_moncl/sph2m_1979_2006.m'
+  nbyr=1979
+  neyr=2006
+  klev=1
+ &end

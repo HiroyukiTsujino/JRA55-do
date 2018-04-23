@@ -1,0 +1,12 @@
+&nml_zonalmean
+  file_in='%wind_grads%',
+  undef_in=-9.99e33,
+  file_out='%wind_zm_grads%',
+  undef_out=-9.99e33,
+  imut=1440,
+  jmut=720,
+  slon=0.125d0,
+  dlon=0.25d0,
+  slat=-89.875d0,
+  dlat=0.25d0,
+&end

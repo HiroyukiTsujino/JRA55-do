@@ -1,0 +1,26 @@
+&nml_pcpdata
+  file_namelist_pcp='NAMELIST.MXE.JRA55',
+  pcp_base_dir='../linkdir/forcing/jra_latlon_e3'
+  fin_base_pcp='snow',
+  file_first_pcp=1958,1,1,0,0,0,
+  file_intv_type_pcp=4,
+  file_intv_pcp=3,
+  total_rec_pcp=1,
+  data_intv_sec_pcp=10800,
+  pcp_first=1958,1,1,1,30,0,
+  undef_pcp=9.999e20,
+  l_ymdir_pcp=.true.
+&end
+
+&nml_calibpcp
+  calc_start=1958,1,1,1,30,0,
+  calc_end=2015,11,2,1,30,0, 
+  l_leap_valid=.true.
+  l_calib_monthly=.false.,
+  l_calib_const=.true.,
+  factor_calib_pcp=0.990767d0,
+  file_calib_pcp='dummy.d',
+  calib_base_dir='../linkdir/forcing/jra_latlon_e4',
+  fout_base_pcp='snow',
+  factor_div_pcp=1.d0
+&end

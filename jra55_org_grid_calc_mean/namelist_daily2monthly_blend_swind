@@ -1,0 +1,9 @@
+&nml_day2mon
+  iyst=1999,
+  imst=8
+  iyed=2009,
+  imed=10
+  item_name='swind'
+  in_base_dir='../linkdir/forcing/jra_blend_daily_org',
+  out_base_dir='../linkdir/forcing/jra_blend_monthly_org',
+&end

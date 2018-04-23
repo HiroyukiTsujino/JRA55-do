@@ -1,0 +1,19 @@
+&nml_blend_remss_anl
+  file_wind10m='@anl_monthly@/wn10m.@yyyymm@'
+  file_mask='@jra_cnst@/TL319.mask'
+  file_blend_org='@blend_org@/wn10m.@yyyymm@'
+  file_blend_latlon='@blend_latlon@/wn10m.@yyyymm@'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  iremss=360,
+  jremss=180,
+  slon_remss=0.5d0,
+  dlon_remss=1.0d0,
+  slat_remss=-89.5d0,
+  dlat_remss=1.0d0,
+  undef4_remss=-9.99e33
+  file_remss='@remss_dir@/swind.@yyyymm@'
+/

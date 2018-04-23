@@ -1,0 +1,19 @@
+
+ocean area:    3.6540394854832568E+018
+
+1988-2007
+
+  Heat flux due to SW+LW+LA+SE :     13.13070000000000
+  Heat flux due to water flux  :   -0.3961590000000000
+  Heat flux due to sea ice     :    -1.397500000000000
+  Residual Heat flux    :     11.33704100000000
+  Total short wave      :     168.0660000000000
+  Downward long wave    :     345.6990000000000
+  Calibration factor for downward radiation :    0.9779334111899409
+
+
+  Sublimation   :    1.7912100000000001E-007
+  Precipitation :    3.5620400000000002E-005
+  Evaporation   :    3.7705400000000000E-005
+  River run off :    3.3375939148988402E-006
+  Calibration factor for precipitaion :    0.9698635356453368

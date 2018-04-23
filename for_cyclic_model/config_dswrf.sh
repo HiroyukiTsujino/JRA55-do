@@ -1,0 +1,2 @@
+short_name='rsds'
+long_name="Surface_Downwelling_Shortwave_Radiation_units_watts_per_square_meter"

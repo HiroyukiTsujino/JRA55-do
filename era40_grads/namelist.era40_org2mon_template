@@ -1,0 +1,11 @@
+&nml_era40_org2mon
+  nyear=@nyear@,
+  var_name='@var_name@',
+  file_in1='/work115/htsujino/ERA-40/org_data/era40_anl_surf_@nyear@.nc',
+  file_in2='/work115/htsujino/ERA-40/org_data/era40_anl_surf_@nyear_next@.nc',
+  file_out_base='/work115/htsujino/ERA-40/grads_monthly/era40_@var_name_out@.'
+  l_ice_out=.true.
+  file_ice_base='/work115/htsujino/ERA-40/grads_monthly/era40_ice.'
+  l_mask_out=.true.
+  file_mask='/work115/htsujino/ERA-40/data/topo_era40.d',
+&end

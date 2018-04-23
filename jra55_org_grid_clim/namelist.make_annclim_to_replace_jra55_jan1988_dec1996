@@ -1,0 +1,20 @@
+&nml_make_annclim_replace
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask',
+  undef4_in=-9.99e33,
+  undef4_out=-9.99e33,
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  file_u_clim_in_org1='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_filt_v1_2tq_annclim_TL319r/un10m.jan1988_dec1996.dat',
+  file_v_clim_in_org1='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_filt_v1_2tq_annclim_TL319r/vn10m.jan1988_dec1996.dat',
+  file_u_clim_in_org2='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_filt_v1_2tq_annclim_TL319r/un10m.nov1999_oct2009.dat',
+  file_v_clim_in_org2='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_filt_v1_2tq_annclim_TL319r/vn10m.nov1999_oct2009.dat',
+  file_u_clim_in_org3='/work115/htsujino/SURF_FLUX/forcing/qscat_jra55anl_filt_annclim_TL319r/un10m.nov1999_oct2009.dat',
+  file_v_clim_in_org3='/work115/htsujino/SURF_FLUX/forcing/qscat_jra55anl_filt_annclim_TL319r/vn10m.nov1999_oct2009.dat',
+  file_u_clim_out_org4='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319r/un10m_rebased.jan1988_dec1996.dat',  
+  file_v_clim_out_org4='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319r/vn10m_rebased.jan1988_dec1996.dat',  
+  file_u_clim_out_latlon='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319/un10m_rebased.jan1988_dec1996.dat',
+  file_v_clim_out_latlon='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319/vn10m_rebased.jan1988_dec1996.dat',
+  l_out_latlon=.true.
+/

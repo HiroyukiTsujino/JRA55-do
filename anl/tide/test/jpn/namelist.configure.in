@@ -1,0 +1,5 @@
+&dmlst imut = 1624, jmut = 1254, km = 51, ksgm = 5, kbbl = 0 &end
+&grlst slat0=25.0d0, slon0=117.d0, dxtdgc=0.0303d0, dytdgc=0.02d0, dztmp=4.d2,5.d2,6.5d2,7.5d2,9.d2,11.5d2,14.d2,16.d2,17.5d2,18.d2,18.5d2,20.d2,20.5d2,21.d2,22.d2,23.d2,24.d2,27.d2,30.d2,30.d2,35.d2,40.d2,40.d2,50.d2,60.d2,65.d2,70.d2,75.d2,80.d2,90.d2,100.d2,100.d2,125.d2,150.d2,150.d2,150.d2,175.d2,225.d2,250.d2,250.d2,250.d2,275.d2,300.d2,300.d2,300.d2,300.d2,300.d2,450.d2,600.d2,600.d2,50.d2, lsub=.true., lvariable=.true., lcyclic=.false., lspherical=.true., lfoldnp=.false. &end
+&grfile vgrid='../../linkdir/mxe/jpn/data/vgrid.d' &end
+&topofile ftopo='../../linkdir/mxe/jpn/data/topo.d' &end
+&iolst icalstr=2001,6,18,0,0,0, icalend=2001,6,18,1,30,0, icalint=0,0,0,0,30,0 &end

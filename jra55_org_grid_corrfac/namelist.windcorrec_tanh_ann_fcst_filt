@@ -1,0 +1,24 @@
+&nml_windcorrec_tanh_ann
+  flnin1='../linkdir/forcing/qscat_jra55anl_filt_annclim_TL319r/wn10m.nov1999_oct2009.dat'
+  flnin2='../linkdir/forcing/qscat_jra55anl_filt_annclim_TL319r/un10m.nov1999_oct2009.dat'
+  flnin3='../linkdir/forcing/qscat_jra55anl_filt_annclim_TL319r/vn10m.nov1999_oct2009.dat'
+  irecs_obs=1,
+  irecu_obs=1,
+  irecv_obs=1,
+  undef_obs=-9.99e33,
+  flnin4='../linkdir/forcing/jra55fcst_filt_v7tq_annclim_TL319r/wn10m.nov1999_oct2009.dat'
+  flnin5='../linkdir/forcing/jra55fcst_filt_v7tq_annclim_TL319r/un10m.nov1999_oct2009.dat'
+  flnin6='../linkdir/forcing/jra55fcst_filt_v7tq_annclim_TL319r/vn10m.nov1999_oct2009.dat'
+  undef_jra=-9.99e33,
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  flnot1='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/wind_mag_tanh_annual.1999_2015.dat'
+  flnot2='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/wind_rot_tanh_annual.1999_2015.dat'
+  flnot3='../linkdir/forcing/jra55fcst_corrfac_v7_TL319/wind_mag_tanh_annual.1999_2015.latlon.dat'
+  flnot4='../linkdir/forcing/jra55fcst_corrfac_v7_TL319/wind_rot_tanh_annual.1999_2015.latlon.dat'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  mag_max=1.5d0,
+  mag_min=0.6666666666666667d0,
+&end

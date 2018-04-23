@@ -1,0 +1,6 @@
+&nml_hintpol
+  flin1="@flin1@",
+  flot1="@flot1@",
+  num_data=@num_data@,
+  undef_out=-9.99e33,
+/

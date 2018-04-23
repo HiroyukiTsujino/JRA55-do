@@ -1,0 +1,14 @@
+ &nml_anncl
+  imax=360,
+  jmax=180,
+  kmax=3,
+  infile_base='/work116/htsujino/SURF_FLUX/forcing/jra_cobesst_monthly_c2/v10m.'
+  undef_in=9.999e20
+  outfile_base='/work116/htsujino/SURF_FLUX/forcing/jra_cobesst_clim_c2/v10m-jan2001_dec2007.dat'
+  undef_out=-9.99e33
+  nbyr=2001
+  nbmn=01
+  neyr=2007
+  nemn=12
+  klev=1
+ &end

@@ -1,0 +1,10 @@
+&nml_org2mon_flux
+  iyst=@iyst@,
+  iyed=@iyed@,
+  imst=@imst@,
+  imed=@imed@,
+  item_name='@item@',
+  in_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319r',
+  out_base_dir='../linkdir/forcing/jra55fcst_monthly_TL319r',
+  int_hour=3,
+&end

@@ -1,0 +1,30 @@
+&nml_raddata
+  file_namelist_rad='NAMELIST.MXE.JRA55',
+  rad_base_dir='../linkdir/forcing/jra55fcst_v7_rad1_3hr_TL319'
+  fin_base_dsw='dswrf',
+  fin_base_dlw='dlwrf',
+  file_first_rad=2018,1,1,0,0,0,
+  file_intv_type_rad=4,
+  file_intv_rad=3,
+  total_rec_rad=1,
+  data_intv_sec_rad=10800,
+  rad_first=2018,1,1,1,30,0,
+  undef_rad=9.999e20,
+  l_ymdir_rad=.true.
+&end
+
+&nml_calibrad
+  calc_start=2018,1,1,1,30,0,
+  calc_end=2018,2,2,1,30,0,
+  l_leap_valid=.true.
+  l_calib_monthly=.false.,
+  l_calib_const_dsw=.true.,
+  l_calib_const_dlw=.true.,
+  factor_calib_dsw=0.98863d0,
+  factor_calib_dlw=0.98863d0,
+  file_calib_dsw='dummy.d',
+  file_calib_dlw='dummy.d',
+  calib_base_dir='../linkdir/forcing/jra55fcst_v1_3_rad2_3hr_TL319',
+  fout_base_dsw='dswrf',
+  fout_base_dlw='dlwrf',
+&end

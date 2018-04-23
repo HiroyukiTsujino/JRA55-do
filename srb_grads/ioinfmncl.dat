@@ -1,0 +1,9 @@
+ &nammoncl
+  infile_base='/worke/htsujino/SRB/rel3.1/grads/swdn.'
+  undef_in=-9.99e33
+  outfile_base='/worke/htsujino/SRB/rel3.1/grads/srb_swdn_3_1_1984_2007.m'
+  undef_out=-9.99e33
+  nbyr=1984
+  neyr=2007
+  klev=1
+ &end

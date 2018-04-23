@@ -1,0 +1,18 @@
+ &nml_heatall
+   fbasmap='/work116/htsujino/COBESST/data/basin_index.gd',
+   flnin_org1='../linkdir/forcing/jra55fcst_v1_1_annual_1x1/nswrf.',
+   flnin_org2='../linkdir/forcing/jra55fcst_v1_1_annual_1x1/nlwrf.',
+   flnin_org3='../linkdir/forcing/jra55fcst_v1_1_annual_1x1/sensible.',
+   flnin_org4='../linkdir/forcing/jra55fcst_v1_1_annual_1x1/latent.',
+   flnot_base1='../linkdir/forcing/jra55fcst_v1_1_annual_1x1/totalheat_noadj.',
+   flnot_base2='../linkdir/forcing/jra55fcst_v1_1_annual_1x1/mhtran_noadj.',
+   flnot_base3='../linkdir/forcing/jra55fcst_v1_1_annual_1x1/heatbudget_noadj.',
+   undef_in=-9.99e33,
+   undef_out=-9.99e33,
+   ibyr=1958,
+   ieyr=2015,
+   slatg=-90.0d0,
+   elatg=90.0d0
+   dlatg=1.0d0
+   heat_adjust=0.0d0
+&end

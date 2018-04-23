@@ -1,0 +1,24 @@
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.JRA55',
+  srf_base_dir='../linkdir/forcing/jra_latlon_c1'
+  fin_base_sph='sph10m',
+  file_first_srf=1958,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1958,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  alt_sph=10.0d0,
+&end
+
+&nml_calibsph
+  calc_start=1958,1,1,0,0,0,
+  calc_end=2015,2,2,0,0,0, 
+  l_leap_valid=.true.,
+  l_calib_monthly=.true.,
+  file_calib_mag='../linkdir/forcing/jra_calib/sph10m_ref_core_smooth.dat',
+  calib_base_dir='../linkdir/forcing/jra_latlon_c2'
+  fout_base_sph='sph10m',
+&end

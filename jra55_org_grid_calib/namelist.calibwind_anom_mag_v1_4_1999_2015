@@ -1,0 +1,34 @@
+&nml_srfdata
+  srf_base_dir='../linkdir/forcing/jra55fcst_filt_v1_2tq_3hr_TL319r'
+  fin_base_us='un10m',
+  fin_base_vs='vn10m',
+  file_first_srf=1999,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1999,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  imut=640,
+  jmut=320,
+  grid_name='TL319',
+  l_little_srf=.true.
+  alt_wind=10.0d0
+&end
+
+&nml_calibwind_anom_mag
+  calc_start=1999,1,1,0,0,0,
+  calc_end=2017,1,1,0,0,0, 
+  l_leap_valid=.true.
+  l_calib_monthly=.false.,
+  l_calib_transition=.false.,
+  file_calib_mag_a='../linkdir/forcing/jra55fcst_corrfac_v1_4_TL319r/wn10m_anom_mag.1999_2009.dat',
+  file_meanu_org_a='../linkdir/forcing/jra55fcst_filt_v1_2tq_annclim_TL319r/un10m.nov1999_oct2009.dat',
+  file_meanv_org_a='../linkdir/forcing/jra55fcst_filt_v1_2tq_annclim_TL319r/vn10m.nov1999_oct2009.dat',
+  file_meanu_new_a='/work115/htsujino/SURF_FLUX/forcing/qscat_jra55anl_filt_annclim_TL319r/un10m.nov1999_oct2009.dat',
+  file_meanv_new_a='/work115/htsujino/SURF_FLUX/forcing/qscat_jra55anl_filt_annclim_TL319r/vn10m.nov1999_oct2009.dat',
+  calib_base_dir='../linkdir/forcing/jra55fcst_filt_v1_4_3hr_wind_TL319r'
+  fout_base_us='un10m',
+  fout_base_vs='vn10m',
+&end

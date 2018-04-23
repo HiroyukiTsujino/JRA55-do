@@ -1,0 +1,6 @@
+&nml_org2mon
+  iyst=1999,
+  iyed=2009,
+  in_base_dir='../linkdir/forcing/jra_latlon_d1',
+  out_base_dir='../linkdir/forcing/jra_monthly_d1',
+&end

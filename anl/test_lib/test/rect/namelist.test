@@ -1,0 +1,36 @@
+&para_imut
+  ival = 62,
+&end
+
+&para_rundefin
+  rval   = -9.e30,
+  rrange = 1.e25,
+/
+
+&para_rundefout
+  rval   = -9.99e33,
+  rrange = 1.e28,
+/
+
+&grid_dz_cm
+  dval   = 20000.d0,
+  drange = 1.d-11,
+  nz     = 5,
+/
+
+&grid_dz_cm
+  dval   = 200000.d0,
+  drange = 1.d-10,
+  nz     = 10,
+/
+
+&topo_ho4
+  ival = 600000,
+  nx = 40,
+  ny = 40,
+&end
+&topo_exnn
+  ival = 10,
+  nx = 40,
+  ny = 40,
+&end

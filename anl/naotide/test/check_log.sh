@@ -1,0 +1,1 @@
+../../tide/test/check_log.sh

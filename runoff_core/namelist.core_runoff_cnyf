@@ -1,0 +1,5 @@
+&nml_core_runoff_cnyf
+  fl_in='/workc/ocpublic/refdata/CORE/COREv2/cnyf/orgdata/runoff.daitren.clim.10FEB2011.nc',
+  fl_out_base='/worke/htsujino/CORE/core_monthly_cnyf/runoff.',
+  file_mask='/worke/htsujino/CORE/data/runoff_mask.gd',
+&end

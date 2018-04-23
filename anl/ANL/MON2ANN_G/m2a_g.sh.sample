@@ -1,0 +1,35 @@
+#! /bin/sh -f
+
+styear=1948
+endyear=2006
+
+################
+
+fpathin="../result/hs_ssh"
+fpathout="../result/hs_ssh"
+./mon2ann_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+fpathin="../result/hs_t"
+fpathout="../result/hs_t"
+./mon2ann_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+fpathin="../result/hs_s"
+fpathout="../result/hs_s"
+./mon2ann_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+fpathin="../result/hs_u"
+fpathout="../result/hs_u"
+./mon2ann_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+fpathin="../result/hs_v"
+fpathout="../result/hs_v"
+./mon2ann_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+fpathin="../result/hs_ice"
+fpathout="../result/hs_ice"
+./mon2ann_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+fpathin="../result/hs_iceuv"
+fpathout="../result/hs_iceuv"
+./mon2ann_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+

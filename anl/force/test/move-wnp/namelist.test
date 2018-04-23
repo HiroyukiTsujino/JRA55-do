@@ -1,0 +1,32 @@
+&force_data_lon
+  dval   = 136.3125000000000d0,
+  drange = 1.d-10,
+  nx     = 200,
+/
+
+&force_data_io_nm
+  ival   = 5,
+/
+
+&force_data_read_data
+  rval   = 29.17441e0,
+  rrange = 1.e-4,
+  nx     = 200,
+  ny     = 10,
+  nz     = 1,
+/
+&force_data_read_data
+  rval   = 187.5005e0,
+  rrange = 1.e-3,
+  nx     = 200,
+  ny     = 10,
+  nz     = 3,
+/
+&force_data_read_data
+  rval   = 1005.445e0,
+  rrange = 1.e-2,
+  nx     = 200,
+  ny     = 10,
+  nz     = 4,
+/
+

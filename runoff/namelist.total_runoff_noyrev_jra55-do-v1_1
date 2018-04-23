@@ -1,0 +1,8 @@
+&nml_total_runoff
+  fl_in_base='/work116/htsujino/SURF_FLUX/forcing/jra55-do-v1_1-river/runoff_all',
+  dir_out='jra55-do-v1_1',
+  ibyr=1958,
+  ieyr=2017,
+  l_apply_area=.true.,
+  file_area='/work116/htsujino/SURF_FLUX/data_river/runoff_area.gd'
+/

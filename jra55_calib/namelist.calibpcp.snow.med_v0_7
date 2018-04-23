@@ -1,0 +1,26 @@
+&nml_pcpdata
+  file_namelist_pcp='NAMELIST.MXE.JRA55',
+  pcp_base_dir='../linkdir/forcing/jra55fcst_v7_prcp_3hr_TL319'
+  fin_base_pcp='snow',
+  file_first_pcp=1958,1,1,0,0,0,
+  file_intv_type_pcp=4,
+  file_intv_pcp=3,
+  total_rec_pcp=1,
+  data_intv_sec_pcp=10800,
+  pcp_first=1958,1,1,1,30,0,
+  undef_pcp=9.999e20,
+  l_ymdir_pcp=.true.
+&end
+
+&nml_calibpcp_med
+  calc_start=1958,1,1,1,30,0,
+  calc_end=1980,1,1,1,30,0, 
+  l_leap_valid=.true.,
+  start_yr_calib=1957,
+  end_yr_calib=2010,
+  file_calib_pcp='../adjust_med_prcp/mult_fac_prcp_1957-2010.gd',
+  file_mask='../linkdir/data/med_mask.gd'
+  calib_base_dir='../linkdir/forcing/jra55fcst_v7_prcp2_3hr_TL319',
+  fout_base_pcp='snow',
+  factor_div_pcp=1.d0
+&end

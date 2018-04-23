@@ -1,0 +1,76 @@
+&nml_sstdata
+  file_namelist_sst='NAMELIST.MXE.COBESST',
+  sst_base_dir='/work116/htsujino/COBESST/daily/grads'
+  fin_base_sst='sst-glb',
+  fin_base_ice='ice-glb',
+  file_first_sst=1958,1,1,0,0,0,
+  file_intv_type_sst=1,
+  file_intv_sst=1,
+  total_rec_sst=365,
+  data_intv_sec_sst=86400,
+  sst_first=1958,1,1,12,0,0,
+  undef_sst=9.999e20
+  l_ymdir_sst=.false.
+&end
+
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.JRA55',
+  srf_base_dir='../linkdir/forcing/jra_latlon_e3'
+  sat_base_dir='../linkdir/forcing/jra_latlon_e2'
+  sph_base_dir='../linkdir/forcing/jra_latlon_e3'
+  wind_base_dir='../linkdir/forcing/jra_latlon_e3'
+  slp_base_dir='../linkdir/forcing/jra_latlon_e3'
+  fin_base_sat='tmp2m',
+  fin_base_sph='sph2m',
+  fin_base_us='u10m',
+  fin_base_vs='v10m',
+  fin_base_slp='slprs',
+  file_first_srf=1958,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1958,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  alt_sat=10.0d0,
+  alt_sph=10.0d0,
+  alt_wind=10.0d0
+&end
+
+&nml_diagsurf
+  calc_start=1958,1,1,1,30,0,
+  calc_end=1985,1,1,1,30,0, 
+  l_leap_valid=.true.
+  int_hist=-1,
+  flx_base_dir='../linkdir/forcing/jra_cobesst_monthly_e4'
+  l_proc_wind=.true.,
+  l_proc_atm=.true.,
+  fout_base_xwind='u10m',
+  fout_base_ywind='v10m',
+  fout_base_swind='wind10m',
+  fout_base_sat='tmp2m',
+  fout_base_sph='sph2m',
+  fout_base_rlh='rlh2m',
+  fout_base_roa='roa2m',
+  fout_base_slp='slprs',
+&end
+
+&nml_table_ocn
+  file_table_ocn='../linkdir/table/jra55o2cobe.d'
+&end
+
+&nml_table_all
+  file_table_all='../linkdir/table/jra55a2cobe.d'
+&end
+
+&nml_intpol
+  l_lin_wind=.false.,
+  l_lin_sat=.false.,
+  l_lin_sph=.false.,
+  l_lin_slp=.false.,
+  l_ocn_wind=.true.,
+  l_ocn_sat=.true.,
+  l_ocn_sph=.true.,
+  l_ocn_slp=.false.
+&end

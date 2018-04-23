@@ -1,0 +1,36 @@
+&power__calc
+  dval = 3.735231637954712d0,
+  drange = 1.d-10,
+  nx = 0,
+&end
+
+&power__calc
+  dval = 0.3230528831481934d0,
+  drange = 1.d-10,
+  nx = 1,
+&end
+
+&power__calc
+  dval = 0.1066392287611961d0,
+  drange = 1.d-10,
+  nx = 2,
+&end
+
+
+&lowpass__calc
+  dval = 1.309884667396545d0,
+  drange = 1.d-10,
+  nx = 1,
+&end
+
+&lowpass__calc
+  dval = 1.130131244659424d0,
+  drange = 1.d-10,
+  nx = 2,
+&end
+
+&lowpass__calc
+  dval = 1.256922125816345d0,
+  drange = 1.d-10,
+  nx = 3,
+&end

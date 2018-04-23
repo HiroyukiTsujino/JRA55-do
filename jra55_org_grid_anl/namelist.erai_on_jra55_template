@@ -1,0 +1,22 @@
+&nml_erai_on_jra55
+  file_mask='@jra_cnst@/TL319.mask'
+  file_prod_org='@erai_jra@/@item@.@yyyymm@'
+  file_prod_latlon='@erai_jra_latlon@/@item@.@yyyymm@'
+  undef4_out=@undef_out@
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  ierai=480,
+  jerai=241,
+  slon_erai=0.0d0,
+  dlon_erai=0.75d0,
+  slat_erai=-90.0d0,
+  dlat_erai=0.75d0,
+  undef4_erai=-9.99e33
+  file_erai='@erai_dir@/@item_erai@.@yyyymm@'
+  file_mask_erai='@erai_cnst@/mask.gd'
+  irec_erai=@irec@
+  l_out_latlon=@out_latlon@
+/

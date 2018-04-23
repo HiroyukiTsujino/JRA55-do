@@ -1,0 +1,9 @@
+&nml_divide_by_area
+  file_namelist_cama='NAMELIST.MXE.GLBRIVER',
+  file_mask_cama='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/river_suppl/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GA_add_Bamber.bin',
+  file_river_in='@file_river_in@',
+  file_river_out='@file_river_out@',
+  num_data=@num_data@,
+  l_area_out=@l_area_out@,
+  file_area_out='@file_area_out@'
+&end

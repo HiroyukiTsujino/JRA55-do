@@ -1,0 +1,14 @@
+&nml_fillwindcorr_antarc
+  flnin1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_mag_aug1999_oct2009_d1.monthly.tanh.dat'
+  flnin2='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_ceof_monthly_d1.dat'
+  num_data=12,
+  nitem1=1,
+  nth1=1,
+  nitem2=3,
+  nth2=1,
+  undef_jra=-9.99e33,
+  flnot1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_mag_aug1999_oct2009_d1_fill_antarc.dat'
+  flnot2='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_ceof_aug1999_oct2009_d1_fill_antarc.dat'
+  file_fill_wind='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_monthly/jra55_wind_fill.gd'
+  num_pass=18
+&end

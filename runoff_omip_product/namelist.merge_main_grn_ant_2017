@@ -1,0 +1,21 @@
+&nml_main_grn_ant
+  file_namelist_cama='NAMELIST.MXE.GLBRIVER',
+  l_leap_valid=.true.,
+  file_mask_cama='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/river_suppl/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GA_add_Bamber.bin',
+  ibyr=2017,
+  ieyr=2017,
+  nmon_last=12,
+  riv_cama_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/river_suzuki_v0_6/runoff.',
+  riv_out_base='/work116/htsujino/SURF_FLUX/forcing/jra55-do-v1_1-river/runoff_all.',
+  l_green_sep=.false.
+  l_green_total=.true.
+  file_grn_solid_base='dummy.gd'
+  file_grn_liquid_base='dummy.gd'
+  file_grn_total_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_2012_Greenland_025x025/clim/fwf_green_025x025'
+  l_antarc_sep=.true.
+  l_antarc_total=.false.
+  file_ant_solid_in='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Depoorter_2013_Antarctica/clim025x025/CF_025x025.dat'
+  file_ant_liquid_in='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Depoorter_2013_Antarctica/clim025x025/BMF_025x025.dat'
+  file_ant_total_in='dummy.d'
+  file_area_out='/work116/htsujino/SURF_FLUX/data_river/runoff_area.gd'
+&end

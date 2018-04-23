@@ -1,0 +1,5 @@
+  Sublimation   :    1.3374485962727004E-007
+  Precipitation :    3.5573800000000002E-005
+  Evaporation   :    3.9596299999999999E-005
+  River run off :    3.4388667664922614E-006
+  Calibration factor for precipitaion :     1.020165911236219     

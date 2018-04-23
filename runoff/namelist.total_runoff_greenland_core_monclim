@@ -1,0 +1,4 @@
+&nml_total_runoff_monclim
+  file_river_in='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/river_Greenland/clim/fwf_green_025x025',
+  dir_out='Greenland_Bamber'
+/

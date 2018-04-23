@@ -1,0 +1,14 @@
+ &nml_anncl
+  imax=640,
+  jmax=320,
+  kmax=1,
+  infile_base='/denkei-shared/og1/htsujino/GlobCurrent/TL319_grid/monthly/u.'
+  undef_in=-9.99e33
+  outfile_base='/denkei-shared/og1/htsujino/GlobCurrent/TL319_grid/annclim/usurf_jan1993-dec2015.dat'
+  undef_out=0.0
+  nbyr=1993
+  nbmn=1
+  neyr=2015
+  nemn=12
+  klev=1
+ &end

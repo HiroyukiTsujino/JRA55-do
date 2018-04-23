@@ -1,0 +1,5 @@
+&nml_smooth_weight
+  file_mask='../linkdir/data/jpn_model.gd',
+  flnot ='../linkdir/data/jpn_weight.gd',
+  iter_total=50
+&end

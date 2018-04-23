@@ -1,0 +1,23 @@
+README.MXE
+
+Tools for forcing files.
+
+See sample shell scripts (sample/).
+
+
+
+==== Fortran program (src/) ====
+
+remap_ctl.F90
+    Make remapping table for interpolation.
+
+interpolate_ctl.F90
+    Interpolate forcing files to MRI.COM grid
+      based on a remapping table.
+    Only for scalar data at T-Grid.
+
+
+==== Fortran module ====
+
+force_data.F90
+    module to read forcing files

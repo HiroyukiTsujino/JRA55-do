@@ -1,0 +1,18 @@
+&nml_rad_comp
+  flnin1_base='/work116/htsujino/CERES/grads',
+  flnin2_base='/work116/htsujino/BUOY/@elem_buoy@_monthly',
+  nbyr=2000,
+  nbmn=3,
+  neyr=2015,
+  nemn=2,
+  lon_buoy4=@lon@,
+  lat_buoy4=@lat@,
+  undef_ceres=-9.99e33,
+  undef_buoy=-9.99e33,
+  elem_ceres='@elem_ceres@',
+  elem_buoy='@elem_buoy@',
+  location='@loc@',
+  flnot1='@outdir@/@elem_buoy@_@loc@_comp.gd',
+  flnot2='@outdir@/@elem_buoy@_@loc@_bias.gs',
+  flnot3='@outdir@/@elem_buoy@_@loc@_ratio.gs',
+&end

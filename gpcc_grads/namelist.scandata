@@ -1,0 +1,6 @@
+&nml_scandata
+  file_base='../linkdir/GPCC/grads_monthly/nobs.'
+  file_mask='../linkdir/GPCC/data/mask-1958_1996.gd'
+  file_of_namelist='NAMELIST.MXE.GPCC'
+  undef_data=-9.99e33
+&end

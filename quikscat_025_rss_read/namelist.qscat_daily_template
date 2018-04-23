@@ -1,0 +1,6 @@
+ &nml_qscat_daily
+   filename='%qscat_file%'
+   file_out='%wind_grads%'
+   undef_out=%undef%
+   l_strict_exclusion=%strict%
+ &end

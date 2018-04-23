@@ -1,0 +1,46 @@
+# -*-Makefile-*-
+#
+
+include ../macros.make
+
+#FC = pgf90
+#AR = ar -r
+#RM = rm -f
+
+#FOPTION = -lacml -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64
+
+CPPFLAGS =  @TRIPOLAR@ @JOT@ @SPHERICAL@ @PLANE@ @VARIABLE@ @BBL@ @CYCLIC@
+LINKOPT = 
+LIB     = lib.o
+
+MODULE  = OC_MOD_PARAM.mod OC_STRUCTURE.mod
+
+OBJLIB  = param.o structure.o
+
+TARGETS = divgtau
+
+all: $(MODULE) $(LIB) $(TARGETS)
+
+#
+#     SUFFIXES rule
+#
+.SUFFIXES: 
+.SUFFIXES: .F90 .o
+.F90.o:
+	$(FC) $< $(FOPTION) $(CPPFLAGS) -c
+#
+#     clean: 
+#
+clean:
+	$(RM) *.o *.trace *~ *.mod *.M core $(LIB)
+#
+
+OC_MOD_PARAM.mod : param.o
+OC_STRUCTURE.mod : structure.o param.o
+
+$(LIB) : $(OBJLIB)
+	$(AR) $(LIB) $(OBJLIB)
+
+divgtau  : $(LIB) divgtau.o
+	$(FC) -o $@ divgtau.o $(LIB)
+

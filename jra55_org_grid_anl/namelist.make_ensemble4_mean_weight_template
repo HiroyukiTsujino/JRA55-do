@@ -1,0 +1,72 @@
+&nml_make_ensemble_mean_weight
+  num_ens=7
+  nbyr=@nbyr@,
+  neyr=@neyr@,
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_mask_weight='../linkdir/data/ensemble4_weight_TL319r.gd'
+  file_ice_base='../linkdir/forcing/jra55fcst_monthly_TL319r/ice.'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  file_ens_org_base='../linkdir/forcing/ensemble4_monthly_TL319r/@item@.'
+  file_ens_latlon_base='../linkdir/forcing/ensemble4_monthly_TL319/@item@.'
+  undef4_out=9.999e20
+  l_out_latlon=.true.
+&end
+
+&nml_reanl_data
+  file_base_tmp='../linkdir/forcing/jra55anl_monthly_TL319r/@item@.',
+  undef_tmp=9.999e20
+  weight_tmp=1.0d0
+  l_for_land_tmp=.true.
+  l_for_ice_tmp=.true.
+&end
+
+&nml_reanl_data
+  file_base_tmp='../linkdir/forcing/erai_monthly_TL319r/@item@.',
+  undef_tmp=9.999e20
+  weight_tmp=1.0d0
+  l_for_land_tmp=.false.
+  l_for_ice_tmp=.false.
+&end
+
+&nml_reanl_data
+  file_base_tmp='../linkdir/forcing/merra2_monthly_TL319r/@item@.',
+  undef_tmp=9.999e20
+  weight_tmp=1.0d0
+  l_for_land_tmp=.false.
+  l_for_ice_tmp=.false.
+&end
+
+&nml_reanl_data
+  file_base_tmp='../linkdir/forcing/ncep_cfsr_monthly_TL319r/@item@.',
+  undef_tmp=9.999e20
+  weight_tmp=1.0d0
+  l_for_land_tmp=.false.
+  l_for_ice_tmp=.false.
+&end
+
+&nml_reanl_data
+  file_base_tmp='../linkdir/forcing/ncep1_monthly_TL319r/@item@.',
+  undef_tmp=9.999e20
+  weight_tmp=0.5d0
+  l_for_land_tmp=.false.
+  l_for_ice_tmp=.false.
+&end
+
+&nml_reanl_data
+  file_base_tmp='../linkdir/forcing/ncep2_monthly_TL319r/@item@.',
+  undef_tmp=9.999e20
+  weight_tmp=0.5d0
+  l_for_land_tmp=.false.
+  l_for_ice_tmp=.false.
+&end
+
+&nml_reanl_data
+  file_base_tmp='../linkdir/forcing/20CRv2_monthly_TL319r/@item@.',
+  undef_tmp=9.999e20
+  weight_tmp=0.5d0
+  l_for_land_tmp=.false.
+  l_for_ice_tmp=.false.
+&end

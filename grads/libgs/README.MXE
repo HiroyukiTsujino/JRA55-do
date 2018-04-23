@@ -1,0 +1,34 @@
+README
+
+gradsスクリプトのライブラリ。寄せ集めですので、適当に編集して下さい。
+
+
+cbarn2.gs
+  カラーバーを描く
+
+clevsreg.gs
+  最小値、最大値、間隔から等値線を引く値を設定する
+
+colmap.gs
+  様々なカラーテーブルを作成する
+
+draws.gs
+  図の周りに文を書く
+
+getdate.gs
+  日付、時刻を得る
+
+getdepth.gs
+  水深を得る
+
+getlat.gs
+  緯度を得る
+
+getlon.gs
+  経度を得る
+
+save.gs
+  EPSファイルに書き出す
+
+where.gs
+  図上でクリックした地点の座標を表示する

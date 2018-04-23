@@ -1,0 +1,10 @@
+&nml_make_dxdy
+ l_xlinear=.true.,
+ imut=640,
+ xstart=-0.28125d0,
+ dx=0.5625d0,
+ ystart=-90.0d0
+ l_ylinear=.false.,
+ file_ydef="TL319_latitude.txt"
+ file_lat="lat_jra55_exact.txt"
+&end

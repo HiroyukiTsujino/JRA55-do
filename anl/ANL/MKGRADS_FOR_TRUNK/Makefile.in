@@ -1,0 +1,93 @@
+#
+
+include ../macros.make
+
+#
+# clpc157
+#
+#F90 = pgf90
+#FOPTION = -lacml -lacml_mv -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64
+#FOPTION = -lacml -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64
+
+# SR16000
+
+#F90 = f90
+#FOPTION = 
+
+#
+
+#F90 = g95
+#FOPTION = 
+
+#CPPFLAGS = @VARIABLE@ @CYCLIC@ @BBL@ -DOGCM_ICEFULLMONIT -DOGCM_ICECMIP5MONIT -DOGCM_VVDIMP -DOGCM_NOHKIM
+
+CPPFLAGS = @VARIABLE@ @CYCLIC@ @BBL@ -DOGCM_VVDIMP -DOGCM_ICEFULLMONIT -DOGCM_ICECMIP5MONIT
+
+LIBS =
+
+binary = mkgrads_xyzdefs mkgrads_ocean_restart mkgrads_ice_restart mkgrads_icecat_restart \
+	 mkgrads_ocean_hist mkgrads_flux_hist mkgrads_ice_hist mkgrads_icecat_hist \
+	 mkgrads_ocean_restart_ptrc
+
+converter: mkgrads_xyzdefs mkgrads_ocean_restart mkgrads_ice_restart mkgrads_icecat_restart \
+	 mkgrads_ocean_hist mkgrads_flux_hist mkgrads_ice_hist mkgrads_icecat_hist \
+	 mkgrads_ocean_restart_ptrc
+
+#
+
+mkgrads_xyzdefs: mkgrads_xyzdefs.o basin_param.o set_grid.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+# restart -> GrADs
+
+mkgrads_ocean_restart: mkgrads_ocean_restart.o basin_param.o set_grid.o mkgrads_ctl.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+mkgrads_ice_restart: mkgrads_ice_restart.o basin_param.o set_grid.o mkgrads_ctl.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+mkgrads_icecat_restart: mkgrads_icecat_restart.o basin_param.o set_grid.o mkgrads_ctl.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+mkgrads_ocean_restart_ptrc: mkgrads_ocean_restart_ptrc.o basin_param.o set_grid.o mkgrads_ctl.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+# hist -> GrADs
+
+mkgrads_ocean_hist: mkgrads_ocean_hist.o basin_param.o set_grid.o mkgrads_ctl.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+mkgrads_flux_hist: mkgrads_flux_hist.o basin_param.o set_grid.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+mkgrads_ice_hist: mkgrads_ice_hist.o basin_param.o set_grid.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+mkgrads_icecat_hist: mkgrads_icecat_hist.o basin_param.o set_grid.o mkgrads_ctl.o
+	$(F90) $^ $(LIBS) $(FOPTION) -o $@
+
+#
+
+%.o: %.F90
+	$(F90) -c $(CPPFLAGS) $(FOPTION) -o $@ $<
+
+#
+
+basin_param.o: basin_param.F90
+set_grid.o: set_grid.F90 basin_param.o
+mkgrads_ctl.o: mkgrads_ctl.F90
+
+mkgrads_xyzdefs.o: mkgrads_xyzdefs.F90 basin_param.o set_grid.o
+
+mkgrads_ocean_restart.o: mkgrads_ocean_restart.F90 basin_param.o set_grid.o mkgrads_ctl.o
+mkgrads_ice_restart.o: mkgrads_ice_restart.F90 basin_param.o set_grid.o mkgrads_ctl.o
+mkgrads_icecat_restart.o: mkgrads_icecat_restart.F90 basin_param.o set_grid.o mkgrads_ctl.o
+mkgrads_ocean_restart_ptrc.o: mkgrads_ocean_restart_ptrc.F90 basin_param.o set_grid.o mkgrads_ctl.o
+
+mkgrads_ocean_hist.o: mkgrads_ocean_hist.F90 basin_param.o set_grid.o mkgrads_ctl.o
+mkgrads_flux_hist.o: mkgrads_flux_hist.F90 basin_param.o set_grid.o
+mkgrads_ice_hist.o: mkgrads_ice_hist.F90 basin_param.o set_grid.o
+mkgrads_icecat_hist.o: mkgrads_icecat_hist.F90 basin_param.o set_grid.o
+
+clean:
+	rm *.o *.L *~ *.mod $(binary)

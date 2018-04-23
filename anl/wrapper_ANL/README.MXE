@@ -1,0 +1,62 @@
+README.MXE
+
+wrapper_ANL: "wrapper" of MXE library (../../lib/libmxe.a) for use in ANL-tools (anl/ANL)
+             param_mxe.F90     to replace ../ANL/param/param.F90
+             structure_mxe.F90 to replace ../ANL/STRUCTURE/structure.F90
+
+以下、日本語で記述
+
+anl/ANL の下に整備された全球モデル解析用ツールを一般化して
+MXE ライブラリを使用する解析ツールとして anl の直下に移設する
+作業を支援するため、モデルの格子数や格子幅などの基本情報を
+与えるプログラム ANL/param/param.F90, ANL/STRUCTURE/structure.F90
+を MXE ライブラリ libmxe.a を使用する形にしたプログラムを提供する。
+
+基本方針:
+
+・param.F90, structure.F90 ともにモジュールの先頭で宣言している
+  変数名を変更しない
+・但し、libmxe_para.F90 など物理定数名の一部には重複があるため
+  (radius, grav, rho, pi)、libmxe_para の方を優先して使用することにする。
+・座標変換のルーチン (trnsfrm.F90) は libmxe_trnsfrm.F90 に移行する。
+  モジュールの初期化は structure.F90 からの
+    call libmxe_grid__register(grid,para)
+  で行われるため、各プログラムから初期化プログラム set_abc を呼び出す必要は
+  なくなる。
+  また、各格子に対応する緯度経度 glatt(u), glont(u) は structure_mxe.F90 の
+  新たなモジュール変数として定義することにして、これを使うことで、
+  関数の呼び出しは少なくすることができる。
+・できるだけ、ANL の計算と移設したプログラムの計算の一致（バイナリまで）を
+  確認する。そのあと、別のコミットで適宜修正を行う。
+
+各プログラムへの実装:
+
+・MXE ライブラリで使用するモデル格子・地形を定義する構造体
+  の中身を計算するプログラム
+     param_mxe__ini     (param_mxe.F90)
+     structure_mxe__ini (strucure_mxe.F90)
+  を各プログラムから呼び出す。
+  今までプログラムから呼び出していた
+    read_topo(fltopo), set_hgrids(file_vgrid), read_scale(flsclf)
+  を呼び出す必要はなくなる。
+・地形や格子定義ファイル名を各プログラムで namelist から読み込む
+  必要もなくなる。MXE の namelist NAMELIST.MXE を用意する。
+・モデル格子を格納する構造体 para, grid, topo を適宜 use する
+・structure_mxe.F90 にない libmxe の機能を使用する場合には、
+  直接 libmxe のサブルーチンを使用する。
+
+ =======================================
+  例: 
+     use oc_mod_param, only :   &
+         & para,                &
+         & param_mxe__ini
+
+     use oc_structure, only  :  &
+         & grid, topo,          &
+         & glont, glatt,        &
+         & glonu, glatu,        &
+         & structure_mxe__ini
+
+     call param_mxe__ini
+     call structure_mxe__ini
+ =======================================

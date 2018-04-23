@@ -1,0 +1,30 @@
+&nml_pcpdata
+  pcp_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319r'
+  fin_base_pcp='@item@',
+  file_first_pcp=1973,1,1,0,0,0,
+  file_intv_type_pcp=4,
+  file_intv_pcp=3,
+  total_rec_pcp=1,
+  data_intv_sec_pcp=10800,
+  pcp_first=1973,1,1,1,30,0,
+  undef_pcp=9.999e20,
+  l_ymdir_pcp=.true.
+  imut=640,
+  jmut=320,
+  grid_name='TL319',
+  l_little_pcp=.true.
+&end
+
+&nml_calibpcp
+  calc_start=1973,1,1,1,30,0,
+  calc_end=1997,1,1,1,30,0, 
+  l_leap_valid=.true.
+  l_calib_monthly=.true.,
+  l_calib_const=.false.,
+  factor_calib_pcp=0.0d0,
+  l_calib_transition=.false.
+  file_calib_pcp_a='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/prcp_corr.1973_1996.dat',
+  calib_base_dir='../linkdir/forcing/jra55fcst_v7_prcp_3hr_TL319r',
+  fout_base_pcp='@item@',
+  factor_div_pcp=86400.d0
+&end

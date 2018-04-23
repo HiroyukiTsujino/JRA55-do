@@ -1,0 +1,16 @@
+&nml_windcorrec_tanh_mon
+  flnin1_base='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_clim/jra55_wind_mask_aug1999_oct2009_filter.m'
+  flnin2_base='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_clim/jra55_wind_mask_aug1999_oct2009_filter.m'
+  flnin3_base='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_clim/jra55_wind_mask_aug1999_oct2009_filter.m'
+  irecs_obs=1,
+  irecu_obs=2,
+  irecv_obs=3,
+  undef_obs=-9.99e33,
+  flnin4_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/wind10m_aug1999_oct2009_filter.m'
+  flnin5_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/u10m_aug1999_oct2009_filter.m'
+  flnin6_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/v10m_aug1999_oct2009_filter.m'
+  undef_jra=-9.99e33,
+  file_mask_wind='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_monthly/jra55_qscat_mask.gd'
+  flnot1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_mag_aug1999_oct2009_filter.monthly.tanh.dat'
+  flnot2='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_aug1999_oct2009_filter.monthly.tanh.dat'
+&end

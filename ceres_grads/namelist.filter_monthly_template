@@ -1,0 +1,8 @@
+ &nml_filter_clim
+  flnin='../linkdir/CERES/grads/@basename_in@.@yyyymm@'
+  undef_in=-9.99e33
+  flnot='../linkdir/CERES/grads/@basename_out@.@yyyymm@'
+  ndata=1
+  filter_lat_s=-65.0d0
+  filter_lat_n=-55.0d0
+ &end

@@ -1,0 +1,9 @@
+&nml_calib_prcp
+  sublimation=4.88709d7,
+  precipitation=3.55738d-5,
+  evaporation=3.95963d-5,
+  river_runoff=1.2565755d9,
+  area_ocean=3.6540395d14,
+  l_sublim_integrated=.true.,
+  l_river_integrated=.true.,
+/

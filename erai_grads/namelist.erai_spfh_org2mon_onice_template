@@ -1,0 +1,9 @@
+&nml_erai_spfh_org2mon_ice
+  nyear=@nyear@,
+  file_in1='/work115/htsujino/ERA-interim/org_data/erai_anl_surf_@nyear@.nc',
+  file_in2='/work115/htsujino/ERA-interim/org_data/erai_anl_surf_@nyear_next@.nc',
+  file_out_base_all='/work115/htsujino/ERA-interim/grads_monthly/erai_sph2m_all.'
+  file_out_base_ocn='/work115/htsujino/ERA-interim/grads_monthly/erai_sph2m_ocn.'
+  file_out_base_ice='/work115/htsujino/ERA-interim/grads_monthly/erai_sph2m_ice.'
+  frac_ratio=@frac_ratio@
+&end

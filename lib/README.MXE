@@ -1,0 +1,36 @@
+README
+
+基本的な操作をまとめたライブラリ。
+MRI.COM実験の前処理、後処理、解析で利用されることを想定。
+
+
+============================
+モジュールの内容
+
+独立したライブラリ
+  libmxe_calendar: カレンダー
+
+MRI.COM実験の設定情報を読み込むモジュール群
+  libmxe_para: 実験の基本パラメータ
+  libmxe_grid: グリッド
+  libmxe_topo: 海底地形
+  libmxe_io: データの入出力(レコードの時間)
+  複数の実験設定を扱えるようにクラス、インスタンスの概念を導入
+
+上記のモジュール群を利用した単機能モジュール
+  libmxe_grads: gradsコントロール・ファイルを作成する
+
+
+============================
+
+NAMELIST : See Wiki/MXE/lib/namelist
+
+
+============================
+
+tripolar以外の一般座標変換を用いるには
+  MRI.COMの座標変換プログラムを一部修正してlib/trnsfrmに置き
+  libmxe_trnsfrm.F90 からリンクを張る
+  どのような修正が必要かは
+    MRI.COMのtrnsfrm/trnsfrm.tripolar.F90とのdiffを見るといい。
+

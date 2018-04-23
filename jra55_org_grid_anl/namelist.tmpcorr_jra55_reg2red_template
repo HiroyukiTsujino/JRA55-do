@@ -1,0 +1,15 @@
+&nml_jra55_reg2red
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_mask_latlon='../linkdir/data/jra55_ocean_mask.gd'
+  file_prod_org='@org_dir@/tmp2m_@surf@_corr_filled.@period@.dat'
+  file_prod_latlon='@latlon_dir@/tmp2m_@surf@_corr_filled.@period@.latlon.dat'
+  undef4_in=9.999e20
+  undef4_out=9.999e20
+  blank_value=@blank_value@
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  num_data=12
+/

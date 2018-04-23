@@ -1,0 +1,4 @@
+&nml_total_runoff_annclim
+  file_river_in='/denkei-shared/og1/hnakano/SURF_FLUX/forcing/river_Antarctica/FWFcnst_025x025.dat',
+  dir_out='Antarctica_Depoorter'
+/

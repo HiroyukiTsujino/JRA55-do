@@ -1,0 +1,25 @@
+###
+### Fortran 90 compiler
+###  Set variables: F90, FFLAGS and AR.
+
+
+### ocsv001 / ocsv003 / ocsv005 / ocsv011 ###
+F90     = pgf90
+FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio
+LDFLAGS = -mcmodel=medium -lacml -lacml_mv
+AR      = ar rv
+INCLUDES=
+
+# ocsv001
+#LDOPTS = -L/usr/local/netcdf/lib -lnetcdff -L/usr/local/netcdf/lib -lnetcdf -lm -lcurl
+
+# ocsv003
+#LDOPTS = -L/usr/local/netcdf/lib -lnetcdf -L/usr/local/netcdf-fortran/lib -lnetcdff -lm -lcurl
+#INCOPTS = -I/usr/local/netcdf/include -I/usr/local/netcdf-fortran/include
+
+# ocsv011
+#LDOPTS = -L/usr/local/netcdf/lib -lnetcdf -lm
+#INCOPTS = -I/usr/local/netcdf/include
+
+#FFLAGS="-tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio -Mcache_align -Minfo -Mbounds"
+#- Do not use -fastsse, -O2

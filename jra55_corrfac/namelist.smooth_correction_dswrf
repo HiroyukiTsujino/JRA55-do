@@ -1,0 +1,9 @@
+ &nml_smooth_correc
+   flnin='/work116/htsujino/SURF_FLUX/forcing/jra_calib/dswrf_mag_mon.dat'
+   flnot='/work116/htsujino/SURF_FLUX/forcing/jra_calib/dswrf_mag_mon_smooth.dat'
+   ndata=12
+   itermax=1
+   l_apply_mask=.false.
+   fill_value=1.0d0
+   undef_in=-9.99e33,
+ &end

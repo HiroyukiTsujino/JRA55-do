@@ -1,0 +1,9 @@
+&map_seek_nearest_sea_igrid
+  ival = 438,
+&end
+
+&cap_jcoast_calc
+  rval = 0.9841464e0,
+  rrange = 1.e-4,
+  nx = 1,
+&end

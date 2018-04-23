@@ -1,0 +1,80 @@
+&nml_sstdata
+  file_namelist_sst='NAMELIST.MXE.COBESST',
+  sst_base_dir='/workc/ocpublic/refdata/COBE-SST/monthly/grads'
+  fin_base_sst='sst-glb',
+  fin_base_ice='ice-glb',
+  file_first_sst=1994,1,1,0,0,0,
+  file_intv_type_sst=1,
+  file_intv_sst=1,
+  total_rec_sst=12,
+  data_intv_sec_sst=-1,
+  sst_first=1994,1,16,12,0,0,
+  undef_sst=9.999e20
+  l_ymdir_sst=.false.
+&end
+
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.CORE',
+  srf_base_dir='/workc/ocpublic/refdata/CORE/COREv2/ciaf/grads_oneitem'
+  fin_base_sat='tmp10m',
+  fin_base_sph='sph10m',
+  fin_base_us='u10m',
+  fin_base_vs='v10m',
+  fin_base_slp='slprs',
+  file_first_srf=1994,1,1,0,0,0,
+  file_intv_type_srf=1,
+  file_intv_srf=1,
+  total_rec_srf=1460,
+  data_intv_sec_srf=21600,
+  srf_first=1994,1,1,3,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.false.
+  alt_sat=10.0d0,
+  alt_sph=10.0d0,
+  alt_wind=10.0d0
+&end
+
+&nml_brtdata
+  file_namelist_brt='NAMELIST.MXE.JRA55',
+  brt_base_dir='/worke/htsujino/SURF_FLUX/forcing/jra_latlon'
+  fin_base_brt='brtmp',
+  file_first_brt=1994,1,1,0,0,0,
+  file_intv_type_brt=4,
+  file_intv_brt=3,
+  total_rec_brt=1,
+  data_intv_sec_brt=10800,
+  brt_first=1994,1,1,0,0,0,
+  undef_brt=9.999e20,
+  l_ymdir_brt=.true.
+&end
+
+&nml_shiftsurf
+  calc_start=1994,1,1,0,0,0,
+  calc_end=2010,1,1,0,0,0, 
+  l_leap_valid=.false.
+  calc_intv_sec=10800,
+  alt_target=2.0d0,
+  int_hist=-1,
+  out_base_dir='/worke/htsujino/CORE/core_monthly_calib'
+  fout_base_bright='brtmp',
+  fout_base_sattrg='tmp2m',
+  fout_base_sphtrg='sph2m',
+&end
+
+&nml_intpol_srf
+  l_lin_wind=.true.,
+  l_lin_sat=.true.,
+  l_lin_sph=.true.,
+  l_lin_slp=.true.,
+  l_ocn_wind=.false.,
+  l_ocn_sat=.false.,
+  l_ocn_sph=.false.,
+  l_ocn_slp=.false.
+&end
+
+&nml_intpol_btm
+  file_table_ocn_btm='../linkdir/table/jra55o2cobe.d',
+  file_table_all_btm='../linkdir/table/jra55a2cobe.d',
+  l_lin_brit=.false.,
+  l_ocn_brit=.false.,
+&end

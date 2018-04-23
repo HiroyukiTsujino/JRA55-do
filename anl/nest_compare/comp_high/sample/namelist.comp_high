@@ -1,0 +1,11 @@
+&nam_comp_high
+ filei1='/workd/htsujino/BC_VORTEX_NEST/e011/result_sub/hs_ssh.19010410',
+ filei2='/worka/htsujino/BC_VORTEX/result_e002/hs_ssh.19010410',
+ fileo1='/workd/htsujino/BC_VORTEX_NEST/e011/result_sub/hs_ssh_rms.19010410',
+ klevel=1
+ TUXY='T'
+ nbw=3
+ nbe=3
+ nbs=3
+ nbn=3
+&end

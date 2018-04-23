@@ -1,0 +1,13 @@
+ &nml_mask_of_mon
+   imax=1440,
+   jmax=720,
+   infile_dir='/worke/htsujino/QuikSCAT/L3/jpl/v2/grads_monthly'
+   outfile_dir='/worke/htsujino/QuikSCAT/L3/jpl/v2/grads_monthly'
+   undef_in=-9.99e33
+   undef_out=-9.99e33
+   nbyr=1999
+   neyr=2009
+   min_ratio=0.4
+   mask_file='/worke/htsujino/QuikSCAT/L3/jpl/v2/grads_monthly/qscat_mask.dat'
+   topo_file='/worke/htsujino/QuikSCAT/L3/jpl/v2/grads_monthly/qscat_topo.d'
+ &end

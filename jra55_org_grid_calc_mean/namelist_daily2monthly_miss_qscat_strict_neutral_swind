@@ -1,0 +1,12 @@
+&nml_day2mon_miss
+  iyst=1999,
+  imst=8,
+  iyed=2009,
+  imed=10,
+  item_name='swind_neutral'
+  in_base_dir='/work115/htsujino/SURF_FLUX/forcing/jra_qscat_strict_daily_org',
+  out_base_dir='/work115/htsujino/SURF_FLUX/forcing/jra_qscat_strict_monthly_org',
+  undef_in=-9.99e33,
+  undef_out=-9.99e33,
+  min_ratio=0.5d0,
+&end

@@ -1,0 +1,44 @@
+&nml_sstdata
+  file_namelist_sst='NAMELIST.MXE.COBESST',
+  sst_base_dir='/work116/htsujino/COBESST/daily/grads'
+  fin_base_sst='sst-glb',
+  fin_base_ice='ice-glb',
+  file_first_sst=1958,1,1,0,0,0,
+  file_intv_type_sst=1,
+  file_intv_sst=1,
+  total_rec_sst=365,
+  data_intv_sec_sst=86400,
+  sst_first=1958,1,1,12,0,0,
+  undef_sst=9.999e20
+  l_ymdir_sst=.false.
+&end
+
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.JRA55',
+  srf_base_dir='../linkdir/forcing/jra55fcst_v1_3_prod2_3hr_TL319'
+  slp_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
+  icj_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
+  fin_base_sat='tmp10m',
+  fin_base_sph='sph10m',
+  fin_base_slp='slprs',
+  fin_base_icj='ice',
+  file_first_srf=1958,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1958,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  alt_sat=10.0d0,
+  alt_sph=10.0d0,
+&end
+
+&nml_calibsat_antarc
+  calc_start=1958,1,1,0,0,0,
+  calc_end=2017,2,20,0,0,0, 
+  l_leap_valid=.true.,
+  calib_base_dir='../linkdir/forcing/jra55fcst_v1_3_prod3_3hr_TL319'
+  fout_base_sat='tmp10m',
+  fout_base_sph='sph10m',
+&end

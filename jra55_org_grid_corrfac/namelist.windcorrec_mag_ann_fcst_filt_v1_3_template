@@ -1,0 +1,15 @@
+&nml_windcorrec_mag_offset_ann
+  flnin1='@ref_dir@/wn10m.@period_cmp@.dat'
+  irecs_obs=1,
+  undef_obs=-9.99e33,
+  flnin4='@fcst_dir@/wn10m.@period_cmp@.dat'
+  undef_jra=-9.99e33,
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  flnot1='../linkdir/forcing/jra55fcst_corrfac_v1_3_TL319r/wind_mag_offset_annual.@period_trg@.dat'
+  flnot3='../linkdir/forcing/jra55fcst_corrfac_v1_3_TL319/wind_mag_offset_annual.@period_trg@.latlon.dat'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  offset_max_ratio=0.5d0,
+&end

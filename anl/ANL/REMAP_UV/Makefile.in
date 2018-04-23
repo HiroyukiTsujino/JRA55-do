@@ -1,0 +1,51 @@
+# -*-Makefile-*-
+#
+
+include ../macros.make
+
+#FC = pgf90
+#AR = ar -r
+#RM = rm -f
+
+#FOPTION = -lacml -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64
+
+CPPFLAGS =  @TRIPOLAR@ @JOT@ @SPHERICAL@ @PLANE@ @VARIABLE@ @BBL@ @CYCLIC@
+LINKOPT = 
+LIB     = lib.o
+
+MODULE  = OC_MOD_PARAM.mod OC_MOD_TRNSFRM.mod OC_STRUCTURE.mod GAUSSGRID.mod
+
+OBJLIB  = param.o trnsfrm.o structure.o gaussgrid.o
+
+TARGETS = remap_uv
+
+all: $(MODULE) $(LIB) $(TARGETS)
+
+#
+#     SUFFIXES rule
+#
+.SUFFIXES: 
+.SUFFIXES: .F90 .o
+.F90.o:
+	$(FC) $< $(FOPTION) $(CPPFLAGS) -c
+#
+#     clean: 
+#
+clean:
+	$(RM) *.o *.trace *~ *.mod *.M core $(LIB)
+#
+
+gauss.o : gauss.F
+	$(FC) $< $(FOPTION) $(CPPFLAGS) -c
+
+OC_MOD_PARAM.mod : param.o
+OC_MOD_TRNSFRM.mod : trnsfrm.o
+OC_STRUCTURE.mod : structure.o param.o
+GAUSSGRID.mod : gaussgrid.o
+
+
+$(LIB) : $(OBJLIB)
+	$(AR) $(LIB) $(OBJLIB)
+
+remap_uv  : $(LIB) gauss.o remap_uv.o
+	$(FC) -o $@ gauss.o remap_uv.o $(LIB)

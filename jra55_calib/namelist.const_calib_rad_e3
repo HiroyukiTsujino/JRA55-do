@@ -1,0 +1,8 @@
+&nml_calib_rad
+  total_shortwave=168.066d0,
+  downward_longwave=345.699d0,
+  total_water_flux=-0.396159d0,
+  total_ice_thermodynamics=-1.3975d0,
+  total_other=13.1307d0,
+  area_ocean=3.6540395d14,
+/

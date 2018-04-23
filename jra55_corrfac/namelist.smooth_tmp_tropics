@@ -1,0 +1,9 @@
+ &nml_smooth_tmp_tropics
+   flnin='../linkdir/forcing/jra55fcst_corrfac_v7_TL319/tmp2m_ocn_corr.1999_2015.latlon.dat'
+   undef_in=-9.99e33,
+   flnot='../linkdir/forcing/jra55fcst_corrfac_v7_TL319/tmp2m_ocn_corr.1999_2015.latlon.smooth.dat'
+   ndata=12
+   file_mask='../linkdir/data/tropical_buoys_mask.gd'
+   fill_value=0.0d0
+   iter_total=200
+ &end

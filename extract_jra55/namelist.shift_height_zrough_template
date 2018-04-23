@@ -1,0 +1,29 @@
+&nml_shift_height
+  file_tmp2m='../linkdir/forcing/jra_org/@yyyymm@/tmp2m.@yyyymmddhh@'
+  file_sph2m='../linkdir/forcing/jra_org/@yyyymm@/sph2m.@yyyymmddhh@'
+  file_slprs='../linkdir/forcing/jra_org/@yyyymm@/slprs.@yyyymmddhh@'
+  file_brtmp='../linkdir/forcing/jra_org/@yyyymm@/brtmp.@yyyymmddhh@'
+  file_zrough='../linkdir/forcing/jra_org/@yyyymm@/zrough.@yyyymmddhh@'
+  file_evapa='../linkdir/forcing/jra_org/@yyyymma@/evap.@yyyymmddhha@'
+  file_sensa='../linkdir/forcing/jra_org/@yyyymma@/sensible.@yyyymmddhha@'
+  file_evapb='../linkdir/forcing/jra_org/@yyyymmb@/evap.@yyyymmddhhb@'
+  file_sensb='../linkdir/forcing/jra_org/@yyyymmb@/sensible.@yyyymmddhhb@'
+  file_uflxa='../linkdir/forcing/jra_org/@yyyymma@/uflx.@yyyymmddhha@'
+  file_vflxa='../linkdir/forcing/jra_org/@yyyymma@/vflx.@yyyymmddhha@'
+  file_uflxb='../linkdir/forcing/jra_org/@yyyymmb@/uflx.@yyyymmddhhb@'
+  file_vflxb='../linkdir/forcing/jra_org/@yyyymmb@/vflx.@yyyymmddhhb@'
+  file_u10m='../linkdir/forcing/jra_org/@yyyymm@/u10m.@yyyymmddhh@'
+  file_v10m='../linkdir/forcing/jra_org/@yyyymm@/v10m.@yyyymmddhh@'
+  file_ice='../linkdir/forcing/jra_org/@yyyymm@/ice.@yyyymmddhh@'
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_tmp10m='../linkdir/forcing/jra_latlon/@yyyymm@/tmp10m.@yyyymmddhh@'
+  file_sph10m='../linkdir/forcing/jra_latlon/@yyyymm@/sph10m.@yyyymmddhh@'
+  altu=10.0d0
+  altt=2.0d0
+  altq=2.0d0
+  alt_target=10.0d0
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+/

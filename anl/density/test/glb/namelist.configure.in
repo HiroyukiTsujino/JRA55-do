@@ -1,0 +1,8 @@
+&dmlst imut = 364, jmut = 368, km = 51 &end
+&grlst slat0=-78.0d0, slon0=0.d0, dxtdgc=1.0d0, dytdgc=0.5d0, nplat=64.0d0, nplon=80.d0, splat=64.0d0, splon=260.d0, dztmp=4.d2,5.d2,6.5d2,7.5d2,9.d2,11.5d2,14.d2,16.d2,17.5d2,18.d2,18.5d2,20.d2,20.5d2,21.d2,22.d2,23.d2,24.d2,27.d2,30.d2,30.d2,35.d2,40.d2,40.d2,50.d2,60.d2,65.d2,70.d2,75.d2,80.d2,90.d2,100.d2,100.d2,125.d2,150.d2,150.d2,150.d2,175.d2,225.d2,250.d2,250.d2,250.d2,275.d2,300.d2,300.d2,300.d2,300.d2,300.d2,450.d2,600.d2,600.d2,50.d2, lsub=.false., lvariable=.true., lcyclic=.true., lspherical=.false., lfoldnp=.true. &end
+&iolst icalstr=2000,5,11,0,0,0, icalend=2000,5,11,0,0,0, icalint=0,0,1,0,0,0 &end
+&grfile vgrid='../../linkdir/mxe/glb/data/vgrid.d' &end
+&sclfile fscale='../../linkdir/mxe/glb/data/scale_factor.d' &end
+&topofile ftopo='../../linkdir/mxe/glb/data/topo.d' &end
+&rundeflst rundefin=-9.99e33 &end
+

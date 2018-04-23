@@ -1,0 +1,32 @@
+&nml_grid_size
+  imut                  = 360,
+  jmut                  = 180,
+  km                    = 1,
+  ksgm                  = 1,
+/
+
+&nml_coordinate
+  lspherical           = .true.,
+  l_globe              = .true.
+/
+
+&nml_vert_grid
+  dz_const_cm          = 1.0d2,
+/
+
+&nml_horz_grid
+  lon_west_end_of_core = 1.0d0,
+  lat_south_end_of_core = -89.0d0,
+  dx_const_deg=1.0d0
+  dy_const_deg=1.0d0
+/
+
+&nml_topo
+  file_topo          = "/work116/htsujino/COBESST/data/topo-jra_cobe_ocean.d",
+/
+
+&nml_record_date
+  rec_first_date        = 1948, 1, 1, 0, 0, 0,
+  rec_last_date         = 2016, 1, 1, 0, 0, 0,
+  rec_interval_date     =    1, 0, 0, 0, 0, 0,
+/

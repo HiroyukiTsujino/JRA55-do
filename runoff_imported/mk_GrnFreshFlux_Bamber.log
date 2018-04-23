@@ -1,0 +1,131 @@
+         1958  Calling Main program 
+         1959  Calling Main program 
+         1960  Calling Main program 
+         1961  Calling Main program 
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+  Computation of climatology started
+         1962  Calling Main program 
+         1963  Calling Main program 
+         1964  Calling Main program 
+         1965  Calling Main program 
+         1966  Calling Main program 
+         1967  Calling Main program 
+         1968  Calling Main program 
+         1969  Calling Main program 
+         1970  Calling Main program 
+         1971  Calling Main program 
+         1972  Calling Main program 
+         1973  Calling Main program 
+         1974  Calling Main program 
+         1975  Calling Main program 
+         1976  Calling Main program 
+         1977  Calling Main program 
+         1978  Calling Main program 
+         1979  Calling Main program 
+         1980  Calling Main program 
+         1981  Calling Main program 
+         1982  Calling Main program 
+         1983  Calling Main program 
+         1984  Calling Main program 
+         1985  Calling Main program 
+         1986  Calling Main program 
+         1987  Calling Main program 
+         1988  Calling Main program 
+         1989  Calling Main program 
+         1990  Calling Main program 
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.01
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.02
+ days_Feb_mean=    28.23333333333333     
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.03
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.04
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.05
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.06
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.07
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.08
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.09
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.10
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.11
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025.12
+ total annual_mean (from total)=    27.76846484785203       mSv
+ total annual_mean (from month)=    27.76846484785214       mSv
+         1991  Calling Main program 
+         1992  Calling Main program 
+         1993  Calling Main program 
+         1994  Calling Main program 
+         1995  Calling Main program 
+         1996  Calling Main program 
+         1997  Calling Main program 
+         1998  Calling Main program 
+         1999  Calling Main program 
+         2000  Calling Main program 
+         2001  Calling Main program 
+         2002  Calling Main program 
+         2003  Calling Main program 
+         2004  Calling Main program 
+         2005  Calling Main program 
+         2006  Calling Main program 
+         2007  Calling Main program 
+         2008  Calling Main program 
+         2009  Calling Main program 
+         2010  Calling Main program 
+  modify_nextxy 
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.01
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.02
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.03
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.04
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.05
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.06
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.07
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.08
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.09
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.10
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.11
+ Reading from data_Grn_Bamber_new/clim/fwf_green_025x025.12
+  Killworth filter 
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.01
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.02
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.03
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.04
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.05
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.06
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.07
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.08
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.09
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.10
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.11
+ reading from data_Grn_Bamber_new/clim/fwf_green_025x025.12
+  mk_daily_main 
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025_365dy
+ Written to data_Grn_Bamber_new/clim/fwf_green_025x025_366dy
+ Written to data_Grn_Bamber_new/clim/total_fwf_green_365dy
+ annual mean (mSv) (killworth : no adjust)
+ original data             from daily (mSv: normal year) 
+    27.76846484785203         27.76459745741717     
+ adjusted factor=    1.000139292148600     
+ annual_mean (mSv) (killworth: adjusted)
+ original data           from daily (normal year)   from daily (leap year) 
+    27.76846484785203         27.76846484785203         27.73730894285409     
+ check at          1307          627
+         filtered, not filtered.  [relative error (%)] 
+             0.0265089    -7.5022977
+             0.0139292     1.4481597
+             0.0241309     7.4759182
+             0.0139292    74.6782404
+            -0.0056691    13.2592992
+             0.0139292    -4.3750217
+             0.0195497    -5.4004007
+             0.0223207    -5.6658242
+             0.0139292    19.7165189
+             0.0138688    11.1498185
+             0.0139292    24.2639495
+             0.0018799    11.2453513

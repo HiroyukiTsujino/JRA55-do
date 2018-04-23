@@ -1,0 +1,7 @@
+ &namanclmncl
+  infile_base='/worke/htsujino/SURF_FLUX/forcing/jra_monthly_c1/sph2m_ocn15_1979_2006.m',
+  undef_in=-9.99e33,
+  outfile='/worke/htsujino/SURF_FLUX/forcing/jra_monthly_c1/sph2m_ocn15_1979_2006.dat',
+  undef_out=-9.99e33,
+  klev=1
+ &end

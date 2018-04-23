@@ -1,0 +1,9 @@
+&nml_rg2latlon_mask
+  file_in='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_out='../linkdir/data/jra_mask.gd'
+  file_topo='../linkdir/data/topo.d'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+/

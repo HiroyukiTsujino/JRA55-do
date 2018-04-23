@@ -1,0 +1,40 @@
+# -*-Makefile-*-
+#
+
+include ../macros.make
+
+#FC = pgf90
+#AR = ar -r
+#RM = rm -f
+
+#FOPTION = -lacml -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64
+# -Mbounds
+
+LINKOPT = 
+LIB     = lib.o
+MODULE  = 
+OBJLIB  = 
+TARGETS = restart2rs
+
+all: $(MODULE) $(LIB) $(TARGETS)
+
+#
+#     SUFFIXES rule
+#
+.SUFFIXES: 
+.SUFFIXES: .F90 .o
+.F90.o:
+	$(FC) $< $(FOPTION) $(CPPFLAGS) -c
+#
+#     clean: 
+#
+clean:
+	$(RM) *.o *.trace *~ *.mod *.M core $(LIB)
+#
+
+$(LIB) : $(OBJLIB)
+	$(AR) $(LIB) $(OBJLIB)
+
+restart2rs  : $(LIB) restart2rs.o
+	$(FC) -o $@ restart2rs.o $(LIB)
+

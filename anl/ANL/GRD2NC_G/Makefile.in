@@ -1,0 +1,65 @@
+# -*-Makefile-*-
+#
+FC = pgf90
+#FC = gfortran
+AR = ar -r
+RM = rm -f
+
+
+# pgf90
+
+CPPFLAGS =  @TRIPOLAR@ @JOT@ @SPHERICAL@ @PLANE@ @VARIABLE@ @BBL@ @CYCLIC@
+
+# ocsv001
+FOPTION = -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64 -O2 -I/usr/local/netcdf/include
+LINKOPT = -L/usr/local/netcdf/lib -lnetcdff -L/usr/local/netcdf/lib -lnetcdf -lm -lcurl
+
+# ocsv011
+#FOPTION =  -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64 -I/usr/local/netcdf/include
+#LINKOPT = -L/usr/local/netcdf/lib -lnetcdf
+
+# gfortran
+
+#CPPFLAGS =  @TRIPOLAR@ @JOT@ @SPHERICAL@ @PLANE@ @JOT@ @SPHERICAL@ @PLANE@ @VARIABLE@ @BBL@ @CYCLIC@ -Df2cFortran
+#FOPTION = -I/usr/include
+#LINKOPT = -lnetcdf -lnetcdff
+#LINKOPT = -L/usr/lib -lnetcdf -lnetcdff
+
+LIB     = lib.o
+
+MODULE  = OC_MOD_PARAM.mod OC_STRUCTURE.mod netCDF_write.mod
+OBJLIB  = param.o structure.o var_4d_wr_3d.o
+
+TARGETS = grd2nc_g
+
+all: $(MODULE) $(LIB) $(TARGETS)
+
+#
+#     SUFFIXES rule
+#
+.SUFFIXES: 
+.SUFFIXES: .F90 .o
+.F90.o:
+	$(FC) $(CPPFLAGS) $(FOPTION) $< -c
+
+#var_4d_wr_3d.o : var_4d_wr_3d.F90
+
+OC_MOD_PARAM.mod : param.o
+OC_STRUCTURE.mod : param.o structure.o
+netCDF_write.mod : var_4d_wr_3d.o
+
+$(LIB) : $(OBJLIB)
+	$(AR) $(LIB) $(OBJLIB)
+
+#
+grd2nc_g.o : grd2nc_g.F90 $(LIB)
+
+grd2nc_g : grd2nc_g.o $(LIB)
+	$(FC) $(CPPFLAGS) $(FOPTION) -o $@ grd2nc_g.o $(LIB) $(LINKOPT) 
+
+#
+#     clean: 
+#         
+
+clean:
+	$(RM) *.o *.trace *~ *.mod *.M core 

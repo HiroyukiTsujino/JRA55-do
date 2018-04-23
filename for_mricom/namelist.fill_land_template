@@ -1,0 +1,11 @@
+ &fill_land_lst
+   file_org='@ORG_NAME@'
+   file_filled='@FILLED_NAME@'
+   nrec_str=1,
+   nrec_end=@RECNUM@,
+   l_cyclic=.true.,
+   dundef_in=9.999e20
+   max_loop=100
+   l_silent=.true.,
+ /
+

@@ -1,0 +1,36 @@
+&nml_grid_size
+  imut                  = 576,
+  jmut                  = 361,
+  km                    = 1,
+  ksgm                  = 1,
+/
+
+&nml_undef
+  rundefin=-9.99e33
+  rundefout=-9.99e33
+/
+
+&nml_coordinate
+  lspherical           = .true.,
+/
+
+&nml_vert_grid
+  dz_const_cm          = 1.0d2,
+/
+
+&nml_horz_grid
+  lon_west_end_of_core = 0.3125d0,
+  lat_south_end_of_core = -89.75d0,
+  dx_const_deg=0.625d0
+  dy_const_deg=0.5d0
+/
+
+&nml_topo
+  file_topo          = "dummy.d",
+/
+
+&nml_record_date
+  rec_first_date        = 1980, 1, 1, 0, 0, 0,
+  rec_last_date         = 2016, 1, 1, 0, 0, 0,
+  rec_interval_date     =    0, 1, 0, 0, 0, 0,
+/

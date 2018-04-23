@@ -1,0 +1,12 @@
+DSET ^swdn_@loc@_comp.gd
+OPTIONS big_endian
+TITLE downward short wave from buoy
+UNDEF -0.9990000E+34
+XDEF 1 LEVELS @lon@
+YDEF 1 LEVELS @lat@
+ZDEF 1 LEVELS   0.0
+TDEF 180 LINEAR  MAR2000  1mo
+VARS  2
+swdn_ceres  0 99  Downward shortwave radiation [W/m2]
+swdn_buoy   0 99  Downward shortwave radiation [W/m2]
+ENDVARS

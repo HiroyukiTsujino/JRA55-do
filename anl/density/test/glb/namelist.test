@@ -1,0 +1,7 @@
+&ts2sigma_calc
+  rval = 27.10895e0,
+  rrange = 1.e-3,
+  nx = 40
+  ny = 40
+  nz = 3
+&end

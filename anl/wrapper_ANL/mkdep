@@ -1,0 +1,4 @@
+### Dependencies ###
+
+structure_mxe.o: structure_mxe.F90 param_mxe.o
+param_mxe.o: param_mxe.F90

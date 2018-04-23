@@ -1,0 +1,119 @@
+&nml_sstdata
+  file_namelist_sst='NAMELIST.MXE.COBESST',
+  sst_base_dir='/work116/htsujino/COBESST/daily/grads'
+  fin_base_sst='sst-glb',
+  fin_base_ice='ice-glb',
+  file_first_sst=1958,1,1,0,0,0,
+  file_intv_type_sst=1,
+  file_intv_sst=1,
+  total_rec_sst=365,
+  data_intv_sec_sst=86400,
+  sst_first=1958,1,1,12,0,0,
+  undef_sst=9.999e20
+  l_ymdir_sst=.false.
+&end
+
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.JRA55',
+  srf_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
+  sat_base_dir='../linkdir/forcing/jra55fcst_v1_2_prod4_3hr_TL319'
+  sph_base_dir='../linkdir/forcing/jra55fcst_v1_2_prod4_3hr_TL319'
+  wind_base_dir='../linkdir/forcing/jra55fcst_v1_2_prod1_3hr_TL319'
+  slp_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
+  fin_base_sat='tmp10m',
+  fin_base_sph='sph10m',
+  fin_base_us='u10m',
+  fin_base_vs='v10m',
+  fin_base_slp='slprs',
+  file_first_srf=1958,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1958,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  alt_sat=10.0d0,
+  alt_sph=10.0d0,
+  alt_wind=10.0d0
+&end
+
+&nml_raddata
+  file_namelist_rad='NAMELIST.MXE.JRA55',
+  rad_base_dir='../linkdir/forcing/jra55fcst_v7_rad1_3hr_TL319'
+  fin_base_dsw='dswrf',
+  fin_base_dlw='dlwrf',
+  file_first_rad=1958,1,1,0,0,0,
+  file_intv_type_rad=4,
+  file_intv_rad=3,
+  total_rec_rad=1,
+  data_intv_sec_rad=10800,
+  rad_first=1958,1,1,1,30,0,
+  undef_rad=9.999e20,
+  l_ymdir_rad=.true.
+&end
+
+&nml_pcpdata
+  file_namelist_pcp='NAMELIST.MXE.JRA55',
+  pcp_base_dir='../linkdir/forcing/jra55fcst_v1_2_prcp_3hr_TL319'
+  fin_base_pcp='prcp',
+  file_first_pcp=1958,1,1,0,0,0,
+  file_intv_type_pcp=4,
+  file_intv_pcp=3,
+  total_rec_pcp=1,
+  data_intv_sec_pcp=10800,
+  pcp_first=1958,1,1,1,30,0,
+  undef_pcp=9.999e20,
+  l_ymdir_pcp=.true.
+&end
+
+&nml_diagflux
+  calc_start=1958,1,1,1,30,0,
+  calc_end=2017,1,1,1,30,0, 
+  l_leap_valid=.true.
+  int_hist=-1,
+  flx_base_dir='../linkdir/forcing/jra55fcst_v1_2pre3_monthly_1x1'
+  fout_base_taux='taux',
+  fout_base_tauy='tauy',
+  fout_base_sens='sensible',
+  fout_base_latent='latent',
+  fout_base_evapor='evapor',
+  fout_base_nswrf='nswrf',
+  fout_base_nlwrf='nlwrf',
+  fout_base_dswrf='dswrf',
+  fout_base_dlwrf='dlwrf',
+  fout_base_precip='precip',
+  fout_base_satu='tmp10m',
+  fout_base_sphu='sph10m',
+  fout_base_dtu='dtu10m',
+  fout_base_dqu='dqu10m',
+  fout_base_w10n='wvn10m',
+  factor_dswrf=1.0d0,
+  factor_dlwrf=1.0d0,
+  factor_precip=1.0d0
+&end
+
+&nml_table_ocn
+  file_table_ocn='../linkdir/table.04/jra55o2cobe.d'
+&end
+
+&nml_table_all
+  file_table_all='../linkdir/table.04/jra55a2cobe.d'
+&end
+
+&nml_intpol
+  l_lin_dswrf=.false.,
+  l_lin_dlwrf=.false.,
+  l_lin_precip=.false.,
+  l_lin_wind=.false.,
+  l_lin_sat=.false.,
+  l_lin_sph=.false.,
+  l_lin_slp=.false.,
+  l_ocn_dswrf=.false.,
+  l_ocn_dlwrf=.false.,
+  l_ocn_precip=.false.,
+  l_ocn_wind=.true.,
+  l_ocn_sat=.true.,
+  l_ocn_sph=.true.,
+  l_ocn_slp=.false.
+&end

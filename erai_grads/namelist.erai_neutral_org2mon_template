@@ -1,0 +1,8 @@
+&nml_erai_neutral_org2mon
+  nyear=@nyear@,
+  file_in1a='/work115/htsujino/ERA-interim/org_data/erai_anl_surf_@nyear@.nc',
+  file_in1b='/work115/htsujino/ERA-interim/org_data/erai_anl_surf_@nyear_next@.nc',
+  file_in2a='/work115/htsujino/ERA-interim/org_data/erai_skin_@nyear@.nc',
+  file_in2b='/work115/htsujino/ERA-interim/org_data/erai_skin_@nyear_next@.nc',
+  file_out_base='/work115/htsujino/ERA-interim/grads_monthly'
+&end

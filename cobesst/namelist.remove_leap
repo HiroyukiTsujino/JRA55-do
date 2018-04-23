@@ -1,0 +1,6 @@
+&nml_remove_leap
+  dir_in='/work116/htsujino/COBESST/daily/grads',
+  dir_out='/work116/htsujino/COBESST/daily/grads_wo_leap',
+  ibyr=1948,
+  ieyr=2016,
+&end

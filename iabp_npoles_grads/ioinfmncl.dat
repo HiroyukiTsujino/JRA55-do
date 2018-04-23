@@ -1,0 +1,7 @@
+ &nammoncl
+  infile_base='/workc/ocpublic/refdata/J-OFURO/grads_monthly/latent.'
+  outfile_base='/workc/ocpublic/refdata/J-OFURO/grads_moncl/latent.m'
+  nbyr=1993
+  neyr=2007
+  klev=1
+ &end

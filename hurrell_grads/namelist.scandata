@@ -1,0 +1,7 @@
+&nml_scandata
+  file_base='/worke/htsujino/Hurrell_SST_ICE/grads/sst-glb.'
+  file_topo='/worke/htsujino/Hurrell_SST_ICE/data/hurrellsst-topo.d'
+  file_mask='/worke/htsujino/Hurrell_SST_ICE/data/hurrellsst-mask.gd'
+  file_of_namelist='NAMELIST.MXE.HurrellSST'
+  undef_data=-9.99e33
+&end

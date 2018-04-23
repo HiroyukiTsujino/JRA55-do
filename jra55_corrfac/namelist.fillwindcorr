@@ -1,0 +1,8 @@
+&nml_fillwindcorr
+  flnin1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_mag_nov1999-oct2009.dat'
+  flnin2='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_ceof_nov1999-oct2009.dat'
+  undef_jra=-9.99e33,
+  flnot1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_mag_nov1999-oct2009_filled.dat'
+  flnot2='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_ceof_nov1999-oct2009_filled.dat'
+  file_fill_wind='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_monthly/jra55_wind_fill.gd'
+&end

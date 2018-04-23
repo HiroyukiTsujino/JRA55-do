@@ -1,0 +1,13 @@
+&nml_zonalmean_on_jra55
+  file_in='@qscat_jra@/@item@.@yyyymm@'
+  undef_in=-9.99e33
+  file_out='@qscat_jra@/@item@_half_zm.@yyyymm@'
+  undef_out=-9.99e33
+  file_mask='@jra_cnst@/TL319.mask'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  frac_valid=0.5d0
+/

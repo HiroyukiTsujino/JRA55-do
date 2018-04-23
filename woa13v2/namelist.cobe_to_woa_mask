@@ -1,0 +1,11 @@
+&nml_cobe_to_woa
+  file_namelist_woa ='NAMELIST.MXE.WOA13v2_025.topo',
+  file_namelist_cobe='NAMELIST.MXE.COBESST.ocean_annual',
+  file_mask_woa ='dummy.gd',
+  file_mask_cobe='/work116/htsujino/COBESST/data/basin_index.gd',
+  file_mask_out ='/work116/htsujino/WOA13v2/data/basin_index.gd',
+  undef_in_woa  = -9.99e33,
+  undef_in_cobe = -9.99e33,
+  cdir='basin'
+  l_read_index=.true.
+&end

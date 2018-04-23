@@ -1,0 +1,7 @@
+&nml_filter_weight
+   num_buff=100,
+   num_filter=20,
+   iside=4,
+   icenter=16,
+   file_filter_weight='filter_weight_9p20.gd'
+&end

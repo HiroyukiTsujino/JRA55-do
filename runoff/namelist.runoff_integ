@@ -1,0 +1,9 @@
+ &nml_runoff_integ
+   flnin_base='/denkei-shared/og/ocpublic/refdata/CORE/COREv2/ciaf/grads_runoff_mks/runoff.',
+   flnot_base='core/runoff_greenland_monthly.',
+   flnav_base='core/runoff_greenland_annual.',
+   file_index='/denkei-shared/og/ocpublic/refdata/CORE/COREv2/runoff_masks/greenland_river.gd'
+   nbyr=1948,
+   neyr=2007,
+   num_index=5,
+ &end

@@ -1,0 +1,14 @@
+ &nml_moncl
+  imax=360,
+  jmax=180,
+  kmax=1,
+  infile_base='../linkdir/CERES/grads/lwdn.'
+  undef_in=-9.99e33
+  outfile_base='../linkdir/CERES/grads_clim/lwdn.mar2000_feb2015.m'
+  undef_out=-9.99e33
+  nbyr=2000
+  nbmn=3
+  neyr=2015
+  nemn=2
+  klev=1
+ &end

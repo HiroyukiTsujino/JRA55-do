@@ -1,0 +1,7 @@
+&nml_scandata
+  file_base='/denkei-shared/og/ocpublic/refdata/WOA/WOA13v2_surakawa/grads/025deg/woa13_decav_th'
+  file_topo='/work116/htsujino/WOA13v2/data/topo-woa13v2.d'
+  file_mask='/work116/htsujino/WOA13v2/data/woa13v2-mask.gd'
+  file_of_namelist='NAMELIST.MXE.WOA13v2_025'
+  undef_data=-9.99e33
+&end

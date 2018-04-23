@@ -1,0 +1,9 @@
+ &nml_smooth_tmpcore
+   flnin='/work116/htsujino/SURF_FLUX/forcing/jra_calib/tmp10m_ref_core.dat'
+   flnot='/work116/htsujino/SURF_FLUX/forcing/jra_calib/tmp10m_ref_core_smooth.dat'
+   ndata=12
+   itermax=1
+   l_apply_mask=.false.
+   fill_value=0.0d0
+   undef_in=-9.99e33,
+ &end

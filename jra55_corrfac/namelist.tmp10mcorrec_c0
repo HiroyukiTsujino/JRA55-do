@@ -1,0 +1,8 @@
+&nml_tmpcorrec
+  flnin1_base='/work116/htsujino/SURF_FLUX/forcing/core_jra55_clim/tmp10m_1979_2008.m'
+  flnin2_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/tmp10m_1979_2008.m'
+  flnin3='/work116/htsujino/SURF_FLUX/data/jra55_ocean_mask.gd'
+  flnot1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/tmp10m_ref_core.dat'
+  undef_jra=-9.99e33,
+  undef_core=-9.99e33,
+&end

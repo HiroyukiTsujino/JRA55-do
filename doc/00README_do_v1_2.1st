@@ -1,0 +1,145 @@
+JRA55-do-v1.2
+========
+
+Version 1.2 of
+JRA-55 based surface dataset for driving ocean-sea ice models (JRA55-do)
+
+See also Terms_of_Use.txt.
+
+
+General Description
+--------
+
+  This is a surface dataset based on JRA-55 (Kobayashi et al. 2015)
+for use in driving ocean-sea ice models. The dataset consists of nine
+atmospheric elements necessary for computing surface fluxes as well as
+fresh water runoff to the ocean. All of the atmospheric elements are
+derived from the forecast phase of JRA-55 and are three hourly.
+Temporal coverage is from 1st of January 1958 to 31st of December 2015. 
+
+  From some time in 2017, data for the latest year is planned to be
+updated monthly. Data from the 1st of January to the middle of the
+previous month will be put here in the early part of each month.
+
+  All files are in netCDF format. For the atmospheric fields, each
+file contains 3-hour time series for one year of a single variable
+on the TL319 lattice. There are also leap years. 
+
+  Runoff fields are produced by running a global river routing model
+(Yamazaki et al. 2011), which is forced by the runoff from the land
+surface model of JRA-55. Time interval is daily and data are on
+0.25 x 0.25 lattice. Runoff from Greenland and Antarctica are
+replaced by climatological runoff. Greenland runoff is based on
+Bamber et al. (2012) and Antarctica runoff is based on
+Depoorter et al. (2013).
+
+
+List of data
+--------
+
+* Downward short wave radiation
+
+  - Filename: rsds.YYYY.18Aug2017.nc
+  - First data represents: 3-hour (00:00-03:00 GMT) average of 1st of January
+  - netCDF variable name: rsds
+  - Units: W/m^2
+
+* Downward long wave radiation
+
+  - Filename: rlds.YYYY.18Aug2017.nc
+  - First data represents: 3-hour (00:00-03:00 GMT) average of 1 Jan
+  - netCDF variable name: rlds
+  - Units: W/m^2
+
+* Precipitation of water in liquid phase (rain)
+
+  - Filename: rain.YYYY.15Dec2016.nc
+  - First data represents: 3-hour (00:00-03:00 GMT) average of 1 Jan
+  - netCDF variable name: prrn
+  - Units: kg/m^2/s
+
+* Precipitation of water in solid phase (snow)
+
+  - Filename: snow.YYYY.15Dec2016.nc
+  - First data represents: 3-hour (00:00-03:00 GMT) average of 1 Jan
+  - netCDF variable name: prsn
+  - Units: kg/m^2/s
+
+* Air temperature at 10 m height
+
+  - Filename: t_10.YYYY.18Aug2017.nc
+  - First data represents: Snap shot at 00:00 GMT of 1 Jan
+  - netCDF variable name: tas_10m
+  - Units: K
+
+* Specific humidity at 10 m height
+
+  - Filename: q_10.YYYY.18Aug2017.nc
+  - First data represents: Snap shot at 00:00 GMT of 1 Jan
+  - netCDF variable name: huss_10m
+  - Units: none (kg/kg)
+
+* Eastward wind at 10 m height
+
+  - Filename: u_10.YYYY.18Aug2017.nc
+  - First data represents: Snap shot at 00:00 GMT of 1 Jan
+  - netCDF variable name: uas_10m
+  - Units: m/s
+
+* Northward wind at 10 m height
+
+  - Filename: v_10.YYYY.18Aug2017.nc
+  - First data represents: Snap shot at 00:00 GMT of 1 Jan
+  - netCDF variable name: vas_10m
+  - Units: m/s
+
+* Sea level pressure
+
+  - Filename: slp.YYYY.18Aug2017.nc
+  - First data represents: Snap shot at 00:00 GMT of 1 Jan
+  - netCDF variable name: psl
+  - Units: Pa
+
+
+* Fresh water transport from land to the ocean
+
+  - Filename: runoff_all.YYYY.15Dec2016.nc
+  - Time interval is daily. First data represents 12:00 GMT of 1 Jan
+  - netCDF variable name: friver
+  - Units: kg/m2/s
+
+
+* Note
+  - Variable names are taken from CMOR, if available.
+  - Downward surface fluxes, that is, downwelling short and long wave
+    radiation, and precipitation in both liquid and solid phases, are
+    3-hour average. The first data represents the average from 00:00
+    to 03:00 GMT on the 1st of January of each year. 
+  - Other surface atmospheric elements, air temperature, specific humidity,
+    wind vector (all of them are at the height of 10 m), and sea level
+    pressure, are 3-hourly snap shot starting at 00:00 GMT on the 1st of
+    January each year.
+  - All elements except for sea level pressure are modified from the
+    original JRA-55 data by applying scaling or offsetting factors
+    to fit the reference fields derived from observations or the CORE
+    dataset (Large and Yeager 2009).
+  - Some supplementary files may be found at JRA55-do-suppl which is
+    placed in the parallel level to this directory
+
+
+History
+--------
+
+* August 2017
+
+  - first release of data
+
+
+Development
+--------
+
+* Ocean model developing group, 
+  Oceanography and Geochemistry Research Department,
+  JMA Meteorological Research Institute
+
+* Questions/Comments : Hiroyuki Tsujino (htsujino@mri-jma.go.jp)

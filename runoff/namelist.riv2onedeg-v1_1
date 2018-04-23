@@ -1,0 +1,7 @@
+&nml_river2onedeg
+  ibyr=1958,
+  ieyr=2016,
+  riv_in_base='/work116/htsujino/SURF_FLUX/forcing/jra55-do-v1_1-river/runoff_all.',
+  riv_out_base='/work116/htsujino/SURF_FLUX/forcing/river_jra55-do-v1_1-monthly-1x1/runoff_all.',
+  l_transport=.false.
+&end

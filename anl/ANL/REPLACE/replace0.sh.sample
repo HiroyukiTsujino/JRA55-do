@@ -1,0 +1,61 @@
+#! /bin/sh -f
+
+yearst=1980
+yeared=1980
+
+################
+
+year=${yearst}
+
+while [ ${year} -le ${yeared} ];
+do
+ echo ${year}
+
+#---------------
+
+ fpathin="../result/hs_t.$year"
+ fpathput="../result/thetao.$year"
+ addval=273.16
+ factor=1.0
+ UNDEF=0.0
+ tuxy="T"
+ ./replace.sh "$fpathin"01 "$fpathput"01 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"02 "$fpathput"02 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"03 "$fpathput"03 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"04 "$fpathput"04 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"05 "$fpathput"05 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"06 "$fpathput"06 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"07 "$fpathput"07 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"08 "$fpathput"08 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"09 "$fpathput"09 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"10 "$fpathput"10 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"11 "$fpathput"11 $addval $factor $UNDEF "$tuxy"
+ ./replace.sh "$fpathin"12 "$fpathput"12 $addval $factor $UNDEF "$tuxy"
+ 
+#---------------
+
+ fpathin="../result/btsf.$year"
+ fpathput="../result/msftbarot.$year"
+ addval=0.0
+ factor=1.036e+9
+ UNDEF=0.0
+ tuxy="u"
+ k_max=1
+ ./replace.sh "$fpathin"01 "$fpathput"01 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"02 "$fpathput"02 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"03 "$fpathput"03 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"04 "$fpathput"04 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"05 "$fpathput"05 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"06 "$fpathput"06 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"07 "$fpathput"07 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"08 "$fpathput"08 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"09 "$fpathput"09 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"10 "$fpathput"10 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"11 "$fpathput"11 $addval $factor $UNDEF "$tuxy" $k_max
+ ./replace.sh "$fpathin"12 "$fpathput"12 $addval $factor $UNDEF "$tuxy" $k_max
+ 
+#---------------
+ 
+ yearn=`expr ${year} + 1`
+ year=${yearn}
+done

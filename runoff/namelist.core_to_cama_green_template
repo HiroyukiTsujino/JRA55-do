@@ -1,0 +1,10 @@
+&nml_core_to_cama
+  file_namelist_cama='NAMELIST.MXE.GLBRIVER',
+  file_namelist_core='NAMELIST.MXE.RUNOFF_CORE',
+  file_mask_cama='/work116/htsujino/CaMa/data/mask_green.gd',
+  file_mask_core='/work116/htsujino/CORE/data/runoff_mask_green.gd',
+  riv_core_base='/work116/htsujino/CORE/core_river_clim/runoff_green.@mon@',
+  riv_out_base='/work116/htsujino/CORE/core_river_clim_025x025/runoff_greenland.@mon@',
+  undef_in_cama=0.0,
+  undef_in_core=0.0,
+&end

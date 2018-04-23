@@ -1,0 +1,302 @@
+! -*-F90-*-
+!ts2steric.F90
+!====================================================
+!
+!   Make GrADS data from OGCM restart file
+!
+!====================================================
+program ts2steric
+  !
+  use basin_param
+  use grid_common
+  use oc_mod_density
+
+  implicit none
+
+  integer(4), parameter :: ibu = 3, ieu = imut - 2  ! cyclic
+  integer(4), parameter :: jbu = 2, jeu = jmut - 3  ! tripolar
+
+  integer(4), parameter :: ibt = 3, iet = imut - 2  ! cyclic
+  integer(4), parameter :: jbt = 2, jet = jmut - 2  ! tripolar
+
+  real(8) :: ratio_nend(jmut)
+
+  real(4), parameter :: UNDEF_grd = -9.99e33
+
+  real(4) :: tt01(imut, jmut, km)
+  real(4) :: ss01(imut, jmut, km)
+  real(4) :: tt12(imut, jmut, km)
+  real(4) :: ss12(imut, jmut, km)
+  real(4) :: dummy
+  real(4) :: tt1(imut, jmut, km) ! reference
+  real(4) :: ss1(imut, jmut, km) ! reference
+  real(4) :: tts(imut, jmut, km) ! this
+  real(4) :: sss(imut, jmut, km) ! this
+  real(4) :: hm (imut, jmut)
+
+  real(8) :: hu (imut, jmut)
+  real(8) :: tsd(imut, jmut, km, 2) ! temporal
+  real(8) :: rho_ref(imut, jmut, km)
+  real(8) :: rho_str(imut, jmut, km)
+  real(8) :: rho_thm(imut, jmut, km)
+
+  real(8) :: depth_ref, depth_this
+  real(8) :: fac_ref, fac_this
+  real(8) :: areag
+
+  real(8) :: rhom_ref
+  real(8) :: rhom_thm, rhom_str
+  real(8) :: dyn_height
+  real(8) :: vol_ref, vol_this
+  real(8) :: steric_anom
+  real(8) :: thermosteric_anom
+  
+  integer(4) :: maskt(imut, jmut, km)
+
+  character(len=256) :: flin_tsclim
+  character(len=256) :: flin_t
+  character(len=256) :: flin_s
+  character(len=256) :: flin_ssh
+  character(len=256) :: flout0
+  character(len=256) :: flout1, flout2, flout3
+  character(len=256) :: flmaskt
+  character(len=256) :: fgrid, ftopo, fscale
+
+  integer(4), parameter :: mtin   = 80
+  integer(4), parameter :: mtin_c = 81
+  integer(4), parameter :: mtin_t = 82
+  integer(4), parameter :: mtin_s = 83
+  integer(4), parameter :: mtin_h = 84
+  integer(4), parameter :: mtout0 = 85
+  integer(4), parameter :: mtout1 = 86
+  integer(4), parameter :: mtout2 = 87
+  integer(4), parameter :: mtout3 = 88
+  !
+  integer(4) :: irec
+  integer(4) :: i, j, k, n
+  !
+  !==========================================
+
+  namelist /nml_steric/ flin_t, flin_s, flin_ssh, flin_tsclim, &
+       & flout0, flout1, flout2, flout3, &
+       & flmaskt, ftopo, fgrid, fscale
+
+  !==========================================
+
+  flin_t  = '../result/hs_t.d'
+  flin_s  = '../result/hs_s.d'
+  flin_ssh= '../result/hs_ssh.d'
+  flin_tsclim = '../../data/tsclim.d'
+  flout0  = '../logs/heiht.txt'
+  flout1  = '../logs/hs_steric.d'
+  flout2  = '../logs/hs_thermo_steric.d'
+  flout3  = '../logs/hs_surface_height.d'
+  flmaskt = '../../data/maskt.gd'
+  ftopo   = '../../data/topo.d'
+  fgrid   = '../../data/vgrid.d'
+  fscale  = '../../data/scale_factor.d'
+
+  read(unit=5, nml_steric)
+
+  print *,'flin_t   :', trim(flin_t)
+  print *,'flin_s   :', trim(flin_s)
+  print *,'flin_ssh :', trim(flin_ssh)
+  print *,'flin_tsclim :', trim(flin_tsclim)
+  print *,'flout0   :', trim(flout0)
+  print *,'flout1   :', trim(flout1)
+  print *,'flout2   :', trim(flout2)
+  print *,'flout3   :', trim(flout3)
+  print *,'flmask   :', trim(flmaskt)
+  print *,'fgrid    :', trim(ftopo)
+  print *,'ftopo    :', trim(fgrid)
+  print *,'fscale   :', trim(fscale)
+
+  !------------------------------------------
+  ! set grid points
+
+  call setgrd(ftopo, fgrid, fscale)
+
+  areag  = 0.0d0
+
+  do j = jbu, jeu
+    do i = ibu, ieu
+      areag = areag + aexl(i,j,1) * areauu(i,j)
+    end do
+  end do
+
+  write(*,*) ' Global Ocean Area  = ', areag
+
+  ratio_nend(1:jmut) = 1.0d0
+  ratio_nend(jet) = 0.5d0
+
+  !------------------------------------------
+  ! mask
+
+  open(mtin, file=flmaskt, form='unformatted',  &
+    & access='direct', action='read', recl=imut*jmut*km*4)
+  read(mtin, rec=1) maskt(1:imut, 1:jmut, 1:km)
+  close(mtin)
+
+  !------------------------------------------
+  ! reference
+
+  open(mtin_c, file=flin_tsclim, form='unformatted', access='sequential')
+
+  read(mtin_c) tt01, ss01
+  do j = 2, 11
+    read(mtin_c) tt12, ss12
+  end do
+  read(mtin_c) tt12, ss12
+
+  close(mtin_c)
+
+  where(maskt(1:imut, 1:jmut, 1:km) == 0)
+    tt01(1:imut, 1:jmut, 1:km) = 0.e0
+    ss01(1:imut, 1:jmut, 1:km) = 0.e0
+    tt12(1:imut, 1:jmut, 1:km) = 0.e0
+    ss12(1:imut, 1:jmut, 1:km) = 0.e0
+  end where
+
+  tt1(1:imut, 1:jmut, 1:km)=0.5e0*(tt01(1:imut, 1:jmut, 1:km)+tt12(1:imut, 1:jmut, 1:km))
+  ss1(1:imut, 1:jmut, 1:km)=0.5e0*(ss01(1:imut, 1:jmut, 1:km)+ss12(1:imut, 1:jmut, 1:km))
+
+  tsd(1:imut, 1:jmut, 1:km, 1) = real(tt1(1:imut, 1:jmut, 1:km), 8)
+  tsd(1:imut, 1:jmut, 1:km, 2) = real(ss1(1:imut, 1:jmut, 1:km), 8)
+
+  call dens(imut,jmut,km,tsd(1,1,1,1),tsd(1,1,1,2),pd,rho_ref)
+
+  !-------------------------------------------
+  ! this
+
+  open(mtin_t,  file=flin_t,   form='unformatted', access='direct', recl=imut*jmut*km*4)
+  open(mtin_s,  file=flin_s,   form='unformatted', access='direct', recl=imut*jmut*km*4)
+  open(mtin_h,  file=flin_ssh, form='unformatted', access='direct', recl=imut*jmut*4)
+
+  read(mtin_t,  rec=1) tts(1:imut, 1:jmut, 1:km)  !  Temperature
+  read(mtin_s,  rec=1) sss(1:imut, 1:jmut, 1:km)  !  Salinity
+  read(mtin_h,  rec=1) hm (1:imut, 1:jmut)        !  Surface Height
+
+  close(mtin_t)
+  close(mtin_s)
+  close(mtin_h)
+
+  where(maskt(1:imut, 1:jmut, 1:km) == 0)
+    tts(1:imut, 1:jmut, 1:km) = 0.e0
+    sss(1:imut, 1:jmut, 1:km) = 0.e0
+  end where
+  where(maskt(1:imut, 1:jmut, 1) == 0)
+    hm(1:imut, 1:jmut) = 0.e0
+  end where
+
+  hm(1:imut,1:jmut) = hm(1:imut,1:jmut) * 1.0e-2 ! cgs -> MKS
+
+  do j = 1, jmut - 1
+    do i = 1, imut - 1
+      hu(i,j) = (dble(hm(i,j  )) * a_bl(i,j) + dble(hm(i+1,j  )) * a_br(i,j) &
+           &   + dble(hm(i,j+1)) * a_tl(i,j) + dble(hm(i+1,j+1)) * a_tr(i,j)) &
+           &  * areaur(i,j)
+    end do
+  end do
+
+  tsd(1:imut, 1:jmut, 1:km, 1) = real(tts(1:imut, 1:jmut, 1:km), 8)
+  tsd(1:imut, 1:jmut, 1:km, 2) = real(sss(1:imut, 1:jmut, 1:km), 8)
+
+  call dens(imut,jmut,km,tsd(1,1,1,1),tsd(1,1,1,2),pd,rho_str)
+
+  !------------------------------------------------------
+
+  tsd(1:imut, 1:jmut, 1:km, 1) = real(tts(1:imut, 1:jmut, 1:km), 8)
+  tsd(1:imut, 1:jmut, 1:km, 2) = real(ss1(1:imut, 1:jmut, 1:km), 8)
+
+  call dens(imut,jmut,km,tsd(1,1,1,1),tsd(1,1,1,2),pd,rho_thm)
+
+  vol_ref  = 0.0d0
+  vol_this = 0.0d0
+  rhom_ref = 0.0d0
+  rhom_str = 0.0d0
+  rhom_thm = 0.0d0
+  
+  do j = jbt, jet
+    do i = ibt, iet
+      fac_ref = (hm(i-1,j  ) * a_br(i-1,j  )  &
+           &   + hm(i  ,j  ) * a_bl(i  ,j  )  &
+           &   + hm(i-1,j-1) * a_tr(i-1,j-1)  &
+           &   + hm(i  ,j-1) * a_tl(i  ,j-1))
+      dyn_height  = dyn_height  + ratio_nend(j) * fac_ref
+    end do
+  end do
+
+  do k = 1, km
+    do j = jbt, jet
+      do i = ibt, iet
+        fac_ref = (dzu(i-1,j  ,k) * a_br(i-1,j  )  &
+             &   + dzu(i  ,j  ,k) * a_bl(i  ,j  )  &
+             &   + dzu(i-1,j-1,k) * a_tr(i-1,j-1)  &
+             &   + dzu(i  ,j-1,k) * a_tl(i  ,j-1))
+        if (k <= ksgm) then
+          fac_this = ((dzu(i-1,j  ,k) + dsgm(k) * hu(i-1,j  )) * a_br(i-1,j  )  &
+               &    + (dzu(i  ,j  ,k) + dsgm(k) * hu(i  ,j  )) * a_bl(i  ,j  )  &
+               &    + (dzu(i-1,j-1,k) + dsgm(k) * hu(i-1,j-1)) * a_tr(i-1,j-1)  &
+               &    + (dzu(i  ,j-1,k) + dsgm(k) * hu(i  ,j-1)) * a_tl(i  ,j-1))
+        else
+          fac_this = fac_ref
+        end if
+
+        vol_ref  = vol_ref  + ratio_nend(j) * fac_ref
+        vol_this = vol_this + ratio_nend(j) * fac_this
+
+        rhom_ref = rhom_ref + ratio_nend(j) * fac_ref * rho_ref(i,j,k)
+        rhom_str = rhom_str + ratio_nend(j) * fac_this * rho_str(i,j,k)
+        rhom_thm = rhom_thm + ratio_nend(j) * fac_this * rho_thm(i,j,k)
+
+      end do
+    end do
+  end do
+
+  dyn_height  = dyn_height  / areag
+
+  depth_ref  = vol_ref  / areag
+  depth_this = vol_this / areag
+
+  write(6,*) ' reference depth ', depth_ref
+  write(6,*) ' this year       ', depth_this
+
+  rhom_ref = rhom_ref / vol_ref  * 1.0d3  !  cgs -> MKS
+  rhom_str = rhom_str / vol_this * 1.0d3  !  cgs -> MKS
+  rhom_thm = rhom_thm / vol_this * 1.0d3  !  cgs -> MKS
+  
+  write(6,*) ' reference density    ', rhom_ref
+  write(6,*) ' steric density       ', rhom_str
+  write(6,*) ' thermostreic density ', rhom_thm
+
+  steric_anom       = vol_ref / areag * (rhom_ref - rhom_str) / (1.0d3 + rhom_ref)
+  thermosteric_anom = vol_ref / areag * (rhom_ref - rhom_thm) / (1.0d3 + rhom_ref)
+
+  ! output
+
+  open(mtout0, file=flout0, position='append')
+  open(mtout1, file=flout1, form='unformatted', access='direct', recl=4)
+  open(mtout2, file=flout2, form='unformatted', access='direct', recl=4)
+  open(mtout3, file=flout3, form='unformatted', access='direct', recl=4)
+
+  write(mtout0,*) '---', trim(flout1), '---'
+  write(mtout0,*) ' Boussinesq height    ', dyn_height        ,'[m]'
+  write(mtout0,*) ' steric height        ', steric_anom       ,'[m]'
+  write(mtout0,*) ' thermostreic height  ', thermosteric_anom ,'[m]'
+  write(mtout0,*) '------------------------'
+
+  write(6,*) ' Boussinesq height    ', dyn_height        ,'[m]'
+  write(6,*) ' steric height        ', steric_anom       ,'[m]'
+  write(6,*) ' thermostreic height  ', thermosteric_anom ,'[m]'
+
+  write(mtout1, rec=1) real(steric_anom, 4)
+  write(mtout2, rec=1) real(thermosteric_anom, 4)
+  write(mtout3, rec=1) real(dyn_height, 4)
+
+  close(mtout3)
+  close(mtout2)
+  close(mtout1)
+  close(mtout0)
+
+end program ts2steric
+!====================================================

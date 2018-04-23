@@ -1,0 +1,29 @@
+&nml_srfdata
+  srf_base_dir='../linkdir/forcing/jra55anl_6hr_TL319r'
+  fin_base_us='u10m',
+  fin_base_vs='v10m',
+  file_first_srf=1987,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=6,
+  total_rec_srf=1,
+  data_intv_sec_srf=21600,
+  srf_first=1987,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.,
+  imut=640,
+  jmut=320,
+  grid_name='TL319',
+  l_little_srf=.true.,
+  alt_wind=10.0d0
+&end
+
+&nml_filterwind
+  calc_start=1987,1,1,0,0,0,
+  calc_end=2016,2,2,0,0,0, 
+  l_leap_valid=.true.
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask',
+  calib_base_dir='../linkdir/forcing/jra55anl_filt_6hr_TL319r'
+  fout_base_us='u10m',
+  fout_base_vs='v10m',
+&end
+

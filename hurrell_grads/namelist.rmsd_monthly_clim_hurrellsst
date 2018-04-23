@@ -1,0 +1,16 @@
+ &nml_rmsd_moncl
+  imax=360,
+  jmax=180,
+  kmax=1,
+  infile_moncl_base='/work116/htsujino/Hurrell_SST_ICE/clim/sst_moncl.1981_2010.m'
+  undef_out=-9.99e33
+  infile_base='/work116/htsujino/Hurrell_SST_ICE/monthly/grads/sst-glb.'
+  undef_in=-9.99e33
+  outfile_base='/work116/htsujino/Hurrell_SST_ICE/clim/sst_rmsd_from_moncl.1981_2010.gd'
+  undef_out=-9.99e33
+  nbyr=1981
+  neyr=2010
+  nbmn=1
+  nemn=12
+  klev=1
+ &end

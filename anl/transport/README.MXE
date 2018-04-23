@@ -1,0 +1,13 @@
+README
+
+
+輸送量を計算する。
+
+
+wlwl_ctl.F90
+  鉛直輸送量と鉛直流速を求める。
+  sample/make_wlwl.sh
+
+section_u_ctl.F90
+  鉛直断面を横切る流量を計算する。
+  sample/calc_section_u.sh

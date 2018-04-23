@@ -1,0 +1,19 @@
+###
+### Fortran 90 compiler
+###  Set variables: F90, FFLAGS and AR.
+
+### ogsv007 ###
+F90     = pgf90
+FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -O -byteswapio
+LDFLAGS = -mcmodel=medium -lacml
+LDOPTS = -L/usr/local/netcdf-4.4.0/lib -lnetcdf -L/usr/local/netcdf-fortran-4.4.3/lib -lnetcdff -lm -lcurl
+INCOPTS = -I/usr/local/netcdf-4.4.0/include -I/usr/local/netcdf-fortran-4.4.3/include
+AR      = ar rv
+#INCLUDES=
+NETCDF_DIR      = /usr/local/netcdf-fortran-4.4.3
+NETCDF_FFLAGS   = -DMXE_NETCDF
+NETCDF_INCLUDES = `$(NETCDF_DIR)/bin/nf-config --fflags`
+NETCDF_LDFLAGS  = `$(NETCDF_DIR)/bin/nf-config --flibs`
+
+#FFLAGS="-tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio -Mcache_align -Minfo -Mbounds"
+#- Do not use -fastsse, -O2

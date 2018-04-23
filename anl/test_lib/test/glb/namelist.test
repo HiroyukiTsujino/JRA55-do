@@ -1,0 +1,24 @@
+&para_imut
+  ival = 364,
+&end
+&topo_ho4
+  ival = 465000,
+  nx = 40,
+  ny = 40,
+&end
+&topo_exnn
+  ival = 47,
+  nx = 40,
+  ny = 40,
+&end
+
+&topo__depth_t_cm
+  ival = 469983,
+  nx = 40,
+  ny = 40,
+&end
+&topo__depth_t_cm
+  ival = 469500,
+  nx = 41,
+  ny = 40,
+&end

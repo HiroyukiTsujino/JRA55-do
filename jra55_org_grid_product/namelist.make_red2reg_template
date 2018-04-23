@@ -1,0 +1,12 @@
+&nml_make_red2reg
+  file_in='@base_dir_org@/@yyyymm@/@item@.@ext@'
+  file_latlon='@base_dir_latlon@/@yyyymm@/@item@.@ext@'
+  l_out_weight=@out_weight@
+  file_weight='@base_dir_latlon@/@yyyymm@/@item_weight@.@ext@'
+  file_table='@file_table@'
+  imut=640,
+  jmut=320,
+  grid_name='TL319'
+  undef4_in=9.999e20,
+  undef4_out=9.999e20,
+/

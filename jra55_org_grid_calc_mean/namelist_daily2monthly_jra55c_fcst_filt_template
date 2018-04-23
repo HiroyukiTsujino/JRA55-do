@@ -1,0 +1,9 @@
+&nml_day2mon
+  iyst=@iyst@,
+  imst=@imst@,
+  iyed=@iyed@,
+  imed=@imed@,
+  item_name='@item@'
+  in_base_dir='../linkdir/forcing/jra55c_daily_org_filt',
+  out_base_dir='../linkdir/forcing/jra55c_monthly_org_filt',
+&end

@@ -1,0 +1,17 @@
+&nml_make_annclim
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_monthly_base='../linkdir/forcing/jra_monthly_org_e1/u10m.'
+  undef4_in=-9.99e33
+  file_clim_org='../linkdir/forcing/jra_clim_org_e1/u10m.nov1999_oct2009.dat'
+  file_clim_latlon='../linkdir/forcing/jra_clim_latlon_e1/u10m.nov1999_oct2009.dat'
+  undef4_out=-9.99e33
+  l_leap_valid=.true.,
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  nbyr=1999,
+  nbmn=11,
+  neyr=2009,
+  nemn=10
+/

@@ -1,0 +1,10 @@
+&nml_calib_prcp
+  infile_base='/work116/htsujino/GPCP-v2_3/grads_monthly_T62/precip.',
+  undef_in=-9.99e33,
+  outfile_base='/work116/htsujino/GPCP-v2_3/grads_monthly_adjusted_T62/precip.',
+  undef_out=-9.99e33,
+  flnin_factor='/work116/htsujino/GPCP-v2_3/grads_monclim_corrfac_T62/prcp_mag_mon_gpcp2core.dat',
+  nbyr=1979,
+  neyr=2015,
+  klev=1,
+/

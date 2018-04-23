@@ -1,0 +1,4 @@
+&dmlst imut=54, jmut=54, km=10, ksgm=5 &end
+&grlst slat0=30.0d0, slon0=0.d0, dxtdgc=0.2d0, dytdgc=0.2d0, dztmp=10.d2,30.d2,50.d2,100.d2,200.d2,200.d2,400.d2,1000.d2,2000.d2,3000.d2, lsub=.true., lvariable=.false., lcyclic=.false., lspherical=.true., lfoldnp=.false.  &end
+&topofile ftopo='../../linkdir/mxe/rect/data-sub/topo.d' &end
+&iolst icalstr=1901,1,1,0,0,0, icalend=1901,1,10,0,0,0, icalint=0,0,1,0,0,0 &end

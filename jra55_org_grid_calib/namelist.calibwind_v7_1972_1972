@@ -1,0 +1,35 @@
+&nml_srfdata
+  srf_base_dir='../linkdir/forcing/jra55fcst_filt_v7tq_3hr_TL319r'
+  fin_base_us='un10m',
+  fin_base_vs='vn10m',
+  file_first_srf=1972,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1972,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  imut=640,
+  jmut=320,
+  grid_name='TL319',
+  l_little_srf=.true.
+  alt_wind=10.0d0
+&end
+
+&nml_calibwind
+  calc_start=1972,1,1,0,0,0,
+  calc_end=1973,1,1,0,0,0, 
+  l_leap_valid=.true.
+  l_calib_monthly=.false.,
+  l_calib_transition=.true.,
+  trans_start=1972,10,1,0,0,
+  trans_end=1972,12,1,0,0,
+  file_calib_mag_b='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/wind_mag_annual.1958_1972.dat',
+  file_calib_mag_a='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/wind_mag_annual.1973_1996.dat',
+  file_calib_rot_b='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/wind_rot_ceof_annual.1999_2015.dat',
+  file_calib_rot_a='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/wind_rot_ceof_annual.1999_2015.dat',
+  calib_base_dir='../linkdir/forcing/jra55fcst_filt_v7_3hr_wind_TL319r'
+  fout_base_us='un10m',
+  fout_base_vs='vn10m',
+&end

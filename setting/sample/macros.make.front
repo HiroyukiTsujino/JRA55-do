@@ -1,0 +1,12 @@
+###
+### Fortran 90 compiler
+###  Set variables: F90, FFLAGS and AR.
+
+
+### front1 ###
+F90 = f90
+FFLAGS =
+#FFLAGS = -64 -nolimit -model=L1 -Os -precise -noscope -parallel=4 -pvfunc=2 -prefetch_zero -loglist -oplist -loopdiag -pardiag -contarea=2
+AR = ar -X64 rv
+
+

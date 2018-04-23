@@ -1,0 +1,26 @@
+&nml_wind_ceof_mon
+  flnin_base1='../linkdir/forcing/jra_monthly_org_e1/u10m.'
+  flnin_base2='../linkdir/forcing/jra_monthly_org_e1/v10m.'
+  undef_model=-9.99e33,
+  flnin_base3='../linkdir/forcing/jra_blend_monthly_org/u10m.'
+  irecu_obs=1,
+  flnin_base4='../linkdir/forcing/jra_blend_monthly_org/v10m.'
+  irecv_obs=1,
+  undef_obs=-9.99e33,
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  flnot1='../linkdir/forcing/jra_calib_v3/wind_mag_ceof_monthly.dat'
+  flnot2='../linkdir/forcing/jra_calib_v3/wind_rot_ceof_monthly.dat'
+  flnot3='../linkdir/forcing/jra_calib_v3/wind_rot_ceof_monthly_latlon.dat'
+  undef_out=-9.99e33,
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  ibyr=1999,
+  ibmn=8,
+  ieyr=2009,
+  iemn=10,
+  l_check=.false.
+  ratio_explain=0.965d0
+  tanh_half=1.0d2
+&end

@@ -1,0 +1,39 @@
+# -*-Makefile-*-
+#
+
+include ../macros.make
+
+#FC = pgf90
+#AR = ar -r
+#RM = rm -f
+
+#FOPTION = -lacml -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64
+
+CPPFLAGS =  @TRIPOLAR@ @JOT@ @SPHERICAL@ @PLANE@ @VARIABLE@ @BBL@ @CYCLIC@
+LINKOPT = 
+LIB     = lib.o
+
+TARGETS = mon_anom
+
+all: $(MODULE) $(LIB) $(TARGETS)
+
+#
+#     SUFFIXES rule
+#
+.SUFFIXES: 
+.SUFFIXES: .F90 .o
+.F90.o:
+	$(FC) $< $(FOPTION) $(CPPFLAGS) -c
+#
+#     clean: 
+#
+clean:
+	$(RM) *.o *.trace *~ *.mod *.M core $(LIB)
+#
+
+$(LIB) : $(OBJLIB)
+	$(AR) $(LIB) $(OBJLIB)
+
+mon_anom  : $(LIB) mon_anom.o
+	$(FC) -o $@ mon_anom.o $(LIB)
+

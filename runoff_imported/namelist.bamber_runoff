@@ -1,0 +1,7 @@
+&nml_bamber_runoff
+  fl_in_fwf='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/bamber_2012_Greenland/Greenland_runoff_calving_5km_monthly.bin',
+  fl_in_lonlat='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/bamber_2012_Greenland/grn_5km_lat_lons.txt',
+  dir_out='/work116/htsujino/SURF_FLUX/forcing/bamber_2012_Greenland/monthly',
+  ibyr=1958,
+  ieyr=2010
+/

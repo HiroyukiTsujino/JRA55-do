@@ -1,0 +1,73 @@
+netcdf rlds_input4MIPs_atmosphericState_OMIP_MRI-JRA55-do-1-3_gn_197001010130-197101010000 {
+dimensions:
+	time = UNLIMITED ; // (2920 currently)
+	lat = 320 ;
+	lon = 640 ;
+	bnds = 2 ;
+variables:
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "days since 1900-01-01 00:00:00" ;
+		time:calendar = "gregorian" ;
+		time:axis = "T" ;
+		time:long_name = "time" ;
+		time:standard_name = "time" ;
+	double time_bnds(time, bnds) ;
+	double lat(lat) ;
+		lat:bounds = "lat_bnds" ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:long_name = "latitude" ;
+		lat:standard_name = "latitude" ;
+	double lat_bnds(lat, bnds) ;
+	double lon(lon) ;
+		lon:bounds = "lon_bnds" ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:long_name = "longitude" ;
+		lon:standard_name = "longitude" ;
+	double lon_bnds(lon, bnds) ;
+	float rlds(time, lat, lon) ;
+		rlds:standard_name = "surface_downwelling_longwave_flux_in_air" ;
+		rlds:long_name = "Surface Downwelling Longwave Radiation" ;
+		rlds:comment = "The surface called \'surface\' means the lower boundary of the atmosphere. \'longwave\' means longwave radiation. Downwelling radiation is radiation from above. It does not mean \'net downward\'. When thought of as being incident on a surface, a radiative flux is sometimes called \'irradiance\'. In addition, it is identical with the quantity measured by a cosine-collector light-meter and sometimes called \'vector irradiance\'. In accordance with common usage in geophysical disciplines, \'flux\' implies per unit area, called \'flux density\' in physics." ;
+		rlds:units = "W m-2" ;
+		rlds:cell_methods = "area: time: mean" ;
+		rlds:cell_measures = "area: areacella" ;
+		rlds:missing_value = 1.e+20f ;
+		rlds:_FillValue = 1.e+20f ;
+
+// global attributes:
+		:Conventions = "CF-1.7 CMIP-6.2" ;
+		:activity_id = "input4MIPs" ;
+		:comment = "Based on JRA-55 reanalysis (1958-01 to 2018-01)" ;
+		:contact = "Hiroyuki Tsujino (htsujino@mri-jma.go.jp)" ;
+		:creation_date = "2018-04-12T05:21:39Z" ;
+		:data_specs_version = "01.00.23" ;
+		:dataset_category = "atmosphericState" ;
+		:external_variables = "areacella" ;
+		:frequency = "3hr" ;
+		:further_info_url = "http://jra.kishou.go.jp/JRA-55/index_en.html" ;
+		:grid = "0.5x0.5 degree latitude x longitude" ;
+		:grid_label = "gn" ;
+		:history = "2018-04-12T05:21:39Z; CMOR rewrote data to be consistent with input4MIPs, CMIP6, and CF-1.7 CMIP-6.2 standards" ;
+		:institution = "Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan" ;
+		:institution_id = "MRI" ;
+		:mip_era = "CMIP6" ;
+		:nominal_resolution = "50 km" ;
+		:product = "reanalysis" ;
+		:realm = "atmos" ;
+		:references = "Tsujino et al., 2018: JRA-55 based surface dataset for driving ocean-sea-ice models (JRA55-do), Ocean Modelling, in review" ;
+		:region = "global_ocean" ;
+		:source = "MRI JRA55-do 1.3: Atmospheric state generated for OMIP based on the JRA-55 reanalysis" ;
+		:source_id = "MRI-JRA55-do-1-3" ;
+		:source_version = "1.3.1" ;
+		:table_id = "input4MIPs_A3hr" ;
+		:table_info = "Creation Date:(10 April 2018) MD5:498f6cacd16552c99e5d40bdc4eb37c5" ;
+		:target_mip = "OMIP" ;
+		:title = "MRI JRA55-do 1.3 dataset prepared for input4MIPs" ;
+		:tracking_id = "hdl:21.14100/8d912a30-2377-4bd0-a39b-ea9a69575d95" ;
+		:variable_id = "rlds" ;
+		:license = "OMIP boundary condition data produced by MRI is licensed under a Creative Commons Attribution-[NonCommercial-]ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing input4MIPs output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
+		:cmor_version = "3.3.1" ;
+}

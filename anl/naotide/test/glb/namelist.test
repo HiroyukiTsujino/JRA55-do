@@ -1,0 +1,12 @@
+&tidehmap_answer
+  tideh_100_100 = 15.24782e0
+  tideh_100_100_delta = 1.e-4
+  tideh_land = 9999.99e0
+  tideh_land_delta = 1.e-2
+&end
+
+&spot_calc
+  rval = 31.19343e0,
+  rrange = 1.e-4,
+  nx = 1,
+&end

@@ -1,0 +1,7 @@
+&nml_ncep1_const
+  file_in='@indir@/lsmask.19294.nc',
+  file_out='@outdir@/@var_out@.gd',
+  var_in='@var_in@',
+  scale=@scale@,
+  offset=@offset@,
+&end

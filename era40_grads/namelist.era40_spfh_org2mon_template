@@ -1,0 +1,8 @@
+&nml_era40_spfh_org2mon
+  nyear=@nyear@,
+  file_in1='/work115/htsujino/ERA-40/org_data/era40_anl_surf_@nyear@.nc',
+  file_in2='/work115/htsujino/ERA-40/org_data/era40_anl_surf_@nyear_next@.nc',
+  l_mask_out=.false.
+  file_mask='/work115/htsujino/ERA-40/data/topo_era40.d',
+  file_out_base='/work115/htsujino/ERA-40/grads_monthly/era40_@var_name_out@.'
+&end

@@ -1,0 +1,28 @@
+&nml_model
+  file_namelist_model='NAMELIST.MXE.COBESST.PACSV',
+  lonst=115.0d0
+  loned=280.0d0
+  latst=10.0d0
+  lated=50.0d0
+&end
+
+&nml_data
+  file_namelist_data='NAMELIST.MXE.COBESST.PACSV',
+  data_base_dir='monthly_wind_link'
+  data_base_us='taux',
+  data_base_vs='tauy',
+  l_units_mks=.true.,
+  clim_base_dir='monthly_wind_link'
+  clim_base_us='taux',
+  clim_base_vs='tauy',
+  undef_data=9.999e20,
+&end
+
+&nml_sv
+  nyst=1958,
+  nyed=2017,
+  file_sv='sv_v1_4pre1.gd'
+  lend_clm=.false.
+  l_intpl=.false.
+  intpmode=2
+&end

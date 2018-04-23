@@ -1,0 +1,33 @@
+&nml_tmp_sph_10m
+  file_u10m='@fcst_wind@/@yyyymm@/u10m.@yyyymmddhh@'
+  file_v10m='@fcst_wind@/@yyyymm@/v10m.@yyyymmddhh@'
+  file_tmp2m='@fcst_tmp@/@yyyymm@/tmp2m.@yyyymmddhh@'
+  file_sph2m='@fcst_sph@/@yyyymm@/sph2m.@yyyymmddhh@'
+  file_brtmp='@fcst_org@/@yyyymm@/brtmp.@yyyymmddhh@'
+  file_slprs='@fcst_org@/@yyyymm@/slprs.@yyyymmddhh@'
+  file_ice='@fcst_org@/@yyyymm@/ice.@yyyymmddhh@'
+  file_tmp2m_org='@fcst_org@/@yyyymm@/tmp2m.@yyyymmddhh@'
+  file_mask='@jra_cnst@/TL319.mask'
+  ihour=@hour@
+  file_tmp10m_org='@fcst_tmp_out@/@yyyymm@/tmp10m.@yyyymmddhh@'
+  file_sph10m_org='@fcst_sph_out@/@yyyymm@/sph10m.@yyyymmddhh@'
+  file_tmp10m_latlon='@fcst_tmp_latlon@/@yyyymm@/tmp10m.@yyyymmddhh@'
+  file_sph10m_latlon='@fcst_sph_latlon@/@yyyymm@/sph10m.@yyyymmddhh@'
+  l_out_latlon=@out_latlon@
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='../linkdir/data/lat_jra55.txt'
+  icobe=360,
+  jcobe=180,
+  slon_cobe=0.5d0,
+  dlon_cobe=1.0d0,
+  slat_cobe=-89.5d0,
+  dlat_cobe=1.0d0,
+  undef4_cobe=9.999e20,
+  file_cobe_a='@cobe_dir@/sst-glb.@yyyya@',
+  file_cobe_b='@cobe_dir@/sst-glb.@yyyyb@',
+  irec_cobe_a=@ireca@
+  irec_cobe_b=@irecb@
+/

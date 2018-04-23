@@ -1,0 +1,56 @@
+&nml_sstdata
+  file_namelist_sst='NAMELIST.MXE.COBESST',
+  sst_base_dir='/work116/htsujino/COBESST/daily/grads'
+  fin_base_sst='sst-glb',
+  fin_base_ice='ice-glb',
+  file_first_sst=1958,1,1,0,0,0,
+  file_intv_type_sst=1,
+  file_intv_sst=1,
+  total_rec_sst=365,
+  data_intv_sec_sst=86400,
+  sst_first=1958,1,1,12,0,0,
+  undef_sst=9.999e20,
+  l_ymdir_sst=.false.
+&end
+
+&nml_raddata
+  file_namelist_rad='NAMELIST.MXE.JRA55',
+  rad_base_dir='../linkdir/forcing/jra_latlon_c1'
+  fin_base_dsw='dswrf',
+  fin_base_dlw='dlwrf',
+  file_first_rad=1958,1,1,0,0,0,
+  file_intv_type_rad=4,
+  file_intv_rad=3,
+  total_rec_rad=1,
+  data_intv_sec_rad=10800,
+  rad_first=1958,1,1,1,30,0,
+  undef_rad=9.999e20,
+  l_ymdir_rad=.true.
+&end
+
+&nml_diagrad
+  calc_start=1958,1,1,1,30,0,
+  calc_end=2015,2,1,1,30,0, 
+  l_leap_valid=.true.
+  int_hist=-1,
+  flx_base_dir='../linkdir/forcing/jra_cobesst_monthly_c1'
+  fout_base_dswrf='dswrf_all',
+  fout_base_dlwrf='dlwrf_all',
+  factor_dswrf=1.0d0,
+  factor_dlwrf=1.0d0,
+&end
+
+&nml_table_ocn
+  file_table_ocn='../linkdir/table/jra55o2cobe.d'
+&end
+
+&nml_table_all
+  file_table_all='../linkdir/table/jra55a2cobe.d'
+&end
+
+&nml_intpol
+  l_lin_dswrf=.false.,
+  l_lin_dlwrf=.false.,
+  l_ocn_dswrf=.false.,
+  l_ocn_dlwrf=.false.,
+&end

@@ -1,0 +1,11 @@
+&nml_srb3_1_net_ocn
+  flnin1_base='/worke/htsujino/SRB/rel3.1/orgdata/srb_rel3.0_shortwave_monthly_utc_'
+  undef_in1=-1000.0e0
+  flnin2_base='/worke/htsujino/SRB/rel3.1/orgdata/srb_rel3.1_longwave_monthly_'
+  undef_in2=-999.0e0
+  flnin3_base='/workc/ocpublic/refdata/COBE-SST/monthly/yyyymm/ice-glb.'
+  undef_in3=-9.99e33
+  flnot1_base='/worke/htsujino/SRB/rel3.1/grads/nswrf.'
+  flnot2_base='/worke/htsujino/SRB/rel3.1/grads/nlwrf.'
+  undef_out=-9.99e33
+/

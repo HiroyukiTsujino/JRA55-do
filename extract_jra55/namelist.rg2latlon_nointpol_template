@@ -1,0 +1,8 @@
+&nml_rg2latlon_nointpol
+  file_in='../linkdir/forcing/jra_org/@yyyymm@/@item@.@yyyymmddhh@'
+  file_out='../linkdir/forcing/jra_latlon/@yyyymm@/@item@.@yyyymmddhh@'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+/

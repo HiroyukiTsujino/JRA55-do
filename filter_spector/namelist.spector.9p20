@@ -1,0 +1,9 @@
+&nml_spector
+  flnin1_base='filter_weight_9p20.gd'
+  num_rec=21,
+  num_grid_in=201,
+  num_data_st=1,
+  num_data_ed=200,
+  delta_x=55.0d0,
+  flout1_base='spector_weight_9p20.gd'
+&end

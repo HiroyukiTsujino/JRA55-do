@@ -1,0 +1,4 @@
+&nml_total_runoff_clim
+  file_river_in='/worke/htsujino/RUNOFF_YOSHIMURA/daily_clim_m2/rivout_clim.bin',
+  dir_out='daily_clim_m2'
+/

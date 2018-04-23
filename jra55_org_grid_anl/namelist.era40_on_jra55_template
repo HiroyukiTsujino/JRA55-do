@@ -1,0 +1,20 @@
+&nml_era40_on_jra55
+  file_mask='@jra_cnst@/TL319.mask'
+  file_prod_org='@era40_jra@/@item@.@yyyymm@'
+  file_prod_latlon='@era40_jra_latlon@/@item@.@yyyymm@'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  iera40=480,
+  jera40=241,
+  slon_era40=0.0d0,
+  dlon_era40=0.75d0,
+  slat_era40=-90.0d0,
+  dlat_era40=0.75d0,
+  undef4_era40=-9.99e33
+  file_era40='@era40_dir@/@item_era40@.@yyyymm@'
+  file_mask_era40='@era40_cnst@/topo_era40.d'
+  irec_era40=@irec@
+/

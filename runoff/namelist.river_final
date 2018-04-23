@@ -1,0 +1,7 @@
+&nml_river_final
+  ibyr=1958,
+  ieyr=2015,
+  riv_in_base='/worke/htsujino/RUNOFF_YOSHIMURA/merge_5/rivout',
+  riv_out_base='/worke/htsujino/RUNOFF_YOSHIMURA/final_v1/runoff.',
+  riv_area='/worke/htsujino/RUNOFF_YOSHIMURA/final_v1/CaMaFlood_area.gd',
+&end

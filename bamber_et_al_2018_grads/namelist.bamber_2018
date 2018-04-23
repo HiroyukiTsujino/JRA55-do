@@ -1,0 +1,10 @@
+&nml_bamber_2018
+  flnin_bamber='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_et_al_2018/FWF17.v3.nc',
+  undef_in=-9999.9,
+  flnot_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_et_al_2018/grads_monthly/Bamber_2018.',
+  undef_out=-9.99e33,
+  nyst=1958,
+  mst=1,
+  nyed=2016,
+  med=12,
+&end

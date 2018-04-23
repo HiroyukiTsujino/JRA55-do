@@ -1,0 +1,8 @@
+&nam_mabiki
+ filei1='/workd/htsujino/BC_VORTEX_NEST/e011/result_parent/hs_t.19010410',
+ filei2='/workd/htsujino/BC_VORTEX_NEST/e011/result_sub/hs_t.19010410',
+ fileo1='/workd/htsujino/BC_VORTEX_NEST/e011/result_mabiki/hs_t.19010410',
+ l_replace_with_zero=.false.
+ klevel=10
+ TUXY='T'
+&end

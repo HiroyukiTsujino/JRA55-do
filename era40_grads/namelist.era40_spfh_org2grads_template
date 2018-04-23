@@ -1,0 +1,8 @@
+&nml_era40_spfh_org2grads
+  nyear=@nyear@,
+  file_in1='/work115/htsujino/ERA-40/org_data/era40_anl_surf_@nyear@.nc',
+  file_out_year='/work115/htsujino/ERA-40/grads_6hourly/era40_@var_name_out@.@nyear@'
+  file_out_s1='/work115/htsujino/ERA-40/grads_6hourly/era40_@var_name_out@.@nyear@010100'
+  file_out_s2='/work115/htsujino/ERA-40/grads_6hourly/era40_@var_name_out@.@nyear@010106'
+  file_out_e1='/work115/htsujino/ERA-40/grads_6hourly/era40_@var_name_out@.@nyear@123118'
+&end

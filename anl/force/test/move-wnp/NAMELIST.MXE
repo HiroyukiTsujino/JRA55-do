@@ -1,0 +1,32 @@
+&nml_grid_size
+  imut                  = 673,
+  jmut                  = 442,
+  km                    = 54,
+  ksgm                  = 5,
+/
+
+&nml_coordinate
+  lspherical            = .true.,
+  lsub                  = .true.,
+/
+
+&nml_vert_grid
+  file_dz_cm            = "../../linkdir/mxe/move-wnp/data/dz_cm.d",
+/
+
+&nml_horz_grid
+  lon_west_end_of_core  = 117.d0,
+  lat_south_end_of_core = 15.d0,
+  file_dxdy_tbox_deg    = "../../linkdir/mxe/move-wnp/data/vgrid_h.d",
+/
+
+&nml_topo
+  file_topo             = "../../linkdir/mxe/move-wnp/data/topo_h.d",
+/
+
+&nml_record_date
+  rec_first_date        = 2011, 1, 1, 0, 0, 0,
+  rec_last_date         = 2011, 1, 1, 0, 0, 0,
+  rec_interval_date     =    0, 1, 0, 0, 0, 0,
+/
+

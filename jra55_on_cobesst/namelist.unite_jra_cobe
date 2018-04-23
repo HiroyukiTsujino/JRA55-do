@@ -1,0 +1,6 @@
+&nml_unitemask
+  flnin1='/work116/htsujino/COBESST/data/cobesst-mask.gd'
+  flnin2='/work116/htsujino/SURF_FLUX/table/rmp_jra55o2cobe_area.gd'
+  flnot1='/work116/htsujino/COBESST/data/topo-jra_cobe.d'
+  flnot2='/work116/htsujino/COBESST/data/jra_cobe-mask.gd'
+&end

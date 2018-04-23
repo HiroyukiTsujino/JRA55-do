@@ -1,0 +1,16 @@
+&nml_make_sph2mcorrec
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_ref_base='../linkdir/forcing/ensemble4_monclim_TL319r/sph2m.@period_ref@.m'
+  file_jra_base='@fcst_clim@/sph2m.@period_ref@.m'
+  undef4_jra=9.999e20
+  undef4_ref=9.999e20
+  l_apply_filter=.true.
+  l_apply_mask=@l_apply_mask@
+  file_correc='../linkdir/forcing/jra55fcst_corrfac_v1_2_TL319r/sph2m_corr_filter.@period_trg@.dat'
+  file_correc_latlon='../linkdir/forcing/jra55fcst_corrfac_v1_2_TL319/sph2m_corr_filter.@period_trg@.dat'
+  undef4_out=9.999e20
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+/

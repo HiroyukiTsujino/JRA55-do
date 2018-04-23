@@ -1,0 +1,9 @@
+&nml_river_factor
+  factor=1.0,
+  ibyr=1981,
+  ieyr=2013,
+  file_mask='/worke/htsujino/RUNOFF_YOSHIMURA/mask.gd',
+  riv_in_base='/worke/htsujino/RUNOFF_YOSHIMURA/original/rivout',
+  riv_out_base='/worke/htsujino/RUNOFF_YOSHIMURA/calib_0/rivout',
+  undef_in=1e20,
+&end

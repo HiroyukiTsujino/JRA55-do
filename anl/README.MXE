@@ -1,0 +1,24 @@
+README
+
+解析用ツール
+  テスト自動化のために一部はモジュール化されている。
+
+
+各ディレクトリのサブディレクトリ
+  src         : Fortran source code
+  sample      : 実際にプログラムを動かすためのスクリプトのサンプル。
+  test        : test program, shell scripts. (do test_all.sh) 
+
+
+内容
+  density     : calc density
+  force       : forcing (interpolate)
+  integ       : 変数の空間積分
+  resize      : resize history or restart output
+  tide        : 潮汐
+  transport   : 輸送量
+
+  naotide     : Matsumoto et al. (2000)の潮汐同化データ
+  modis       : Modisデータ
+
+  test_lib    : ライブラリLIBMXEのテスト

@@ -1,0 +1,9 @@
+ &nammoncl
+  infile_base='@in_dir@/prcp.'
+  undef_in=-9.99e33,
+  outfile_base='@out_dir@/prcp_@ibyr@_@ieyr@.m'
+  undef_out=-9.99e33,
+  nbyr=@ibyr@
+  neyr=@ieyr@
+  klev=1
+ &end

@@ -1,0 +1,44 @@
+&nml_grid_size
+  imut                  = 364,
+  jmut                  = 368,
+  km                    = 51,
+  ksgm                  = 51,
+  kbbl			= 1,
+/
+
+&nml_coordinate
+  ltripolar            = .true.
+  lcyclic              = .true.
+/
+
+&nml_vert_grid
+  file_dz_cm            = "/work116/htsujino/SURF_FLUX/reference_simulation/CORE2g-run-20130808/data/dz_cm.d",
+/
+
+&nml_horz_grid
+  lon_west_end_of_core = 0.0d0,
+  lat_south_end_of_core = -78.0d0,
+  file_dxdy_tbox_deg = "/work116/htsujino/SURF_FLUX/reference_simulation/CORE2g-run-20130808/data/dxdy_tbox_deg.d",
+/
+
+&nml_topo
+  file_topo             = "/work116/htsujino/SURF_FLUX/reference_simulation/CORE2g-run-20130808/data/topo.d",
+/
+
+&nml_grid_scale
+  file_scale            = "/work116/htsujino/SURF_FLUX/reference_simulation/CORE2g-run-20130808/data/scale_factor.d",
+/
+
+&nml_poles
+  north_pole_lon=80.0d0,
+  north_pole_lat=64.0d0,
+  south_pole_lon=260.0d0,
+  south_pole_lat=64.0d0
+/
+
+&nml_record_date
+  rec_first_date        = 1948, 1, 1, 0, 0, 0,
+  rec_last_date         = 2007, 1, 1, 0, 0, 0,
+  rec_interval_date     =    1, 0, 0, 0, 0, 0,
+  l_leap_year           = .false.
+/

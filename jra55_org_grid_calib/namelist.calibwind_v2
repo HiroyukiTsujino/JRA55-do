@@ -1,0 +1,30 @@
+&nml_srfdata
+  srf_base_dir='../linkdir/forcing/jra_org_e1'
+  fin_base_us='u10m',
+  fin_base_vs='v10m',
+  file_first_srf=1979,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1979,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  imut=640,
+  jmut=320,
+  grid_name='TL319',
+  l_little_srf=.true.
+  alt_wind=10.0d0
+&end
+
+&nml_calibwind
+  calc_start=1979,1,1,0,0,0,
+  calc_end=2011,1,1,0,0,0, 
+  l_leap_valid=.true.
+  l_calib_monthly=.true.,
+  file_calib_mag='../linkdir/forcing/jra_calib_v3/wind_mag_tanh_monthly.dat',
+  file_calib_rot='../linkdir/forcing/jra_calib_v3/wind_rot_ceof_monthly_v2.dat',
+  calib_base_dir='../linkdir/forcing/jra_org_e3'
+  fout_base_us='u10m',
+  fout_base_vs='v10m',
+&end

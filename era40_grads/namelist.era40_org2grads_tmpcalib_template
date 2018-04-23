@@ -1,0 +1,12 @@
+&nml_era40_org2grads_tmpcalib
+  nyear=@nyear@,
+  file_in1='/work115/htsujino/ERA-40/org_data/era40_anl_surf_@nyear@.nc',
+  file_out_tmp_year='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_tmp2m.@nyear@'
+  file_out_tmp_s1='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_tmp2m.@nyear@010100'
+  file_out_tmp_s2='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_tmp2m.@nyear@010106'
+  file_out_tmp_e1='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_tmp2m.@nyear@123118'
+  file_out_sph_year='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_sph2m.@nyear@'
+  file_out_sph_s1='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_sph2m.@nyear@010100'
+  file_out_sph_s2='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_sph2m.@nyear@010106'
+  file_out_sph_e1='/work115/htsujino/ERA-40/grads_6hourly_v2/era40_sph2m.@nyear@123118'
+&end

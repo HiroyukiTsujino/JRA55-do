@@ -1,0 +1,20 @@
+&nml_blend_iabp_anl
+  file_tmp2m='/work116/htsujino/JRA-55-MONTHLY/jra-org-grid/anl/tmp2m.@yyyymm@'
+  file_ice='/work116/htsujino/JRA-55-MONTHLY/jra-org-grid/ice/ice.@yyyymm@'
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_blend_org='/work116/htsujino/JRA-55-MONTHLY/jra-org-grid/blend/tmp2m.@yyyymm@'
+  file_blend_latlon='/work116/htsujino/JRA-55-MONTHLY/jra-latlon/blend/tmp2m.@yyyymm@'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55.txt'
+  iiabp=360,
+  jiabp=180,
+  slon_iabp=0.5d0,
+  dlon_iabp=1.0d0,
+  slat_iabp=-89.5d0,
+  dlat_iabp=1.0d0,
+  undef4_iabp=-9.99e33
+  file_iabp='/work116/htsujino/IABP_NPOLES/grads/tair.@yyyymm@'
+/

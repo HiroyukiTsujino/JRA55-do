@@ -1,0 +1,90 @@
+&btro_vector_divergence
+  rval = -2.2524355e-3,
+  rrange = 1.e-8,
+  nx = 40,
+  ny = 40,
+/
+&btro_vector_divergence
+  rval = -1.2135722e-2,
+  rrange = 1.e-7,
+  nx = 40,
+  ny = 60,
+/
+
+&regrid_h2d_t2u
+  rval = -1.847e-2,
+  rrange = 1.e-4,
+  nx = 40,
+  ny = 40,
+&end
+&regrid_h2d_t2u_zero
+  nx = 40,
+  ny = 40,
+&end
+&regrid_h2d_t2u_one
+  nx = 40,
+  ny = 40,
+&end
+&gradient_h2d_dtdxu
+  rval = -1.2091e-11,
+  rrange = 1.e-14,
+  nx = 40,
+  ny = 40,
+&end
+&gradient_h2d_dtdxu_zero
+  nx = 40,
+  ny = 40,
+&end
+&gradient_h2d_dtdxu_one
+  nx = 40,
+  ny = 40,
+&end
+&gradient_h2d_dudxu
+  rval = 8.3882187e-5,
+  rrange = 1.e-9,
+  nx = 40,
+  ny = 40,
+&end
+&gradient_h2d_dudyu
+  rval = 3.700159e-5,
+  rrange = 1.e-9,
+  nx = 40,
+  ny = 40,
+&end
+
+&jcoast_read
+  rval = 318.e0,
+  rrange = 1.e-2,
+  nx = 40,
+&end
+
+&energy_w
+  rval = 1.789285e0,
+  rrange = 1.e-4,
+  nx = 40,
+  ny = 40,
+&end
+&energy_px
+  rval = 612817.1e0,
+  rrange = 1.e0,
+  nx = 40,
+  ny = 40,
+&end
+&energy_py
+  rval = 393782.1e0,
+  rrange = 1.e0,
+  nx = 40,
+  ny = 40,
+&end
+&energy_nablap
+  rval = 5.4100551e-2,
+  rrange = 1.e-6,
+  nx = 40,
+  ny = 40,
+&end
+&uabs_mean_calc
+  rval = 8.3432078e-2,
+  rrange = 1.e-6,
+  nx = 40,
+  ny = 40,
+&end

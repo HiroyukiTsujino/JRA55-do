@@ -1,0 +1,3 @@
+&dmlst imut = 4000, jmut = 4000, km = 1, ksgm = 0, kbbl = 0 &end
+&grlst slat0=20.01d0, slon0=115.01d0, dxtdgc=0.01d0, dytdgc=0.01d0, dztmp=4.d2, lsub=.false., lvariable=.false., lcyclic=.false., lspherical=.true., lfoldnp=.false. &end
+&iolst icalstr=2011,1,1,0,0,0, icalend=2011,1,1,0,0,0, icalint=0,0,1,0,0,0 &end

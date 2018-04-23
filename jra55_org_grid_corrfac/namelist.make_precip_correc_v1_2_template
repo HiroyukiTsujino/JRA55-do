@@ -1,0 +1,15 @@
+&nml_make_pcpcorrec
+  file_ref_base='@file_ref_base@.m',
+  undef4_ref=-9.99e33,
+  file_pcp_base='@fcst_clim@/prcp.@period_ref@.m',
+  undef4_jra=-9.99e33,
+  file_pcp_correc_org='../linkdir/forcing/jra55fcst_corrfac_v1_2_TL319r/prcp_corr.@period_trg@.dat',
+  file_pcp_correc_latlon='../linkdir/forcing/jra55fcst_corrfac_v1_2_TL319/prcp_corr.@period_trg@.latlon.dat',
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319'
+  file_ydef='../linkdir/data/lat_jra55_exact.txt'
+  corr_max=3.0d0,
+  corr_min=0.333333333333333d0,
+/

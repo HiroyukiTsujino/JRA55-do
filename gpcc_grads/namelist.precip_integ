@@ -1,0 +1,11 @@
+&nml_precip_integ
+  flnin_org1='../linkdir/GPCC/grads_monthly/precip.'
+  flnot_base1='../linkdir/GPCC/grads_integ/precip_med_mon.'
+  flnot_base2='../linkdir/GPCC/grads_integ/precip_med_ann.'
+  file_avail='../linkdir/GPCC/data/mask-1958_1996.gd'
+  file_mask='../linkdir/COBESST/data/med_mask.gd'
+  undef_in=-9.99e33,
+  undef_out=-9.99e33,
+  ibyr=1948,
+  ieyr=2009,
+&end

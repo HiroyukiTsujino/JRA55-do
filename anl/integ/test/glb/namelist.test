@@ -1,0 +1,84 @@
+&have_calc
+  dval = 3666.292857929914d0,
+  drange = 1.d-6,
+  nz = 1,
+&end
+&mean_calc
+  rval = 18660.69,
+  rrange = 1.e0,
+  nx = 40,
+  ny = 40,
+  nz = 1,
+&end
+&diff_mean_calc
+  rval = 2.71e-2,
+  rrange = 1.e-4,
+  nx = 40,
+  ny = 40,
+  nz = 1,
+&end
+&diff_calc
+  rval = -0.164e0,
+  rrange = 1.e-3,
+  nx = 40,
+  ny = 40,
+  nz = 1,
+&end
+
+&vave_calc
+  dval = 0.3840806621147979d0,
+  drange = 1.d-8,
+&end
+
+&integ_area_t_2d
+  dval = 5.283940766836e18,
+  drange = 1.e8,
+&end
+&integ_area_t_one
+  dval = 3.645900026810e18,
+  drange = 1.e8,
+&end
+&integ_area_u_2d
+  dval = 3.170384815473e23,
+  drange = 1.e13,
+&end
+&integ_area_u_one
+  dval = 3.650961439231e18,
+  drange = 1.e8,
+&end
+&integ_vol_u
+  dval = 5.1647569777866674d23,
+  drange = 1.e13,
+&end
+&integ_vert_t
+  dval = 379082.0234179199d0,
+  drange = 1.d-6,
+  nx = 40,
+  ny = 40,
+&end
+&integ_vert_t
+  dval = 429708.3992987871d0,
+  drange = 1.d-6,
+  nx = 50,
+  ny = 40,
+&end
+
+&runmean_calc
+  rval = -144.2558,
+  rrange = 1.e-2,
+  nx = 40,
+  ny = 40,
+  nz = 1,
+&end
+
+&barotropic_ke_vol_calc
+  dval = 3.2660737922545996d-3,
+  drange = 1.d-15,
+&end
+
+&integ_vert__calc
+  dval = 379082.0234179199d0,
+  drange = 1.d-6,
+  nx = 40,
+  ny = 40,
+&end

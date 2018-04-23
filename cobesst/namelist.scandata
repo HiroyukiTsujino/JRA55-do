@@ -1,0 +1,7 @@
+&nml_scandata
+  file_base='/work116/htsujino/COBESST/daily/grads/sst-glb.'
+  file_topo='/work116/htsujino/COBESST/data/topo-cobesst.d'
+  file_mask='/work116/htsujino/COBESST/data/cobesst-mask.gd'
+  file_of_namelist='NAMELIST.MXE.COBESST.daily'
+  undef_data=9.999e20
+&end

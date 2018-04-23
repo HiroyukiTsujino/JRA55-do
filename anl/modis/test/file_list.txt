@@ -1,0 +1,1 @@
+../../linkdir/mxe/modis/A2GL11105310443OD1_OSTAQ_01000_01000_sst_05

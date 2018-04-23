@@ -1,0 +1,13 @@
+&snap_convert
+  rval = 25.01999e0,
+  rrange = 1.e-3,
+  nx = 1697,
+  ny = 1023,
+&end
+
+&mean_convert
+  rval = 25.01999e0,
+  rrange = 1.e-3,
+  nx = 1697,
+  ny = 1023,
+&end

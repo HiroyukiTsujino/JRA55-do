@@ -1,0 +1,7 @@
+&nml_precipcorrmon
+  flnin1_base='/work116/htsujino/CORE/core_T62_clim/prcp_1979_2009.m'
+  undef_ref=-9.99e33,
+  flnin4_base='/work116/htsujino/GPCP-v2_3/grads_monclim_T62/precip_1979_2009.m'
+  undef_raw=-9.99e33,
+  flnot1='/work116/htsujino/GPCP-v2_3/grads_monclim_corrfac_T62/prcp_mag_mon_gpcp2core.dat'
+&end

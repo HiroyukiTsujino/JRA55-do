@@ -1,0 +1,6 @@
+&nml_total_runoff
+  fl_in_base='/worke/htsujino/RUNOFF_YOSHIMURA/merge_1/rivout',
+  dir_out='result_m1',
+  ibyr=1981,
+  ieyr=2013
+/

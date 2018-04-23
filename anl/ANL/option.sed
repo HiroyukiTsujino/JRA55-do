@@ -1,0 +1,26 @@
+#s/@JOT@/-DOGCM_JOT/
+ s/@JOT@//
+
+ s/@TRIPOLAR@/-DOGCM_TRIPOLAR/
+#s/@TRIPOLAR@//
+
+#s/@SPHERICAL@/-DOGCM_SPHERICAL/
+ s/@SPHERICAL@//
+
+#s/@PLANE@/-DOGCM_PLANE/
+ s/@PLANE@//
+
+ s/@CYCLIC@/-DOGCM_CYCLIC/
+#s/@CYCLIC@//
+
+ s/@VARIABLE@/-DOGCM_VARIABLE/
+#s/@VARIABLE@//
+
+ s/@BBL@/-DOGCM_BBL/
+#s/@BBL@//
+
+# s/@SUB@/-DOGCM_SUB/
+s/@SUB@//
+
+ s/@Y365D@/-DOGCM_Y365D/
+#s/@Y365D@//

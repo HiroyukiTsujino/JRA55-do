@@ -1,0 +1,12 @@
+ &nml_moncl
+  imax=640,
+  jmax=320,
+  kmax=3,
+  infile_base='/worke/htsujino/CORE/core_jra55_monthly/dswrf.'
+  undef_in=-1.0e34
+  outfile_base='/worke/htsujino/CORE/core_jra55_clim/dswrf_1984_2007.m'
+  undef_out=-9.99e33
+  nbyr=1984
+  neyr=2007
+  klev=1
+ &end

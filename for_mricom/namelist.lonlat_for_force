@@ -1,0 +1,9 @@
+&nml_lonlat_force
+ l_xlinear=.true.,
+ imut=640,
+ xstart=0.0d0,
+ dx=0.5625d0,
+ l_ylinear=.false.,
+ file_ydef="lat_jra55_exact.txt"
+ file_grid="jra55_surf_grid.dat"
+&end

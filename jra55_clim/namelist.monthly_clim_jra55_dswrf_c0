@@ -1,0 +1,12 @@
+ &nml_moncl
+  imax=640,
+  jmax=320,
+  kmax=3,
+  infile_base='/work116/htsujino/SURF_FLUX/forcing/jra_monthly/dswrf.'
+  undef_in=9.999e20
+  outfile_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/dswrf_1984_2007.m'
+  undef_out=-9.99e33
+  nbyr=1984
+  neyr=2007
+  klev=1
+ &end

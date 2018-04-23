@@ -1,0 +1,9 @@
+&nml_curltau
+  flinx='../linkdir/forcing/jra_cobesst_monthly/taux.201501',
+  fliny='../linkdir/forcing/jra_cobesst_monthly/tauy.201501',
+  irecx=1,
+  irecy=1,
+  l_units_cgs=.false.,
+  l_nohalo_cyclic=.true.
+  flout='../linkdir/forcing/jra_cobesst_monthly/hcurl.201501'
+/

@@ -1,0 +1,14 @@
+ &nml_heat_diag
+   ftopo='data_core2g/topo.d',
+   fgrid='data_core2g/vgrid.d',
+   fscale='data_core2g/scale_factor.d',
+   fbasmap='data_core2g/basin_map.gd',
+   flnin_org1='annual_mean_core2g/hs_q_sice.',
+   flnot_base2='annual_mean_core2g/merid_ht_sice.',
+   flnot_base3='annual_mean_core2g/hs_q_sice_ave.',
+   ibyr=2141,
+   ieyr=2200,
+   jmug=181,
+   delt_latg=1.d0,
+   strt_latg=-90.d0
+&end

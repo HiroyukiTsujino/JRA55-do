@@ -1,0 +1,40 @@
+&nml_anmdata
+  file_namelist_anm='NAMELIST.MXE.JRA55',
+  anm_base_dir='../linkdir/forcing/jra55fcst_corrfac_v7_prod3_TL319'
+  fin_base_tanm='tmp10m_correc',
+  fin_base_qanm='sph10m_correc',
+  file_first_anm=1958,1,1,0,0,0,
+  file_intv_type_anm=2,
+  file_intv_anm=1,
+  total_rec_anm=1,
+  data_intv_sec_anm=-1,
+  anm_first=1958,1,16,12,0,0,
+  undef_anm=-9.99e33
+  l_ymdir_anm=.false.
+&end
+
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.JRA55',
+  srf_base_dir='../linkdir/forcing/jra55fcst_v7_prod3_3hr_TL319'
+  fin_base_sat='tmp10m',
+  fin_base_sph='sph10m',
+  file_first_srf=1958,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1958,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  alt_sat=10.0d0,
+  alt_sph=10.0d0,
+&end
+
+&nml_calib_satsph
+  calc_start=1958,1,1,0,0,0,
+  calc_end=1979,1,1,0,0,0, 
+  l_leap_valid=.true.,
+  calib_base_dir='../linkdir/forcing/jra55fcst_v7_prod4_3hr_TL319'
+  fout_base_sat='tmp10m',
+  fout_base_sph='sph10m',
+&end

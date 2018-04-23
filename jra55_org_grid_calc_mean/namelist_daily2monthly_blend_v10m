@@ -1,0 +1,9 @@
+&nml_day2mon
+  iyst=1979,
+  imst=1,
+  iyed=1998,
+  imed=12,
+  item_name='sph2m'
+  in_base_dir='../linkdir/forcing/jra_daily_org_e2',
+  out_base_dir='../linkdir/forcing/jra_monthly_org_e2',
+&end

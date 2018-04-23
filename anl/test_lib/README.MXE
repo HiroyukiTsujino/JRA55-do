@@ -1,0 +1,8 @@
+README
+
+ライブラリLIBMXEの検証用ツール。
+テストにはFRUIT(Fortran Unit Test Framework)を利用している。
+
+  test_all.sh  : テスト実行用スクリプト
+  *_driver.F90 : test driver
+  *_test.F90   : test module

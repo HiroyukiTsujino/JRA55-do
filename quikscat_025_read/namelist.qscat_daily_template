@@ -1,0 +1,5 @@
+ &nml_qscat_daily
+   l3_file='%level3_file%'
+   file_out='%wind_grads%'
+   undef_out=%undef%
+ &end

@@ -1,0 +1,11 @@
+ &nml_merge_rad
+   flnin1='/worke/htsujino/CORE/core_monthly_calib/d@itemc@_1984_2007.m@mon@'
+   flnin2='/worke/htsujino/SRB/rel3.0_lpsa_lpla/grads/srb_@items@_3_0_1984_2007.m@mon@'
+   flnot='/worke/htsujino/CORE_SRB/3_0/core_srb_@items@_3_0_1984_2007.m@mon@'
+   undef_in1=-9.99e33,
+   undef_in2=-9.99e33,
+   l_apply_mask=.false.,
+   undef_out=-9.99e33,
+   low_trans=65.0d0,
+   high_trans=70.0d0,
+ &end

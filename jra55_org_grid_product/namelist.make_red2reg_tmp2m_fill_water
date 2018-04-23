@@ -1,0 +1,12 @@
+&nml_make_red2reg
+  file_in='../linkdir/forcing/jra_anl_org/200001/tmp2m.2000010100'
+  file_latlon='../linkdir/forcing/jra_anl_latlon/200001/tmp2m.2000010100'
+  l_out_weight=.true.
+  file_weight='../linkdir/forcing/jra_anl_latlon/200001/tmp2m_weight.2000010100'
+  file_table='../linkdir/data/red2reg_fill_with_water.d'
+  imut=640,
+  jmut=320,
+  grid_name='TL319'
+  undef4_in=9.999e20,
+  undef4_out=9.999e20,
+/

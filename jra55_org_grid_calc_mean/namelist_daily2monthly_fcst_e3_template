@@ -1,0 +1,9 @@
+&nml_day2mon
+  iyst=@iyst@,
+  imst=@imst@,
+  iyed=@iyed@,
+  imed=@imed@,
+  item_name='@item@'
+  in_base_dir='/work115/htsujino/SURF_FLUX/forcing/jra_daily_org_e3',
+  out_base_dir='/work115/htsujino/SURF_FLUX/forcing/jra_monthly_org_e3',
+&end

@@ -1,0 +1,8 @@
+&nml_gpcc
+  file_in='/work/a/htsujino/GPCC/rawdata/precip.mon.nobs.1x1.v7.nc',
+  file_out_base='/work/a/htsujino/GPCC/grads_monthly',
+  ibyr=1901,
+  ieyr=2013,
+  var_in='precip',
+  var_out='nobs', 
+&end

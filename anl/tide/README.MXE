@@ -1,0 +1,31 @@
+README
+
+潮汐実験の解析
+
+
+==== Fortran program ====
+
+energy.F90
+  線形順圧潮汐場のエネルギー解析 (Eq.(1) in Egbert and Ray, 2003)
+
+uabs_mean.F90
+  順圧流の流速絶対値の時間平均
+
+cap_jcoast.F90
+  日本沿岸潮位と比較し、潮位変動捕捉率を計算する
+
+
+
+==== Fortran module ====
+
+regrid.F90
+  異なるグリッド間で配列の補間を行う
+
+gradient.F90
+  空間勾配を計算する
+
+jcoast.F90
+  日本沿岸潮位データを読み込む
+
+map.F90
+  地図に関する作業を行う

@@ -1,0 +1,15 @@
+&nml_merge_cama_core
+  file_namelist_cama='NAMELIST.MXE.GLBRIVER',
+  file_namelist_core='NAMELIST.MXE.RUNOFF_CORE',
+  l_leap_valid=.true.,
+  file_mask_cama='/worke/htsujino/RUNOFF_YOSHIMURA/mask_poles.gd',
+  file_mask_core='/worke/htsujino/CORE/data/runoff_mask_green.gd',
+  ibyr=1981,
+  ieyr=2013,
+  riv_cama_base='/worke/htsujino/RUNOFF_YOSHIMURA/calib_0/rivout',
+  riv_core_base='/worke/htsujino/CORE/core_monthly/runoff.',
+  data_intv_sec_cama=86400,
+  undef_in_cama=0.0,
+  undef_in_core=0.0,
+  riv_out_base='/worke/htsujino/RUNOFF_YOSHIMURA/merge_1/rivout',
+&end

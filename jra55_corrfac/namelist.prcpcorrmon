@@ -1,0 +1,8 @@
+&nml_precipcorrmon
+  flnin1_base='/work116/htsujino/SURF_FLUX/forcing/core_jra55_clim/prcp_1979_2008.m'
+  undef_obs=-9.99e33,
+  flnin4_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/prcp_1979_2008.m'
+  undef_jra=-9.99e33,
+  file_mask_jra='/work116/htsujino/SURF_FLUX/data/jra55_ocean_mask.gd'
+  flnot1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/prcp_mag_mon.dat'
+&end

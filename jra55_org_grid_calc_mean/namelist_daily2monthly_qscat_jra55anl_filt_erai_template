@@ -1,0 +1,9 @@
+&nml_day2mon
+  iyst=@iyst@,
+  imst=@imst@,
+  iyed=@iyed@,
+  imed=@imed@,
+  item_name='@item@'
+  in_base_dir='../linkdir/forcing/qscat_jra55anl_filt_erai_daily_TL319r',
+  out_base_dir='../linkdir/forcing/qscat_jra55anl_filt_erai_monthly_TL319r',
+&end

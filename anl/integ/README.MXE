@@ -1,0 +1,43 @@
+README.MXE
+
+MRI.COM history データの積分や平均を行う。
+
+See sample shell scripts (sample/).
+
+
+
+==== Fortran program (src/) ====
+
+diff_ctl.F90
+    2つのデータの差
+
+diff_mean_ctl.F90
+    2つのデータの差を時間平均
+    operate="square" とすると差を2乗して平均する
+
+have_ctl.F90
+    水平平均
+    オプションでマスク配列を指定できる。
+    マスク配列を作るサンプル・プログラム: sample/mask.F90
+    オプションoperateを"square"とすると2乗して水平平均する
+
+integ_vert_ctl.F90
+    vertical integration
+
+mean_ctl.F90
+    時間平均
+    operate="square" とすると値を2乗して平均する
+
+runmean_ctl.F90
+    時間移動平均
+
+vave_ctl.F90
+    体積平均
+
+
+
+
+==== Fortran module ====
+
+integ.F90
+    空間積分のサブルーチン群

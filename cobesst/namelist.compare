@@ -1,0 +1,11 @@
+&nml_compare
+  file_base_cobe='/work116/htsujino/COBESST/monthly/yyyymm/sst-glb.'
+  file_base_ref='/work116/htsujino/Hurrell_SST_ICE/monthly/grads/sst-glb.'
+  file_out='/work116/htsujino/COBESST/clim/sst_vs_hurrell.1981-2010.gd',
+  file_of_namelist='NAMELIST.MXE.COBESST.ocean_annual',
+  undef_cobe=-9.99e33,
+  undef_ref=-9.99e33,
+  undef_out=-9.99e33,
+  ibyr=1981,
+  ieyr=2010
+&end

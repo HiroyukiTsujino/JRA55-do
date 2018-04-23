@@ -1,0 +1,6 @@
+&nml_org2mon
+  iyst=1959,
+  iyed=2014,
+  in_base_dir='/work116/htsujino/SURF_FLUX/forcing/jra_latlon',
+  out_base_dir='/work116/htsujino/SURF_FLUX/forcing/jra_monthly',
+&end

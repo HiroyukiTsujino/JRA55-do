@@ -1,0 +1,38 @@
+README.MXE
+
+Calculate meridional overturning stream function of resolved velocity
+on the latitude-depth plane.
+
+This is a modified version of anl/ANL/HS2MOC.
+
+See sample shell scripts (sample/).
+
+==== Fortran program (src/) ====
+
+moc_depth.F90: main program
+param_mxe.F90 -> ../../wrapper_ANL/param_mxe.F90
+structure_mxe.F90 -> ../../wrapper_ANL/structure_mxe.F90
+
+namelist /nml_moc_dep/ 
+  flin_u       : X-ward velocity (3D, U-points) (input)
+  flin_v       : Y-ward velocity (3D, U-points) (input)
+  flin_ssh     : Sea Surface Height             (input)
+  flout        : Meridional Overturning Stream Function (output)
+  l_read_basin : (T/F) read basin index
+  flibas       : file name of basin index (U-points, required if l_read_basin = .true.)
+  basin_index  : basin index  (required if l_read_basin = .false.)
+               : 1:ATL, 2:PAC, 3:IND, 4:MED, 9:SO
+  l_exclude    : (T/F) specify the region where the transport is NOT included into zonal integration
+               :   intented for use in PARENT model of nesting
+  file_exclude : file name of mask data (2D,U-points) unity to exclude, zero to include ... land-sea mask will be multplied
+               : required if l_exclude = .true.
+  l_specify    : (T/F) specify the region where the transport is included into zonal integration
+               :   intented for use in CHILD model of nesting
+  file_specify : file name of mask data (2D,U-points) unity to exclude, zero to include ... land-sea mask will be multplied
+               : required if l_specify = .true.
+  l_check_used : (T/F) check grid points used for zonal integration
+  file_check_used : file name of the count accessed for zonal integration (2D,U-points) 
+               : required if l_check_used = .true.
+  slatg        : southern end latitude of the MOC calculation 
+  elatg        : northern end latitude of the MOC calculation 
+  dlatg        : latitudinal interval ... the number of grid points are automatically determined

@@ -1,0 +1,199 @@
+JRA55-do-suppl:
+========
+
+Supplementary data for
+JRA-55 based surface dataset for driving ocean - sea-ice models (JRA55-do)
+
+
+General Description
+--------
+
+  Supplementary data are provided in subdirectories.
+
+
+jra55_brtmp
+--------
+
+* Brightness temperature
+
+  - Filename: brtmp.YYYY.01Jul2016.nc
+  - First data represents: Snap shot at 00:00 GMT of 1 Jan
+  - netCDF variable name: ts
+  - Units: K
+  - NOTE: According to the handbook of JRA-55,
+       "In JRA-55 products, SST is output as brightness temperature
+        in the two-dimensional instantaneous diagnostic fields."
+        Original data on the reduced TL319 grid are linearly
+        interpolated in the zonal direction to the normal TL319 grid.
+
+jra55_ice
+--------
+
+* Ice area fraction (0 or 1)
+
+  - Filename: ice.YYYY.01Jul2016.nc
+  - First data represents: Snap shot at 00:00 GMT of 1 Jan
+  - netCDF variable name: ice
+  - Units: 1
+  - NOTE: Original JRA-55 does not treat fractional distribution
+          of ice within a grid cell (area fraction value is either
+          0 or 1). Thus, linear interpolation in the zonal
+          direction is not applied to ice distribution
+          for computing values on the normal lat-lon TL319 grids.
+          The value at a regular lat-lon grid is taken from
+          the nearest reduced grid. For the middle point between
+          the reduced grids, the value of the western side is taken.
+
+jra55_grid
+--------
+
+* Land-Sea mask (1) (Taken from original JRA-55)
+
+  - Filename: jra55_mask_org.30Jun2016.nc
+  - netCDF variable name: water
+
+
+* Land-Sea mask (2) (Inland seas/lakes of original JRA-55 data are buried manually)
+
+  - Filename: jra55_mask_sea.30Jun2016.nc
+  - netCDF variable name: sea
+
+
+* Grid cell area of TL319 grid on which atmospheric data are placed
+
+  - Filename: jra55_cell_area.30Jun2016.nc
+  - netCDF variable name: areacella
+  - Units: m^2
+
+
+* Longitude/Latitude of four corner points of a grid cell
+
+  - Filename: jra55_corner_points.30Jun2016.nc
+  - netCDF variable name:
+      - southwest corner: (longitude_sw, latitude_sw)
+      - southeast corner: (longitude_se, latitude_se)
+      - northwest corner: (longitude_nw, latitude_nw)
+      - northeast corner: (longitude_ne, latitude_ne)
+  - Units: degrees east for longitude, degrees north for latitude
+
+
+runoff (on 0.25x0.25 grid)
+--------
+
+* Fresh water transport from land to the ocean except for Greenland and Antarctica
+
+  - Filename: runoff_CaMaFlood.YYYY.15Dec2016.nc
+  - Time interval is daily. First data represents 12:00 GMT of 1 Jan
+  - netCDF variable name: friver
+  - Units: kg/m2/s
+  - Note: Runoff from Greenland and Antarctica is set to zero.
+
+
+* Fresh water transport from Greenland to the ocean (Bamber et al. 2012)
+
+  - Filename: runoff_greenland_clim_365dy.15Dec2016.nc (for normal year)
+  - Filename: runoff_greenland_clim_366dy.15Dec2016.nc (for leap year)
+  - Daily data based on the monthly climatology of 1961-1990.
+       Original data is provided by the courtesy of Prof. J. Bamber of Bristol University.
+  - netCDF variable name: friver
+  - Units: kg/m2/s
+
+
+* Fresh water transport from Antarctica to the ocean (Depoorter et al. 2013)
+
+  - Filename: runoff_antarctica_basal_melt_clim.YYYY.15Dec2016.nc   (representing liquid run-off)
+              runoff_antarctica_calving_flux_clim.YYYY.15Dec2016.nc (representing solid run-off)
+  - Annual mean climatology (Only one data in each file)
+  - netCDF variable name: friver
+  - Units: kg/m2/s
+
+
+* Grid cell area of 0.25x0.25 grid on which river run-off data are placed
+
+  - Filename: runoff_cell_area.15Dec2016.nc
+  - netCDF variable name: areacello
+  - Units: m^2
+
+
+
+COBESST (Ishii et al. 2005) (on 1x1 deg grid)
+--------
+
+* Sea surface temperature
+
+  - Filename: sst.COBESST.YYYY.05Mar2017.nc
+  - First data represents: 12:00 GMT of 1 Jan
+  - netCDF variable name: tos
+  - Units: degree Celsius
+
+
+* Ice area fraction
+
+  - Filename: ice.COBESST.YYYY.05Mar2017.nc
+  - First data represents: 12:00 GMT of 1 Jan
+  - netCDF variable name: ice
+  - Units: 1
+
+woa13v2 (on 0.25x0.25 grid)
+--------
+
+* Reference data for sea surface salinity restoring
+
+  - Filename: woa13_decav_s_0-10m.mon_01v2.nc
+
+     Reference data for sea surface salinity restoring
+     as average of 0 m, 5 m, 10 m (with weights 0.25, 0.5, 0.25)
+     data of WOA13v2.
+
+
+  - Filename: woa13_decav_s_0-10m.mon_01v2_fill.nc
+
+     Land-filled data of the above
+
+
+programs
+--------
+
+  - bulk_ncar.F90
+     Subroutine to compute surface fluxes based on
+     the bulk formula of Large and Yeager (2004; 2009)
+
+
+History
+--------
+
+* June 2016
+
+  - first release of data
+
+* December 2016
+
+  - Three sources of river runoff data (Main, Greenland, Antarctica)
+    as well as grid cell area for runoff data
+
+* June 2017
+
+  - Main river runoff data is extended to 31Mar2017
+
+* August 2017
+
+  - brightness temperature and ice area fraction are extended to 19Feb2017
+
+* August 2017
+
+  - SST and ice area fraction from COBESST (01Jan1947-21Feb2017)
+
+* September 2017
+
+  - Subdirectories are created so that users can easily find the files they wish to get.
+  - Put a program of flux computation based on the bulk formula of Large and Yeager (2004;2009).
+
+
+Development
+--------
+
+* Ocean model developing group, 
+  Oceanography and Geochemistry Research Department,
+  JMA Meteorological Research Institute
+
+* Questions/Comments : Hiroyuki Tsujino (htsujino@mri-jma.go.jp)

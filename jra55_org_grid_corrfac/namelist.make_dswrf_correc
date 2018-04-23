@@ -1,0 +1,13 @@
+&nml_make_radcorrec
+  file_ref_base='../linkdir/CERES/grads_clim/swdn_seaice_tropics_filter.@period_ref@.m'
+  undef4_ref=-9.99e33,
+  file_rad_base='@fcst_clim@/dswrf.@period_ref@.m',
+  undef4_jra=-9.99e33,
+  file_rad_correc_org='../linkdir/forcing/jra55fcst_corrfac_v7_TL319r/dswrf_corr.@period_trg@.dat'
+  file_rad_correc_latlon='../linkdir/forcing/jra55fcst_corrfac_v7_TL319/dswrf_corr.@period_trg@.latlon.dat'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='../linkdir/data/lat_jra55_exact.txt'
+/

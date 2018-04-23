@@ -1,0 +1,15 @@
+&nml_sverdrup_function
+ file_mask='../jra55_topo/jra55_wind_sv.gd',
+ file_u_base='../linkdir/forcing/jra55fcst_v1_3_prod1_monthly_TL319/taux.',
+ file_v_base='../linkdir/forcing/jra55fcst_v1_3_prod1_monthly_TL319/tauy.',
+ file_out_base='../linkdir/forcing/jra55fcst_v1_3_prod1_monthly_TL319/sverdrup.',
+ undef_in=-9.99e33,
+ undef_out=-9.99e33,
+ nbyr=1999,
+ neyr=2009,
+ lon_start=120.0d0,
+ lat_start=-10.0d0, 
+ lat_end=55.d0,
+ l_nohalo_cyclic=.true.,
+ l_out_latlon=.true.
+/

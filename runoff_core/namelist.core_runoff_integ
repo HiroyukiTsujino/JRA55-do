@@ -1,0 +1,5 @@
+&nml_core_runoff_integ
+  fl_in='/workc/ocpublic/refdata/CORE/COREv2/ciaf/orgdata/runoff.daitren.iaf.10FEB2011.nc',
+  ibyr=1948,
+  ieyr=2007
+&end

@@ -1,0 +1,7 @@
+&nml_org2mon
+  iyst=1958,
+  iyed=2014,
+  item_name='@item@',
+  in_base_dir='../linkdir/forcing/jra_latlon_c1',
+  out_base_dir='../linkdir/forcing/jra_monthly_c1',
+&end

@@ -1,0 +1,377 @@
+%
+%
+%
+\documentclass[a4j]{jarticle}
+\usepackage[dvips]{graphics}
+\usepackage{makeidx}
+\usepackage{ascmac}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{latexsym}
+%
+% ページ設定
+%
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{16cm}
+\setlength{\voffset}{-0.7cm}
+\setlength{\oddsidemargin}{0.5cm}
+\setlength{\evensidemargin}{-0.5cm}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%
+% マクロ
+%
+\input{macromricom}
+
+\title{非緯度-経度座標格子モデルにおける双方向格子変換について}
+\author{辻野博之（海洋・地球化学研究部 第一研究室）}
+
+\begin{document}
+
+\maketitle
+
+\pagestyle{plain}
+
+\section{背景}
+
+全球海洋モデルにおいては、北極点の特異点問題を解消するため、極を陸上に配置するような座標系を設定している。これにより、モデル計算を安定的に進めるために行っていた特殊な処理をしなくても済むようになったが、モデル結果は歪んだ格子上に表現されることになったため、結果の解釈やさらに進んだ解析の妨げとなっている面があった。それに対して、緯度経度データを非緯度経度の格子に内挿するためのツールはモデルの実行上必要であったために整備されていたが、その逆、非緯度経度格子のモデル座標から緯度経度格子への変換ツールの整備状況は貧弱であった。
+
+\textsc{Mri.Com}\footnote{\texttt{ocsv001:/home/ocpublic/repos/MRICOM.git}} の全球モデル解析用に整備されている \textsc{Anl} ツール\footnote{\texttt{ocsv001:/home/ocpublic/repos/ANL.git}}にこれらの双方向変換を行うツールの一部を整備した。この文書はその解説である。実際の需要に迫られて作業を行う際に順次拡充を行っていく予定である。
+
+\section{緯度経度格子データの非緯度経度海洋モデル格子への補間}
+
+緯度経度格子データの非緯度経度海洋モデル格子への補間は、モデルのインプットデータの作成の際などに必要となる。\textsc{Anl}ツールに
+\begin{itemize}
+\item スカラーデータ: \texttt{ANL/MAP\_SCALAR/map\_scalar.F90}
+\item ベクトルデータ: \texttt{ANL/MAP\_VECTOR/map\_vector.F90}
+\end{itemize}
+を整備した。スカラーデータについては双1次補間、ベクトルデータについては、双3次補間を行うプログラムが用意されている。どちらもフラックス等の完全な保存を保証できないため、河川データなど、保存を保証する必要のあるデータの補間には \textsc{Mxe}\footnote{\texttt{ocsv001:/home/ocpublic/repos/MXE.git}} に整備されたツール（\verb|MXE/prep/river|）を使用すること推奨している。
+
+\subsection{双1次補間によるスカラーデータの補間}
+\subsubsection{考え方}
+
+スカラー値を求めたいモデル格子（Fig.~\ref{fig:bilin1} の×）の緯度経度を求め、その点を囲む緯度経度座標データの４点（Fig.~\ref{fig:bilin1} の●）を求める。この４点によって長方形が形成されている（緯度経度格子が等方的である）と仮定して、モデル格子点における値を４点を使用した重みによって求める。つまり、
+\begin{equation}
+ s = a_1 d_1 + a_2 d_2 + a_3 d_3 + a_4 d_4
+\end{equation}
+と表現され、
+\begin{align}
+  a_1 =& (x_2-x_t)/(x_2-x_1) \times (y_3-y_t)/(y_3-y_1) \\
+  a_2 =& (x_t-x_1)/(x_2-x_1) \times (y_4-y_t)/(y_4-y_2) \nonumber \\
+  a_3 =& (x_4-x_t)/(x_4-x_3) \times (y_t-y_1)/(y_3-y_1) \nonumber \\
+  a_4 =& (x_t-x_3)/(x_4-x_3) \times (y_t-y_2)/(y_4-y_2) \nonumber \\
+  x_1 =& x_3, \,\, x_2=x_4, \,\, y_1 = y_2, \,\, y_3 = y_4 
+\end{align}
+である。
+
+\begin{figure}[h]
+\begin{center}
+%  \resizebox{13cm}{!}{\includegraphics{procedure.eps}}
+  \resizebox{5cm}{!}{\includegraphics{bilinear.eps}}
+\end{center}
+\caption{双1次補間によるスカラーデータの補間}
+\label{fig:bilin1}
+\end{figure}
+
+\subsubsection{プログラムの使用法}
+
+\begin{description}
+ \item[プログラム名] \texttt{ANL/MAP\_SCALAR/map\_scalar.F90}
+ \item[機能] スカラー量の 緯度・経度格子 ⇒ 一般直交座標海洋モデルへの変換
+  既存の変換テーブルを読み込むか、bi-linear 補間を行なう。
+ \item[実行スクリプト例] \texttt{ANL/MAP\_SCALAR/map\_scalar.sh}
+ \item[注意点] CMIP5 で使用した scup 変換テーブルを用いるときは、コンパイル時に CPP オプション \verb|OGCM_CMIP5| を指定してください（\verb|Makefile| 参照）。
+\end{description}
+
+実行スクリプトにおいて、以下の namelist を指定する必要がある。
+\begin{verbatim}
+  namelist /nml_map_scl/
+    l_read_table: テーブルを新たに作成する(.true.)か否か(.false.)
+    file_rmp_table: テーブルファイル名（scup タイプ）
+    idiv: 格子分割によるテーブルを作成する際、海洋格子を X 方向に idiv 分割する。
+    jdiv: 格子分割によるテーブルを作成する際、海洋格子を Y 方向に jdiv 分割する。
+         （現在のところ、格子分割による変換手法はサポートされていない。）
+    sph_grid: 緯度・経度（大気モデル）格子名 ... gaussgrid.F90 のリストから指定する。
+    tuw: 海洋モデルの t (トレーサー)点, u (水平速度)点、w (鉛直速度)点へ変換する。
+         （現在のところ、トレーサー点(t)への内挿のみがサポートされている）
+    flin: インプットデータのファイル名
+    undef_in: インプットデータの未定義値
+    id_start: 処理したいデータの開始番号
+    id_end:   処理したいデータの終了番号
+    item_start: 処理を行うデータの開始番号
+    item_end:   処理を行うデータの終了番号
+    item_layer: 処理を行うデータの層数
+    item_total: 処理を行うデータ項目の総数
+    k_start: 処理する鉛直層の開始値
+    k_end: 処理する鉛直層の終了値
+    flout: アウトプットデータのファイル名
+    undef_out: アウトプットデータの未定義値
+    file_recv_area: 海洋格子で受け取った重みの合計を出力（チェック用）
+    fltopo: 海洋モデルの地形情報ファイル
+    flsclf: 海洋モデルの格子面積情報ファイル
+    flstdout: 実行ログの出力ファイル名
+\end{verbatim}
+
+海洋モデルが可変格子の場合（\verb|VARIABLE|）は、格子情報ファイルを指定する。
+\begin{verbatim}
+  namelist /inflg/ file_vgrid: 格子間隔情報ファイル(トレーサー点中心)
+\end{verbatim}
+
+\subsection{双3次スプライン補間によるベクトルデータの補間}
+\label{subsec:spline-s2m}
+\subsubsection{考え方}
+
+ベクトルを求めたいモデル格子点$(x_t,y_t)$（Fig.~\ref{fig:bicub1} の×）の緯度経度を求め、その点を囲む緯度経度座標データの４ｘ４＝１６点（Fig.~\ref{fig:bicub1} の●）を求める。ベクトルの座標変換には回転が伴う。補間を行うための双3次多項式自体は緯度経度座標上で求めるが、その前に使用する１６点のベクトルは座標変換後のモデル座標点におけるベクトルとなるように回転を行っておき、回転後のX成分、Y成分それぞれについて補間を行うことを考える。
+
+１６点は等方的な緯度経度格子上にあると仮定して、双3次多項式を、求めたいモデル格子点 $(x_t,y_t)$ を中心として、以下のように定義する。
+\begin{align}
+f(x,y)\, =& \, a_{01} (x-x_t)^3 (y-y_t)^3 + a_{02} (x-x_t)^3(y-y_t)^2 + a_{03} (x-x_t)^2 (y-y_t)^3 \label{eq:spline}\\
+    +& a_{04} (x-x_t)^3 (y-y_t) + a_{05} (x-x_t)^2 (y-y_t)^2 + a_{06} (x-x_t) (y-y_t)^3 \nonumber \\
+    +& a_{07} (x-x_t)^3 + a_{08} (x-x_t)^2(y-y_t) + a_{09} (x-x_t) (y-y_t)^2 + a_{10} (y-y_t)^3 \nonumber \\
+    +& a_{11} (x-x_t)^2 + a_{12} (x-x_t)(y-y_t) + a_{13} (y-y_t)^2 \nonumber \\
+    +& a_{14} (x-x_t) + a_{15} (y-y_t) + a_{16} \nonumber
+\end{align}
+この多項式が、$(x_t,y_t)$を囲む１６個の緯度経度座標データの格子点を通るものとして、係数 $(a_{01}, ... , a_{16})$ を求める、１６個の連立方程式をもとめることができる。
+\begin{equation}
+\mathbf{X} \mathbf{a} = \mathbf{d}
+\end{equation}
+ここで、$\mathbf{X}$ は式(\ref{eq:spline})にの右辺に各格子点座標値（経度・緯度）を代入することによって得られる係数、$\mathbf{a}=(a_{01}, ... , a_{16})$は多項式の係数、$\mathbf{d}=(d_{01},...,d_{16})$ は各格子における、実際のデータ値である。$\mathbf{X}$ の逆行列を求めることにより、$\mathbf{a}$ を求めることができる。
+\begin{equation}
+\mathbf{a} = (\mathbf{X}^{-1})^{T} \mathbf{d} \label{eq:solution}
+\end{equation}
+
+一方、モデル格子点$(x_t,y_t)$における式(\ref{eq:spline})の値は、
+\begin{equation}
+ f(x_t,y_t) = a_{16}
+\end{equation}
+となり、モデル格子点の値を求めるという目的に対しては、係数 $a_{16}$ を求めるだけで十分である。式(\ref{eq:solution})から、
+\begin{equation}
+ a_{16} = \sum_{n=1}^{16} X^{-1}_{(16,n)} d_n
+\end{equation}
+であるので、逆行列の成分 $X^{-1}_{(16,n)}$ が、データからモデル格子点値を求める際に使用する重みとなる。
+
+緯度経度座標上で定義されているn番目の点のベクトル$(u_n, v_n)$をモデル格子上のベクトル$(U_n,V_n)$として表現するための回転角を $\theta_n$ とすると、
+\begin{align}
+ U_n =& u_n \cos \theta_n - v_n \sin \theta_n \\
+ V_n =& u_n \sin \theta_n + v_n \cos \theta_n
+\end{align}
+となるので、
+\begin{align}
+ U = \sum_{n=1}^{16} X^{-1}_{(16,n)} U_n =& \sum_{n=1}^{16} X^{-1}_{(16,n)}(u_n \cos \theta_n - v_n \sin \theta_n) \\
+ V = \sum_{n=1}^{16} X^{-1}_{(16,n)} V_n =& \sum_{n=1}^{16} X^{-1}_{(16,n)}(u_n \sin \theta_n + v_n \cos \theta_n)
+\end{align}
+
+従って、プログラムにおける作業は以下のようになる。
+\begin{itemize}
+\item 4x4のデータ点で囲むことのできたモデル格子点においては、双3次スプラインの係数を求めるプログラムを作成し、この逆行列を求め、16列目の成分がデータに対する重みとする。
+\item 2x2のデータ点でしか囲むことができない場合は、双1次補間により求める。
+\item 有効なデータ点の外側にモデル格子がある場合は、真南や真北の緯度のデータが、モデル緯度のデータであるとして、経度方向の線形補間により求める。
+\end{itemize}
+
+\begin{figure}[h]
+\begin{center}
+%  \resizebox{13cm}{!}{\includegraphics{procedure.eps}}
+  \resizebox{6cm}{!}{\includegraphics{bicubic.eps}}
+\end{center}
+\caption{双3次スプライン補間によるベクトルデータの補間。モデル格子点の緯度経度$(x_t,y_t)$を求め、}
+ \label{fig:bicub1}
+\end{figure}
+
+\subsubsection{使用法}
+
+\begin{description}
+\item[プログラム] \verb|ANL/MAP_VECTOR/map_vector.F90|
+\item[機能] ベクトル量の 緯度・経度格子 ⇒ 一般直交座標海洋モデルへの変換
+  既存の変換テーブルを読み込むか、bi-cubic spline を行なう。
+\item[注意点] CMIP5 で使用した scup 変換テーブルを用いるときは、コンパイル時に CPP オプション \verb|OGCM_CMIP5| を指定してください（\verb|Makefile| 参照）。
+\item[実行スクリプト例] \verb|ANL/MAP_VECTOR/map_vector.sh|
+\end{description}
+
+実行スクリプトにおいて、以下の namelist を指定する必要がある。
+\begin{verbatim}
+  namelist /nml_map_vec/
+    l_read_table: テーブルを新たに作成する(.true.)か否か(.false.)
+    file_rmp_table: テーブルファイル名（scup タイプ）
+    idiv: 格子分割変換テーブルを作成する際、データ格子を X 方向に idiv 分割。
+    jdiv: 格子分割変換テーブルを作成する際、データ格子を Y 方向に jdiv 分割。
+    sph_grid: 緯度・経度格子名 ... gaussgrid.F90 のリストから指定する。
+    tuw: モデルの t (トレーサー)点, u (水平速度)点、w (鉛直速度)点に内挿。
+        （現在のところ、u点にのみ対応している）
+    flinu: インプットデータ(X成分ベクトル)のファイル名
+    flinv: インプットデータ(Y成分ベクトル)のファイル名
+    l_read_sep: X,Y 成分ベクトルを別ファイルから入力
+    id_start: 処理したいデータの開始番号
+    id_end:   処理したいデータの終了番号
+    undef_in: インプットデータの未定義値
+    itemu_start: 処理を行うデータ(X成分ベクトル)の１層目のレコード番号
+    itemv_start: 処理を行うデータ(Y成分ベクトル)の１層目のレコード番号
+    itemu_intv: 処理を行うデータ(X成分ベクトル)のレコードインターバル
+    itemv_intv: 処理を行うデータ(Y成分ベクトル)のレコードインターバル
+    k_start: 処理する鉛直層の開始値
+    k_end: 処理する鉛直層の終了値
+    floutu: アウトプットデータ(X成分ベクトル)のファイル名
+    floutv: アウトプットデータ(Y成分ベクトル)のファイル名
+    l_write_sep: X,Y 成分ベクトルを別ファイルに出力
+    undef_out: アウトプットデータの未定義値
+    file_recv_area: 変換の際海洋格子で受け取った重みの合計、平均 cos, sin 値を書き出す。
+    fltopo: 海洋モデルの地形情報ファイル
+    flsclf: 海洋モデルの格子面積情報ファイル
+    flstdout: 実行ログの出力ファイル名
+\end{verbatim}
+
+海洋モデルが可変格子の場合（\verb|VARIABLE|）は、格子情報ファイルを指定する。
+\begin{verbatim}
+  namelist /inflg/ file_vgrid
+\end{verbatim}
+
+\section{モデルデータの緯度経度格子への補間}
+
+モデルデータから緯度経度格子への変換は、モデルデータの図示の際などに必要となる。\textsc{Anl}ツールに
+\begin{itemize}
+\item スカラーデータ: \texttt{ANL/REMAP\_SCALAR/remap\_scalar.F90}
+\item ベクトルデータ: \texttt{ANL/REMAP\_VECTOR/remap\_vector.F90}
+\end{itemize}
+を整備した。スカラーデータについては格子分割による面積重みつき変換、ベクトルデータについては、格子分割による面積重みつき変換と双3次補間を行うプログラムが用意されている。
+
+\subsection{格子分割による面積重みつき変換によるスカラーデータの補間}
+
+\subsubsection{考え方}
+
+モデルの速度格子を例えば20x20の小格子に等分割し、その中心点の緯度経度を求め、緯度経度座標系の該当格子に面積の重みをつけたスカラー値を分配する。スカラー値は、トレーサー点で定義されたものであれば、4分割した速度格子のどの象限に属するかによって決め(Fig.~\ref{filtert})、速度点で定義されたものであればその値である(Fig.~\ref{filteru})。緯度経度格子では、受け取ったスカラー値を面積重みつき平均してその格子点におけるスカラー値とする。変換において、スカラーの積分値は保存される。
+
+\begin{figure}[h]
+\begin{center}
+%  \resizebox{13cm}{!}{\includegraphics{procedure.eps}}
+  \resizebox{7cm}{!}{\includegraphics{divided_lattice.eps}}
+\end{center}
+\caption{格子分割による面積重みつき変換によるスカラーデータ(トレーサー点)の補間。モデルの速度格子を分割して、緯度経度格子に分配する。分割された格子が保持するトレーサー値は分割格子が速度格子のどの象限に属するかで決まる。}
+ \label{filtert}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+%  \resizebox{13cm}{!}{\includegraphics{procedure.eps}}
+  \resizebox{7cm}{!}{\includegraphics{divided_lattice_u.eps}}
+\end{center}
+\caption{格子分割による面積重みつき変換によるスカラーデータ（速度点）の補間。速度格子を分割するため、分割された格子が保持するトレーサー値はすべて同じである。}
+ \label{filteru}
+\end{figure}
+
+\subsubsection{使用法}
+
+\begin{description}
+ \item[プログラム] \verb|remap_scalar.F90|
+ \item[機能] スカラー量の 一般直交座標海洋モデル ⇒ 緯度・経度格子への変換
+ \item[注意点] CMIP5 で使用した scup 変換テーブルを用いるときは、コンパイル時に CPP オプション \verb|OGCM_CMIP5| を指定する。\verb|Makefile| 参照
+ \item[実行スクリプト例] \verb|remap_scalar.sh|
+\end{description}
+
+実行時には、標準入力から以下の namelist を指定する。
+\begin{verbatim}
+  namelist /nml_rmp_scl/
+    l_read_table: 変換テーブルを読み込む(.true.)か新たに作成する(.false.)か否か。
+    file_rmp_table: テーブルファイル名（scup タイプ）
+    l_check_table: 変換をチェックする(.true.)か否か(.false.)
+    file_recv_area: 変換チェックの結果を書き出すファイル名
+    idiv: テーブルを作成する際、海洋格子を X 方向に idiv 分割する。
+    jdiv: テーブルを作成する際、海洋格子を Y 方向に jdiv 分割する。
+    sph_grid: 緯度・経度格子名 ... gaussgrid.F90 のリストから指定する。
+    tuw: 海洋モデル t (トレーサー)点, u (水平速度)点、w (鉛直速度)格子のスカラー量を変換
+    flin: インプットデータのファイル名
+    undef_in: インプットデータの未定義値
+    item_start: 処理を行うデータの１層目のレコード番号
+    k_start: 処理する鉛直層の開始値
+    k_end: 処理する鉛直層の終了値
+    flout: アウトプットデータのファイル名
+    undef_out: アウトプットデータの未定義値
+    file_recv_area: 緯度・経度格子で受け取った重みの合計を出力（チェック用）
+    fltopo: 海洋モデルの地形情報ファイル
+    flsclf: 海洋モデルの格子面積情報ファイル
+    flstdout: 実行ログの出力ファイル名
+\end{verbatim}
+
+海洋モデルが可変格子の場合（\verb|VARIABLE|）は、格子情報ファイルを指定する。
+
+\begin{verbatim}
+  namelist /inflg/ file_vgrid
+\end{verbatim}
+
+
+\subsection{ベクトルデータの変換}
+
+\subsubsection{格子分割による面積重みつき変換の考え方}
+
+基本的に速度点のスカラー値を変換する場合と同様である(Fig.~\ref{fig:filter_vector})。但しベクトルは座標変換時に回転する必要がある。ベクトルの回転角は、分割されたモデル小格子の中心点と、それに対応する緯度経度座標上の点における座標の回転に基づいて計算され、変換後の格子で面積重みつき平均を算出する前にベクトルの回転を行う。
+
+\begin{figure}[h]
+\begin{center}
+%  \resizebox{13cm}{!}{\includegraphics{procedure.eps}}
+  \resizebox{7cm}{!}{\includegraphics{divided_lattice_vec.eps}}
+\end{center}
+\caption{格子分割による面積重みつき変換によるベクトルーデータ（速度点）の補間。モデル格子（実線）におけるベクトル（太線）は、緯度経度格子（破線）においては、細い点線であらわされるX,Y方向成分であらわされる。この成分を持って、緯度経度格子に面積重みつきで分配される。}
+ \label{fig:filter_vector}
+\end{figure}
+
+\subsubsection{双3次スプライン補間(試作品)の考え方}
+
+基本的な考え方は Section \ref{subsec:spline-s2m} と同じである。最初にベクトルデータを求めたい緯度経度座標上の点のモデル格子における座標値を求める(Fig.~\ref{fig:bicubic_vector})。モデル上でこの点を囲む１６点が全て海でないと、双3次多項式を求めることができない。この条件が満たされないときは、双一次等を用いることになる。重みの計算はモデル座標上で行う。各モデル格子から、データを求めたい緯度経度座標上の点に変換される時の回転角を求め、重みに掛ける。
+
+\begin{figure}[h]
+\begin{center}
+%  \resizebox{13cm}{!}{\includegraphics{procedure.eps}}
+  \resizebox{7cm}{!}{\includegraphics{bicubic_vec.eps}}
+\end{center}
+\caption{双3次スプライン補間によるベクトルデータの変換。緯度経度格子$(x_t,y_t)$を一旦モデル格子に投影して、16点の重みを求める。}
+ \label{fig:bicubic_vector}
+\end{figure}
+%
+
+\subsection{使用法}
+
+\begin{description}
+ \item[プログラム] \verb|remap_vector.F90|
+ \item[機能] ベクトル量の 一般直交座標海洋モデル ⇒ 緯度・経度格子への変換
+ \item[注意点]　CMIP5 で使用した scup 変換テーブルを用いるときは、コンパイル時に CPP オプション \verb|OGCM_CMIP5| を指定する。\verb|Makefile| 参照
+ \item[実行スクリプト例] \verb|remap_vector.sh|
+\end{description}
+
+実行時には標準入力から以下の namelist を入力する。
+\begin{verbatim}
+  namelist /nml_rmp_vec/
+    l_read_table: 変換テーブルを読み込む(.true.)か新たに作成する(.false.)か否か。
+    l_area_weight: 格子分割を基本とする補間を行う。
+    l_bicubic_trn: 双３次スプラインを基本とする補間を行う。
+    file_rmp_table: テーブルファイル名（Scup タイプ）
+    l_check_table: 変換をチェックする(.true.)か否か(.false.)
+    file_recv_area: 変換チェックの結果を書き出すファイル名
+    idiv: テーブルを作成する際、海洋格子を X 方向に idiv 分割する。
+    jdiv: テーブルを作成する際、海洋格子を Y 方向に jdiv 分割する。
+    sph_grid: 緯度・経度格子名 ... gaussgrid.F90 のリストから指定する。
+    tuw: 海洋モデル t (トレーサー)点, u (水平速度)点、w (鉛直速度)格子のベクトルを変換
+    flinu: インプットデータ(X成分ベクトル)のファイル名
+    flinv: インプットデータ(Y成分ベクトル)のファイル名
+    undef_in: インプットデータの未定義値
+    itemu_start: 処理を行うデータ(X成分ベクトル)の１層目のレコード番号
+    itemv_start: 処理を行うデータ(Y成分ベクトル)の１層目のレコード番号
+    k_start: 処理する鉛直層の開始値
+    k_end: 処理する鉛直層の終了値
+    floutu: アウトプットデータ(X成分ベクトル)のファイル名
+    floutv: アウトプットデータ(Y成分ベクトル)のファイル名
+    undef_out: アウトプットデータの未定義値
+    fltopo: 海洋モデルの地形情報ファイル
+    flsclf: 海洋モデルの格子面積情報ファイル
+    flstdout: 実行ログの出力ファイル名
+\end{verbatim}
+
+海洋モデルが可変格子の場合（\verb|VARIABLE|）は、格子情報ファイルを指定する。
+
+\begin{verbatim}
+  namelist /inflg/ file_vgrid
+\end{verbatim}
+
+\end{document}

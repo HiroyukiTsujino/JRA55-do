@@ -1,0 +1,8 @@
+&nml_rg2latlon_nointpol
+  file_in='/work116/htsujino/JRA-55-MONTHLY/jra-org-grid/@type@/@item@.@yyyymm@'
+  file_out='/work116/htsujino/JRA-55-MONTHLY/jra-latlon/@type@/@item@.@yyyymm@'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+/

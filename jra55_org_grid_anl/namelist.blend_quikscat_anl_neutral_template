@@ -1,0 +1,26 @@
+&nml_blend_qscat_anl_neutral
+  file_u10m='@anl_daily@/@yyyymm@/un10m.@yyyymmdd@'
+  file_v10m='@anl_daily@/@yyyymm@/vn10m.@yyyymmdd@'
+  file_wind='@anl_daily@/@yyyymm@/windn10m.@yyyymmdd@'
+  file_u10m_blend_org='@blend_org@/@yyyymm@/un10m.@yyyymmdd@'
+  file_v10m_blend_org='@blend_org@/@yyyymm@/vn10m.@yyyymmdd@'
+  file_wind_blend_org='@blend_org@/@yyyymm@/windn10m.@yyyymmdd@'
+  file_u10m_blend_latlon='@blend_latlon@/@yyyymm@/un10m.@yyyymmdd@'
+  file_v10m_blend_latlon='@blend_latlon@/@yyyymm@/vn10m.@yyyymmdd@'
+  file_wind_blend_latlon='@blend_latlon@/@yyyymm@/windn10m.@yyyymmdd@'
+  l_out_latlon=@out_latlon@
+  file_mask='@jra_cnst@/TL319.mask'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  iqscat=1440,
+  jqscat=720,
+  slon_qscat=0.125d0,
+  dlon_qscat=0.25d0,
+  slat_qscat=-89.875d0,
+  dlat_qscat=0.25d0,
+  undef4_qscat=-9.99e33
+  file_qscat='@qscat_dir@/@yyyy@/qscat_wind_rss_v4.@yyyymmdd@'
+/

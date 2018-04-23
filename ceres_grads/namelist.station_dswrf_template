@@ -1,0 +1,11 @@
+&nml_station_mon
+ file_in='station/CAVE_@sta@_dswrf.txt',
+ undef_in=-999.0,
+ file_out='station/@sta@_dswrf.gd',
+ undef_out=-999.0, 
+ file_clim='station/@sta@_dswrf_clim.gd',
+ nbyr=2000,
+ nbmn=3,
+ neyr=2015,
+ nemn=6,
+&end

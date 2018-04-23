@@ -1,0 +1,31 @@
+&nml_grid_size
+  imut                  = 640,
+  jmut                  = 320,
+  km                    = 1,
+  ksgm                  = 1,
+/
+
+&nml_coordinate
+  lspherical            = .true.,
+  l_globe               = .true.
+/
+
+&nml_vert_grid
+  dz_const_cm           = 1.0d0,
+/
+
+&nml_horz_grid
+  lon_west_end_of_core  = 0.28125d0,
+  lat_south_end_of_core = -89.29163284081430d0,
+  file_dxdy_tbox_deg = "../linkdir/data/dxdy_jra55_up_exact.d",
+/
+
+&nml_topo
+  file_topo          = "../linkdir/data/topo.d",
+/
+
+&nml_record_date
+  rec_first_date        = 1958, 1, 1, 0, 0, 0,
+  rec_last_date         = 1958, 1, 1, 0, 0, 0,
+  rec_interval_date     =    1, 0, 0, 0, 0, 0,
+/

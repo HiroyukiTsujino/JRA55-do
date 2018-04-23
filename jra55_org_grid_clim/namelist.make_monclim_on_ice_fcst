@@ -1,0 +1,18 @@
+&nml_make_monclim_on_ice
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_monthly_base1='../linkdir/forcing/jra_monthly_org/tmp2m.'
+  file_monthly_base2='../linkdir/forcing/jra_monthly_org/tmp2m.'
+  file_ice_base='../linkdir/forcing/jra_monthly_org/ice.'
+  undef4_in=-9.99e33
+  file_clim_org_base1='../linkdir/forcing/jra_clim_org/tmp2m_ice.1979_1998.m'
+  file_clim_org_base2='../linkdir/forcing/jra_clim_org/tmp2m_all.1979_1998.m'
+  file_clim_latlon_base1='../linkdir/forcing/jra_clim_latlon/tmp2m_ice.1979_1998.m'
+  file_clim_latlon_base2='../linkdir/forcing/jra_clim_latlon/tmp2m_all.1979_1998.m'
+  undef4_out=-9.99e33
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  nbyr=1979,
+  neyr=1998
+/

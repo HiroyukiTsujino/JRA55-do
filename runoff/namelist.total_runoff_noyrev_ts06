@@ -1,0 +1,8 @@
+&nml_total_runoff
+  fl_in_base='/denkei-shared/og1/hnakano/SURF_FLUX/forcing/river_suzuki_v0_6/runoff',
+  dir_out='tsuzuki-v0_6',
+  ibyr=1958,
+  ieyr=2015
+  l_apply_area=.false.,
+  file_area='dummy.d'
+/

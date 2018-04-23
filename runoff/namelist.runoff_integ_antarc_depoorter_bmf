@@ -1,0 +1,7 @@
+ &nml_runoff_integ_antarc
+   flnin='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Depoorter_2013_Antarctica/clim025x025/BMF_025x025.dat',
+   flnot='antarc_runoff_bmf.gd',
+   file_index='/denkei-shared/og1/hnakano/Refdata/Depoorter_ICESat/Ant_ICESat_MODIS_Mask_025x025.dat'
+   irec_coast=5,
+   irec_shelf=4,
+ &end

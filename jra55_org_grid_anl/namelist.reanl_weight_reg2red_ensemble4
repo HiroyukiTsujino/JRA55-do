@@ -1,0 +1,15 @@
+&nml_jra55_reg2red
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_mask_latlon='../linkdir/data/jra_mask.gd'
+  file_prod_org='../linkdir/data/ensemble4_weight_TL319r.gd'
+  file_prod_latlon='../linkdir/data/ensemble4_weight.gd'
+  undef4_in=9.999e20
+  undef4_out=9.999e20
+  blank_value=9.999e20
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  num_data=1
+/

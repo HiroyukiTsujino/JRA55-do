@@ -1,0 +1,30 @@
+&nml_grid_size
+  imut                  = 192,
+  jmut                  = 94,
+  km                    = 1,
+  ksgm                  = 1,
+/
+
+&nml_coordinate
+  lspherical            = .true.,
+/
+
+&nml_vert_grid
+  dz_const_cm           = 1.0d2,
+/
+
+&nml_horz_grid
+  lon_west_end_of_core  = 0.9375d0,
+  lat_south_end_of_core = -87.59759902954100d0,
+  file_dxdy_tbox_deg = "../linkdir/CORE/data/dxdy_core_up.d",
+/
+
+&nml_topo
+  file_topo          = "../linkdir/CORE/data/topo_all.d",
+/
+
+&nml_record_date
+  rec_first_date        = 1979, 1, 1, 0, 0, 0,
+  rec_last_date         = 2008,12, 1, 0, 0, 0,
+  rec_interval_date     =    0, 1, 0, 0, 0, 0,
+/

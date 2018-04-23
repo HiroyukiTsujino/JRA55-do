@@ -1,0 +1,17 @@
+&nml_make_annclim
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_monthly_base='../linkdir/forcing/jra55anl_filt_monthly_TL319r/@item@.'
+  undef4_in=-9.99e33
+  file_clim_org='../linkdir/forcing/jra55anl_filt_annclim_TL319r/@item@.2002_2015.dat'
+  file_clim_latlon='../linkdir/forcing/jra55anl_filt_annclim_TL319/@item@.2002_2015.dat'
+  undef4_out=-9.99e33,
+  l_leap_valid=.true.,
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319'
+  nbyr=2002,
+  nbmn=1,
+  neyr=2015,
+  nemn=12
+/

@@ -1,0 +1,45 @@
+# -*-Makefile-*-
+#
+
+include ../macros.make
+
+#FC = pgf90
+#AR = ar -r
+#RM = rm -f
+
+#FOPTION = -lacml -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64 -C -Ktrap=fp
+
+LINKOPT = 
+LIB     = lib.o
+
+MODULE  = OC_MOD_PARAM.mod OC_STRUCTURE.mod
+
+OBJLIB  = param.o structure.o
+
+TARGETS = xy2uv
+
+all: $(MODULE) $(LIB) $(TARGETS)
+
+#
+#     SUFFIXES rule
+#
+.SUFFIXES: 
+.SUFFIXES: .F90 .o
+.F90.o:
+	$(FC) $< $(FOPTION) -c 
+#
+#     clean: 
+#
+clean:
+	$(RM) *.o *.trace *~ *.mod *.M core $(LIB)
+#
+
+OC_MOD_PARAM.mod : param.o
+OC_STRUCTURE.mod : param.o structure.o
+
+$(LIB) : $(OBJLIB)
+	$(AR) $(LIB) $(OBJLIB)
+
+xy2uv  : $(LIB) xy2uv.o
+	$(FC) -o $@ xy2uv.o $(LIB)
+

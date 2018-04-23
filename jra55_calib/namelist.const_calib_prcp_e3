@@ -1,0 +1,7 @@
+&nml_calib_prcp
+  sublimation=1.79121d-7,
+  precipitation=3.56204d-5,
+  evaporation=3.77054d-5,
+  river_runoff=1.21957d9,
+  area_ocean=3.6540395d14,
+/

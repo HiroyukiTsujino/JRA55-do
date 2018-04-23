@@ -1,0 +1,26 @@
+&nml_make_daily_surf
+  iyear=@year@,
+  imon=@month@,
+  iday=@day@,
+  int_hour=3,
+  file_surf_base='../linkdir/forcing/jra55c_org'
+  file_daily_base='../linkdir/forcing/jra55c_daily_org'
+  file_daily_latlon_base='../linkdir/forcing/jra55c_daily_latlon'
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  l_daily_tmp2m=@tmp2m@,
+  l_daily_sph2m=@sph2m@,
+  l_daily_wind=@wind@,
+  l_daily_brtmp=@brtmp@,
+  l_daily_slprs=@slprs@,
+  l_daily_ice=@ice@,
+  l_latlon_tmp2m=@tmp2m_chk@,
+  l_latlon_sph2m=@sph2m_chk@,
+  l_latlon_wind=@wind_chk@,
+  l_latlon_brtmp=@brtmp_chk@,
+  l_latlon_slprs=@slprs_chk@,
+  l_latlon_ice=@ice_chk@,
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+/

@@ -1,0 +1,36 @@
+&nml_srfdata
+  srf_base_dir='../linkdir/forcing/jra55Cfcst_filt_v1_2tq_3hr_TL319r'
+  fin_base_us='un10m',
+  fin_base_vs='vn10m',
+  file_first_srf=1988,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1988,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  l_little_srf=.true.
+  alt_wind=10.0d0
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='../linkdir/data/lat_jra55_exact.txt'
+&end
+
+&nml_mean_wind_speed
+  calc_start=1988,1,1,0,0,0,
+  calc_end=1997,1,1,0,0,0, 
+  l_leap_valid=.true.
+  l_mean_monthly=.false.,
+  file_meanu_org='/work113/htsujino/JRA-55C/forcing/jra55Cfcst_filt_v1_2tq_annclim_TL319r/un10m.jan1988_dec1996.dat',
+  file_meanv_org='/work113/htsujino/JRA-55C/forcing/jra55Cfcst_filt_v1_2tq_annclim_TL319r/vn10m.jan1988_dec1996.dat',
+  file_meanu_ref='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319r/un10m_scaled.jan1988_dec1996.dat',
+  file_meanv_ref='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319r/vn10m_scaled.jan1988_dec1996.dat',
+  file_meanw_ref='/work115/htsujino/SURF_FLUX/forcing/remss_jra55anl_filt_qscat_annclim_TL319r/wn10m.jan1988_dec1996.dat',
+  fout_meanw_reduce='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319r/wn10m_alpha.1958_1972.dat',
+  fout_meanw_latlon='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319/wn10m_alpha.1958_1972.dat',
+  fout_factor_reduce='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_corrfac_v1_4_TL319r/wn10m_anom_mag.1958_1972.dat',
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+&end

@@ -1,0 +1,9 @@
+&nml_erai_org2mon
+  nyear=@nyear@,
+  var_name='@var_name@',
+  file_in1='/work115/htsujino/ERA-interim/org_data/erai_anl_surf_@nyear@.nc',
+  file_in2='/work115/htsujino/ERA-interim/org_data/erai_anl_surf_@nyear_next@.nc',
+  l_mask_out=.false.
+  file_mask='/work115/htsujino/ERA-interim/data/topo_erai.d',
+  file_out_base='/work115/htsujino/ERA-interim/grads_monthly/erai_@var_name_out@.'
+&end

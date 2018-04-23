@@ -1,0 +1,1 @@
+../../test/check_log.sh

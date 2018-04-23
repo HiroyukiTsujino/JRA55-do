@@ -1,0 +1,14 @@
+&nml_trend
+  flnin_base='@file_in_base@',
+  rmiss_in=@rmiss_in@,
+  lconv_in=.true.,
+  nbyr=@year_start@,
+  neyr=@year_end@,
+  ibyr=@year_start@,
+  ieyr=@year_end@,
+  istrt=1,
+  intv=1,
+  flout='@file_out@',
+  rmiss_out=@rmiss_out@,
+  lconv_out=.true.
+&end

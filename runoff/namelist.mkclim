@@ -1,0 +1,8 @@
+&nml_river_mkclim
+  ibyr=1988,
+  ieyr=2007,
+  riv_in_base='/worke/htsujino/RUNOFF_YOSHIMURA/merge_2/rivout',
+  file_river_clim='/worke/htsujino/RUNOFF_YOSHIMURA/daily_clim_m2/rivout_clim.bin',
+  file_river_leap='/worke/htsujino/RUNOFF_YOSHIMURA/daily_clim_m2/rivout_leap.bin',
+  undef_in=1e20,
+&end

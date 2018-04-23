@@ -1,0 +1,5 @@
+&nml_smooth_weight
+  file_mask='../linkdir/data/ensemble4.gd',
+  flnot ='../linkdir/data/ensemble4_weight.gd',
+  iter_total=50
+&end

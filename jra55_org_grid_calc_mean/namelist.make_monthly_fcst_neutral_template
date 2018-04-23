@@ -1,0 +1,15 @@
+&nml_make_monthly_wind
+  iyear=@year@,
+  imon=@month@,
+  int_hour=3,
+  file_in_base='@org_dir@',
+  file_out_base='@monthly_org_dir@',
+  file_out_latlon_base='@monthly_latlon_dir@',
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask',
+  l_out_latlon=@out_latlon@,
+  l_neutral_wind=.true.
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319'
+/

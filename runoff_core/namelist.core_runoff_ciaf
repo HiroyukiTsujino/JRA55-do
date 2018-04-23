@@ -1,0 +1,7 @@
+&nml_core_runoff_ciaf
+  fl_in='/denkei-shared/og/ocpublic/refdata/CORE/COREv2/ciaf/orgdata/runoff.daitren.iaf.10FEB2011.nc',
+  fl_out_base='/work116/htsujino/CORE/core_river/runoff.',
+  file_mask='/work116/htsujino/CORE/data/runoff_mask.gd',
+  ibyr=1948,
+  ieyr=2007
+&end

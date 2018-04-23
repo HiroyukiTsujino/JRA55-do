@@ -1,0 +1,26 @@
+&nml_wind_ceof_ann
+  flnin_base1='../linkdir/forcing/jra55anl_filt_monthly_TL319r/u10m.'
+  flnin_base2='../linkdir/forcing/jra55anl_filt_monthly_TL319r/v10m.'
+  undef_model=-9.99e33,
+  flnin_base3='../linkdir/forcing/erai_monthly_TL319r/u10m.'
+  irecu_obs=1,
+  flnin_base4='../linkdir/forcing/erai_monthly_TL319r/v10m.'
+  irecv_obs=1,
+  undef_obs=-9.99e33,
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  flnot1='../linkdir/forcing/jra55anl_filt_corrfac_v7_TL319r/wind_mag_ceof_annual.dat'
+  flnot2='../linkdir/forcing/jra55anl_filt_corrfac_v7_TL319r/wind_rot_ceof_annual.dat'
+  flnot3='../linkdir/forcing/jra55anl_filt_corrfac_v7_TL319/wind_rot_ceof_annual.dat'
+  undef_out=-9.99e33,
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0,
+  grid_name='TL319',
+  ibyr=2002,
+  ibmn=1,
+  ieyr=2015,
+  iemn=12,
+  l_check=.false.
+  ratio_explain=0.90d0
+  tanh_half=2.0d1
+&end

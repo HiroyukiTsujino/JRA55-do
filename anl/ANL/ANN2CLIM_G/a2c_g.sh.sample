@@ -1,0 +1,34 @@
+#! /bin/sh -f
+
+styear=1281
+endyear=1300
+
+################
+
+fpathin="../grddat/zm_age"
+fpathout="../clim/zm_age_atl"
+./ann2clim_g.sh 1 154 51 $styear $endyear "$fpathin" "$fpathout" -9.99e33 2
+
+#fpathin="../grddat/hs_t"
+#fpathout="../grddat/hs_t"
+#./ann2clim_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+#fpathin="../grddat/hs_s"
+#fpathout="../grddat/hs_s"
+#./ann2clim_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+#fpathin="../grddat/hs_u"
+#fpathout="../grddat/hs_u"
+#./ann2clim_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+#fpathin="../grddat/hs_v"
+#fpathout="../grddat/hs_v"
+#./ann2clim_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+#fpathin="../grddat/hs_ice"
+#fpathout="../grddat/hs_ice"
+#./ann2clim_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"
+
+#fpathin="../grddat/hs_iceuv"
+#fpathout="../grddat/hs_iceuv"
+#./ann2clim_g.sh 364 368 51 $styear $endyear "$fpathin" "$fpathout"

@@ -1,0 +1,15 @@
+ &nml_water_diag
+   ftopo='data_gondola_100/topo.d',
+   fgrid='data_gondola_100/dxdy_tbox_deg.d',
+   fscale='data_gondola_100/scale_factor.d',
+   fdz='data_gondola_100/dz_cm.d',
+   fbasmap='data_gondola_100/basin_map.gd',
+   flnin_org1='annual_mean_gondola_100/hs_subl.',
+   flnot_base2='annual_mean_gondola_100/merid_wat_subl.',
+   flnot_base3='annual_mean_gondola_100/hs_subl_have.',
+   ibyr=1958,
+   ieyr=2015,
+   jmug=181,
+   delt_latg=1.d0,
+   strt_latg=-90.d0
+&end

@@ -1,0 +1,53 @@
+&nml_sstdata
+  sst_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319r'
+  fin_base_sst='brtmp',
+  fin_base_ice='ice',
+  file_first_sst=1958,1,1,0,0,0,
+  file_intv_type_sst=4,
+  file_intv_sst=3,
+  total_rec_sst=1,
+  data_intv_sec_sst=10800,
+  sst_first=1958,1,1,0,0,0,
+  undef_sst=9.999e20,
+  num_grid_sst=157792,
+  l_ymdir_sst=.true.
+  l_little_sst=.true.
+&end
+
+&nml_srfdata
+  srf_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319r'
+  fin_base_sat='tmp2m',
+  fin_base_sph='sph2m',
+  fin_base_slp='slprs',
+  file_first_srf=1958,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1958,1,1,0,0,0,
+  undef_srf=9.999e20,
+  num_grid_srf=157792,
+  l_ymdir_srf=.true.,
+  l_little_srf=.true.,
+  alt_sat=2.0d0,
+  alt_sph=2.0d0,
+&end
+
+&nml_mskdata
+  fin_msk='../linkdir/forcing/jra_org/const/TL319.mask'
+  l_little_msk=.true.
+  num_grid_msk=157792
+/
+
+&nml_calibsat
+  calc_start=1958,1,1,0,0,0,
+  calc_end=1972,1,1,0,0,0, 
+  l_leap_valid=.true.,
+  l_calib_monthly=.true.,
+  l_calib_transition=.false.
+  file_calib_ocn_a='../linkdir/forcing/jra55fcst_corrfac_v1_2_TL319r/tmp2m_ocn_corr.1958_1972.dat',
+  file_calib_ice_a='../linkdir/forcing/jra55fcst_corrfac_v1_2_TL319r/tmp2m_ice_corr.1958_1972.dat',
+  calib_base_dir='../linkdir/forcing/jra55fcst_v1_2_3hr_tmp2m_TL319r'
+  fout_base_sat='tmp2m',
+  fout_base_sph='sph2m',
+&end

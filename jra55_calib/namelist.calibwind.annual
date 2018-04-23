@@ -1,0 +1,27 @@
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.JRA55',
+  srf_base_dir='../linkdir/forcing/jra_latlon'
+  fin_base_us='u10m',
+  fin_base_vs='v10m',
+  file_first_srf=1958,1,1,0,0,0,
+  file_intv_type_srf=4,
+  file_intv_srf=3,
+  total_rec_srf=1,
+  data_intv_sec_srf=10800,
+  srf_first=1958,1,1,0,0,0,
+  undef_srf=9.999e20,
+  l_ymdir_srf=.true.
+  alt_wind=10.0d0
+&end
+
+&nml_calibwind
+  calc_start=1958,1,1,0,0,0,
+  calc_end=2014,2,1,0,0,0, 
+  l_leap_valid=.true.
+  l_calib_monthly=.false.,
+  file_calib_mag='../linkdir/forcing/jra_calib_TL319/jra55_wind_mag.dat',
+  file_calib_rot='../linkdir/forcing/jra_calib_TL319/jra55_wind_rot.dat',
+  calib_base_dir='../linkdir/forcing/jra_latlon_c1'
+  fout_base_us='u10m',
+  fout_base_vs='v10m',
+&end

@@ -1,0 +1,10 @@
+&nml_create_data
+  ibyr=1958,
+  ieyr=2014,
+  l_normal_year=.false.
+  file_river_clim='/worke/htsujino/RUNOFF_YOSHIMURA/daily_clim_m2/rivout_clim.bin',
+  file_river_leap='/worke/htsujino/RUNOFF_YOSHIMURA/daily_clim_m2/rivout_leap.bin',
+  file_prcp_land_base='/worke/htsujino/SURF_FLUX/forcing/jra_cobesst_annual_c2/prcp_integ_1st.',
+  factor_prcp2river=0.326575d0,
+  riv_out_base='/worke/htsujino/RUNOFF_YOSHIMURA/merge_3/rivout',
+&end

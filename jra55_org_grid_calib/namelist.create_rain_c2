@@ -1,0 +1,22 @@
+&nml_pcpsnwdata
+  file_namelist_pcp='NAMELIST.MXE.JRA55',
+  pcp_base_dir='../linkdir/forcing/jra_latlon_c2'
+  fin_base_pcp='prcp',
+  fin_base_snw='snow',
+  file_first_pcp=1958,1,1,0,0,0,
+  file_intv_type_pcp=4,
+  file_intv_pcp=3,
+  total_rec_pcp=1,
+  data_intv_sec_pcp=10800,
+  pcp_first=1958,1,1,1,30,0,
+  undef_pcp=9.999e20,
+  l_ymdir_pcp=.true.
+&end
+
+&nml_rain
+  calc_start=1958,1,1,1,30,0,
+  calc_end=2015,2,7,1,30,0, 
+  l_leap_valid=.true.
+  rain_base_dir='../linkdir/forcing/jra_latlon_c2',
+  fout_base_rain='rain',
+&end

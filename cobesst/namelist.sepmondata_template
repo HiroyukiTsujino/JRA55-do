@@ -1,0 +1,7 @@
+&nml_sepmondata
+  dir_in='/work116/htsujino/COBESST/monthly/grads',
+  dir_out='/work116/htsujino/COBESST/monthly/yyyymm',
+  ibyr=@ibyr@,
+  ieyr=@ieyr@,
+  iemn=@iemn@,
+&end

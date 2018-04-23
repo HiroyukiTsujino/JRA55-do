@@ -1,0 +1,19 @@
+DSET    ^../../grads_out/hs_icecat_uv.%y4%m2
+OPTIONS big_endian template 
+PDEF 364 368 BILIN STREAM BINARY-BIG ^pdef.masku.bilin.gd
+TITLE    OImon (UV)
+UNDEF   0.00000
+XDEF    360 LINEAR   0.500   1.000
+YDEF    336 LINEAR  -77.75   0.500
+ZDEF      5 LEVELS   1.000   2.000   3.000   4.000   5.000
+TDEF 2200 LINEAR  15JAN1851 1mo
+VARS    8
+uice        0 99 Sea Ice Eastward Drifting Velocity  [m/s]
+vice        0 99 Sea Ice Northward Drifting Velocity [m/s]
+transix     0 99 Eastward Sea Ice Transport [kg/s] (CMIP5-P1)
+transiy     0 99 Northward Sea Ice Transport [kg/s] (CMIP5-P1)
+strairx     0 99 Eastward Atmospheric Stress On Sea Ice [N/m^2] (CMIP5-P2)
+strairy     0 99 Northward Atmospheric Stress On Sea Ice [N/m^2] (CMIP5-P2)
+strocnx     0 99 Eastward Ocean Stress On Sea Ice [N/m^2] (CMIP5-P2)
+strocny     0 99 Northward Ocean Stress On Sea Ice [N/m^2] (CMIP5-P2)
+ENDVARS

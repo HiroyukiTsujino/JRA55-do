@@ -1,0 +1,16 @@
+README
+
+Tools for MODIS data
+
+
+==== Fortran program ====
+
+snap.F90
+  1つのスナップショットをgrads処理する
+  sample/make_snap.sh       : make 1 snap shot.
+         make_snap_month.sh : make 31 snaps for a month
+
+mean.F90
+  make a mean field based on file_list.txt
+  sample/make_mean.sh
+

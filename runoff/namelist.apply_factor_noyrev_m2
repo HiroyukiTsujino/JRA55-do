@@ -1,0 +1,8 @@
+&nml_river_factor_noyrev
+  factor=1.06200,
+  ibyr=1981,
+  ieyr=2013,
+  riv_in_base='/worke/htsujino/RUNOFF_YOSHIMURA/merge_1/rivout',
+  riv_out_base='/worke/htsujino/RUNOFF_YOSHIMURA/merge_2/rivout',
+  undef_in=1e20,
+&end

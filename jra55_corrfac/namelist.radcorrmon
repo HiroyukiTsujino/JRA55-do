@@ -1,0 +1,11 @@
+&nml_radcorrmon
+  flnin1_base='/work116/htsujino/SURF_FLUX/forcing/core_jra55_clim/dswrf_1984_2007.m'
+  flnin2_base='/work116/htsujino/SURF_FLUX/forcing/core_jra55_clim/dlwrf_1984_2007.m'
+  undef_obs=-9.99e33,
+  flnin4_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/dswrf_1984_2007.m'
+  flnin5_base='/work116/htsujino/SURF_FLUX/forcing/jra_clim/dlwrf_1984_2007.m'
+  undef_jra=-9.99e33,
+  file_mask_jra='/work116/htsujino/SURF_FLUX/data/jra55_ocean_mask.gd'
+  flnot1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/dswrf_mag_mon.dat'
+  flnot2='/work116/htsujino/SURF_FLUX/forcing/jra_calib/dlwrf_mag_mon.dat'
+&end

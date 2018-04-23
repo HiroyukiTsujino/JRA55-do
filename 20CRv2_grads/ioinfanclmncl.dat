@@ -1,0 +1,7 @@
+ &namanclmncl
+  infile_base='/worke/htsujino/NOCS/grads_moncl/sph2m_1979_2006.m',
+  undef_in=-9.99e33,
+  outfile='/worke/htsujino/NOCS/grads_anncl/sph2m_1979_2006.dat',
+  undef_out=-9.99e33,
+  klev=1
+ &end

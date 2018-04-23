@@ -1,0 +1,15 @@
+ &nml_anncl
+  imax=360,
+  jmax=180,
+  kmax=1,
+  infile_base='../linkdir/NOCS/grads/qair.',
+  undef_in=-9.99e33,
+  outfile_base='../linkdir/NOCS/grads_anncl/qair_1979_2006.dat',
+  undef_out=-9.99e33,
+  nbyr=1979,
+  nbmn=1,
+  neyr=2006,
+  nemn=12,
+  klev=1,
+  l_leap_valid=.true.,
+ &end

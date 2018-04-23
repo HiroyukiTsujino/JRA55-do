@@ -1,0 +1,5 @@
+&have_calc
+  dval = 4.258253411e-5,
+  drange = 1.e-10,
+  nz = 10,
+&end

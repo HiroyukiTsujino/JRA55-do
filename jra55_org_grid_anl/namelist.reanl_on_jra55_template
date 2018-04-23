@@ -1,0 +1,22 @@
+&nml_reanl_on_jra55
+  file_mask='@jra_cnst@/TL319.mask'
+  file_prod_org='@reanl_jra@/@item@.@yyyymm@'
+  file_prod_latlon='@reanl_jra_latlon@/@item@.@yyyymm@'
+  undef4_out=@undef_out@
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  undef4_reanl=@undef_reanl@
+  file_mxe_reanl='@file_mxe_reanl@'
+  file_reanl='@reanl_dir@/@item_reanl@.@yyyymm@'
+  file_mask_reanl='@reanl_cnst@/@file_mask_reanl@'
+  l_flip_mask_reanl=@flip_mask_reanl@
+  reanl_mask_threshold=@mask_thre_reanl@
+  l_little_in=@little_in@
+  scale_in=@scale_in@
+  offset_in=@offset_in@
+  irec_reanl=@irec@
+  l_out_latlon=@out_latlon@
+/

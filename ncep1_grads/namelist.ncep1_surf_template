@@ -1,0 +1,8 @@
+&nml_ncep1_surf
+  file_in='@indir@/@var_in@.2m.mon.mean.nc',
+  file_out_base='@outdir@',
+  ibyr=@ibyr@,
+  ieyr=@ieyr@,
+  var_in='@var_in@',
+  var_out='@var_out@', 
+&end

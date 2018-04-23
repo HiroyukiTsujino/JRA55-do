@@ -1,0 +1,16 @@
+ &nml_reduce_swdn
+  flnin='../linkdir/CERES/grads_clim/swdn_seaice.@period@.m@month@'
+  undef_in=-9.99e33
+  flnot='../linkdir/CERES/grads_clim/swdn_seaice_tropics.@period@.m@month@'
+  ndata=1
+  low_trans_n=10.0d0
+  low_sigm_n=5.0d0
+  high_trans_n=10.0d0
+  high_sigm_n=12.5d0
+  reduct_fac_n=0.04d0
+  low_trans_s=10.0d0
+  low_sigm_s=5.0d0
+  high_trans_s=10.0d0
+  high_sigm_s=12.5d0
+  reduct_fac_s=0.03d0
+ &end

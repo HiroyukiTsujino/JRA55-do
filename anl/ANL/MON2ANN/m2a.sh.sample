@@ -1,0 +1,62 @@
+#! /bin/sh -f
+
+styear=2600
+endyear=2600
+
+################
+
+fpathin="../result/hs_t"
+fpathout="../result/hs_t"
+tuxy="T"
+k_max=51
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+fpathin="../result/hs_s"
+fpathout="../result/hs_s"
+tuxy="T"
+k_max=51
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+fpathin="../result/hs_ssh"
+fpathout="../result/hs_ssh"
+tuxy="t"
+k_max=1
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+fpathin="../result/hs_u"
+fpathout="../result/hs_u"
+tuxy="U"
+k_max=51
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+fpathin="../result/hs_v"
+fpathout="../result/hs_v"
+tuxy="U"
+k_max=51
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+
+fpathin="../result/hs_flx"
+fpathout="../result/hs_flx"
+tuxy="t"
+k_max=5
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+fpathin="../result/hs_flxuv"
+fpathout="../result/hs_flxuv"
+tuxy="u"
+k_max=2
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+fpathin="../result/hs_ice"
+fpathout="../result/hs_ice"
+tuxy="t"
+k_max=4
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+
+fpathin="../result/hs_iceuv"
+fpathout="../result/hs_iceuv"
+tuxy="u"
+k_max=2
+./mon2ann.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+

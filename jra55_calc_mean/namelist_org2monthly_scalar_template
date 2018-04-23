@@ -1,0 +1,8 @@
+&nml_org2mon_scalar
+  iyst=@ibyr@,
+  iyed=@ieyr@,
+  item_name='@item@',
+  nhint=@nhint@,
+  in_base_dir='@indir@',
+  out_base_dir='@outdir@',
+&end

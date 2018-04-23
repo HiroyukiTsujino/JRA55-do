@@ -1,0 +1,74 @@
+netcdf sos_input4MIPs_atmosphericState_OMIP_MRI-JRA55-do-1-3_gn_195501-201212-clim {
+dimensions:
+	time = UNLIMITED ; // (12 currently)
+	lat = 720 ;
+	lon = 1440 ;
+	bnds = 2 ;
+variables:
+	double time(time) ;
+		time:climatology = "climatology_bnds" ;
+		time:units = "days since 1955-01-01 0.0.0" ;
+		time:calendar = "gregorian" ;
+		time:axis = "T" ;
+		time:long_name = "time" ;
+		time:standard_name = "time" ;
+	double climatology_bnds(time, bnds) ;
+	double lat(lat) ;
+		lat:bounds = "lat_bnds" ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:long_name = "latitude" ;
+		lat:standard_name = "latitude" ;
+	double lat_bnds(lat, bnds) ;
+	double lon(lon) ;
+		lon:bounds = "lon_bnds" ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:long_name = "longitude" ;
+		lon:standard_name = "longitude" ;
+	double lon_bnds(lon, bnds) ;
+	float sos(time, lat, lon) ;
+		sos:standard_name = "sea_surface_salinity" ;
+		sos:long_name = "Sea Surface Salinity" ;
+		sos:comment = "Sea surface salinity is the salt content of sea water close to the sea surface, often on the Practical Salinity Scale of 1978. However, the unqualified term \'salinity\' is generic and does not necessarily imply any particular method of calculation. The units of salinity are dimensionless and the units attribute should normally be given as 1e-3 or 0.001 i.e. parts per thousand. Sea surface salinity is often abbreviated as \'SSS\'. For the salinity of sea water at a particular depth or layer, a data variable of \'sea_water_salinity\' or one of the more precisely defined salinities should be used with a vertical coordinate axis." ;
+		sos:units = "0.001" ;
+		sos:cell_methods = "area: mean where sea time: mean" ;
+		sos:cell_measures = "area: areacello" ;
+		sos:history = "2018-04-11T23:41:02Z altered by CMOR: replaced missing value flag (-9.99e+33) with standard missing value (1e+20)." ;
+		sos:missing_value = 1.e+20f ;
+		sos:_FillValue = 1.e+20f ;
+
+// global attributes:
+		:Conventions = "CF-1.7 CMIP-6.2" ;
+		:activity_id = "input4MIPs" ;
+		:comment = "Based on JRA-55 reanalysis (1958-01 to 2018-01)" ;
+		:contact = "Hiroyuki Tsujino (htsujino@mri-jma.go.jp)" ;
+		:creation_date = "2018-04-11T23:41:02Z" ;
+		:data_specs_version = "01.00.23" ;
+		:dataset_category = "atmosphericState" ;
+		:external_variables = "areacello" ;
+		:frequency = "monC" ;
+		:further_info_url = "http://jra.kishou.go.jp/JRA-55/index_en.html" ;
+		:grid = "0.5x0.5 degree latitude x longitude" ;
+		:grid_label = "gn" ;
+		:history = "2018-04-11T23:41:02Z; CMOR rewrote data to be consistent with input4MIPs, CMIP6, and CF-1.7 CMIP-6.2 standards" ;
+		:institution = "Meteorological Research Institute, Tsukuba, Ibaraki 305-0052, Japan" ;
+		:institution_id = "MRI" ;
+		:mip_era = "CMIP6" ;
+		:nominal_resolution = "50 km" ;
+		:product = "reanalysis" ;
+		:realm = "ocean" ;
+		:references = "Tsujino et al., 2018: JRA-55 based surface dataset for driving ocean-sea-ice models (JRA55-do), Ocean Modelling, in review" ;
+		:region = "global_ocean" ;
+		:source = "MRI JRA55-do 1.3: Atmospheric state generated for OMIP based on the JRA-55 reanalysis" ;
+		:source_id = "MRI-JRA55-do-1-3" ;
+		:source_version = "1.3.1" ;
+		:table_id = "input4MIPs_OmonC" ;
+		:table_info = "Creation Date:(10 April 2018) MD5:498f6cacd16552c99e5d40bdc4eb37c5" ;
+		:target_mip = "OMIP" ;
+		:title = "MRI JRA55-do 1.3 dataset prepared for input4MIPs" ;
+		:tracking_id = "hdl:21.14100/9646428f-c163-4b64-ad67-ef3906b967c6" ;
+		:variable_id = "sos" ;
+		:license = "OMIP boundary condition data produced by MRI is licensed under a Creative Commons Attribution-[NonCommercial-]ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing input4MIPs output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law." ;
+		:cmor_version = "3.3.1" ;
+}

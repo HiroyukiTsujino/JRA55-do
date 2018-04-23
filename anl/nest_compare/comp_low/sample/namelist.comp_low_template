@@ -1,0 +1,11 @@
+&nam_comp_low
+ filei1='%hs_rgn%',
+ filei2='%hs_all%',
+ fileo1='%hs_rms%',
+ klevel=%klevel%
+ TUXY='T'
+ ibst=22
+ ibed=42
+ jbst=32
+ jbed=62
+&end

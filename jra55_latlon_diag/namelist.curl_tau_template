@@ -1,0 +1,10 @@
+&nml_curltau
+  flinx='@indir@/taux.@yyyymm@',
+  fliny='@indir@/tauy.@yyyymm@',
+  irecx=1,
+  irecy=1,
+  l_units_cgs=.false.,
+  l_nohalo_cyclic=.true.
+  l_mask_coast=.false.
+  flout='@outdir@/hcurl.@yyyymm@'
+/

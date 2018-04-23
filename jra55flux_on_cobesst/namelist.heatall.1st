@@ -1,0 +1,18 @@
+ &nml_heatall
+   fbasmap='dummy.d',
+   flnin_org1='../linkdir/forcing/jra_cobesst_annual_c2/nswrf.',
+   flnin_org2='../linkdir/forcing/jra_cobesst_annual_c2/nlwrf.',
+   flnin_org3='../linkdir/forcing/jra_cobesst_annual_c2/sensible.',
+   flnin_org4='../linkdir/forcing/jra_cobesst_annual_c2/latent.',
+   flnot_base1='../linkdir/forcing/jra_cobesst_annual_c2/totalheat.',
+   flnot_base2='../linkdir/forcing/jra_cobesst_annual_c2/mhtran.',
+   flnot_base3='../linkdir/forcing/jra_cobesst_annual_c2/heatbudget.',
+   undef_in=-9.99e33,
+   undef_out=-9.99e33,
+   ibyr=1958,
+   ieyr=2014,
+   slatg=-90.0d0,
+   elatg=90.0d0
+   dlatg=1.0d0
+   heat_adjust=0.0d0
+&end

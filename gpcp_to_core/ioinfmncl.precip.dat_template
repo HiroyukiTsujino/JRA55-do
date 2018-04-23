@@ -1,0 +1,9 @@
+ &nammoncl
+  infile_base='@in_dir@/precip.'
+  undef_in=-1.0e34,
+  outfile_base='@out_dir@/precip_@ibyr@_@ieyr@.m'
+  undef_out=-9.99e33,
+  nbyr=@ibyr@
+  neyr=@ieyr@
+  klev=1
+ &end

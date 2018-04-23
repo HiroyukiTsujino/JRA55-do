@@ -1,0 +1,15 @@
+&nml_make_tmp2mcorrec
+  file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
+  file_ref_base='../linkdir/forcing/npoles_monclim_TL319r/tmp2m_@surf@.1979_1998.m'
+  file_jra_base='../linkdir/forcing/jra55anl_erai_monclim_TL319r/tmp2m_@surf@.1979_1998.m'
+  undef4_jra=9.999e20
+  undef4_ref=9.999e20
+  l_apply_mask=@l_apply_mask@
+  file_correc='../linkdir/forcing/jra55anl_erai_corrfac_v7_TL319r/tmp2m_@surf@_corr.1979_1998.dat'
+  file_correc_latlon='../linkdir/forcing/jra55anl_erai_corrfac_v7_TL319/tmp2m_@surf@_corr.1979_1998.dat'
+  undef4_out=9.999e20
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+/

@@ -1,0 +1,11 @@
+ &nml_smooth_windrot
+   flnin='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_ceof_aug1999_oct2009_d1_fill_antarc.dat'
+   flnot='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_ceof_aug1999_oct2009_d1_antarc_smooth.dat'
+   ndata=12
+   itermax=1
+   l_apply_mask=.false.
+   fill_value=0.0d0
+   undef_in=-9.99e33,
+   low_trans=100.0d0
+   high_trans=100.0d0
+ &end

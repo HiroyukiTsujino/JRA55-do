@@ -1,0 +1,11 @@
+&nml_globcurrent
+  flnin_dir='/denkei-shared/og1/htsujino/GlobCurrent/global_025_deg/total_hs',
+  flnin_globcurrent='GLOBCURRENT-L4-CUReul_hs-ALT_SUM-v03.0-fv01.0.nc',
+  undef_in=9.96921e36,
+  flnot_base='/denkei-shared/og1/htsujino/GlobCurrent/global_025_deg/total_hs/grads/uv.',
+  undef_out=-9.99e33,
+  iyst=1993,
+  iyed=2015,
+  mst=1,
+  med=12
+&end

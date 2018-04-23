@@ -1,0 +1,115 @@
+&nml_sstdata
+  file_namelist_sst='NAMELIST.MXE.COBESST',
+  sst_base_dir='/workc/ocpublic/refdata/COBE-SST/monthly/grads'
+  fin_base_sst='sst-glb',
+  fin_base_ice='ice-glb',
+  file_first_sst=1948,1,1,0,0,0,
+  file_intv_type_sst=1,
+  file_intv_sst=1,
+  total_rec_sst=12,
+  data_intv_sec_sst=-1,
+  sst_first=1948,1,16,12,0,0,
+  undef_sst=9.999e20,
+  l_ymdir_sst=.false.
+&end
+
+&nml_srfdata
+  file_namelist_srf='NAMELIST.MXE.CORE',
+  srf_base_dir='/workc/ocpublic/refdata/CORE/COREv2/ciaf/grads_oneitem'
+  fin_base_sat='tmp10m',
+  fin_base_sph='sph10m',
+  fin_base_us='u10m',
+  fin_base_vs='v10m',
+  fin_base_slp='slprs',
+  file_first_srf=1948,1,1,0,0,0,
+  file_intv_type_srf=1,
+  file_intv_srf=1,
+  total_rec_srf=1460,
+  data_intv_sec_srf=21600,
+  srf_first=1948,1,1,3,0,0,
+  undef_srf=-9.99e33,
+  l_ymdir_srf=.false.
+  alt_sat=10.0d0,
+  alt_sph=10.0d0,
+  alt_wind=10.0d0
+&end
+
+&nml_raddata
+  file_namelist_rad='NAMELIST.MXE.CORE',
+  rad_base_dir='/workc/ocpublic/refdata/CORE/COREv2/ciaf/grads_oneitem'
+  fin_base_dsw='dswrf',
+  fin_base_dlw='dlwrf',
+  file_first_rad=1948,1,1,0,0,0,
+  file_intv_type_rad=1,
+  file_intv_rad=1,
+  total_rec_rad=365,
+  data_intv_sec_rad=86400,
+  rad_first=1948,1,1,12,0,0,
+  undef_rad=-9.99e33,
+  l_ymdir_rad=.false.
+&end
+
+&nml_pcpdata
+  file_namelist_pcp='NAMELIST.MXE.CORE',
+  pcp_base_dir='/workc/ocpublic/refdata/CORE/COREv2/ciaf/grads_oneitem'
+  fin_base_pcp='prcp',
+  file_first_pcp=1948,1,1,0,0,0,
+  file_intv_type_pcp=1,
+  file_intv_pcp=1,
+  total_rec_pcp=12,
+  data_intv_sec_pcp=-1,
+  pcp_first=1948,1,16,12,0,0,
+  undef_pcp=-9.99e33,
+  l_ymdir_pcp=.false.
+&end
+
+&nml_diagflux
+  calc_start=1948,1,1,3,0,0,
+  calc_end=2010,1,1,3,0,0, 
+  l_leap_valid=.false.
+  int_hist=-1,
+  flx_base_dir='/worke/htsujino/CORE/core_monthly_cobe_dec2015'
+  fout_base_taux='taux',
+  fout_base_tauy='tauy',
+  fout_base_sens='sensible',
+  fout_base_latent='latent',
+  fout_base_evapor='evapor',
+  fout_base_nswrf='nswrf',
+  fout_base_nlwrf='nlwrf',
+  fout_base_dswrf='dswrf',
+  fout_base_dlwrf='dlwrf',
+  fout_base_precip='precip',
+  fout_base_satu='tmp10m',
+  fout_base_sphu='sph10m',
+  fout_base_dtu='dtu10m',
+  fout_base_dqu='dqu10m',
+  fout_base_w10n='wvn10m',
+  factor_dswrf=1.0d0,
+  factor_dlwrf=1.0d0,
+  factor_precip=1.0d0
+&end
+
+&nml_table_ocn
+  file_table_ocn='dummy.d'
+&end
+
+&nml_table_all
+  file_table_all='dummy.d'
+&end
+
+&nml_intpol
+  l_lin_dswrf=.true.,
+  l_lin_dlwrf=.true.,
+  l_lin_precip=.true.,
+  l_lin_wind=.true.,
+  l_lin_sat=.true.,
+  l_lin_sph=.true.,
+  l_lin_slp=.true.,
+  l_ocn_dswrf=.false.,
+  l_ocn_dlwrf=.false.,
+  l_ocn_precip=.false.,
+  l_ocn_wind=.false.,
+  l_ocn_sat=.false.,
+  l_ocn_sph=.false.,
+  l_ocn_slp=.false.
+&end

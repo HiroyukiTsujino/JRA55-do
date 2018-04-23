@@ -1,0 +1,7 @@
+ &nml_runoff_integ_antarc
+   flnin='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/CORE_Antarctica/annclim_025x025/runoff_annual_antarctica.gd',
+   flnot='antarc_runoff_core.gd',
+   file_index='/denkei-shared/og1/hnakano/Refdata/Depoorter_ICESat/CORE_shelf_Mask_025x025.dat'
+   irec_coast=2,
+   irec_shelf=1,
+ &end

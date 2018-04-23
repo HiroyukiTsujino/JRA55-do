@@ -1,0 +1,13 @@
+#! /bin/sh -f
+
+styear=1901
+endyear=2050
+
+################
+
+fpathin="../result/hs_mldmax"
+fpathout="../result/hs_maxmldmax"
+tuxy="t"
+k_max=1
+./day2monmax.sh $styear $endyear "$fpathin" "$fpathout" "$tuxy" $k_max
+

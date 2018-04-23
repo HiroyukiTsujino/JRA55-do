@@ -1,0 +1,51 @@
+# -*-Makefile-*-
+#
+#
+
+include ../macros.make
+
+#FC = ifort
+#FC = pgf90
+#AR = ar -r
+#RM = rm -f
+
+#FOPTION = -fpp -O3 -tpp7 -axW -w90 -w95 -convert big_endian -assume byterecl -mcmodel=medium
+#FOPTION = -lacml -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -mcmodel=medium -tp k8-64
+
+CPPFLAGS =  @TRIPOLAR@ @JOT@ @SPHERICAL@ @PLANE@ @VARIABLE@ @BBL@ @CYCLIC@
+LINKOPT = 
+LIB     = lib.o
+
+#LIBMATH = -lm
+
+MODULE  = OC_MOD_PARAM.mod OC_STRUCTURE.mod
+
+OBJLIB  = param.o structure.o
+
+TARGETS = hs2btm_uv
+
+all: $(MODULE) $(LIB) $(TARGETS)
+
+#
+#     SUFFIXES rule
+#
+.SUFFIXES: 
+.SUFFIXES: .F90 .o
+.F90.o:
+	$(FC) $< $(FOPTION) $(CPPFLAGS) -c 
+#
+#     clean: 
+#
+clean:
+	$(RM) *.o *.trace *~ *.mod *.M core $(LIB)
+#
+
+OC_MOD_PARAM.mod : param.o
+OC_STRUCTURE.mod : param.o structure.o
+
+$(LIB) : $(OBJLIB)
+	$(AR) $(LIB) $(OBJLIB)
+
+hs2btm_uv  : $(LIB) hs2btm_uv.o
+	$(FC) -o $@ hs2btm_uv.o $(LIB) 
+

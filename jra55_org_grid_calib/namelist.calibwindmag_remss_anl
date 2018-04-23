@@ -1,0 +1,27 @@
+&nml_srfdata
+  srf_base_dir='../linkdir/forcing/remss_jra55anl_filt_monthly_TL319r'
+  fin_base_us='wn10m',
+  file_first_srf=1988,1,1,0,0,0,
+  file_intv_type_srf=2,
+  file_intv_srf=1,
+  total_rec_srf=1,
+  data_intv_sec_srf=-1,
+  srf_first=1988,1,16,12,0,0,
+  undef_srf=-9.99e33,
+  l_ymdir_srf=.false.
+  imut=640,
+  jmut=320,
+  grid_name='TL319',
+  l_little_srf=.true.
+  alt_wind=10.0d0
+&end
+
+&nml_calibwind
+  calc_start=1988,1,16,12,0,0,
+  calc_end=2016,1,16,12,0,0, 
+  l_leap_valid=.true.
+  l_calib_monthly=.false.,
+  file_calib_mag='../linkdir/forcing/remss_jra55anl_filt_corrfac_v7_TL319r/wn10m_mag_annual.dat',
+  calib_base_dir='../linkdir/forcing/remss_jra55anl_filt_qscat_monthly_TL319r'
+  fout_base_us='wn10m',
+&end

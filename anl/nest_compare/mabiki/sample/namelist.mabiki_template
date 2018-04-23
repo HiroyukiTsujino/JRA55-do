@@ -1,0 +1,8 @@
+&nam_mabiki
+ filei1='%hs_par%',
+ filei2='%hs_sub%',
+ fileo1='%hs_rep%',
+ l_replace_with_zero=%replace_with_zero%
+ klevel=%klevel%
+ TUXY='T'
+&end

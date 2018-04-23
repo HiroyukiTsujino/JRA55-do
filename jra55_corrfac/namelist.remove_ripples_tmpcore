@@ -1,0 +1,7 @@
+ &nml_remove_ripples
+   flnin='/work116/htsujino/SURF_FLUX/forcing/jra_calib/tmp10m_ref_core_no_antarc_smooth.dat'
+   flnot='/work116/htsujino/SURF_FLUX/forcing/jra_calib/tmp10m_ref_core_no_antarc_smooth_remove_ripples.dat'
+   ndata=12
+   undef_in=0.0e0,
+   undef_out=0.0e0,
+ &end

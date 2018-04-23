@@ -1,0 +1,14 @@
+&wlwl_wlwl
+  rval = 8.7824941e10,
+  rrange = 1.e5,
+  nx = 40,
+  ny = 40,
+  nz = 1,
+&end
+&wlwl_w2
+  rval = 2.7548303e-3,
+  rrange = 1.e-8,
+  nx = 40,
+  ny = 40,
+  nz = 1,
+&end

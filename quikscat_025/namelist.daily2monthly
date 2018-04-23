@@ -1,0 +1,11 @@
+ &nml_day_to_mon
+   imax=1440,
+   jmax=720,
+   infile_dir='/worke/htsujino/QuikSCAT/L3/jpl/v2/grads_daily'
+   outfile_dir='/worke/htsujino/QuikSCAT/L3/jpl/v2/grads_monthly'
+   undef_in=-9.99e33
+   undef_out=-9.99e33
+   nbyr=1999
+   neyr=2009
+   min_ratio=0.0
+ &end

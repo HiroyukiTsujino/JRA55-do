@@ -1,0 +1,7 @@
+&nml_river2onedeg
+  ibyr=1958,
+  ieyr=2015,
+  riv_in_base='/worke/htsujino/RUNOFF_YOSHIMURA/final_v1/rivout',
+  riv_out_base='/worke/htsujino/RUNOFF_YOSHIMURA/monthly_1x1_f1/runoff.',
+  l_transport=.false.
+&end

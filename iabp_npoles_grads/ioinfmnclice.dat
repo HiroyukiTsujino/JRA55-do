@@ -1,0 +1,14 @@
+ &nammonclice
+  infile_base='/work116/htsujino/IABP_NPOLES/grads/tair.'
+  undef_in=-9.99e33
+  infile_base_ice='/work116/htsujino/COBESST/monthly/grads/ice-glb.'
+  undef_ice=-9.99e33
+  outfile_base_ocn='/work116/htsujino/IABP_NPOLES/grads_moncl/tair_ocn.1979_1998.m'
+  outfile_base_ice='/work116/htsujino/IABP_NPOLES/grads_moncl/tair_ice.1979_1998.m'
+  undef_out=9.999e20
+  nbyr=1979
+  neyr=1998
+  klev=1
+  def_ice=0.55
+  frac_valid=0.66
+ &end

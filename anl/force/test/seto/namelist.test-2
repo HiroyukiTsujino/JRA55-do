@@ -1,0 +1,31 @@
+&remap_nlink
+  ival   = 9429170,
+&end
+&remap_isrc
+  ival   = 204793,
+  nx     = 10,
+&end
+&remap_idst
+  ival   = 1,
+  nx     = 1,
+&end
+&remap_idst
+  ival   = 1,
+  nx     = 4,
+&end
+&remap_idst
+  ival   = 3,
+  nx     = 10,
+&end
+&remap_idst
+  ival   = 6,
+  nx     = 20,
+&end
+
+&interpolate_calc
+  rval   = 3.903657e0,
+  rrange = 1.e-5,
+  nx     = 6,
+  ny     = 1,
+  nz     = 1,
+&end

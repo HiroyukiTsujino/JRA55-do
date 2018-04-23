@@ -1,0 +1,22 @@
+&nml_wind_ceof
+  flnin_base1='/work116/htsujino/SURF_FLUX/forcing/jra_monthly/u10m.'
+  flnin_base2='/work116/htsujino/SURF_FLUX/forcing/jra_monthly/v10m.'
+  undef_model=-9.99e33,
+  flnin_base3='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_monthly/jra55_wind_mask.'
+  irecu_obs=2,
+  flnin_base4='/work116/htsujino/SURF_FLUX/forcing/qscat_jra55_monthly/jra55_wind_mask.'
+  irecv_obs=3,
+  undef_obs=-9.99e33,
+  flnot1='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_mag_ceof_nov1999-oct2009.dat'
+  flnot2='/work116/htsujino/SURF_FLUX/forcing/jra_calib/wind_rot_ceof_nov1999-oct2009.dat'
+  undef_out=-9.99e33,
+  slon=160.0d0,
+  elon=220.d0,
+  slat=30.d0,
+  elat=65.d0,
+  ibyr=1999,
+  ibmn=11,
+  ieyr=2009,
+  iemn=10,
+  l_check=.false.
+&end

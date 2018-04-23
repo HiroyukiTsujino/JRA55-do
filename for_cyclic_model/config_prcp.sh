@@ -1,0 +1,2 @@
+short_name='pr'
+long_name="Precipitation_both_liquid_and_solid_phases_units_kg_per_square_meter_per_second"

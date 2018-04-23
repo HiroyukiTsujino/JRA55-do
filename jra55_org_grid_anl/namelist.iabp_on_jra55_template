@@ -1,0 +1,21 @@
+&nml_iabp_on_jra55
+  file_mask='@jra_cnst@/TL319.mask'
+  file_prod_org='@iabp_jra@/@item@.@yyyymm@'
+  file_prod_latlon='@iabp_jra_latlon@/@item@.@yyyymm@'
+  undef4_out=@undef_out@
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  iiabp=360,
+  jiabp=180,
+  slon_iabp=0.5d0,
+  dlon_iabp=1.0d0,
+  slat_iabp=-89.5d0,
+  dlat_iabp=1.0d0,
+  undef4_iabp=9.999e20
+  file_iabp='@iabp_dir@/@item_iabp@.@yyyymm@'
+  irec_iabp=@irec@
+  l_out_latlon=@out_latlon@
+/

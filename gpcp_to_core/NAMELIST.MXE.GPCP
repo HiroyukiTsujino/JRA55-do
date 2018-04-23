@@ -1,0 +1,32 @@
+&nml_grid_size
+  imut                  = 144,
+  jmut                  = 72,
+  km                    = 1,
+  ksgm                  = 1,
+/
+
+&nml_coordinate
+  lspherical            = .true.,
+  l_globe               = .true.,
+/
+
+&nml_vert_grid
+  dz_const_cm           = 1.0d0,
+/
+
+&nml_horz_grid
+  lon_west_end_of_core  = 2.5d0,
+  lat_south_end_of_core = -87.5d0,
+  dx_const_deg=2.5d0
+  dy_const_deg=2.5d0
+/
+
+&nml_topo
+  file_topo          = "dummy.d",
+/
+
+&nml_record_date
+  rec_first_date        = 1979, 1, 1, 0, 0, 0,
+  rec_last_date         = 2015,12, 1, 0, 0, 0,
+  rec_interval_date     =    0, 1, 0, 0, 0, 0,
+/

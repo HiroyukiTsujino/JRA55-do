@@ -1,0 +1,4 @@
+ &nml_org2mon_tmpcutoff
+   fin_tmp10m='/workc/ocpublic/refdata/CORE/COREv2/ciaf/grads_oneitem/tmp10m.@year@'
+   fout_tmp10m='/worke/htsujino/CORE/core_orggrd_monthly/tmp10m_antarc.@year@'
+&end

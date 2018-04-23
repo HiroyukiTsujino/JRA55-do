@@ -1,0 +1,8 @@
+&nml_merra_surf
+  file_in_base='@indir@/svc_MERRA2_@indx@.tavgM_2d_slv_Nx',
+  file_out_base='@outdir@',
+  ibyr=@ibyr@,
+  ieyr=@ibyr@,
+  var_in='@var_in@',
+  var_out='@var_out@', 
+&end

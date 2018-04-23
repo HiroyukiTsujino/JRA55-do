@@ -1,0 +1,7 @@
+  Heat flux due to SW+LW+LA+SE :     7.603300000000000     
+  Heat flux due to water flux  :   -0.3961600000000000     
+  Heat flux due to sea ice     :    -1.397500000000000     
+  Residual Heat flux    :     5.809640000000000     
+  Total short wave      :     167.9468000000000     
+  Downward long wave    :     345.6869000000000     
+  Calibration factor for downward radiation :    0.9886891378038474     

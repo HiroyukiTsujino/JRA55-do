@@ -1,0 +1,6 @@
+&nml_remap_on_cobesst
+  ibyr=1948,
+  ieyr=2007,
+  riv_in_base='/work116/htsujino/CORE/core_river/runoff.',
+  riv_out_base='/work116/htsujino/CORE/core_river_monthly_cobesst/runoff.',
+&end
