@@ -1,4 +1,4 @@
-jra55_for_ogcm
+JRA55-do/README.md
 ========
 
   * Programs/scripts to adjust/calibrate the JRA-55 atmospheric field
