@@ -1,20 +1,20 @@
 description_paper
 ========
 
-  データセット記述論文に使用する図を管理
+  GrADs scripts for draw ingfigures for the documents.
+
+  User defined functions in ${HOME}/grads/libgs are used.
 
 
-
-
-内容
+Contents
 --------
 
-   * compare_dswrf_precip_raw.gs 
+   * compare_dswrf_precip_raw.gs  (---> Figure 1)
       調整前の全球平均下向き短波・全球積算降水の比較
       （JRA55に対する期間別調整実施の根拠）
 
 
-このディレクトリ以外で作成する図
+Figures produced in directories outside of this
 --------
 
    * ../ceres_grads/swdn_monthly/dswrf_buoy_bias.gs, dswrf_buoy_correc.gs
@@ -29,7 +29,7 @@ description_paper
 
 
 
-作成者
+Contact
 --------
 
-   * 辻野 博之 気象研究所海洋・地球化学研究部
+   * Hiroyuki Tsujino (JMA-MRI)
