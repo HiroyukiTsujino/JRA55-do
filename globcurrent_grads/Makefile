@@ -19,7 +19,11 @@ LDNCOPTS = -L/usr/local/netcdf-fortran-4.4.3/lib -lnetcdff -L/usr/local/netcdf-4
 
 RM = /bin/rm -f
 
-targets = nc2grads_globcurrent
+targets = nc2grads_globcurrent \
+	globcurrent_to_jra \
+	globcurrent_to_jra_onedata \
+	globcurrent_smooth \
+	mkannclim
 
 ### Phony targets ###
 all: $(targets)
@@ -71,4 +75,13 @@ nc2grads_globcurrent : nc2grads_globcurrent.o
 	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@
 
 globcurrent_to_jra : globcurrent_to_jra.o $(lib) 
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@
+
+globcurrent_to_jra_onedata : globcurrent_to_jra_onedata.o $(lib) 
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@
+
+globcurrent_smooth : globcurrent_smooth.o $(lib) 
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@
+
+mkannclim : mkannclim.o $(lib)
 	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@

@@ -1,3 +1,4 @@
+!-*-F90-*-
 program mmc2interpo
   implicit none
   

@@ -1,3 +1,4 @@
+!-*-F90-*-
 program transfer_endian
   implicit none
   integer(4),parameter :: nx  =  1440,  ny =   720

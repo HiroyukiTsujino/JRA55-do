@@ -1,3 +1,4 @@
+!-*-F90-*-
 program find_waterhead
   use mod_waterhead
   implicit none
@@ -8,4 +9,3 @@ program find_waterhead
   call waterhead__write
   
 end program find_waterhead
-

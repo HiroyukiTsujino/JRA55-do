@@ -4,7 +4,8 @@
   file_mask_cama='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/river_suppl/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GA_add_Bamber.bin',
   ibyr=2018,
   ieyr=2018,
-  nmon_last=2,
+  nmon_last=12,
+  nday_last=31,
   riv_cama_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/river_suzuki_v0_6/runoff.',
   riv_out_base='/work116/htsujino/SURF_FLUX/forcing/jra55-do-v1_1-river/runoff_all.',
   l_green_sep=.false.

@@ -2,7 +2,7 @@
 
 set -e
 
-if [ x${3} == x ]; then
+if [ x${1} == x ]; then
    echo "Usage: ${0} year"
    exit
 fi

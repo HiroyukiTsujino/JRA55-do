@@ -105,7 +105,8 @@ program grads_to_netCDF_general
   character(len=64) :: LON_UNITS, LAT_UNITS, LVL_UNITS
   character(len=64) :: REC_UNITS ='months since XXXX-1-1 00:00:00' 
 
-  character(len=128) :: file_in, file_out
+  character(len=256) :: file_in
+  character(len=128) :: file_out
 
   integer(4) :: num_var_out, num_var_all
   integer(4) :: nth_place_tmp

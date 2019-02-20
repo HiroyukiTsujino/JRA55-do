@@ -2,7 +2,23 @@ runoff/README.md
 ========
 
 This directory contains shell srcipts/Fortran programs
- to handle river run-off data from CaMaFlood
+to evaluate and manipulate daily river runoff data on 0.25 x 0.25.
+
+
+Description
+--------
+
+  * src/total_runoff_noyrev.F90: 
+    Generate monthly and annual time series from daily data. 
+    This should be useful for evaluating JRA55-do runoff products.
+    Example: namelist.total_runoff_noyrev_jra55-do-v1_1.
+
+
+Note
+--------
+
+Following information is obsolete:
+ used to handle river run-off data from CaMaFlood.
 
 
 Data
@@ -23,6 +39,7 @@ Data
     - mask_antactica.gd: mask CaMa flood region to be filled by CORE run-off ("zero" run-off is EXcluded)
     - merge_5/rivoutYYYY.bin : cover entire period 1958-2015 utilizing climatology applied by precipitation on land
     - final_v1/runoff.YYYY : final product in units kg/m2/s
+
 
 Programs/Scripts
 --------
@@ -64,7 +81,7 @@ Programs/Scripts
 Development
 --------
 
-  * Developed at: Oceanography and Geocheminstry Research Department,
+  * Developed at: Oceanography and Geochemistry Research Department,
                   Meteorological Research Institute,
                   Japan Meteorological Agency
   * Contact: Hiroyuki Tsujino (htsujino@mri-jma.go.jp)

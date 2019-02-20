@@ -1,3 +1,4 @@
+!-*-F90-*-
 program delete_lakes
   implicit none
   integer(4),parameter :: nx = 1440, ny = 720

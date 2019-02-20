@@ -1,5 +1,7 @@
 ### Target objects ###
-targets := merge_main_grn_ant divide_by_cellarea
+targets := merge_main_grn_ant \
+	   merge_main_grn_caa_ant \
+	   divide_by_cellarea
 
 ### Phony targets ###
 all: $(targets)

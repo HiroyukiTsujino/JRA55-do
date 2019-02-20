@@ -9,7 +9,8 @@ targets := total_runoff check_nextxy apply_factor apply_factor_noyrev \
 	dummy_topo \
 	core_to_cama \
 	create_1x1_monthly \
-	runoff_antarctica_region
+	runoff_antarctica_region \
+	separated_runoff_noyrev
 
 ### Phony targets ###
 all: $(targets)

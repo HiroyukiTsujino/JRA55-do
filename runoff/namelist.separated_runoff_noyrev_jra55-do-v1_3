@@ -1,0 +1,11 @@
+&nml_separated_runoff
+  fl_liquid_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra55-do-v1_3-river/liquid_runoff',
+  fl_solid_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra55-do-v1_3-river/solid_runoff',
+  dir_out='jra55-do-v1_3-sep',
+  ibyr=1958,
+  ieyr=2018,
+  l_apply_area=.true.,
+  file_area='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra55-do-v1_4-river/runoff_area.gd',
+  file_nextxy='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GA_add_Bamber.bin'
+  l_solid_clim=.true.
+/

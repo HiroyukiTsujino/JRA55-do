@@ -1,0 +1,7 @@
+ &nml_smooth
+  fl_in='/denkei-shared/og1/htsujino/GlobCurrent/global_025_deg/total_hs/grads_clim/uv_nov1999-oct2009.dat'
+  undef_in=-9.99e33
+  fl_ot='/denkei-shared/og1/htsujino/GlobCurrent/global_025_deg/total_hs/grads_clim/uv_nov1999-oct2009_9p20.dat'
+  undef_out=-9.99e33
+  iter_max=20
+ &end

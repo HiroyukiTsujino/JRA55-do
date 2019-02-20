@@ -1,0 +1,12 @@
+ &nml_moncl
+  imax=1440,
+  jmax=720,
+  kmax=3,
+  infile_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_et_al_2018_025x025/grads_monthly_CAA/Bamber_2018_025x025.'
+  undef_in=-9.99e33
+  outfile_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_et_al_2018_025x025/grads_monclim_CAA/Bamber_2018_025x025.2012-2016.m'
+  undef_out=-9.99e33
+  nbyr=2012
+  neyr=2016
+  klev=3
+ &end

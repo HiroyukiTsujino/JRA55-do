@@ -1,3 +1,4 @@
+!-*-F90-*-
 module mod_waterhead
   implicit none
   integer(4),parameter :: nx  =  1440,  ny =   720

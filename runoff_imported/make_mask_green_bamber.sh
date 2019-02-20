@@ -2,7 +2,8 @@
 
 set -e
 
-dir_in=/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_2012_Greenland_025x025/clim
+#dir_in=/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_2012_Greenland_025x025/clim
+dir_in=/work116/htsujino/SURF_FLUX/forcing/Bamber_2012_Greenland_025x025/clim
 dir_out=/work116/htsujino/SURF_FLUX/forcing/Bamber_2012_Greenland_025x025/clim
 
 # normal year

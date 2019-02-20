@@ -1,0 +1,28 @@
+&nml_main_grn_caa_ant
+  file_namelist_cama='NAMELIST.MXE.GLBRIVER',
+  l_leap_valid=.true.,
+  file_mask_cama='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/mask_CaaGrnArc.gd',
+  ibyr=@ibyr@,
+  ieyr=@ieyr@,
+  nmon_last=@nmon_last@,
+  nday_last=@nday_last@,
+  riv_cama_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/river_suzuki_v0_6/runoff.',
+  riv_out_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra55-do-v1_4-river/liquid_runoff.',
+  l_green_clim=.false.
+  l_green_sep=.true.
+  l_green_total=.false.
+  file_grn_solid_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_et_al_2018_025x025/grads_daily_CAA/Bamber_sld_2018_025x025.'
+  file_grn_liquid_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Bamber_et_al_2018_025x025/grads_daily_CAA/Bamber_lqd_2018_025x025.'
+  file_grn_total_base='dummy.gd'
+  l_antarc_sep=.true.
+  l_antarc_total=.false.
+  file_ant_solid_in='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Depoorter_2013_Antarctica/clim025x025/CF_025x025.dat'
+  file_ant_liquid_in='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/Depoorter_2013_Antarctica/clim025x025/BMF_025x025.dat'
+  file_ant_total_in='dummy.d'
+  l_solid_out=@l_solid_out@,
+  sld_out_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra55-do-v1_4-river/solid_runoff.',
+  l_area_out=@l_area_out@,
+  file_area_out='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra55-do-v1_4-river/runoff_area.gd'
+  l_total_solid=@l_total_solid@,
+  l_liquid_solid=@l_liquid_solid@,
+&end

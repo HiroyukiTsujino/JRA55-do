@@ -1,6 +1,7 @@
 ### Target objects ###
 targets := diag_bulk_interannual_on_cobesst \
 	   diag_bulk_interannual_on_brtmp \
+	   diag_latent_fusion_interannual_on_cobesst \
 	   sverdrup
 
 ### Phony targets ###
@@ -70,4 +71,5 @@ fileocmng.o: fileocmng.F90 fileunmng.o
 force_process.o: force_process.F90
 diag_bulk_interannual_on_brtmp.o: diag_bulk_interannual_on_brtmp.F90
 diag_bulk_interannual_on_cobesst.o: diag_bulk_interannual_on_cobesst.F90
+diag_latent_fusion_interannual_on_cobesst.o: diag_latent_fusion_interannual_on_cobesst.F90
 sverdrup.o: sverdrup.F90

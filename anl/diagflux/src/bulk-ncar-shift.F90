@@ -5,6 +5,34 @@
 !     Calculate Latent/Sensible heat flux based on 
 !          the bulk formula by Large and Yeager (2004).
 !
+!   About CPP directives
+!     - LYCOEF    : Compute properties of moist air based on Large and Yeager (2004;2009)
+!     - CALHEIGHT : Estimate the height of the bottom level (where surface variables are defined)
+!                    of JMA global spectral models (This option will not be usually used.)
+!
+!   Input:
+!     us   : zonal wind speed (m s-1)
+!     vs   : meridional wind speed (m s-1)
+!     sat  : Surface air temperature (degree Celsius)
+!     qar  : Specific humidity of surface air (kg kg-1)
+!     wdv  : Scalar wind speed (m s-1)
+!     slp  : Sea level pressure (hPa)
+!     sst  : Sea surface temperature (degree Celsius)
+!     imx,jmx : Size of the arrays (integer)
+!     atexl: land-sea mask (0:land, 1:sea)
+!     altu : Observation height of wind (m)
+!     altt : Observation height of air temperature (m)
+!     altq : Observation height of specific humidity (m)
+!
+!   Output:
+!     tmptrg : Height shifted air temperature (degree Celsius)
+!     sphtrg : Height shifted specific humidity (kg kg-1)
+!     tu   : Air temperature at the height where wind is observed (degree Celsius)
+!     qu   : Specific humidity at the height where wind is observed (kg kg-1)
+!     dtu  : Difference of temperature between air temperature and sea surface temperature (degree Celsius)
+!     dqu  : Difference of specific humidity between air specific humidity
+!          :  and saturation specific humidity at the sea surface  (kg kg-1)
+!
 subroutine bulk_shift(tmptrg,sphtrg, &
      & us,vs,sat,qar,wdv,slp,sst,ice,&
      & imx,jmx,atexl,altu,altt,altq,alt_target,sphmin)
@@ -188,8 +216,8 @@ subroutine bulk_shift(tmptrg,sphtrg, &
         !
         ! !!!!! do not change the line order below !!!!!
         !
-        ! psurf : 海面気圧     [Pa]
-        ! pfull : 一層目の気圧  [Pa]
+        ! psurf : Sea level pressure [Pa]
+        ! pfull : Pressure at the first level [Pa]
         !
         pfull = slpres * 1.0d2
         bgsmr = 1.0d0 - bgsm

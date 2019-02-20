@@ -1,8 +1,8 @@
 &nml_total_runoff
-  fl_in_base='/work116/htsujino/SURF_FLUX/forcing/jra55-do-v1_1-river/runoff_all',
+  fl_in_base='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_1/river_flux_025x025/river_all/runoff_all',
   dir_out='jra55-do-v1_1',
   ibyr=1958,
-  ieyr=2017,
+  ieyr=2018,
   l_apply_area=.true.,
-  file_area='/work116/htsujino/SURF_FLUX/data_river/runoff_area.gd'
+  file_area='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_1/river_support/runoff_area.gd'
 /

@@ -48,7 +48,8 @@ program mk_GrnFreshFlux_Bamber
   end do
   call modify_nextxy
 
-  i_check = 1307; j_check = 627
+!  i_check = 1307; j_check = 627
+  i_check = 1306; j_check = 628
 
   ! Create daily data for convenience.
 
@@ -98,6 +99,14 @@ subroutine main (nyr, nmn)
   fwfi(:,:) = fwfi(:,:) * 1.d9                          ! (km)^3  -> m^3
   fwfi(:,:) = fwfi(:,:) / (month_days(nmn) * 86400.d0 ) ! 1/month -> 1/s
  
+  do jj = 1, nyi
+    do ii = 1, nxi
+      if (loni(ii,jj) < 0.e0 ) then
+        loni(ii,jj) = loni(ii,jj) + 360.e0
+      end if
+    end do
+  end do
+
   total = 0.d0
   fwf(:,:) = 0.d0
   do jj = 1, nyi

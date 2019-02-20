@@ -20,7 +20,12 @@ LDNCOPTS = -L/usr/local/netcdf-fortran-4.4.3/lib -lnetcdff -L/usr/local/netcdf-4
 RM = /bin/rm -f
 
 targets = nc2grads_bamber_2018 \
-	  mk_GrnFreshFlux_Bamber_025x025
+	  mk_GrnFreshFlux_Bamber_025x025 \
+	  mk_GrnCaaFreshFlux_Bamber_025x025 \
+	  scan_bamber_2018 \
+	  mkmonclim \
+	  divide unite
+
 
 ### Phony targets ###
 all: $(targets)
@@ -72,4 +77,19 @@ nc2grads_bamber_2018 : nc2grads_bamber_2018.o
 	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@
 
 mk_GrnFreshFlux_Bamber_025x025: mk_GrnFreshFlux_Bamber_025x025.o
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) -o $@
+
+mk_GrnCaaFreshFlux_Bamber_025x025: mk_GrnCaaFreshFlux_Bamber_025x025.o
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) -o $@
+
+scan_bamber_2018: scan_bamber_2018.o
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) -o $@
+
+divide: divide.o
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) -o $@
+
+unite: unite.o
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) -o $@
+
+mkmonclim: mkmonclim.o $(lib)
 	$(F90) $(FFLAGS) $^ $(LDFLAGS) -o $@
