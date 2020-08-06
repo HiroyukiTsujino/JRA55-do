@@ -13,8 +13,8 @@ day_st=${3}
 day_ed=${4}
 
 out_weight=.false.
-fcst_org='../linkdir/forcing/jra55fcst_filt_3hr_TL319r'
-fcst_latlon='../linkdir/forcing/jra55fcst_filt_3hr_TL319'
+fcst_org='../linkdir/work/jra55fcst_filt_3hr_TL319r'
+fcst_latlon='../linkdir/work/jra55fcst_filt_3hr_TL319'
 file_table='../linkdir/data/red2reg_fill_with_water.d'
 
 ################
@@ -57,7 +57,7 @@ do
 
     if [ ! -e ${fcst_latlon}/${yyyymm} ]; then
       echo "creating ${yyyymm}"
-      mkdir ${fcst_latlon}/${yyyymm}
+      mkdir -p ${fcst_latlon}/${yyyymm}
     fi
 
     for hour in 0 3 6 9 12 15 18 21

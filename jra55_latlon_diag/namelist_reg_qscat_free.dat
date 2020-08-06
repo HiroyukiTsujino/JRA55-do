@@ -1,0 +1,49 @@
+&nml_reg
+  flnin1='/work113/htsujino/SURF_FLUX/forcing/gcurr_on_qscat_annclim_TL319/curl_uvsurf_gcurr_nov1999-oct2009.dat',
+  flnin2='/work113/htsujino/SURF_FLUX/forcing/qscat_strict_free_1_annclim_TL319/curl_uv_free_actual_filt_nov1999-oct2009.dat',
+  rmiss1=-9.99e33,
+  rmiss2=-9.99e33,
+  lconv1=.true.,
+  lconv2=.true.,
+  uvc_min=1.e-7
+  w_lon=122.d0,
+  e_lon=135.d0,
+  s_lat=22.d0,
+  n_lat=31.d0,
+&end
+
+!  flnin2='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_annclim_TL319/curl_uvn_filt_nov1999-oct2009.dat',
+!  flnin2='/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_annclim_TL319/curl_uvn_nov1999-oct2009.dat',
+!
+!  w_lon=180.d0,
+!  e_lon=240.d0,
+!  s_lat=4.d0,
+!  n_lat=9.d0,
+!
+!  w_lon=120.d0,
+!  e_lon=135.d0,
+!  s_lat=22.d0,
+!  n_lat=33.d0,
+!
+! Use this
+!  w_lon=122.d0,
+!  e_lon=135.d0,
+!  s_lat=22.d0,
+!  n_lat=31.d0,
+!
+!  w_lon=277.d0,
+!  e_lon=290.d0,
+!  s_lat=25.d0,
+!  n_lat=37.d0,
+!
+! Use this
+!  w_lon=279.d0,
+!  e_lon=292.d0,
+!  s_lat=28.d0,
+!  n_lat=39.d0,
+!
+! Use this
+!  w_lon=180.d0,
+!  e_lon=240.d0,
+!  s_lat=4.d0,
+!  n_lat=9.d0,

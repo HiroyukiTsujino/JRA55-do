@@ -3,7 +3,8 @@
 targets = mkannclim mkmonclim \
 	mkanncl_from_moncl \
 	mkmonclim_filter mkmonthly_filter \
-	mk_rmsd_from_moncl
+	mk_rmsd_from_moncl \
+	mkannclim_nomiss
 
 ### Phony targets ###
 all: $(targets)

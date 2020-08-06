@@ -69,7 +69,7 @@ System Requirements
     - PGI fortran
     - GrADs
     - Bash
-    - CMOR3.3.1 bundled in Anaconda2 (python 2.7)
+    - CMOR3.4.0 bundled in Anaconda2 (python 2.7)
 
   * "Setup.sh" is to set user dependent environments.
 
@@ -109,7 +109,7 @@ Processing of the JRA-55 raw data
     - adjust_med_prcp    : adjust Mediterranean precipitation using CORE and GPCC
 
 
-  * Evaluation using SST datasets (Stage 2)
+  * Evaluation using SST datasets (Stage 3)
 
     - jra55_on_cobesst     : Diagnosis of JRA55 on COBESST grid (1x1)
     - jra55flux_on_cobesst : Processing fluxes on COBESST grid
@@ -124,7 +124,7 @@ Processing of the JRA-55 raw data
     - jra55surf_on_hurrellsst : Processing atmospheric variables on Hurrell SST grid
 
 
-  * Producing the dataset (Stage 3)
+  * Producing the dataset (Stage 4)
 
     - for_omip	       : Produce netCDF files in preparation for CMOR
     - for_omip_cmor    : CMORize data

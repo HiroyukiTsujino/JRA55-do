@@ -1,0 +1,9 @@
+&nml_hann
+ fl_in='/work113/htsujino/SURF_FLUX/forcing/qscat_strict_free_4_annclim_TL319/curl_uv_free_actual_nov1999-oct2009.dat',
+ fl_ot='/work113/htsujino/SURF_FLUX/forcing/qscat_strict_free_4_annclim_TL319/curl_uv_free_actual_filt_nov1999-oct2009.dat',
+ i_search=5,
+ j_search=5,
+ h_deg_width=2.0d0,
+ undef_in=-9.99e33,
+ undef_out=-9.99e33
+&end

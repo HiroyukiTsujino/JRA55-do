@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e
 
@@ -12,8 +12,15 @@ yred=${2}
 dyst=${3}
 dyed=${4}
 
-input_dir=../linkdir/forcing/fcst_phyland
-newdir=../linkdir/forcing/jra55fcst_v1_3_input_runoff_3hr_TL319r
+#input_dir=../linkdir/forcing/fcst_phyland
+
+input_dir=/mri-data/jra-55/Hist/Daily/fcst_phyland
+newdir=../linkdir/work/jra55fcst_v1_3_input_runoff_3hr_TL319r
+
+if [ ! -e ${newdir} ]; then
+  echo "creating ${newdir}"
+  mkdir ${newdir}
+fi
 
 ################
 

@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e
 
@@ -29,9 +29,9 @@ do
   else
     num_day=${day_ed}
   fi
-  num_data=`expr ${num_day} * 8`
+  num_data=`expr ${num_day} \* 8`
   echo "num_day = ${num_day}, num_data = ${num_data}"
-  num_data_year=`expr ${num_day_year} * 8`
+  num_data_year=`expr ${num_day_year} \* 8`
   echo "num_day_year = ${num_day_year}, num_data_year = ${num_data_year}"
 #  for item in tmp10m sph10m
   for item in slprs tmp10m sph10m u10m v10m dswrf dlwrf rain snow # adjusted

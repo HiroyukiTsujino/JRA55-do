@@ -26,6 +26,6 @@
 
 &nml_record_date
   rec_first_date        = 1958, 1, 1, 0, 0, 0,
-  rec_last_date         = 2017, 1, 1, 0, 0, 0,
+  rec_last_date         = 2019, 1, 1, 0, 0, 0,
   rec_interval_date     =    1, 0, 0, 0, 0, 0,
 /

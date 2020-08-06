@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e
 
@@ -19,8 +19,8 @@ day_ed=${4}
 
 out_weight=.false.
 
-fcst_org='../linkdir/forcing/jra55fcst_v7_rad_3hr_TL319r'
-fcst_latlon='../linkdir/forcing/jra55fcst_v7_rad_3hr_TL319'
+fcst_org='../linkdir/work/jra55fcst_v0_7_rad_3hr_TL319r'
+fcst_latlon='../linkdir/work/jra55fcst_v0_7_rad_3hr_TL319'
 
 #fcst_org='../linkdir/forcing/jra55fcst_v7_rad1_3hr_TL319r'
 #fcst_latlon='../linkdir/forcing/jra55fcst_v7_rad1_3hr_TL319'
@@ -67,7 +67,7 @@ do
 
     if [ ! -e ${fcst_latlon}/${yyyymm} ]; then
       echo "creating ${yyyymm}"
-      mkdir ${fcst_latlon}/${yyyymm}
+      mkdir -p ${fcst_latlon}/${yyyymm}
     fi
 
     for hour in 0 3 6 9 12 15 18 21

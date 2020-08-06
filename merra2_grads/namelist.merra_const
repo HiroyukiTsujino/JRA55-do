@@ -1,0 +1,5 @@
+&nml_merra_const
+  file_in='/work/a/htsujino/MERRA2/rawdata/MERRA2_101.const_2d_asm_Nx.00000000.nc4',
+  file_out='/work/a/htsujino/MERRA2/grads_const/frocean.gd',
+  var_in='FROCEAN',
+&end

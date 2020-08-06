@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e 
 
@@ -8,7 +8,7 @@ if [ x${3} == x ]; then
 fi
 
 rm -f NAMELIST.MXE
-ln -s NAMELIST.MXE.COBESST NAMELIST.MXE
+ln -s NAMELIST.MXE.COBESST.ocean_annual NAMELIST.MXE
 
 yearst=${1}
 yeared=${2}
@@ -46,3 +46,7 @@ do
   yearn=`expr ${year} + 1`
   year=${yearn}
 done
+
+rm -f NAMELIST.MXE
+
+exit 0

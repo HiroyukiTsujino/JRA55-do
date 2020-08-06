@@ -1,9 +1,9 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e
 
 if [ x${2} = x ]; then
-  echo "Usage: ${0} start_year end_year (start_month end_month)"
+  echo "Usage: ${0} start_year end_year (start_day end_day)"
   exit
 fi
 
@@ -19,10 +19,8 @@ day_ed=${4}
 
 out_weight=.false.
 
-datahome=/work113/htsujino/SURF_FLUX/forcing
-
-fcst_org="../linkdir/forcing/jra55fcst_v1_2_prcp_3hr_TL319r"
-fcst_latlon="../linkdir/forcing/jra55fcst_v1_2_prcp_3hr_TL319"
+fcst_org="../linkdir/work/jra55fcst_v1_2_prcp_3hr_TL319r"
+fcst_latlon="../linkdir/work/jra55fcst_v1_2_prcp_3hr_TL319"
 file_table='../linkdir/data/red2reg_fill_with_water.d'
 
 ################
@@ -65,7 +63,7 @@ do
 
     if [ ! -e ${fcst_latlon}/${yyyymm} ]; then
       echo "creating ${yyyymm}"
-      mkdir ${fcst_latlon}/${yyyymm}
+      mkdir -p ${fcst_latlon}/${yyyymm}
     fi
 
     for hour in 0 3 6 9 12 15 18 21

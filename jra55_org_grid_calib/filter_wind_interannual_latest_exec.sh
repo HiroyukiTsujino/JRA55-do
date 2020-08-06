@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e
 
@@ -13,6 +13,23 @@ dyst=${3}
 yred=${4}
 mned=${5}
 dyed=${6}
+
+orgdir=../linkdir/work/jra55fcst_3hr_TL319r
+newdir=../linkdir/work/jra55fcst_filt_3hr_TL319r
+
+year=${yrst}
+
+while [ ${year} -le ${yred} ];
+do
+  for mon in `seq -f "%02g" 1 12`
+  do
+    if [ ! -e ${newdir}/${year}${mon} ]; then
+      echo "creating ${year}${mon}"
+      mkdir -p ${newdir}/${year}${mon}
+    fi
+  done
+  year=`expr ${year} + 1`
+done
 
 sed -e s%@yrst@%${yrst}% \
     -e s%@mnst@%${mnst}% \

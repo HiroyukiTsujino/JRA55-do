@@ -1,0 +1,45 @@
+### Target objects ###
+targets := 20CRv3_to_jra \
+	   merge_20CRv3_and_jra
+
+### Phony targets ###
+all: $(targets)
+clean:
+	rm -f *.o core $(targets) *_driver log.* \
+	 *.mod *.a *~ */*~ namelist.test
+
+vpath %.F90 src src/file_mng
+
+### Platform dependent settings ###
+include ../setting/macros.make
+
+### MXE library ###
+LIB_DIR := ../lib
+include ../lib/libmxe.make
+
+
+### Local modules ###
+lib := lib.a
+objs_lib := fileunmng.o fileocmng.o
+$(lib) : $(objs_lib)
+	$(AR) $@ $^
+$(objs_lib): %.o: %.F90 $(LIBMXE)
+	$(F90) -c $(FFLAGS) $(CPPFLAGS) $(INCLUDES) -o $@ $<
+
+
+####################
+
+### Compile ###
+%.o: %.F90 $(LIBMXE) $(lib)
+	$(F90) $< -c $(FFLAGS) $(INCLUDES) $(CPPFLAGS) -o $@
+
+### Link ###
+%: %.o $(lib)
+	$(F90) $^ $(LDFLAGS) -o $@
+
+
+### Dependencies ###
+20CRv3_to_jra: 20CRv3_to_jra.o
+20CRv3_to_jra.o: 20CRv3_to_jra.F90
+merge_20CRv3_and_jra: merge_20CRv3_and_jra.o
+merge_20CRv3_and_jra.o: merge_20CRv3_and_jra.F90

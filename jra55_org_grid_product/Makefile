@@ -13,12 +13,12 @@ clean:
 
 vpath %.F90 src src/util src/file_mng
 
-#include ../setting/macros.make
-# use OpenMP
-F90     = pgf90
+include ../setting/macros.make
+# use OpenMP with pgf90
+#F90     = pgf90
 # OpenMP
-FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio -mp
-LDFLAGS = -mcmodel=medium -lacml -lacml_mv -mp
+#FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio -mp
+#LDFLAGS = -mcmodel=medium -lacml -lacml_mv -mp
 # no OpenMP
 #FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio
 #LDFLAGS = -mcmodel=medium -lacml -lacml_mv

@@ -1,5 +1,5 @@
 &nml_river_update
   ibyr=2019,
   ieyr=2019,
-  nd_last=5
+  nd_last=365
 &end

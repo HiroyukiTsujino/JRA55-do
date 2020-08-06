@@ -1,0 +1,22 @@
+###
+### Fortran 90 compiler
+###  Set variables: F90, FFLAGS and AR.
+#-- You need to load the following three modules.
+# $ module load intel
+# $ module load hdf5
+# $ module load netcdf
+# $ module load netcdf-fortran
+
+### front1 ###
+F90 = ifort
+FFLAGS = -convert big_endian -assume byterecl
+LDFLAGS =
+OMPFFLAGS = -qopenmp
+OMPLDFLAGS = -qopenmp
+AR = ar rv
+
+#- NetCDF Library in front
+NETCDF_DIR      =
+NETCDF_FFLAGS   = -DMXE_NETCDF
+NETCDF_INCLUDES = `nf-config --fflags`
+NETCDF_LDFLAGS  = `nf-config --flibs`

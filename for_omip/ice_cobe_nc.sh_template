@@ -2,12 +2,12 @@
 
 set -e
 
-orgdir=/work116/htsujino/COBESST/daily/grads
-newdir=/work113/htsujino/SURF_FLUX/forcing
+orgdir=../linkdir/COBESST/daily/grads
+newdir=../linkdir/products
 
 flin="${orgdir}/ice-glb."
-flout="${newdir}/OMIP_DATA/JRA55-do-suppl-v1.3.01/ice.COBESST.@year@.@create@.nc"
-flctl="${newdir}/OMIP_DATA/JRA55-do-suppl-v1.3.01/ice.COBESST.@year@.ctl"
+flout="${newdir}/support/netCDF/ice.COBESST.@year@.@create@.nc"
+flctl="${newdir}/support/netCDF/ice.COBESST.@year@.ctl"
 
 ##############################
 # if mask is written to file, l_mask_out = .true.

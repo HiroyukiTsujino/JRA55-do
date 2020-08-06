@@ -1,0 +1,5 @@
+&nml_20CRv3_boundary
+  nyear=@nyear@,
+  file_in_base='/data/htsujino/20CRv3',
+  file_out_base='/data/htsujino/20CRv3/grads',
+&end

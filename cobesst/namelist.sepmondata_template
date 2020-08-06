@@ -1,6 +1,6 @@
 &nml_sepmondata
-  dir_in='/work116/htsujino/COBESST/monthly/grads',
-  dir_out='/work116/htsujino/COBESST/monthly/yyyymm',
+  dir_in='../linkdir/COBESST/monthly/grads',
+  dir_out='../linkdir/COBESST/monthly/yyyymm',
   ibyr=@ibyr@,
   ieyr=@ieyr@,
   iemn=@iemn@,

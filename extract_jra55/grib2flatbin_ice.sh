@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/usr/bin/bash
 
 set -e
 
@@ -7,8 +7,9 @@ yeared=${2}
 day_st=${3}
 day_ed=${4}
 
-orgdir=../linkdir/forcing/ice
-newdir=../linkdir/forcing/jra_org
+orgdir=/mri-data/jra-55/Hist/Daily/ice
+#orgdir=../linkdir/forcing/ice
+newdir=../linkdir/work/jra55fcst_3hr_TL319r
 
 ################
 

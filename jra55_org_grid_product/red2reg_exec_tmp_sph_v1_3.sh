@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e 
 
@@ -64,13 +64,13 @@ do
       yyyymmddhh=${yr0}${mn0}${dy0}${hh}
 
       item=tmp10m
-      fcst_org='../linkdir/forcing/jra55fcst_v1_3_prod1_3hr_TL319r'
-      fcst_latlon='../linkdir/forcing/jra55fcst_v1_3_prod1_3hr_TL319'
+      fcst_org='../linkdir/work/jra55fcst_v1_3_prod1_3hr_TL319r'
+      fcst_latlon='../linkdir/work/jra55fcst_v1_3_prod1_3hr_TL319'
       item_weight=${item}'_weight'
 
       if [ ! -e ${fcst_latlon}/${yyyymm} ]; then
         echo "creating ${yyyymm}"
-        mkdir ${fcst_latlon}/${yyyymm}
+        mkdir -p ${fcst_latlon}/${yyyymm}
       fi
 
       sed -e s%@base_dir_org@%${fcst_org}% \
@@ -86,13 +86,13 @@ do
       ./make_red2reg
 
       item=sph10m
-      fcst_org='../linkdir/forcing/jra55fcst_v1_3_prod1_3hr_TL319r'
-      fcst_latlon='../linkdir/forcing/jra55fcst_v1_3_prod1_3hr_TL319'
+      fcst_org='../linkdir/work/jra55fcst_v1_3_prod1_3hr_TL319r'
+      fcst_latlon='../linkdir/work/jra55fcst_v1_3_prod1_3hr_TL319'
       item_weight=${item}'_weight'
 
       if [ ! -e ${fcst_latlon}/${yyyymm} ]; then
         echo "creating ${yyyymm}"
-        mkdir ${fcst_latlon}/${yyyymm}
+        mkdir -p ${fcst_latlon}/${yyyymm}
       fi
 
       sed -e s%@base_dir_org@%${fcst_org}% \

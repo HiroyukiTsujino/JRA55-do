@@ -1,0 +1,15 @@
+&nml_day2mon_miss
+  imf=640,
+  jmf=320,
+  iyst=1999,
+  imst=8,
+  iyed=2009,
+  imed=10,
+  item_name='@item@_gcurr',
+  in_base_dir='/work113/htsujino/SURF_FLUX/forcing/gcurr_on_qscat_daily_TL319',
+  out_base_dir='/work113/htsujino/SURF_FLUX/forcing/gcurr_on_qscat_monthly_TL319',
+  undef_in=-9.99e33,
+  undef_out=-9.99e33,
+  min_ratio=0.333333333333333d0,
+  l_big_endian=.true.
+&end

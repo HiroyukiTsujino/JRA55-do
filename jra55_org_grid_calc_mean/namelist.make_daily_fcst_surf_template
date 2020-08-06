@@ -3,9 +3,9 @@
   imon=@month@,
   iday=@day@,
   int_hour=3,
-  file_surf_base='../linkdir/forcing/jra_org'
-  file_daily_base='../linkdir/forcing/jra_daily_org'
-  file_daily_latlon_base='../linkdir/forcing/jra_daily_latlon'
+  file_surf_base='@org_dir@'
+  file_daily_base='@daily_dir@'
+  file_daily_latlon_base='@latlon_dir@'
   file_mask='../linkdir/forcing/jra_org/const/TL319.mask'
   l_daily_tmp2m=@tmp2m@,
   l_daily_sph2m=@sph2m@,

@@ -47,6 +47,8 @@ program unite_mask
         mask(i,j) = 8.0
       else if (indx(i,j)=='7') then
         mask(i,j) = 7.0
+      else if (indx(i,j)=='6') then
+        mask(i,j) = 6.0
       else if (indx(i,j)=='2') then
         mask(i,j) = 6.0
       end if
@@ -55,7 +57,8 @@ program unite_mask
   !
   ! Output Grads Data File
   !
-  file_mask='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/mask_CaaGrnArc.gd'
+  !file_mask='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/mask_CaaGrnArc.gd'
+  file_mask='/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/mask_CaaGrnArc_v1_4.gd'
   open(24,file=file_mask,form='unformatted', &
        & access='direct',recl=4*imut*jmut)
   write(24,rec=1) mask

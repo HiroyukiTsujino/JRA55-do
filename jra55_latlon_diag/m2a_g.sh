@@ -109,14 +109,14 @@ endyear=${2}
 #fpathout="${anndir}/prcp"
 #./mon2ann_g.sh 640 320 1 ${styear} ${endyear} "${fpathin}" "${fpathout}" -9.99e33
 
-fpathin="${mondir}/wvn10m"
-fpathout="${anndir}/wvn10m"
-./mon2ann_g.sh 640 320 1 ${styear} ${endyear} "${fpathin}" "${fpathout}" 9.999e20
+#fpathin="${mondir}/wvn10m"
+#fpathout="${anndir}/wvn10m"
+#./mon2ann_g.sh 640 320 1 ${styear} ${endyear} "${fpathin}" "${fpathout}" 9.999e20
 
-fpathin="${mondir}/un10m"
-fpathout="${anndir}/un10m"
-./mon2ann_g.sh 640 320 1 ${styear} ${endyear} "${fpathin}" "${fpathout}" 9.999e20
+#fpathin="${mondir}/un10m"
+#fpathout="${anndir}/un10m"
+#./mon2ann_g.sh 640 320 1 ${styear} ${endyear} "${fpathin}" "${fpathout}" 9.999e20
 
-fpathin="${mondir}/vn10m"
-fpathout="${anndir}/vn10m"
-./mon2ann_g.sh 640 320 1 ${styear} ${endyear} "${fpathin}" "${fpathout}" 9.999e20
+#fpathin="${mondir}/vn10m"
+#fpathout="${anndir}/vn10m"
+#./mon2ann_g.sh 640 320 1 ${styear} ${endyear} "${fpathin}" "${fpathout}" 9.999e20

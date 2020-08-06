@@ -42,6 +42,7 @@ program curltau
   real(4),allocatable :: curl4(:,:)
 
   real(8),allocatable :: mask_coast(:,:)
+  real(8),allocatable :: mask_miss(:,:)
   !
   real(4), parameter :: UNDEF = -9.99e33
   !
@@ -58,6 +59,7 @@ program curltau
   logical :: l_nohalo_cyclic
   logical :: l_out_latlon
   logical :: l_mask_coast
+  logical :: l_mask_miss
 
   integer(4) :: mtin, mtnam
   integer(4) :: mtot
@@ -69,7 +71,7 @@ program curltau
   !==============================================
 
   namelist /nml_curltau/ flinx, fliny, irecx, irecy, &
-       & l_units_cgs, l_mask_coast, flout, l_nohalo_cyclic, l_out_latlon
+       & l_units_cgs, l_mask_coast, l_mask_miss, flout, l_nohalo_cyclic, l_out_latlon
 
   !---------------------------------------------
   ! 入力パラメタ既定値
@@ -80,6 +82,7 @@ program curltau
   l_units_cgs = .false.
   l_nohalo_cyclic = .false.
   l_mask_coast = .true.
+  l_mask_miss = .true.
 
   ! 標準入力から読み込み
 
@@ -111,6 +114,7 @@ program curltau
   allocate(curl4(1:imut,1:jmut))
 
   allocate(mask_coast(1:imut,1:jmut))
+  allocate(mask_miss(1:imut,1:jmut))
 
   !----------------------------------------------
 
@@ -132,6 +136,28 @@ program curltau
   if(ios /= 0) write(*, *) 'reading error in file:', trim(flinx)
   call close_file(mtin)
 
+  mask_miss(:,:) = 0.d0
+  do j = 2, jmut
+    do i = 2, imut
+      if ((taux4(i,j) /= undef) .and. (taux4(i-1,j) /= undef) &
+           & .and. (taux4(i,j-1) /= undef) .and. (taux4(i-1,j-1) /= undef)) then
+        mask_miss(i,j) = 1.d0
+      end if
+    end do
+  end do
+  if (l_nohalo_cyclic) then
+    do j = 2, jmut
+      if ((taux4(1,j) /= undef) .and. (taux4(imut,j) /= undef) &
+           & .and. (taux4(1,j-1) /= undef) .and. (taux4(imut,j-1) /= undef)) then
+        mask_miss(1,j) = 1.d0
+      end if
+    end do
+  end if
+
+  where (taux4(:,:) == undef) 
+    taux4(:,:) = 0.d0
+  end where
+
   if (l_units_cgs) then
     taux(:,:) = aexl(:,:,1)*real(taux4(:,:),8) * 1.0d-1 ! ---> MKS
   else
@@ -145,6 +171,10 @@ program curltau
   read (mtin, rec=irecy, iostat=ios) tauy4
   if(ios /= 0) write(*, *) 'reading error in file:', mtin
   call close_file(mtin)
+
+  where (tauy4(:,:) == undef) 
+    tauy4(:,:) = 0.d0
+  end where
 
   if (l_units_cgs) then
     tauy(:,:) = aexl(:,:,1)*real(tauy4(:,:),8) * 1.0d-1 ! ----> MKS
@@ -179,6 +209,12 @@ program curltau
     end where
   end if
   !
+  if (l_mask_miss) then
+    where(mask_miss(:,:) == 0.0d0)
+      curl4(:,:) = UNDEF
+    end where
+  end if
+
   call open_file_direct(mtot, flout, lreclen, action='write')
   write (mtot, rec=1, iostat=ios) curl4
   if(ios /= 0) write(*, *) 'writing error in file:', trim(flout)

@@ -2,7 +2,9 @@
 targets := diag_bulk_interannual_on_cobesst \
 	   diag_bulk_interannual_on_brtmp \
 	   diag_latent_fusion_interannual_on_cobesst \
-	   sverdrup
+	   sverdrup \
+	   linear_regression \
+	   hann_filter
 
 ### Phony targets ###
 all: $(targets)
@@ -42,7 +44,8 @@ objs_lib := bulk-ncar.o \
 	psit_30.o psiu_30.o grv.o qsee.o \
 	hintpl_mask.o \
 	fileunmng.o fileocmng.o \
-	force_process.o
+	force_process.o \
+	lsr.o
 $(lib) : $(objs_lib)
 	$(AR) $@ $^
 $(objs_lib): %.o: %.F90 $(LIBMXE)
@@ -69,7 +72,10 @@ bulk-cor30a.o: bulk-cor30a.F90
 fileunmng.o: fileunmng.F90
 fileocmng.o: fileocmng.F90 fileunmng.o
 force_process.o: force_process.F90
+lsr.o: lsr.F90
 diag_bulk_interannual_on_brtmp.o: diag_bulk_interannual_on_brtmp.F90
 diag_bulk_interannual_on_cobesst.o: diag_bulk_interannual_on_cobesst.F90
 diag_latent_fusion_interannual_on_cobesst.o: diag_latent_fusion_interannual_on_cobesst.F90
 sverdrup.o: sverdrup.F90
+linear_regression.o: linear_regression.F90
+hann_filter.o: hann_filter.F90

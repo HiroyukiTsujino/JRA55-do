@@ -2,17 +2,18 @@
 
 set -e
 
-if [ x${2} == x ]; then
-   echo "Usage: ${0} year end_month (0 to process only daily data)"
+if [ x${3} == x ]; then
+   echo "Usage: ${0} year end_month (0 to process only daily data) remote_host_name"
    exit
 fi
 
 year=${1}
 end_mon=${2}
+remotenam=${3}
 
 HOME=`pwd`
 
-cobesst_org=front:/mri-data/climate_1/Kai/COBE-SST
+cobesst_org=${remotenam}:/mri-data/climate_1/Kai/COBE-SST
 cobesst_dir=/work116/htsujino/COBESST
 
 echo "copying COBESST daily ......"

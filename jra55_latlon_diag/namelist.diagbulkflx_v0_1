@@ -3,12 +3,12 @@
   sst_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
   fin_base_sst='brtmp',
   fin_base_ice='ice',
-  file_first_sst=1999,1,1,0,0,0,
+  file_first_sst=2017,1,1,0,0,0,
   file_intv_type_sst=4,
   file_intv_sst=3,
   total_rec_sst=1,
   data_intv_sec_sst=10800,
-  sst_first=1999,1,1,0,0,0,
+  sst_first=2017,1,1,0,0,0,
   undef_sst=9.999e20
   l_ymdir_sst=.true.
 &end
@@ -21,12 +21,12 @@
   fin_base_us='u10m',
   fin_base_vs='v10m',
   fin_base_slp='slprs',
-  file_first_srf=1999,1,1,0,0,0,
+  file_first_srf=2017,1,1,0,0,0,
   file_intv_type_srf=4,
   file_intv_srf=3,
   total_rec_srf=1,
   data_intv_sec_srf=10800,
-  srf_first=1999,1,1,0,0,0,
+  srf_first=2017,1,1,0,0,0,
   undef_srf=9.999e20,
   l_ymdir_srf=.true.
   alt_sat=2.0d0,
@@ -35,8 +35,8 @@
 &end
 
 &nml_diagbulkflx
-  calc_start=1999,1,1,1,30,0,
-  calc_end=2010,1,1,1,30,0, 
+  calc_start=2017,1,1,1,30,0,
+  calc_end=2020,1,1,1,30,0, 
   l_leap_valid=.true.
   int_hist=-1,
   flx_base_dir='../linkdir/forcing/jra55fcst_monthly_TL319'

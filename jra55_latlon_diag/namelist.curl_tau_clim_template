@@ -1,0 +1,11 @@
+&nml_curltau
+  flinx='@indir@/@file_x@',
+  fliny='@indir@/@file_y@',
+  irecx=1,
+  irecy=1,
+  l_units_cgs=.false.,
+  l_nohalo_cyclic=.true.
+  l_mask_coast=.true.
+  l_mask_miss=.true.
+  flout='@outdir@/@file_out@'
+/

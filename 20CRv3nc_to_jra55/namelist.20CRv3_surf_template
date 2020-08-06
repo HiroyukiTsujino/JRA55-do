@@ -1,0 +1,8 @@
+&nml_20CRv3_surf
+  file_in_base='@indir@/@file_in@.',
+  file_out_base='@outdir@',
+  ibyr=@ibyr@,
+  ieyr=@ieyr@,
+  var_in='@var_in@',
+  var_out='@var_out@', 
+&end

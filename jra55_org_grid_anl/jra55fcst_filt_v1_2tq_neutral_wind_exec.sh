@@ -1,26 +1,26 @@
-#!/bin/bash -f
+#!/bin/bash
 
 set -e
 
-export OMP_NUM_THREADS=4
+#export OMP_NUM_THREADS=4
 
 yearst=${1}
 yeared=${2}
 day_st=${3}
 day_ed=${4}
 
-jra_cnst='../linkdir/forcing/jra_org/const'
-cobe_dir='/work116/htsujino/COBESST/daily/grads'
+jra_cnst='../linkdir/work/const'
+cobe_dir='../linkdir/COBESST/daily/grads'
 
 out_latlon=.false.
 adjust_icesurf=.true.
 
-fcst_org='../linkdir/forcing/jra55fcst_3hr_TL319r'
-fcst_wind='../linkdir/forcing/jra55fcst_filt_3hr_TL319r'
-fcst_tmp='../linkdir/forcing/jra55fcst_v1_2_3hr_tmp2m_TL319r'
-fcst_sph='../linkdir/forcing/jra55fcst_v1_2_3hr_sph2m_TL319r'
-fcst_wind_out='../linkdir/forcing/jra55fcst_filt_v1_2tq_3hr_TL319r'
-fcst_wind_latlon='../linkdir/forcing/jra55fcst_filt_v1_2tq_3hr_TL319'
+fcst_org='../linkdir/work/jra55fcst_3hr_TL319r'
+fcst_wind='../linkdir/work/jra55fcst_filt_3hr_TL319r'
+fcst_tmp='../linkdir/work/jra55fcst_v1_2_3hr_tmp2m_TL319r'
+fcst_sph='../linkdir/work/jra55fcst_v1_2_3hr_sph2m_TL319r'
+fcst_wind_out='../linkdir/work/jra55fcst_filt_v1_2tq_3hr_TL319r'
+fcst_wind_latlon='../linkdir/work/jra55fcst_filt_v1_2tq_3hr_TL319'
 
 ################
 
@@ -62,7 +62,12 @@ do
 
     if [ ! -e ${fcst_wind_out}/${yyyymm} ]; then
       echo "creating ${yyyymm}"
-      mkdir ${fcst_wind_out}/${yyyymm}
+      mkdir -p ${fcst_wind_out}/${yyyymm}
+    fi
+
+    if [ ! -e ${fcst_wind_latlon}/${yyyymm} ]; then
+      echo "creating ${yyyymm}"
+      mkdir -p ${fcst_wind_latlon}/${yyyymm}
     fi
 
     for hour in 0 3 6 9 12 15 18 21

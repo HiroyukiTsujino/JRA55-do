@@ -16,7 +16,8 @@ targets := blend_quikscat_anl \
 	   jra55reg_to_jra55red \
 	   iabp_npoles_on_jra55_grid \
 	   make_ensemble_mean \
-	   make_ensemble_mean_weight
+	   make_ensemble_mean_weight \
+	   quikscat_to_current_free
 
 all: $(targets)
 clean:
@@ -32,8 +33,8 @@ include ../lib/libmxe.make
 
 ### OpenMP ###
 
-FFLAGS  := $(FFLAGS) -mp
-LDFLAGS := $(LDFLAGS) -mp
+FFLAGS  := $(FFLAGS) $(OMPFFLAGS)
+LDFLAGS := $(LDFLAGS) $(OMPLDFLAGS)
 
 ### Local library ###
 lib := lib.a
@@ -61,3 +62,4 @@ blend_iabp_noples_anl: blend_iabp_noples_anl.o
 remss_wind_on_jra55_grid: remss_wind_on_jra55_grid.o
 diag_neutral_wind: diag_neutral_wind.o shift_wind_real_to_neutral.o
 diag_actual_wind: diag_actual_wind.o shift_wind_neutral_to_real.o
+quikscat_to_current_free: quikscat_to_current_free.o shift_wind_neutral_to_real_mask.o

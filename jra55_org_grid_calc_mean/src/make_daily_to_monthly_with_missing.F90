@@ -4,15 +4,15 @@ program make_monthly_data_from_daily_with_missing
 
   implicit none
 
-  integer(4), parameter :: imf = 157792 ! reduced TL319 grid
-  integer(4), parameter :: jmf = 1
+  integer(4) :: imf = 157792 ! reduced TL319 grid
+  integer(4) :: jmf = 1
 
   integer(4), parameter :: mtin1 = 80
   integer(4), parameter :: mtot1 = 90
 
-  real(4) :: data_snap(imf,jmf) ! snap shot read from file
-  real(8) :: data_day(imf,jmf)  ! daily mean
-  real(8) :: data_mon(imf,jmf)  ! monthly mean
+  real(4),allocatable :: data_snap(:,:) ! snap shot read from file
+  real(8),allocatable :: data_day(:,:)  ! daily mean
+  real(8),allocatable :: data_mon(:,:)  ! monthly mean
 
   integer(4) :: idmon(12)
 
@@ -42,26 +42,42 @@ program make_monthly_data_from_daily_with_missing
   real(8) :: undef8_in, undef8_out
   real(8) :: min_ratio
 
-  integer(4) :: n_valid(imf,jmf)
+  integer(4),allocatable :: n_valid(:,:)
+  logical :: l_big_endian
+  character(len=256) :: convert_endian
 
   !+***!S++1++++*++++2++++*++++3++++*++++4++++*++++5++++*++++6++++*++++7++
 
-  namelist /nml_day2mon_miss/ iyst, imst, iyed, imed, &
+  namelist /nml_day2mon_miss/ imf, jmf, &
+       & iyst, imst, iyed, imed, &
        & item_name, &
        & in_base_dir, out_base_dir, &
        & undef_in, undef_out, &
-       & min_ratio
+       & min_ratio, &
+       & l_big_endian
 
   !-----------------------------------------------------------------------
 
+  l_big_endian = .false.
   open(lun,file='namelist_daily2monthly_miss')
   read(lun,nml=nml_day2mon_miss)
   close(lun)
+
+  allocate(data_snap(imf,jmf)) ! snap shot read from file
+  allocate(data_day(imf,jmf))  ! daily mean
+  allocate(data_mon(imf,jmf))  ! monthly mean
+  allocate(n_valid(imf,jmf))
 
   undef8_in  = real(undef_in,8)
   undef8_out = real(undef_out,8)
 
   lreclen = imf*jmf*4
+
+  if (l_big_endian) then
+    convert_endian = 'big_endian'
+  else
+    convert_endian = 'little_endian'
+  end if
 
   !-----------------------------------------------------------------------
 
@@ -110,7 +126,7 @@ program make_monthly_data_from_daily_with_missing
            & trim(in_base_dir),'/',iyear,m,'/',trim(item_name),'.',iyear,m,n
       write(6,*) ' reading from .....', trim(fin_snap)
       open(mtin1,file=fin_snap,form='unformatted',access='direct',action='read', &
-           & convert='little_endian',recl=lreclen)
+             & convert=trim(convert_endian),recl=lreclen)
       read(mtin1,rec=1) data_snap
       close(mtin1)
 
@@ -140,7 +156,7 @@ program make_monthly_data_from_daily_with_missing
          & trim(out_base_dir),'/',trim(item_name),'.',iyear,m
     write(6,*) ' Writing to .....', trim(fout_month)
     open(mtot1,file=fout_month,form='unformatted',access='direct',action='write', &
-         & convert='little_endian',recl=lreclen)
+         & convert=trim(convert_endian),recl=lreclen)
     write(mtot1,rec=1) data_snap
     close(mtot1)
 

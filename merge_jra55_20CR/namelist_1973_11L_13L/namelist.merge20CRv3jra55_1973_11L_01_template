@@ -1,0 +1,19 @@
+&nml_merge20CRv3jra55
+  flnin1_base="@item_jra55@",
+  flnin2_base="@item_20CR@",
+  dir1_in="../linkdir/forcing/jra55fcst_v1_5_3hr_TL319"
+  dir2_in="../linkdir/forcing/20CRv3_3hr_TL319"
+  undef1=-9.99e33,
+  undef2=-9.99e33,
+  nyeara=1973,
+  nmona=9,
+  ndaya=9,
+  nhoura=12,
+  ncont=1,
+  nfh_replace=24,
+  lonc=269.5,
+  latc=28.0,
+  dir_out="../linkdir/forcing/jra55fcst_v1_5_3hr_TL319"
+  flnot_base="@item_out@"
+  l_out_weight=.false.,
+&end

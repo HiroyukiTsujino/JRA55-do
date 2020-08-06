@@ -1,5 +1,4 @@
-#!/bin/bash -f
-
+#!/usr/bin/bash
 set -e
 
 if [ x${3} == x ]; then

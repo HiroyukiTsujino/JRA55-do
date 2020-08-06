@@ -2,10 +2,10 @@
 
 set -e 
 
-yearst=2009
-yeared=2009
+yearst=2000
+yeared=2008
 mon_st=1
-mon_ed=10
+mon_ed=12
 
 out_weight=.false.
 file_table='../linkdir/data/red2reg_fill_with_water.d'

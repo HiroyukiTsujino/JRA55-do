@@ -1,0 +1,15 @@
+ &nml_anncl_nomiss
+  imax=640,
+  jmax=320,
+  kmax=1,
+  infile_base='/work113/htsujino/SURF_FLUX/forcing/qscat_strict_free_4_monthly_TL319/v10m_free_actual.'
+  undef_in=-9.99e33
+  outfile_base='/work113/htsujino/SURF_FLUX/forcing/qscat_strict_free_4_annclim_TL319/v10m_free_actual.nov1999-oct2009.dat'
+  undef_out=-9.99e33
+  nbyr=1999
+  nbmn=11
+  neyr=2009
+  nemn=10
+  klev=1
+  l_leap_valid=.true.
+ &end

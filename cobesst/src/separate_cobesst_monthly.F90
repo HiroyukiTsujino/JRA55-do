@@ -58,13 +58,13 @@ program separate_cobesst_monthly
   LOOP_YEAR : do nyear = ibyr, ieyr
 
      write(flin1,'(1a,1a,i4.4)') trim(dir_in),'/sst-glb.',nyear
-     write(6,*) 'reading temparature from ...', trim(flin1)
-     open(mtin1,file=flin1,form='unformatted',access='direct',recl=4*imt*jmt)
+     write(6,*) 'reading temparature from ... ', trim(flin1)
+     open(mtin1,file=trim(flin1),form='unformatted',access='direct',recl=4*imt*jmt)
      irec_sst = 0
 
      write(flin2,'(1a,1a,i4.4)') trim(dir_in),'/ice-glb.',nyear
-     write(6,*) 'reading ice fractional area from ...', trim(flin2)
-     open(mtin2,file=flin2,form='unformatted',access='direct',recl=4*imt*jmt)
+     write(6,*) 'reading ice fractional area from ... ', trim(flin2)
+     open(mtin2,file=trim(flin2),form='unformatted',access='direct',recl=4*imt*jmt)
      irec_ice = 0
 
      do month = 1, iemn
@@ -72,11 +72,11 @@ program separate_cobesst_monthly
         ! open output file
 
         write(flot1,'(1a,1a,i4.4,i2.2)') trim(dir_out),'/sst-glb.',nyear, month
-        open(mtot1,file=flot1,form='unformatted',access='direct',recl=4*imt*jmt)
+        open(mtot1,file=trim(flot1),form='unformatted',access='direct',recl=4*imt*jmt)
         irec_ssto = 0
         
         write(flot2,'(1a,1a,i4.4,i2.2)') trim(dir_out),'/ice-glb.',nyear, month
-        open(mtot2,file=flot2,form='unformatted',access='direct',recl=4*imt*jmt)
+        open(mtot2,file=trim(flot2),form='unformatted',access='direct',recl=4*imt*jmt)
         irec_iceo = 0
 
         irec_sst = irec_sst + 1

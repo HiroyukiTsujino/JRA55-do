@@ -20,6 +20,7 @@ LDNCOPTS = -L/usr/local/netcdf-fortran-4.4.3/lib -lnetcdff -L/usr/local/netcdf-4
 RM = /bin/rm -f
 
 targets = nc2grads_globcurrent \
+	nc2grads_globcurrent_daily \
 	globcurrent_to_jra \
 	globcurrent_to_jra_onedata \
 	globcurrent_smooth \
@@ -72,6 +73,9 @@ $(objs_lib): %.o: %.F90 $(LIBMXE)
 all : $(TARGETS)
 
 nc2grads_globcurrent : nc2grads_globcurrent.o
+	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@
+
+nc2grads_globcurrent_daily : nc2grads_globcurrent_daily.o
 	$(F90) $(FFLAGS) $^ $(LDFLAGS) $(NETCDF_LDFLAGS) -o $@
 
 globcurrent_to_jra : globcurrent_to_jra.o $(lib) 

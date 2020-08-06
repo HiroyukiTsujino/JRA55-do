@@ -21,7 +21,7 @@
 /
 
 &nml_topo
-  file_topo          = "/work116/htsujino/COBESST/data/topo-cobesst.d",
+  file_topo          = "../linkdir/COBESST/data/topo-cobesst.d",
 /
 
 &nml_record_date

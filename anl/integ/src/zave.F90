@@ -49,6 +49,7 @@ module zave
   real(8),allocatable :: d(:,:)
   real,allocatable :: r4(:,:,:)
   integer(4) :: i_region_number 
+  integer(4) :: ex_region_number 
 
 contains
 
@@ -87,9 +88,10 @@ subroutine ini
   real(8) :: area, area_ocean
 
   namelist /zave_lst/ file_base, fileo_base, l2d, cgrid, file_mask &
-                    & , i_region_number, operate
+                    & , i_region_number, ex_region_number, operate
 
   i_region_number = 1
+  ex_region_number = -999
 
   read(5,nml=zave_lst,iostat=i)
 
@@ -138,10 +140,22 @@ subroutine ini
          & ,access='direct',recl=reclen,action='read')
     read(lun,rec=1) r4
     close(lun)
-    where(r4(:,:,:) /= real(i_region_number,4))
+    if (i_region_number > 0) then
+      where(r4(:,:,:) /= real(i_region_number,4))
+        mask(:,:,:) = 0.d0
+      end where
+    else
+      where(r4(:,:,:) <= 0.0)
+        mask(:,:,:) = 0.d0
+      end where
+    end if
+  endif
+
+  if (ex_region_number > 0) then
+    where(r4(:,:,:) == real(ex_region_number,4))
       mask(:,:,:) = 0.d0
     end where
-  endif
+  end if
 
   allocate(d(im,jm),rarea(jm,km),f(jm,km))
 

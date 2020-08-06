@@ -2,13 +2,12 @@
 
 set -e
 
-#datahome=/work116/htsujino/SURF_FLUX/forcing
-datahome=/denkei-shared/og1/htsujino/SURF_FLUX/forcing
-nchome=/work113/htsujino/SURF_FLUX/forcing
+datahome=../linkdir/products
+nchome=../linkdir/products
 
-flin="${datahome}/jra_for_mricom_support/TL319_grid/@year@/brtmp."
-flout="${nchome}/OMIP_DATA/JRA55-do-suppl-v1.3.01/brtmp.@year@.@create@.nc"
-flctl="${nchome}/OMIP_DATA/JRA55-do-suppl-v1.3.01/brtmp.@year@.ctl"
+flin="${datahome}/support/grads/@year@/brtmp."
+flout="${nchome}/support/netCDF/brtmp.@year@.@create@.nc"
+flctl="${nchome}/support/netCDF/brtmp.@year@.ctl"
 
 ##############################
 # if mask is written to file, l_mask_out = .true.
@@ -76,7 +75,7 @@ time_intv="3hr"
 &nml_global_attributes
   global_attributes%title="Brightness temperature of JRA-55"
   global_attributes%institution="JMA Meteorological Research Institute"
-  global_attributes%version="v1.3.1"
+  global_attributes%version="v1.5.0"
   global_attributes%comment="Ice surface temperature for sea ice. SST for open ocean."
   global_attributes%fill_value="Fill value is 1.e20"
 /

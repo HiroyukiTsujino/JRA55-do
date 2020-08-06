@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 elmlist='taux tauy'
 
 
@@ -28,15 +30,15 @@ elmlist='taux tauy'
 # raw, v1_3, v1_4
 
 #ORGDIR=/work115/htsujino/SURF_FLUX/forcing/jra55fcst_monthly_1x1
-#ORGDIR=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_monthly_1x1
+ORGDIR=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_monthly_1x1
 #ORGDIR=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4pre1_monthly_1x1
 #ORGDIR=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4_monthly_1x1
-#yrs_org=1958
-#yre_org=2017
+yrs_org=1958
+yre_org=2019
 #yrs_this=1958
-#yre_this=2017
-#yrs_this=1898
-#yre_this=1957
+#yre_this=2019
+yrs_this=1896
+yre_this=1957
 
 
 # CORE
@@ -77,10 +79,10 @@ do
           do 
              fname1=${ORGDIR}/${elm}.${yearo}${mon}
              fname2=${elm}.${yeart}${mon}
-	     if [ -e ${fname2} ]; then
-               rm -f ${fname2}
-             fi
-             ln -s ${fname1} ${fname2}
+	     #if [ -e ${fname2} ]; then
+             #  rm -f ${fname2}
+             #fi
+             ln -sf ${fname1} ${fname2}
           done
    done
    yeart=`expr ${yeart} + 1`

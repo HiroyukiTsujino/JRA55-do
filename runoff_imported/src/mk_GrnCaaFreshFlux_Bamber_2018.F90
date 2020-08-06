@@ -32,7 +32,7 @@ program mk_GrnFreshFlux_Bamber
 
   l_fwf_exist(:,:) = .false.
 
-  do nyr = 1958, 2019
+  do nyr = 2021, 2024
 
     if ( mod(nyr,4) == 0 ) then
       l_leap = .true. 

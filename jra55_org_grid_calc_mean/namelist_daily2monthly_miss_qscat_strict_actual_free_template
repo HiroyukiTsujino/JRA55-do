@@ -1,0 +1,12 @@
+&nml_day2mon_miss
+  iyst=1999,
+  imst=8,
+  iyed=2009,
+  imed=10,
+  item_name='@item@_free_actual',
+  in_base_dir='/work113/htsujino/SURF_FLUX/forcing/qscat_strict_free_4_daily_TL319r',
+  out_base_dir='/work113/htsujino/SURF_FLUX/forcing/qscat_strict_free_4_monthly_TL319r',
+  undef_in=-9.99e33,
+  undef_out=-9.99e33,
+  min_ratio=0.333333333333333d0,
+&end

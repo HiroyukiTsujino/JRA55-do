@@ -7,6 +7,8 @@
 F90     = pgf90
 FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio
 LDFLAGS = -mcmodel=medium -lacml -lacml_mv
+OMPFFLAGS = -mp
+OMPLDFLAGS =
 AR      = ar rv
 INCLUDES=
 

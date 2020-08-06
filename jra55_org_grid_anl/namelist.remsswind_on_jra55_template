@@ -1,0 +1,18 @@
+&nml_remss_on_jra55
+  file_wind='@anl_monthly@/swind.@yyyymm@'
+  file_mask='@jra_cnst@/TL319.mask'
+  file_wind_blend_org='@remss_jra@/swind_actual.@yyyymm@'
+  imut=640,
+  jmut=320,
+  dlon=0.5625d0
+  grid_name='TL319'
+  file_ydef='lat_jra55_exact.txt'
+  iremss=360,
+  jremss=180,
+  slon_remss=0.5d0,
+  dlon_remss=1.0d0,
+  slat_remss=-89.5d0,
+  dlat_remss=1.0d0,
+  undef4_remss=-9.99e33
+  file_remss='@remss_dir@/swind.@yyyymm@'
+/

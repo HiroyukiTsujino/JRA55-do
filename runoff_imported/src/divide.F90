@@ -26,7 +26,8 @@ program divide_mask
 
   !-----------------------------------------------------------------------
 
-  file_nextxy = '/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GA.bin'
+!  file_nextxy = '/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GA.bin'
+  file_nextxy = '/denkei-shared/og1/htsujino/SURF_FLUX/forcing/data_etc/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GAC_add_Bamber_2018.bin'
   open(mtin1,file=file_nextxy,form='unformatted',access='direct',recl=4*imut*jmut)
   write(6,*) 'MASK read from ',trim(file_nextxy)
   read(mtin1,rec=1) imaskx(1:imut,1:jmut)
