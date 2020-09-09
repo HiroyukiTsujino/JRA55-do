@@ -67,9 +67,6 @@ program uv2w
   character(len=256)    :: flsclf ! スケールファクター・ファイル
   character(len=256)    :: flout_w ! 出力ファイル
   !
-  namelist /nml_uv2w/ flin_u, flin_v, flin_ssh, flout_w, &
-    &                 undef, fltopo, flsclf
-  !
   integer(4) :: ios          !  入出力エラーチェック用
   integer(4), parameter :: mtin_u   = 80
   integer(4), parameter :: mtin_v   = 81
@@ -89,6 +86,9 @@ program uv2w
   integer(4) :: k0
   !
   !==============================================
+  !
+  namelist /nml_uv2w/ flin_u, flin_v, flin_ssh, flout_w, &
+    &                 undef, fltopo, flsclf
   !
   !----------------------------------------------
   ! 入力パラメタ既定値

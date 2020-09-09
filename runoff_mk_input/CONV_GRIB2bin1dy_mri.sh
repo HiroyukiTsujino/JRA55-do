@@ -71,8 +71,10 @@ do
       for hh in 00 03 06 09 12 15 18 21
       do
         orgfile=${orgdir}/fcst_phyland.${yyyymmdd}${hh}
-        echo $orgfile
-        wgrib -s $orgfile | egrep '(:WATR:)' | wgrib -i -bin -ieee $orgfile  -append -o $newfile
+        echo "$orgfile"
+	echo "====> $newfile"
+        #wgrib -s $orgfile | egrep '(:WATR:)' | wgrib -i -bin -ieee $orgfile -append -o $newfile # wgrib v1.8.1.2a (6-10) bundled with grads
+        wgrib -s $orgfile | egrep '(:ROF:)' | wgrib -i -bin -ieee $orgfile -append -o $newfile # wgrib v1.8.2 (3-10)
       done
       i=$(( $i + 1 ))
     else

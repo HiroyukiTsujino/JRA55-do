@@ -1,0 +1,7 @@
+&nml_extract_rivmouth
+  cdir='../OUTPUT'
+  odir='/riv_v1.0_mri'
+  idir='/JRA55_mri'
+  isyear=@styr@
+  ieyear=@edyr@
+&end

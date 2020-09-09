@@ -96,12 +96,6 @@ program zonal_mean_meridional_gradient
 #ifdef OGCM_VARIABLE
   character(len=256)    :: file_vgrid ! 可変格子定義ファイル
 #endif /* OGCM_VARIABLE */
-  namelist /nml_zm_mgrd/  flin, flout, flout2, fltopo, flsclf, &
-       & undef4_in, undef4_out, dst, ded, l_depth_average
-#ifdef OGCM_VARIABLE
-  namelist /inflg/ file_vgrid
-#endif /* OGCM_VARIABLE */
-  !
   integer(4) :: ios          !  入出力エラーチェック用
 
   integer(4), parameter :: mtin     = 82
@@ -117,6 +111,12 @@ program zonal_mean_meridional_gradient
   integer(4) :: jg
   !
   !==============================================
+  namelist /nml_zm_mgrd/  flin, flout, flout2, fltopo, flsclf, &
+       & undef4_in, undef4_out, dst, ded, l_depth_average
+#ifdef OGCM_VARIABLE
+  namelist /inflg/ file_vgrid
+#endif /* OGCM_VARIABLE */
+  !----------------------------------------------
   !
   ! 入力パラメタ規定値
   !

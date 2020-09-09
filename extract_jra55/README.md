@@ -1,22 +1,29 @@
-SURF_FLUX/extract_jra55
+extract_jra55
 ========
 
 This directory contains shell srcipts/Fortran programs to do
- the following operations
+ the following operations.
 
- 1. Convert orignal JRA55 data format from Grib to Direct access binary
- 2. Zonal interpolation from reduced gauss grid to regular lat-lon grid
+ 1. Convert orignal JRA-55 data format from Grib to Direct access binary.
+ 2. Zonal interpolation from reduced gauss grid to regular lat-lon grid.
+
 
 Document
 --------
 
  1. Convert orignal JRA55 data from Grib to direct access binary
 
-    grib2flatbin_phy2m.sh ! 2D phyical quantity monitor
-    grib2flatbin_surf.sh  ! 2D surface monitor
- 
- 2. Zonal interpolation from reduced gauss grid to regular lat-lon grid
+    NOTE: Edit the following file according to the grib table
+    you will use with wgrib command: Default variable name for
+    "total precipipation" seems to be different beween
+    wgrib 1.8.1.2a (APCP) and 1.8.2 (TPRAT).
 
+    - grib2flatbin_phy2m.sh ! 2D physical quantity monitor
+    - grib2flatbin_surf.sh  ! 2D surface monitor
+    - grib2flatbin_ice.sh   ! 2D sea ice monitor
+ 
+
+ 2. Zonal interpolation from reduced gauss grid to regular lat-lon grid
 
    a. Use linear interpolation
 

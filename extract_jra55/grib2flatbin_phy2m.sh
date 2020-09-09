@@ -60,13 +60,14 @@ do
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:DLWRF:sfc:)' | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/dlwrf.${date}${hh}
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:USWRF:sfc:)' | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/uswrf.${date}${hh}
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:ULWRF:sfc:)' | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/ulwrf.${date}${hh}
-      wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:APCP:sfc:)'  | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/prcp.${date}${hh}
+      #wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:APCP:sfc:)'  | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/prcp.${date}${hh} # wgrib 1.8.1.2a
+      wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:TPRAT:sfc:)' | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/prcp.${date}${hh} # wgrib 1.8.2
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:EVP:sfc:)'   | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/evap.${date}${hh}
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:LHTFL:sfc:)' | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/latent.${date}${hh}
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:SHTFL:sfc:)' | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/sensible.${date}${hh}
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:UFLX:sfc:)'  | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/uflx.${date}${hh}
       wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:VFLX:sfc:)'  | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/vflx.${date}${hh}
-      wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:SRWEQ:)'     | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/snow.${date}${hh}
+      wgrib -s ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} | egrep '(:SRWEQ:sfc:)' | wgrib -i -bin -nh ${orgdir}/${yyyymm}/fcst_phy2m.${date}${hh} -o ${newdir}/${yyyymm}/snow.${date}${hh}
     done
 
     i=$(( $i + 1 ))

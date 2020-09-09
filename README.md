@@ -3,7 +3,7 @@ JRA55-do/README.md
 
   * Programs/scripts to adjust/calibrate the JRA-55 atmospheric field
     to produce a surface atmospheric dataset for driving Ocean-Sea ice models
-    (JRA55-do; Tsujino et al. 2018 (in revision))
+    (JRA55-do; Tsujino et al. 2018 <https://doi.org/10.1016/j.ocemod.2018.07.002>)
 
   * Contents
 
@@ -40,7 +40,7 @@ Introduction
        - After the main adjustment, variables are interpolated
          from the reduced TL319 grid to the normal TL319 grid.
 
-    - Stage 2: Additional adjustment to on the normal TL319 grid.
+    - Stage 2: Additional adjustment on the normal TL319 grid.
 
        - This includes the global flux closure by applying
          a globally uniform, time-invariant factor
@@ -66,10 +66,10 @@ System Requirements
   * Programs and scripts in this directory were developed in the following
     computation environments:
 
-    - PGI fortran
+    - ifort
     - GrADs
     - Bash
-    - CMOR3.4.0 bundled in Anaconda2 (python 2.7)
+    - CMOR3.5.0 bundled in Anaconda3 (python 3.7)
 
   * "Setup.sh" is to set user dependent environments.
 
@@ -104,6 +104,7 @@ Processing of the JRA-55 raw data
     - jra55_clim	 : Calculate climatology on JRA55 grid
     - jra55_latlon_diag  : Diagnosis on JRA55 grid
 
+
   * Adjust precipitation on Mediterranean (Stage 2)
 
     - adjust_med_prcp    : adjust Mediterranean precipitation using CORE and GPCC
@@ -126,23 +127,30 @@ Processing of the JRA-55 raw data
 
   * Producing the dataset (Stage 4)
 
-    - for_omip	       : Produce netCDF files in preparation for CMOR
-    - for_omip_cmor    : CMORize data
+    - for_mricom       : Gather data into one file for a single variable every year.
+                         Also produce input files for MRI.COM.
+    - for_omip	       : Produce netCDF files in preparation for CMOR.
+    - for_omip_cmor    : CMORize data in preparation for input4MIPs.
 
 
 Processing runoff data
 --------
 
+  * Processing of river runoff data is independent of that for surface atmospheric data.
+    Runoff data are processed in the following directories.
+
   * bamber_et_al_2018_grads : Process Greenland runoff data provided by Bamber et al. (2018)
                               (Stage 0)
   * runoff_mk_input         : Generate input file for CaMaFlood (river routing model)
                               (Stage 1)
+  * CaMa-Flood              : Run "CaFa-Flood" (the river routing model provided to produce JRA55-do).
+                              (Stage 2)
   * runoff_imported         : Process imported runoff data to produce the dataset
                               (Stage 3)
   * runoff_omip_product     : Produce OMIP dataset
                               (Stage 3)
   * runoff_core             : Process CORE runoff
-  * runoff                  : Analyze runoff data
+  * runoff                  : Analyze (evaluate) runoff data
   * runoff_to_model_grid    : Sample program to map runoff data to model grid
 
 
@@ -292,14 +300,13 @@ Evaluation
 Producing input files to MRI.COM
 --------
 
-  * for_mricom	     : Produce input files for MRI.COM
   * for_cyclic_model : Produce input files for MRI.COM with cyclic grid configulation
 
 
 Documents
 --------
 
-  * See doc directory
+  * See doc directory.
 
 
 Development

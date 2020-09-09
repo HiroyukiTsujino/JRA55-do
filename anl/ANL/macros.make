@@ -22,16 +22,30 @@
 #  FFLAGS = $(F90FLAGS)
 #  PCPP = -D#
 
-### pgf90 (ocsv001) ###
- F90 = pgf90
- F90FLAGS = -lacml -lacml_mv -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -Mlarge_arrays -mcmodel=medium -tp k8-64
-# F90FLAGS = -byteswapio
+### front1 ###
+ F90 = ifort
+ F90FLAGS = -convert big_endian -assume byterecl
+ LDFLAGS =
  FC = $(F90)
  FFLAGS = $(F90FLAGS)
  FOPTION = $(F90FLAGS)
+ OMPFFLAGS =
+ OMPLDFLAGS =
+#OMPFFLAGS = -qopenmp
+#OMPLDFLAGS = -qopenmp
  PCPP = -D#
- AR = ar -r
- RM = rm -f
+ AR = ar rv
+
+### pgf90 (ocsv001) ###
+# F90 = pgf90
+# F90FLAGS = -lacml -lacml_mv -byteswapio -fastsse -Mvect=sse -Mcache_align -Minfo -Mlarge_arrays -mcmodel=medium -tp k8-64
+## F90FLAGS = -byteswapio
+# FC = $(F90)
+# FFLAGS = $(F90FLAGS)
+# FOPTION = $(F90FLAGS)
+# PCPP = -D#
+# AR = ar -r
+# RM = rm -f
 
 ### NEC-fortran (front.mri-jma.go.jp) ###
 # F90 = efc

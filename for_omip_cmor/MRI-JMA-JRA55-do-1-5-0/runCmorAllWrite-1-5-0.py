@@ -1161,7 +1161,7 @@ for key in inputDict.keys():
     newJson = json.load(open(inputJson))
     for var in inputDict[key].keys():
         outVar = inputDict[key][var]['outputVarName']
-        # Update frequency based on variableand write output to CMOR input file
+        # Update frequency based on variable and write output to CMOR input file
         newJson['frequency'] = cmorJson['variable_entry'][outVar]['frequency']
 
         if var in ['friver','licalvf','areacellg','s_u10a']:

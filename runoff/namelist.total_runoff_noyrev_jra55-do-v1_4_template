@@ -1,0 +1,8 @@
+&nml_total_runoff
+  fl_in_base='../linkdir/river/jra55-do-v1_4-river/runoff_all',
+  dir_out='jra55-do-v1_4',
+  ibyr=@styr@,
+  ieyr=@edyr@,
+  l_apply_area=.true.,
+  file_area='../linkdir/river/data_etc/runoff_area.gd'
+/

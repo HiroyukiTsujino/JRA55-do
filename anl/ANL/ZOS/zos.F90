@@ -52,8 +52,6 @@ program zos
   character(len=256)    :: flout  ! 出力ファイル
   character(len=256)    :: flout_ssh ! ZOS出力ファイル
   !
-  namelist /nml_zos/ flin_ssh, flin_ice, fltopo, flsclf, flout, flout_ssh
-  !
   character(len=256)    :: flout2
   !
   integer(4) :: ios          !  入出力エラーチェック用
@@ -79,6 +77,8 @@ program zos
   !
   !==============================================
   !
+  namelist /nml_zos/ flin_ssh, flin_ice, fltopo, flsclf, flout, flout_ssh
+  !
   !----------------------------------------------
   ! 入力パラメタ既定値
   !----------------------------------------------
@@ -93,7 +93,8 @@ program zos
   !----------------------------------------------
   ! 標準入力から読み込み
   !----------------------------------------------
-  read(unit=5, nml_zos)
+  read(unit=5, nml=nml_zos)
+
   print *,'flin_ssh :', trim(flin_ssh)
   print *,'flin_ice :', trim(flin_ice)
   print *,'fltopo   :', trim(fltopo)

@@ -108,11 +108,6 @@ program zonal_mean
   character(len=256)    :: file_vgrid ! 可変格子定義ファイル
 #endif /* OGCM_VARIABLE */
   !
-  namelist /nml_zm/  flin, flin_ssh, flout, fltopo, flsclf, flibas
-#ifdef OGCM_VARIABLE
-  namelist /inflg/ file_vgrid
-#endif /* OGCM_VARIABLE */
-  !
   integer(4) :: ios          !  入出力エラーチェック用
   integer(4), parameter :: mttmp    = 79
   integer(4), parameter :: mtin   = 82
@@ -128,6 +123,11 @@ program zonal_mean
   real(8)    :: wrk1, wrk2
   !
   !==============================================
+  namelist /nml_zm/  flin, flin_ssh, flout, fltopo, flsclf, flibas
+#ifdef OGCM_VARIABLE
+  namelist /inflg/ file_vgrid
+#endif /* OGCM_VARIABLE */
+  !----------------------------------------------
   !
   ! 入力パラメタ規定値
   !

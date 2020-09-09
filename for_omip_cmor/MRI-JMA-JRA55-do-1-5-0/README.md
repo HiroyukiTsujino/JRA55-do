@@ -17,6 +17,10 @@ Contents
       - input_clim  ---> JRA55-do climatological data  (../../linkdir/products/clim/netCDF)
       - input_fx    ---> JRA55-do invariant data  (../../linkdir/products/fx/netCDF)
       - input4MIPs  ---> CMORized data for input4MIPS (../../linkdir/products/version_1_5/input4MIPs)
+ 
+   * Also, before running, please check <https://github.com/PCMDI/input4MIPs-cmor-tables>
+     and update contents of ../input4MIPs-cmor-tables directory with those of 
+     Tables directory of the latest <https://github.com/PCMDI/input4MIPs-cmor-tables>.
 
 
 Usage Note

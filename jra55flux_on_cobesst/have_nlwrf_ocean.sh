@@ -62,6 +62,12 @@ ln -sf NAMELIST.MXE.COBESST.ocean_annual NAMELIST.MXE
 #file_base=../linkdir/forcing/jra55fcst_v1_4_annual_1x1/nlwrf
 #fileo=v1_4/nlwrf_glb_v1_4
 
+#file_base=../linkdir/verification/jra55fcst_v1_3_01_annual_1x1/nlwrf
+#fileo=v1_3_01/nlwrf_glb_v1_3_01
+
+#file_base=../linkdir/verification/jra55fcst_v1_5_annual_1x1/nlwrf
+#fileo=v1_5/nlwrf_glb_v1_5
+
 l2d=.true.
 cgrid=U
 

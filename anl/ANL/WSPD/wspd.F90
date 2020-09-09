@@ -44,8 +44,6 @@ program wspd
   character(len=256)    :: file_vgrid
   character(len=256)    :: file_scale
   !
-  namelist /nml_wspd/ fltopo, file_vgrid, file_scale, undef, flin, flout
-  !
   integer(4), parameter :: mttmp    = 80
   integer(4), parameter :: mtin     = 81
   integer(4), parameter :: mtout    = 84
@@ -54,6 +52,9 @@ program wspd
   integer(4) :: i, j
   !==============================================
   !
+  namelist /nml_wspd/ fltopo, file_vgrid, file_scale, undef, flin, flout
+  !
+  !----------------------------------------------
   ! 入力パラメタ既定値
   !
   fltopo = 'topo.d'
@@ -62,7 +63,7 @@ program wspd
   !
   ! 標準入力から読み込み
   !
-  read(unit=5, nml_wspd)
+  read(unit=5, nml=nml_wspd)
   write(*,*) 'fltopo    :', trim(fltopo)
 #ifdef OGCM_SPHERICAL
 #ifdef OGCM_VARIABLE

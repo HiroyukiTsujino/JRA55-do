@@ -16,16 +16,18 @@ clean:
 vpath %.F90 src src/file_mng
 
 ### Platform dependent settings ###
-#include ../../setting/macros.make
+include ../../setting/macros.make
 
 ### ocsv001 / ocsv003 / ocsv005 / ocsv011 ###
-F90     = pgf90
+#F90     = pgf90
 # OpenMP
-FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio -mp
-LDFLAGS = -mcmodel=medium -lacml -lacml_mv -mp
+#FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio -mp
+#LDFLAGS = -mcmodel=medium -lacml -lacml_mv -mp
 # no OpenMP
 #FFLAGS  = -tp k8-64 -mcmodel=medium -lacml -lacml_mv -O -byteswapio
 #LDFLAGS = -mcmodel=medium -lacml -lacml_mv
+
+#
 AR      = ar rv
 INCLUDES=
 
@@ -35,6 +37,10 @@ INCLUDES=
 LIB_DIR := ../../lib
 include ../../lib/libmxe.make
 
+### OpenMP ###
+
+FFLAGS  := $(FFLAGS) $(OMPFFLAGS)
+LDFLAGS := $(LDFLAGS) $(OMPLDFLAGS)
 
 ### Local modules ###
 lib := lib.a

@@ -101,7 +101,7 @@ program ts2steric
   flgrid  = '../../data/vgrid.d'
   flsclf  = '../../data/scale_factor.d'
 
-  read(unit=5, nml_steric)
+  read(unit=5, nml=nml_steric)
 
   print *,'flin_t   :', trim(flin_t)
   print *,'flin_s   :', trim(flin_s)

@@ -1,0 +1,13 @@
+&nml_separated_runoff
+  fl_liquid_base='../linkdir/river/jra55-do-v1_4-river/liquid_runoff',
+  fl_solid_base='../linkdir/river/jra55-do-v1_4-river/solid_runoff',
+  dir_out='jra55-do-v1_4-sep',
+  ibyr=@styr@,
+  ieyr=@edyr@,
+  l_apply_area=.true.,
+  file_area='../linkdir/river/data_etc/runoff_area.gd',
+  file_nextxy='../linkdir/river/data_etc/nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GAC_add_Bamber_2018.bin'
+  l_solid_clim=.false.
+  l_sep_grn_caa=.true.
+  file_sep_grn_caa='../linkdir/river/data_etc/mask_CaaGrnArc_v1_4.gd'
+&end
