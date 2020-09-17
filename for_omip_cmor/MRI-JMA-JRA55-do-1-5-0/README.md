@@ -1,38 +1,34 @@
 MRI-JMA-JRA55-do-1-5-0
 ========
 
-   Generate CMORized data for input4MIPs
+   Generate CMORized data for input4MIPs.
 
 
 Contents
 --------
 
-   * runCmorAllWrite-1-5-0.py: Generate All files for JRA55-do-v1.5.0
+   * mriJRA55-do-input.json
 
-   * Before running runCmorAllWrite-1-5-0.py, make symbolic links to 
+   * runCmorAllWrite-1-5-0.py: Generate all files for JRA55-do-v1.5.0.
 
-      - Tables      ---> ../input4MIPs-cmor-tables
-      - input_atmos ---> JRA55-do main data  (../../linkdir/products/version_1_5/netCDF)
-      - input_suppl ---> JRA55-do supplemental data  (../../linkdir/products/support/netCDF)
-      - input_clim  ---> JRA55-do climatological data  (../../linkdir/products/clim/netCDF)
-      - input_fx    ---> JRA55-do invariant data  (../../linkdir/products/fx/netCDF)
-      - input4MIPs  ---> CMORized data for input4MIPS (../../linkdir/products/version_1_5/input4MIPs)
+   * runCmorAllWrite-1-5-0-update.py: Update only recent years for JRA55-do-v1.5.0.
+
+   * Tables: Copy of "../../Tables".
+   
+   * Before running runCmorAllWrite-1-5-0.py, make symbolic links to...
+
+      - input_atmos ---> JRA55-do main data
+      - input_suppl ---> JRA55-do supplemental data
+      - input_clim  ---> JRA55-do climatological data
+      - input_fx    ---> JRA55-do invariant data
+      - input4MIPs  ---> CMORized data for input4MIPS
  
-   * Also, before running, please check <https://github.com/PCMDI/input4MIPs-cmor-tables>
-     and update contents of ../input4MIPs-cmor-tables directory with those of 
-     Tables directory of the latest <https://github.com/PCMDI/input4MIPs-cmor-tables>.
-
 
 Usage Note
 --------
 
-   * On front, issue the following command:
-       $ conda activate mypy37 # environment that contains the cmor 3.5.0
-       $ run runCmorAllWrite-1-5-0.py
+   * Python scripts work with python 3.8 with CMOR 3.6.0.
 
-   * On glb193, issue the following command:
-       $ conda activate CMOR # environment that contains the latest cmor
-       $ run runCmorAllWrite-1-5-0.py
 
 Contact
 --------
