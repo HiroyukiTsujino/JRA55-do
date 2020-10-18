@@ -101,6 +101,19 @@ yeared=${3}
 #newdir=/work116/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_3_01/TL319_grid
 #newdir=/work116/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_4/TL319_grid
 
+# on MRI-CX2550
+#
+# v1_5
+#orgdir=../linkdir/work/jra55fcst_3hr_TL319            # slprs brtmp ice
+#orgdir=../linkdir/work/jra55fcst_v1_5_prod4_3hr_TL319 # tmp10m sph10m
+#orgdir=../linkdir/work/jra55fcst_v1_5_prod1_3hr_TL319 # u10m v10m
+#orgdir=../linkdir/work/jra55fcst_v1_3_rad2_3hr_TL319  # dswrf dlwrf
+#orgdir=../linkdir/work/jra55fcst_v1_3_prcp2_3hr_TL319 # prcp snow
+
+# v1_5
+#newdir=../linkdir/products/version_1_5/grads # atmospheric variables
+#newdir=../linkdir/products/support/grads # brtmp ice
+
 ################
 
 . ../util/datel_leap.sh

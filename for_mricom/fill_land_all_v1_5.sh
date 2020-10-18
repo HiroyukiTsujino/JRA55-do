@@ -15,8 +15,8 @@ source ../util/datel_leap.sh
 
 ln -sf NAMELIST.MXE.JRA55 NAMELIST.MXE
 
-idir=/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_5/TL319_grid
-odir=/denkei-shared/og1/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_5_filled/TL319_grid
+idir=../linkdir/products/version_1_5/grads
+odir=../linkdir/products/version_1_5/grads_filled
 
 exe=fill_land_ctl
 

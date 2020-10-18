@@ -71,18 +71,11 @@ dayed=${4}
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_2_prcp2_3hr_TL319 # prcp snow
 
 # V1.3
-# ocsv011
 #orgdir=/work116/htsujino/SURF_FLUX/forcing/jra55fcst_3hr_TL319          # slprs brtmp ice
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_prod4_3hr_TL319 # tmp10m sph10m
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_prod1_3hr_TL319 # u10m v10m
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_rad2_3hr_TL319  # dswrf dlwrf
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_prcp2_3hr_TL319 # prcp snow
-
-#orgdir=../linkdir/work/jra55fcst_3hr_TL319            # slprs brtmp ice
-#orgdir=../linkdir/work/jra55fcst_v1_3_prod4_3hr_TL319 # tmp10m sph10m
-#orgdir=../linkdir/work/jra55fcst_v1_3_prod1_3hr_TL319 # u10m v10m
-#orgdir=../linkdir/work/jra55fcst_v1_3_rad2_3hr_TL319  # dswrf dlwrf
-#orgdir=../linkdir/work/jra55fcst_v1_3_prcp2_3hr_TL319 # prcp snow
 
 # V1.4
 #orgdir=/work116/htsujino/SURF_FLUX/forcing/jra55fcst_3hr_TL319          # slprs brtmp ice
@@ -91,7 +84,15 @@ dayed=${4}
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4_rad2_3hr_TL319  # dswrf dlwrf
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4_prcp2_3hr_TL319 # prcp snow
 
-# NEWDIR
+# CX2550
+# latest (V1.5)
+#orgdir=../linkdir/work/jra55fcst_3hr_TL319            # slprs brtmp ice
+#orgdir=../linkdir/work/jra55fcst_v1_5_prod4_3hr_TL319 # tmp10m sph10m
+#orgdir=../linkdir/work/jra55fcst_v1_5_prod1_3hr_TL319 # u10m v10m
+#orgdir=../linkdir/work/jra55fcst_v1_3_rad2_3hr_TL319  # dswrf dlwrf
+#orgdir=../linkdir/work/jra55fcst_v1_3_prcp2_3hr_TL319 # prcp snow
+
+##### NEWDIR #####
 
 # ocsv011
 #newdir=/work116/htsujino/SURF_FLUX/forcing/jra_for_mricom_slprs/TL319_grid   # slprs
@@ -100,8 +101,9 @@ dayed=${4}
 #newdir=/work116/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_3/TL319_grid
 #newdir=/work116/htsujino/SURF_FLUX/forcing/jra_for_mricom_v1_4/TL319_grid
 
-# CX2550
-newdir=../linkdir/products/version_1_5/grads # atmospheric variables
+# MRI-CX2550
+# latest (V1.5)
+#newdir=../linkdir/products/version_1_5/grads # atmospheric variables
 #newdir=../linkdir/products/support/grads # brtmp ice
 
 ################

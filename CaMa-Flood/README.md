@@ -1,8 +1,8 @@
 CaMa-Flood
 ========
 
-   Run CaMa-Flood for JRA55-do.
-   Courtesy Tatsuo Suzuki of JAMSTEC.
+   Run CaMa-Flood and extract river discharge for JRA55-do.
+   Courtesy Tatsuo Suzuki (JAMSTEC) and Dai Yamazaki (Univ. Tokyo).
 
 
 Usage
@@ -12,13 +12,13 @@ Usage
 
       - ../runoff_mk_input directory (see readme.txt)
 
-      - CONV_GRID2bin1dy_mri.sh : Convert JRA55-raw in GRIB format to flat binary format
-         <------- Input : fcst_phyland
-         -------> Output: DATA/T319bin1dy
+      - CONV_GRID2bin1dy_mri.sh : Convert JRA55-raw in GRIB format to flat binary format.
+         <------- Input : fcst_phyland (JRA-55 raw data)
+         -------> Output: ../linkdir/work/jra55fcst_v1_3_input_runoff_3hr_TL319r
 
-      - CONV_T319toRIV1dy_tfact_mri.sh : Produce input data for CaMaFlood
-         <------- Input : DATA/T319bin1dy
-         -------> Output: DATA/RIVGRD_1dy_tfact2
+      - CONV_T319toRIV1dy_tfact_mri.sh : Produce input data for CaMaFlood.
+         <------- Input : ../linkdir/work/jra55fcst_v1_3_input_runoff_3hr_TL319r
+         -------> Output: ../linkdir/work/jra55fcst_v1_3_input_runoff_1dy_025x025
 
 
    * Run CaMa-Flood
@@ -36,19 +36,19 @@ Usage
       - run compile.sh
 
       - run JRA55_mri.sh 
-         <------- Input : DATA/RIVGRD_1dy_tfact2
-         -------> Output: CaMa_out/JRA55_mri
+         <------- Input  : INPUT (../linkdir/work/jra55fcst_v1_3_input_runoff_1dy_025x025)
+         -------> Output : OUTPUT/JRA55_mri (../linkdir/CaMa-Flood/OUTPUT_MRI/JRA55_mri)
 
 
    * Process CaMa-Flood output to produce river discharge to the oceans
 
-     - Extract_rivmouth directory
+      - Extract_rivmouth directory
 
-     - compile mk_runoff_v1.0_mri.F 
+      - compile mk_runoff_v1.0_mri.F 
 
-     - run mk_runoff_v1.0_mri (extract only river mouth data)
-         <------- Input : CaMa_out/JRA55_mri
-         -------> Output: CaMa_out/riv_v1.0_mri
+      - run mk_runoff_v1.0_mri (extract only river mouth data)
+         <------- Input : OUTPUT/JRA55_mri (../linkdir/CaMa-Flood/OUTPUT_MRI/JRA55_mri)
+         -------> Output: OUTPUT/riv_v1.0_mri (../linkdir/CaMa-Flood/OUTPUT_MRI/riv_v1.0_mri)
 
 
 Contact

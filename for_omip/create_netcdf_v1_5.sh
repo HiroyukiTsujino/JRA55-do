@@ -37,8 +37,10 @@ do
 #  for item in tmp10m
 #  for item in sph10m
 #  for item in tmp10m sph10m
+#  for item in u10m v10m
+  for item in tmp10m sph10m u10m v10m
 #  for item in slprs u10m v10m dswrf dlwrf rain snow # adjusted
-  for item in slprs tmp10m sph10m u10m v10m dswrf dlwrf rain snow # adjusted
+#  for item in slprs tmp10m sph10m u10m v10m dswrf dlwrf rain snow # adjusted
   do
     sed -e s/@year@/${year}/ \
         -e s/@create@/${creation_date}/ \

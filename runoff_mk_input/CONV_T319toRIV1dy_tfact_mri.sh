@@ -15,7 +15,7 @@ dyed=${4}
 indir=../linkdir/work/jra55fcst_v1_3_input_runoff_3hr_TL319r
 outdir=../linkdir/work/jra55fcst_v1_3_input_runoff_1dy_025x025
 facdir=../linkdir/corrfac/v1_3/jra55fcst_corrfac_v1_3_input_runoff_025x025
-mskdir=../linkdir/work/const
+mskdir=../linkdir/data
 
 mask=${mskdir}/TL319.mask.withheader
 

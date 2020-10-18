@@ -19,7 +19,8 @@ flibas="../../data/basin_map.txt"
 time_start="00z01jan@year@"
 time_intv="3hr"
 
-./grd2nc_g_input4mips<<EOF
+#./grd2nc_g_input4mips<<EOF
+./grd2nc_g_input4mips_all<<EOF
 &nml_grd2nc_g
  file_in="${flin}",
  file_out="${flout}",

@@ -1,5 +1,5 @@
 ### Target objects ###
-targets := grd2nc_g
+targets := grd2nc_g grd2nc_g_all
 
 ### Phony targets ###
 all: $(targets)

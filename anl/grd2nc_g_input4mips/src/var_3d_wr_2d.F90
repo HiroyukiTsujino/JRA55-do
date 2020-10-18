@@ -33,7 +33,8 @@ module netCDF_write_3d
   character(len=64),parameter :: CALENDAR='calendar'
 
   public :: netCDF_write_3d__create_file,       &
-       &    netCDF_write_3d__var_3d
+       &    netCDF_write_3d__var_3d,            &
+       &    netCDF_write_3d__all_at_once
 
 contains
   !----------------------------------------------------------------------------
@@ -402,5 +403,113 @@ contains
          & FILE_NAME(1:ltmp), ' : rec=[', irec, ']/[',nrecs,'] ***'
 
   end subroutine netCDF_write_3d__var_3d
+  !--------------------------------------------------------------------
+  !-----------------------------------------------------------------------------
+  subroutine netCDF_write_3d__all_at_once  (            &
+       & var_out, nrecs_out,                            &
+       & nrecs, recs, recsb, recse,                     &
+       & FILE_NAME,                                     &
+       & nvars, VAR_NAME,                               &
+       & NLONS, NLATS        )
+    
+    integer(4),intent(in) :: NLATS, NLONS
+    integer(4),intent(in) :: nrecs, nrecs_out
+    integer(4),intent(in) :: nvars
+    real(4),   intent(in) :: var_out(NLONS, NLATS, nrecs, nvars)
+    real(8),   intent(in) :: recs(nrecs), recsb(nrecs), recse(nrecs)
+    character(len=*),intent(in) :: FILE_NAME
+    character(len=*),intent(in) :: VAR_NAME(nvars)
+
+    integer(4) :: ncid
+
+    real(8), allocatable :: rec_axis(:)
+    real(8), allocatable :: bnd_axis(:,:)
+
+    !     The start and count arrays will tell the netCDF library where to
+    !     write our data.
+
+    integer(4) :: start(NDIMS), count(NDIMS)
+
+    integer(4) :: rec_varid
+    integer(4) :: bnd_varid
+    integer(4) :: var_varid(nvars)
+
+    !     Loop indices.
+    integer(4) :: i, n
+
+    !     Error handling.
+    integer(4) :: retval
+
+    integer(4) :: ltmp
+
+    !---------------------------------------------------------
+
+    retval = nf_open(FILE_NAME, nf_write, ncid)
+    if (retval .ne. nf_noerr) call handle_err(retval)
+
+    retval = nf_inq_varid(ncid, REC_NAME, rec_varid)
+    if (retval .ne. nf_noerr) call handle_err(retval)
+
+    retval = nf_inq_varid(ncid, BND_NAME, bnd_varid)
+    if (retval .ne. nf_noerr) call handle_err(retval)
+
+    !----------------------------------------------------------------------
+    !     These settings tell netcdf to write one timestep of data. (The
+    !     setting of start(4) inside the loop below tells netCDF which
+    !     timestep to write.)
+
+    count(1) = NLONS
+    count(2) = NLATS
+    count(3) = nrecs_out
+
+    start(1) = 1
+    start(2) = 1
+    start(3) = 1
+  
+    !----------------------------------------------------------------------
+    !     Write the pretend data. This will write our surface pressure and
+    !     surface temperature data. The arrays only hold one timestep worth
+    !     of data. We will just rewrite the same data for each timestep. In
+    !     a real application, the data would change between timesteps.
+  
+    do n = 1, nvars
+
+      retval = nf_inq_varid(ncid, VAR_NAME(n), var_varid(n))
+      if (retval .ne. nf_noerr) call handle_err(retval)
+
+      retval = nf_put_vara_real(ncid, var_varid(n), start, count, var_out(1,1,1,n))
+      if (retval .ne. nf_noerr) call handle_err(retval)
+      write(6,*) 'writing data O.K.'
+  
+    end do
+
+    !----------------------------------------------------------------------
+
+    allocate(rec_axis(1:nrecs_out))
+    rec_axis(1:nrecs_out) = recs(1:nrecs_out)
+    retval = nf_put_var_double(ncid, rec_varid, rec_axis)
+    if (retval .ne. nf_noerr) call handle_err(retval)
+    write(6,*) 'writing time O.K.'
+
+    !----------------------------------------------------------------------
+
+    allocate(bnd_axis(1:2,1:nrecs_out))
+    bnd_axis(1,1:nrecs_out) = recsb(1:nrecs_out)
+    bnd_axis(2,1:nrecs_out) = recse(1:nrecs_out)
+    retval = nf_put_var_double(ncid, bnd_varid, bnd_axis)
+    if (retval .ne. nf_noerr) call handle_err(retval)
+
+    !     Close the file. This causes netCDF to flush all buffers and make
+    !     sure your data are really written to disk.
+
+    retval = nf_close(ncid)
+    if (retval .ne. nf_noerr) call handle_err(retval)
+  
+    ltmp=len_trim(FILE_NAME)
+
+    write(6,"(A,A,A,I4,A,I4,A)") '*** SUCCESS writing ', &
+         & FILE_NAME(1:ltmp), ' : rec=[', nrecs_out, ']/[',nrecs,'] ***'
+
+  end subroutine netCDF_write_3d__all_at_once
   !--------------------------------------------------------------------
 end module netCDF_write_3d
