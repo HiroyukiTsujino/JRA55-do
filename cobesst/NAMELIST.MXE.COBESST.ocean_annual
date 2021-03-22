@@ -22,7 +22,7 @@
 /
 
 &nml_topo
-  file_topo          = "/work116/htsujino/COBESST/data/topo-jra_cobe_ocean.d",
+  file_topo          = "../linkdir/COBESST/data/topo-jra_cobe_ocean.d",
 /
 
 &nml_record_date

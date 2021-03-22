@@ -25,8 +25,11 @@ yr=${yrstr}
 while [ ${yr} -le ${yrend} ];
 do
 
+  nleap=`isleap ${yr}`
+  days_of_yr=`expr ${nleap} + 365`
+
   if [ ${yr} -eq ${yrend} ]; then
-    if [ x${enddy_last} == x ]; then
+    if [ x${enddy_last} == x -o ${enddy_last} == ${days_of_yr} ]; then
       lists="${yr} ${yr}010100 ${yr}010103 ${yr}123121"
     else
       lists="${yr} ${yr}010100 ${yr}010103"
@@ -35,7 +38,6 @@ do
     lists="${yr} ${yr}010100 ${yr}010103 ${yr}123121"
   fi    
 
-  nleap=`isleap ${yr}`
   if [ ${yr} -eq ${yrend} ]; then
     if [ x${enddy_last} == x ]; then
       enddy=`expr ${nleap} + 365`

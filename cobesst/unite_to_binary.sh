@@ -74,6 +74,11 @@ cgrid=U
 #indxdir=60nnp
 #file_mask=60nnp
 
+#indxdir=enso
+#file_mask=enso
+
+#indxdir=pdo
+#file_mask=pdo
 
 ./${exe}<<EOF
 &nml_maskunite

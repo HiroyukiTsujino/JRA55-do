@@ -1,7 +1,7 @@
 &nml_separated_runoff
   fl_liquid_base='../linkdir/river/jra55-do-v1_4-river/liquid_runoff',
   fl_solid_base='../linkdir/river/jra55-do-v1_4-river/solid_runoff',
-  dir_out='jra55-do-v1_4-sep',
+  dir_out='@dir_out@',
   ibyr=@styr@,
   ieyr=@edyr@,
   l_apply_area=.true.,

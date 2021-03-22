@@ -153,6 +153,18 @@ cgrid=U
 #slon=0.0d0
 #elon=360.0d0
 
+#indxdir=enso
+#slat=-20.0d0
+#elat=20.0d0
+#slon=110.0d0
+#elon=285.0d0
+
+#indxdir=pdo
+#slat=20.0d0
+#elat=70.0d0
+#slon=110.0d0
+#elon=260.0d0
+
 if [ -e ${indxdir} ]; then
   echo "${indxdir} already exists, please check"
   exit

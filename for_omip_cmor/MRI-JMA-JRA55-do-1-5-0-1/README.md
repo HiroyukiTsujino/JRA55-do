@@ -29,9 +29,7 @@ Contents
 Usage Note
 --------
 
-   * On front, issue the following command:
-       $ conda activate mypy37 # environment that contains the cmor 3.5.0
-       $ run runCmorAllWrite-1-5-0-1.py
+   * Python scripts work with python 3.8 with CMOR 3.6.0.
 
 Contact
 --------

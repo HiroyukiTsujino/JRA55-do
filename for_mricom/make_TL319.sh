@@ -12,6 +12,7 @@ yearst=${2}
 yeared=${3}
 
 ################
+# on glb193 (ocsv011)
 
 # V01
 #orgdir=/work116/htsujino/SURF_FLUX/forcing/jra_latlon_v1_1
@@ -87,12 +88,14 @@ yeared=${3}
 # V1.3.01
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_3_01_prod4_3hr_TL319 # tmp10m sph10m
 
-# V1.4
+# V1.4beta
 #orgdir=/work116/htsujino/SURF_FLUX/forcing/jra55fcst_3hr_TL319          # slprs brtmp ice
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4_prod4_3hr_TL319 # tmp10m sph10m
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4_prod1_3hr_TL319 # u10m v10m
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4_rad2_3hr_TL319  # dswrf dlwrf
 #orgdir=/work113/htsujino/SURF_FLUX/forcing/jra55fcst_v1_4_prcp2_3hr_TL319 # prcp snow
+
+# newdir (output)
 
 #newdir=/work116/htsujino/SURF_FLUX/forcing/jra_for_mricom_slprs/TL319_grid   # slprs
 #newdir=/work116/htsujino/SURF_FLUX/forcing/jra_for_mricom_support/TL319_grid # brtmp ice

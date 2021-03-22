@@ -97,6 +97,8 @@ program main
     riv_indx(:,:) = 1.e0
   end if
 
+  mask(:,:) = 0.e0
+
   !--------------------------------------------------------------------
 
   write(file_clim,'(1a,1a)') trim(dir_out),'/clim.txt'
@@ -135,11 +137,11 @@ program main
     annual_sld_ant = 0.d0
 
     write(file_river_in,'(1a,1a,i4.4)') trim(fl_liquid_base),'.',nyr
-    open(10,file=file_river_in,form='unformatted',status='old',access='direct',recl=4*nx*ny)
+    open(10,file=file_river_in,form='unformatted',status='old',action='read',access='direct',recl=4*nx*ny)
     irec = 0
 
     write(file_solid_in,'(1a,1a,i4.4)') trim(fl_solid_base),'.',nyr
-    open(11,file=file_solid_in,form='unformatted',status='old',access='direct',recl=4*nx*ny)
+    open(11,file=file_solid_in,form='unformatted',status='old',action='read',access='direct',recl=4*nx*ny)
     irecs = 0
 
     write(file_riv_ann,'(1a,1a,i4.4)') trim(dir_out),'/runoff.',nyr
@@ -203,6 +205,11 @@ program main
               write(6,*) ' tiny at ', i,j, roff(i,j)
               roff(i,j) = 0.
             end if
+
+            if ((roff(i,j) + solid(i,j)) > 0.0) then
+              mask(i,j) = 1.0
+            end if
+
             daily = daily + real(roff(i,j)*area(i,j),8)
             daily_sld = daily_sld + real(solid(i,j)*area(i,j),8)
             if ((nextx(i,j) == index_cmf) .and. (nexty(i,j) == index_cmf)) then
@@ -395,6 +402,28 @@ program main
   write(50,*) 'Green  (solid)  ', clim_sld_grn
   write(50,*) 'CAA    (solid)  ', clim_sld_caa
   write(50,*) 'Antarc (solid)  ', clim_sld_ant
+
+  write(6,*) ' '
+  write(6,*) ' Consistency check between data and ', trim(file_nextxy)
+  do j = 1, ny
+    do i = 1, nx
+      if (mask(i,j) == 1.0) then
+        if ((nextx(i,j) /= index_cmf) .and. (nexty(i,j) /= index_cmf) &
+      .and. (nextx(i,j) /= index_grn) .and. (nexty(i,j) /= index_grn) &
+      .and. (nextx(i,j) /= index_ant) .and. (nexty(i,j) /= index_ant)) then
+          write(6,'(1a,i6,i6,f8.3,i6)') &
+               & '  Serious inconsistency at ', i, j, mask(i,j), nextx(i,j)
+        end if
+      else
+        if ((nextx(i,j) == index_cmf) .or. (nexty(i,j) == index_cmf) &
+      .and. (nextx(i,j) == index_grn) .or. (nexty(i,j) == index_grn) &
+      .and. (nextx(i,j) == index_ant) .or. (nexty(i,j) == index_ant)) then
+          write(6,'(1a,i6,i6,f8.3,i6)') &
+               & '  Acceptable inconsistency at ', i, j, mask(i,j), nextx(i,j)
+        end if
+      end if
+    end do
+  end do
 
 contains
 

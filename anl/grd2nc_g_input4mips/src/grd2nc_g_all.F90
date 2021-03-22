@@ -817,14 +817,14 @@ program grads_to_netCDF_general
 
   if (l_space_2d) then
     call netCDF_write_3d__all_at_once(          &
-         &   var_out_2d, nrecs_out,             &
+         &   var_out_2d, ireco,                 &
          &   nrecs, time_axis, time_axis_b, time_axis_e,  &
          &   file_out,                          &
          &   num_var_all, vname,                &
          &   nlons, nlats )
   else
     call netCDF_write__all_at_once(             &
-         &   var_out_3d, nrecs_out,             &
+         &   var_out_3d, ireco,                 &
          &   nrecs, time_axis, time_axis_b, time_axis_e,  &
          &   file_out,                          &
          &   num_var_all, vname,                &

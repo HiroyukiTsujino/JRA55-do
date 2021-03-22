@@ -102,7 +102,8 @@ program diagnosis_net_radiation_flux
   !------------------
   ! Radiation data
 
-  character(256) :: rad_base_dir, rad_dir
+  character(256) :: drad_base_dir, drad_dir
+  character(256) :: urad_base_dir, urad_dir
   character(256) :: fin_base_dsw, fin_base_dlw
   character(256) :: fin_base_usw, fin_base_ulw
 
@@ -175,7 +176,8 @@ program diagnosis_net_radiation_flux
        &  l_ymdir_sst
 
   namelist /nml_raddata/ file_namelist_rad, &
-       &  rad_base_dir, &
+       &  drad_base_dir, &
+       &  urad_base_dir, &
        &  fin_base_dsw, fin_base_dlw, &
        &  fin_base_usw, fin_base_ulw, &
        &  file_first_rad, &
@@ -450,11 +452,12 @@ program diagnosis_net_radiation_flux
   call get_first_two_data(current_date,sst_file,sst_dir,l_ymdir_sst)
   call get_first_two_data(current_date,ice_file,sst_dir,l_ymdir_sst)
 
-  rad_dir = trim(rad_base_dir)
-  call get_first_two_data(current_date,dsw_file,rad_dir,l_ymdir_rad)
-  call get_first_two_data(current_date,usw_file,rad_dir,l_ymdir_rad)
-  call get_first_two_data(current_date,dlw_file,rad_dir,l_ymdir_rad)
-  call get_first_two_data(current_date,ulw_file,rad_dir,l_ymdir_rad)
+  drad_dir = trim(drad_base_dir)
+  call get_first_two_data(current_date,dsw_file,drad_dir,l_ymdir_rad)
+  call get_first_two_data(current_date,dlw_file,drad_dir,l_ymdir_rad)
+  urad_dir = trim(urad_base_dir)
+  call get_first_two_data(current_date,usw_file,urad_dir,l_ymdir_rad)
+  call get_first_two_data(current_date,ulw_file,urad_dir,l_ymdir_rad)
 
   nstep = 0
   num_hist(:,:) = 0
@@ -499,10 +502,10 @@ program diagnosis_net_radiation_flux
       end do
     end do
 
-    call update_data(current_date,dsw_file,rad_dir,l_ymdir_rad)
-    call update_data(current_date,usw_file,rad_dir,l_ymdir_rad)
-    call update_data(current_date,dlw_file,rad_dir,l_ymdir_rad)
-    call update_data(current_date,ulw_file,rad_dir,l_ymdir_rad)
+    call update_data(current_date,dsw_file,drad_dir,l_ymdir_rad)
+    call update_data(current_date,dlw_file,drad_dir,l_ymdir_rad)
+    call update_data(current_date,usw_file,urad_dir,l_ymdir_rad)
+    call update_data(current_date,ulw_file,urad_dir,l_ymdir_rad)
 
     ! Covert to the unit used in the model
 

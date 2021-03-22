@@ -65,9 +65,11 @@ do
       mkdir -p ${fcst_wind_out}/${yyyymm}
     fi
 
-    if [ ! -e ${fcst_wind_latlon}/${yyyymm} ]; then
-      echo "creating ${yyyymm}"
-      mkdir -p ${fcst_wind_latlon}/${yyyymm}
+    if [ ${out_latlon} = .true. ]; then
+      if [ ! -e ${fcst_wind_latlon}/${yyyymm} ]; then
+        echo "creating ${yyyymm}"
+        mkdir -p ${fcst_wind_latlon}/${yyyymm}
+      fi
     fi
 
     for hour in 0 3 6 9 12 15 18 21

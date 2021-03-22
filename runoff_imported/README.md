@@ -4,6 +4,21 @@ runoff_imported
   外部から提供された河川データの処理
 
 
+Note for JRA55-do-v1.4
+--------
+
+  * Monthly data from Bamber et al. (2018) is mapped on 0.25x0.25 grid
+    and then temporary interpolated to daily interval.
+
+    During this processing, a mask file for JRA55-do-v1.4 river discharge
+    data is generated.
+
+    - src/mk_GrnCaaFreshFlux_Bamber_2018.F90
+      Be careful not to overwrite existing
+      "nextxy_wo_lake_big_endian_noyrev_lon0strt_rm_GAC_add_Bamber_2018.bin".
+      (no overwrite by default)
+
+
 処理の説明
 --------
 

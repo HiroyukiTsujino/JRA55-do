@@ -1,0 +1,5 @@
+&nml_river_update
+  ibyr=@ibyr@,
+  ieyr=@ieyr@,
+  nd_last=@num_days@
+&end

@@ -8,6 +8,10 @@ to evaluate and manipulate daily river runoff data on 0.25 x 0.25.
 Description
 --------
 
+  * separated_runoff_noyrev_sum_v1_4.sh
+    src/separated_runoff_noyrev.F90
+    - Comprehensive check for JRA55-do-v1.4.
+
   * src/total_runoff_noyrev.F90: 
     Generate monthly and annual time series from daily data. 
     This should be useful for evaluating JRA55-do runoff products.
@@ -81,7 +85,7 @@ Programs/Scripts
 Development
 --------
 
-  * Developed at: Oceanography and Geochemistry Research Department,
+  * Developed at: Climate and Geochemistry Research Department,
                   Meteorological Research Institute,
                   Japan Meteorological Agency
   * Contact: Hiroyuki Tsujino (htsujino@mri-jma.go.jp)

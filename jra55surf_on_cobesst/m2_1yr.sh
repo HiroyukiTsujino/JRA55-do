@@ -1,18 +1,19 @@
-#!/bin/sh -f
+#!/bin/sh
 
 set -e
 
 if [ x${4} = x ]; then
-  echo "Usage : ${0} start_year end_year directory file_basename"
+  echo "Usage : ${0} start_year end_year directory(dataset name) file_basename"
   exit  
 fi
 
 yearst=${1}
 yeared=${2}
 #dir=../linkdir/forcing/${3}
-dir=/work115/htsujino/SURF_FLUX/forcing/${3}
+#dir=/work115/htsujino/SURF_FLUX/forcing/${3}
 #dir=/work116/htsujino/SURF_FLUX/forcing/${3}
-dir=/work116/htsujino/${3}/monthly/grads/ # COBESST
+#dir=/work116/htsujino/${3}/monthly/grads/ # COBESST
+dir=../linkdir/verification/${3}
 file_base=${4}
 
 echo "directory = ${dir} file_base = ${file_base}"

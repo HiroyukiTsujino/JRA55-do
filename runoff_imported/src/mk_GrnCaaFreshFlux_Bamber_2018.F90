@@ -27,12 +27,14 @@ program mk_GrnFreshFlux_Bamber
   character(len=128) :: cfile_mask = &
        & 'data_etc/mask_CaaGrnArc.gd'
   logical :: l_leap
+  logical :: l_new_mask_out = .false. ! modify if you want to generate a new mask
 
   !------------------------------------------------------------
 
   l_fwf_exist(:,:) = .false.
 
-  do nyr = 2021, 2024
+!  do nyr = 2021, 2024
+  do nyr = 1958, 2024
 
     if ( mod(nyr,4) == 0 ) then
       l_leap = .true. 
@@ -45,7 +47,11 @@ program mk_GrnFreshFlux_Bamber
 
   end do
 
-  call modify_nextxy
+  if (l_new_mask_out) then
+    call modify_nextxy
+  else
+    write(6,*) ' Mask file has not rewritten in this operation'
+  end if
 
 contains
 !---------------------------------------------------------------    
@@ -227,6 +233,10 @@ subroutine mk_daily_main (nyear)
       end if
     end do
   end do
+
+!---------------------------
+!  return 
+!---------------------------
 
   ! daily file
 

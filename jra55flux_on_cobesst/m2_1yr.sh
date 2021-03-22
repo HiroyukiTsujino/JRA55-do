@@ -3,7 +3,7 @@
 set -e
 
 if [ x${4} = x ]; then
-  echo "Usage : ${0} start_year end_year directory file_basename"
+  echo "Usage : ${0} start_year end_year directory(dataset name) file_basename"
   exit  
 fi
 

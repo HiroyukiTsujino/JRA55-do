@@ -1,0 +1,59 @@
+&nml_sstdata
+  file_namelist_sst='NAMELIST.MXE.COBESST',
+  sst_base_dir='../linkdir/COBESST/daily/grads'
+  fin_base_sst='sst-glb',
+  fin_base_ice='ice-glb',
+  file_first_sst=1958,1,1,0,0,0,
+  file_intv_type_sst=1,
+  file_intv_sst=1,
+  total_rec_sst=365,
+  data_intv_sec_sst=86400,
+  sst_first=1958,1,1,12,0,0,
+  undef_sst=9.999e20,
+  l_ymdir_sst=.false.
+&end
+
+&nml_raddata
+  file_namelist_rad='NAMELIST.MXE.JRA55',
+  drad_base_dir='../linkdir/work/jra55fcst_filt_3hr_TL319'
+  urad_base_dir='../linkdir/work/jra55fcst_orgflux_3hr_TL319'
+  fin_base_dsw='dswrf',
+  fin_base_dlw='dlwrf',
+  fin_base_usw='uswrf',
+  fin_base_ulw='ulwrf',
+  file_first_rad=1958,1,1,0,0,0,
+  file_intv_type_rad=4,
+  file_intv_rad=3,
+  total_rec_rad=1,
+  data_intv_sec_rad=10800,
+  rad_first=1958,1,1,1,30,0,
+  undef_rad=9.999e20,
+  l_ymdir_rad=.true.
+&end
+
+&nml_diagnetrad
+  calc_start=1958,1,1,1,30,0,
+  calc_end=2020,1,1,1,30,0, 
+  l_leap_valid=.true.
+  int_hist=-1,
+  flx_base_dir='../linkdir/verification/jra55fcst_orgflux_monthly_1x1'
+  fout_base_nswrf='nswrf',
+  fout_base_nlwrf='nlwrf',
+  factor_swrf=1.0d0,
+  factor_lwrf=1.0d0,
+&end
+
+&nml_table_ocn
+  file_table_ocn='../linkdir/table.04/jra55o2cobe.d'
+&end
+
+&nml_table_all
+  file_table_all='../linkdir/table.04/jra55a2cobe.d'
+&end
+
+&nml_intpol
+  l_lin_swrf=.false.,
+  l_lin_lwrf=.false.,
+  l_ocn_swrf=.true.,
+  l_ocn_lwrf=.true.,
+&end

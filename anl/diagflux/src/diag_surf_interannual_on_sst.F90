@@ -802,8 +802,8 @@ program diagnosis_surface_atmospheric_state
 
       do j = 1, jmf
         do i = 1, imf
-          usf (i,j) = (us_file%dat_b(i,j) * us_file%br + us_file%dat_a(i,j) * us_file%ar) * 1.0d2
-          vsf (i,j) = (vs_file%dat_b(i,j) * vs_file%br + vs_file%dat_a(i,j) * vs_file%ar) * 1.0d2
+          usf (i,j) = (us_file%dat_b(i,j) * us_file%br + us_file%dat_a(i,j) * us_file%ar)
+          vsf (i,j) = (vs_file%dat_b(i,j) * vs_file%br + vs_file%dat_a(i,j) * vs_file%ar)
         end do
       end do
 

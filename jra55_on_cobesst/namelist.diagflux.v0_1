@@ -1,36 +1,36 @@
 &nml_sstdata
   file_namelist_sst='NAMELIST.MXE.COBESST',
-  sst_base_dir='/work116/htsujino/COBESST/daily/grads'
+  sst_base_dir='../linkdir/COBESST/daily/grads'
   fin_base_sst='sst-glb',
   fin_base_ice='ice-glb',
-  file_first_sst=2019,1,1,0,0,0,
+  file_first_sst=1958,1,1,0,0,0,
   file_intv_type_sst=1,
   file_intv_sst=1,
   total_rec_sst=365,
   data_intv_sec_sst=86400,
-  sst_first=2019,1,1,12,0,0,
+  sst_first=1958,1,1,12,0,0,
   undef_sst=9.999e20
   l_ymdir_sst=.false.
 &end
 
 &nml_srfdata
   file_namelist_srf='NAMELIST.MXE.JRA55',
-  srf_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
-  sat_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
-  sph_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
-  wind_base_dir='../linkdir/forcing/jra55fcst_filt_3hr_TL319'
-  slp_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
+  srf_base_dir='../linkdir/work/jra55fcst_3hr_TL319'
+  sat_base_dir='../linkdir/work/jra55fcst_3hr_TL319'
+  sph_base_dir='../linkdir/work/jra55fcst_3hr_TL319'
+  wind_base_dir='../linkdir/work/jra55fcst_filt_3hr_TL319'
+  slp_base_dir='../linkdir/work/jra55fcst_3hr_TL319'
   fin_base_sat='tmp2m',
   fin_base_sph='sph2m',
   fin_base_us='u10m',
   fin_base_vs='v10m',
   fin_base_slp='slprs',
-  file_first_srf=2019,1,1,0,0,0,
+  file_first_srf=1958,1,1,0,0,0,
   file_intv_type_srf=4,
   file_intv_srf=3,
   total_rec_srf=1,
   data_intv_sec_srf=10800,
-  srf_first=2019,1,1,0,0,0,
+  srf_first=1958,1,1,0,0,0,
   undef_srf=9.999e20,
   l_ymdir_srf=.true.
   alt_sat=2.0d0,
@@ -40,39 +40,39 @@
 
 &nml_raddata
   file_namelist_rad='NAMELIST.MXE.JRA55',
-  rad_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
+  rad_base_dir='../linkdir/work/jra55fcst_3hr_TL319'
   fin_base_dsw='dswrf',
   fin_base_dlw='dlwrf',
-  file_first_rad=2019,1,1,0,0,0,
+  file_first_rad=1958,1,1,0,0,0,
   file_intv_type_rad=4,
   file_intv_rad=3,
   total_rec_rad=1,
   data_intv_sec_rad=10800,
-  rad_first=2019,1,1,1,30,0,
+  rad_first=1958,1,1,1,30,0,
   undef_rad=9.999e20,
   l_ymdir_rad=.true.
 &end
 
 &nml_pcpdata
   file_namelist_pcp='NAMELIST.MXE.JRA55',
-  pcp_base_dir='../linkdir/forcing/jra55fcst_3hr_TL319'
+  pcp_base_dir='../linkdir/work/jra55fcst_3hr_TL319'
   fin_base_pcp='prcp',
-  file_first_pcp=2019,1,1,0,0,0,
+  file_first_pcp=1958,1,1,0,0,0,
   file_intv_type_pcp=4,
   file_intv_pcp=3,
   total_rec_pcp=1,
   data_intv_sec_pcp=10800,
-  pcp_first=2019,1,1,1,30,0,
+  pcp_first=1958,1,1,1,30,0,
   undef_pcp=9.999e20,
   l_ymdir_pcp=.true.
 &end
 
 &nml_diagflux
-  calc_start=2019,1,1,1,30,0,
+  calc_start=1958,1,1,1,30,0,
   calc_end=2020,1,1,1,30,0, 
   l_leap_valid=.true.
   int_hist=-1,
-  flx_base_dir='../linkdir/forcing/jra55fcst_monthly_1x1'
+  flx_base_dir='../linkdir/verification/jra55fcst_v0_1_monthly_1x1'
   fout_base_taux='taux',
   fout_base_tauy='tauy',
   fout_base_sens='sensible',

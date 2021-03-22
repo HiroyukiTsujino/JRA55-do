@@ -9,7 +9,7 @@ fi
 
 dsname=${1}
 
-export OMP_NUM_THREADS=2
+#export OMP_NUM_THREADS=2
 
 ln -sf NAMELIST.MXE.COBESST.ocean NAMELIST.MXE.COBESST
 
